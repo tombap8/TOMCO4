@@ -86,6 +86,12 @@
                 8. 글자스타일 -> font-style
                     -> 이탤릭일때 사용 : italic
                     -> 이탤릭해제시 : normal
+                9. 글자데코레이션 -> text-decoration
+                    -> 글자에 줄긋기
+                    underline 밑줄
+                    overline 윗줄
+                    linethrough 중간줄
+                    none 줄없앰
 
                 참고)
                 https://www.w3schools.com/css/css_font.asp
@@ -186,7 +192,7 @@
                 /* 글자자간 */
                 letter-spacing:2px;
                 /* 글자줄간격 */
-                line-height: 1.5;
+                line-height: 1;
                 /* 글자단어간격 */
                 word-spacing: 10px;
                 /* 글자스타일 */
@@ -200,6 +206,15 @@
 
                 /* font: 스두크/줄체;
                 font: 스타일 두께 크기/줄간격 글씨체; */
+                font: bold 20px/40px "굴림";
+                /* font: italic bold 24px/30px "궁서"; */
+            }
+            /* 마우스오버시 */
+            /* :hover 가상클래스 */
+            .nav > a:hover{
+                color: red;
+                text-decoration: overline;
+                /* text-decoration: line-through; */
             }
 
             /* 2. 메인영역 */
