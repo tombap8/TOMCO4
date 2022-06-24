@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>네이버 요약뉴스 - 경제</title>
+    <!-- title : 브라우저 탭메뉴 타이틀 -->
+    <meta charset="utf-8">
+    <!-- meta태그 초기정보 셋업 : 
+            charset 문자인코딩형식 지정 -->
+    <!-- 구글웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
+    <!-- 외부스타일시트 불러오기 :  익스터널방식 -->
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <header id="top" class="bxc">
+        <!-- 1-1. 타이틀 -->
+        <h1>네이버 요약뉴스 - 경제</h1>
+        <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
+        <nav class="nav">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="네이버로고" style="width: 20px;">
+                <!-- 
+                        style 속성
+                        (인라인방식)
+                        - 어느요소나 사용가능
+                        - css를 각 요소에 직접
+                        코딩하는 방식
+                        - JS에서 이방식을 사용!
+                        - 우선순위 가장높음!
+                     -->
+            </a>
+            <!-- 
+                    img 요소 : image
+                    - 이미지를 경로에서 불러와서
+                    화면에 보여주는 요소
+                    (필수속성 2가지!)
+                    -> src : source
+                        이미지 경로 속성
+                    -> alt : alternative text
+                        대체 텍스트
+                        (웹접근성 필수!)
+
+                    [ 경로에 관하여... ]
+                    1) 상대경로
+                        -> 현재 파일 위치로 경로를 잡음
+                        ./ 현재위치로부터
+                        (안써도 현재위치로부터임)
+                        ../ 한단계 위로
+                        ../../../ 계속 위로...
+                    2) 절대경로
+                        -> http://... 이런식의
+                        웹주소가 절대경로임!
+                    3) 절대상대경로
+                        프로젝트 파일 최상위부터 잡는 경로
+                        / 루트부터출발
+                        예) /aaa/bbb 
+                 -->
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </nav>
+    </header>
+    <!-- 
+            div : divide / division
+            -> 영역을 구분하는 블록요소
+            블록요소는 옆에 다른요소가 못오며
+            내용을 구분하는 역할을 함!
+
+            [요소에 이름넣기!]
+            - 요소를 구분하기 위한 아이디/클래스로 이름짓는다
+            - 아이디(id) : 유일한 요소구분
+            - 클래스(class) : 공통디자인 요소구분
+         -->
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="bxc">
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer id="info" class="bxc">
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br>
+            대표: Tom Brace Parker <br>
+            전화: 010-2222-3333
+        </address>
+    </footer>
+
+
+
+    <!-- 
+            [ div 형제 요소들 ]
+
+            -> div에 어떤 내용영역인지 알 수 있도록
+            의미를 부여한 새로운 레이아웃용 태그들!
+            -> 태그에 의미를 부여함! 
+            -> 시멘틱태그!(sementic tag)
+
+            1. header - 상단영역
+            2. footer - 하단영역
+            3. main - 메인영역(한페이지에 한번만!)
+            4. nav - 네비게이션 영역
+            5. aside - 부수적인 내용 영역
+            4. section - 내용구분을 위한 영역
+            5. article - 독립적인 내용을 구분하는 영역
+                (보통 article 이나 section은 
+                w3c에서 heading 태그(h1~h6)를 내용에
+                사용할 것을 권고함! - 안써도 무관! )
+
+
+         -->
+
+
+</body>
+
+</html>
