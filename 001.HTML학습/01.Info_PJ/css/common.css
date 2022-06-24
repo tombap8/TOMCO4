@@ -22,16 +22,16 @@
     margin: 20px auto;
     /* m20 */
     /* 
-                    [블록박스 가로중앙정렬]
-                    margin: 0 auto; -> 마영오!
-                    양쪽마진 auto의 의미는? 양쪽마진 등분할!
+        [블록박스 가로중앙정렬]
+        margin: 0 auto; -> 마영오!
+        양쪽마진 auto의 의미는? 양쪽마진 등분할!
 
-                    [마진 값 주기 === 패딩값도 동일함!]
-                    margin: 하나; -> 4방향마진
-                    margin: 하나 둘 -> 위아래 양쪽
-                    margin: 하나 둘 셋 -> 위 양쪽 아래
-                    margin: 하나 둘 셋 넷 -> 위부터 시계방향 
-                */
+        [마진 값 주기 === 패딩값도 동일함!]
+        margin: 하나; -> 4방향마진
+        margin: 하나 둘 -> 위아래 양쪽
+        margin: 하나 둘 셋 -> 위 양쪽 아래
+        margin: 하나 둘 셋 넷 -> 위부터 시계방향 
+    */
 
     /* 박스크기유지 속성! : 패딩과 보더크기 포함! */
     box-sizing: border-box;
@@ -49,13 +49,13 @@
     text-align: center;
     /* tac */
     /* 
-                    text-align 텍스트 정렬
-                    (값)
-                    left - 왼쪽정렬
-                    right - 오른쪽정렬
-                    center - 중앙정렬
-                    justify - 양쪽정렬
-                */
+        text-align 텍스트 정렬
+        (값)
+        left - 왼쪽정렬
+        right - 오른쪽정렬
+        center - 중앙정렬
+        justify - 양쪽정렬
+    */
 }
 
 /* 1. 상단영역 */
