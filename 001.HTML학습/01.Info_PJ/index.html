@@ -52,7 +52,7 @@
                 /* 1. 가로크기 */
                 width: 750px;/* w750 */
                 /* 2. 세로크기 */
-                height: 200px;/* h200 */
+                /* height: 200px; *//* h200 */
                 /* 3. 안쪽여백 */
                 padding: 10px;/* p10 */
                 /* 4. 경계선 : 두께 종류 색상(두종색)*/
@@ -63,11 +63,18 @@
                 /* 배경색 */
                 background-color: #b9ffb5;
             }
+
+            /* 2. 메인영역 */
+            #cont img{
+                width: 100%;
+                /* 이미지는 가로크기를 주면
+                세로크기는 비율유지함! */
+            }
         </style>
     </head>
     <body>
         <!-- 1. 상단영역 -->
-        <div id="top">
+        <div id="top" class="bxc">
             <!-- 1-1. 타이틀 -->
             <h1>네이버 요약뉴스</h1>
             <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
@@ -129,12 +136,12 @@
             - 클래스(class) : 공통디자인 요소구분
          -->
         <!-- 2. 메인영역 -->
-        <div>
+        <div id="cont" class="bxc">
             <!-- 메인이미지 -->
             <img src="./images/main.jpg" alt="메인 뉴스 일러스트 이미지">
         </div>
         <!-- 3. 하단영역 -->
-        <div>
+        <div id="info" class="bxc">
             <!-- 회사주소 및 정보 -->
             <address>
                 서울시 강남구 역삼동 119 대호B 8F <br>
