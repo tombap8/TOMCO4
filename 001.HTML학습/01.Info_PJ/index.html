@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>네이버 요약뉴스</title>
-        <!-- title : 브라우저 탭메뉴 타이틀 -->
-        <meta charset="utf-8">
-        <!-- meta태그 초기정보 셋업 : 
+
+<head>
+    <title>네이버 요약뉴스</title>
+    <!-- title : 브라우저 탭메뉴 타이틀 -->
+    <meta charset="utf-8">
+    <!-- meta태그 초기정보 셋업 : 
             charset 문자인코딩형식 지정 -->
-        <!-- 구글웹폰트 -->
-        <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
-        <!-- 스타일시트 코딩구역 : 인터널방식 -->
-        <style>
-            /* 스타일시트를 사용하는 영역 */
-            /* CSS문법만 쓸 수 있음! */
-            /* 
+    <!-- 구글웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
+    <!-- 스타일시트 코딩구역 : 인터널방식 -->
+    <style>
+        /* 스타일시트를 사용하는 영역 */
+        /* CSS문법만 쓸 수 있음! */
+        /* 
                 기본 사용법:
 
                 선택자 {
@@ -136,21 +137,26 @@
 
             */
 
-            /* 공통 클래스 */
-            /* box center의 의미로 bxc */
-            .bxc{
-                /* 기본 박스모델 속성 5가지! */
-                /* 1. 가로크기 */
-                width: 750px;/* w750 */
-                /* 2. 세로크기 */
-                /* height: 200px; *//* h200 */
-                /* 3. 안쪽여백 */
-                padding: 10px;/* p10 */
-                /* 4. 경계선 : 두께 종류 색상(두종색)*/
-                border: 2px solid silver;/* bd */
-                /* 5. 바깥여백 */
-                margin: 20px auto;/* m20 */
-                /* 
+        /* 공통 클래스 */
+        /* box center의 의미로 bxc */
+        .bxc {
+            /* 기본 박스모델 속성 5가지! */
+            /* 1. 가로크기 */
+            width: 750px;
+            /* w750 */
+            /* 2. 세로크기 */
+            /* height: 200px; */
+            /* h200 */
+            /* 3. 안쪽여백 */
+            padding: 10px;
+            /* p10 */
+            /* 4. 경계선 : 두께 종류 색상(두종색)*/
+            border: 2px solid silver;
+            /* bd */
+            /* 5. 바깥여백 */
+            margin: 20px auto;
+            /* m20 */
+            /* 
                     [블록박스 가로중앙정렬]
                     margin: 0 auto; -> 마영오!
                     양쪽마진 auto의 의미는? 양쪽마진 등분할!
@@ -162,19 +168,22 @@
                     margin: 하나 둘 셋 넷 -> 위부터 시계방향 
                 */
 
-                /* 박스크기유지 속성! : 패딩과 보더크기 포함! */
-                box-sizing: border-box;
+            /* 박스크기유지 속성! : 패딩과 보더크기 포함! */
+            box-sizing: border-box;
 
-            }
-            
-            /* 상단과 하단만 배경색 
+        }
+
+        /* 상단과 하단만 배경색 
             콤마(,)는 그룹선택자 */
-            #top, #info {
-                /* 배경색 */
-                background-color: #d7ffd5;/* bgc */
-                /* 블록박스 인라인내용 중앙정렬 */
-                text-align: center;/* tac */
-                /* 
+        #top,
+        #info {
+            /* 배경색 */
+            background-color: #d7ffd5;
+            /* bgc */
+            /* 블록박스 인라인내용 중앙정렬 */
+            text-align: center;
+            /* tac */
+            /* 
                     text-align 텍스트 정렬
                     (값)
                     left - 왼쪽정렬
@@ -182,54 +191,57 @@
                     center - 중앙정렬
                     justify - 양쪽정렬
                 */
-            }
+        }
 
-            /* 1. 상단영역 */
-            /* 타이틀 */
-            h1{
-                /* 글자크기 fz */
-                font-size: 34px;
-                /* 글자두께 */
-                font-weight: lighter;
-                /* 글자체 */
-                font-family: 'Black And White Picture', sans-serif;
-                /* font-family: san-serif,"긍서","글림","돋음"; */
-                /* 글자색 */
-                color:hotpink;
-                /* 글자자간 */
-                letter-spacing:2px;
-                /* 글자줄간격 */
-                line-height: 1;
-                /* 글자단어간격 */
-                word-spacing: 10px;
-                /* 글자스타일 */
-            }
-            /* 메뉴GNB */
-            .nav > a{
-                /* a링크는 2가지 기본설정이 있음 */
-                /* 글자색, 글자밑줄 -> 여기서 수정함! */
-                color: navy;
-                text-decoration: none;
+        /* 1. 상단영역 */
+        /* 타이틀 */
+        h1 {
+            /* 글자크기 fz */
+            font-size: 34px;
+            /* 글자두께 */
+            font-weight: lighter;
+            /* 글자체 */
+            font-family: 'Black And White Picture', sans-serif;
+            /* font-family: san-serif,"긍서","글림","돋음"; */
+            /* 글자색 */
+            color: hotpink;
+            /* 글자자간 */
+            letter-spacing: 2px;
+            /* 글자줄간격 */
+            line-height: 1;
+            /* 글자단어간격 */
+            word-spacing: 10px;
+            /* 글자스타일 */
+        }
 
-                /* font: 스두크/줄체;
+        /* 메뉴GNB */
+        .nav>a {
+            /* a링크는 2가지 기본설정이 있음 */
+            /* 글자색, 글자밑줄 -> 여기서 수정함! */
+            color: navy;
+            text-decoration: none;
+
+            /* font: 스두크/줄체;
                 font: 스타일 두께 크기/줄간격 글씨체; */
-                font: bold 20px/40px "굴림";
-                /* font: italic bold 24px/30px "궁서"; */
-            }
-            /* 마우스오버시 */
-            /* :hover 가상클래스 */
-            .nav > a+a:hover{
-                /* a+a:hover 
+            font: bold 20px/40px "굴림";
+            /* font: italic bold 24px/30px "궁서"; */
+        }
+
+        /* 마우스오버시 */
+        /* :hover 가상클래스 */
+        .nav>a+a:hover {
+            /* a+a:hover 
                 -> 앞에 a요소가 있는 a요소 모두선택 
                 결과적으로 첫번째 a만 제외됨! */
-                color: red;
-                text-decoration: overline;
-                /* text-decoration: line-through; */
-            }
-            /* 메뉴 중 로고이미지 */
-            .nav a img{
-                vertical-align: -3px;
-                /* 
+            color: red;
+            text-decoration: overline;
+            /* text-decoration: line-through; */
+        }
+
+        /* 메뉴 중 로고이미지 */
+        .nav a img {
+            vertical-align: -3px;
+            /* 
                     vertical-align 
                     -> 인라인요소간 세로정렬
                     : top, bottom, baseline, middle, 수치
@@ -237,36 +249,37 @@
                     영향을 준다! (보통 이미지와 글자의
                     세로위치를 조정할때 사용함!)
                 */
-            }
+        }
 
-            /* 2. 메인영역 */
-            #cont img{
-                width: 100%;
-                /* 이미지는 가로크기를 주면
+        /* 2. 메인영역 */
+        #cont img {
+            width: 100%;
+            /* 이미지는 가로크기를 주면
                 세로크기는 비율유지함! */
-            }
+        }
 
-            /* 3. 하단영역 */
-            #info address{
-                /* font-style: normal; */
-                /* address 기본 이탤릭해제! */
-                font: normal bold 17px/28px "굴림";
-                color: #333;
-                padding: 13px 0;
-                /* font: 스두크/줄체 */
-            }
-        </style>
-    </head>
-    <body>
-        <!-- 1. 상단영역 -->
-        <div id="top" class="bxc">
-            <!-- 1-1. 타이틀 -->
-            <h1>네이버 요약뉴스</h1>
-            <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
-            <div class="nav">
-                <a href="#">
-                    <img src="./images/logo.png" alt="네이버로고" style="width: 20px;">
-                    <!-- 
+        /* 3. 하단영역 */
+        #info address {
+            /* font-style: normal; */
+            /* address 기본 이탤릭해제! */
+            font: normal bold 17px/28px "굴림";
+            color: #333;
+            padding: 13px 0;
+            /* font: 스두크/줄체 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <header id="top" class="bxc">
+        <!-- 1-1. 타이틀 -->
+        <h1>네이버 요약뉴스</h1>
+        <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
+        <nav class="nav">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="네이버로고" style="width: 20px;">
+                <!-- 
                         style 속성
                         (인라인방식)
                         - 어느요소나 사용가능
@@ -275,8 +288,8 @@
                         - JS에서 이방식을 사용!
                         - 우선순위 가장높음!
                      -->
-                </a>
-                <!-- 
+            </a>
+            <!-- 
                     img 요소 : image
                     - 이미지를 경로에서 불러와서
                     화면에 보여주는 요소
@@ -302,14 +315,14 @@
                         / 루트부터출발
                         예) /aaa/bbb 
                  -->
-                <a href="#">정치</a> | 
-                <a href="#">경제</a> | 
-                <a href="#">사회</a> | 
-                <a href="#">IT/과학</a> | 
-                <a href="#">TV/연예</a>
-            </div>
-        </div>
-        <!-- 
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </nav>
+    </header>
+    <!-- 
             div : divide / division
             -> 영역을 구분하는 블록요소
             블록요소는 옆에 다른요소가 못오며
@@ -320,19 +333,46 @@
             - 아이디(id) : 유일한 요소구분
             - 클래스(class) : 공통디자인 요소구분
          -->
-        <!-- 2. 메인영역 -->
-        <div id="cont" class="bxc">
-            <!-- 메인이미지 -->
-            <img src="./images/main.jpg" alt="메인 뉴스 일러스트 이미지">
-        </div>
-        <!-- 3. 하단영역 -->
-        <div id="info" class="bxc">
-            <!-- 회사주소 및 정보 -->
-            <address>
-                서울시 강남구 역삼동 119 대호B 8F <br>
-                대표: Tom Brace Parker <br>
-                전화: 010-2222-3333
-            </address>
-        </div>
-    </body>
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="bxc">
+        <!-- 메인이미지 -->
+        <img src="./images/main.jpg" alt="메인 뉴스 일러스트 이미지">
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer id="info" class="bxc">
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br>
+            대표: Tom Brace Parker <br>
+            전화: 010-2222-3333
+        </address>
+    </footer>
+
+
+
+    <!-- 
+            [ div 형제 요소들 ]
+
+            -> div에 어떤 내용영역인지 알 수 있도록
+            의미를 부여한 새로운 레이아웃용 태그들!
+            -> 태그에 의미를 부여함! 
+            -> 시멘틱태그!(sementic tag)
+
+            1. header - 상단영역
+            2. footer - 하단영역
+            3. main - 메인영역(한페이지에 한번만!)
+            4. nav - 네비게이션 영역
+            5. aside - 부수적인 내용 영역
+            4. section - 내용구분을 위한 영역
+            5. article - 독립적인 내용을 구분하는 영역
+                (보통 article 이나 section은 
+                w3c에서 heading 태그(h1~h6)를 내용에
+                사용할 것을 권고함! - 안써도 무관! )
+
+
+         -->
+
+
+</body>
+
 </html>
