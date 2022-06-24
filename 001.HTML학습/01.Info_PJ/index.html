@@ -38,10 +38,26 @@
 
                 [ CSS 요소 박스모델 필수속성! ]
                 1. width - 가로크기
+                    -> 기본값 auto 
+                    (블록박스는 끝까지 차지, 인라인박스는 내용만큼)
                 2. height - 세로크기
+                    -> 기본값 auto
+                    (내용만큼 늘어남!)
                 3. padding - 안쪽여백
                 4. border - 경계선
                 5. margin - 바깥여백
+                ____________________________
+
+                -> 박스모델에서 width, height크기 지정시
+                내부 컨텐츠 영역의 크기를 지정한 것임
+                따라서 패딩, 보더의 크기는 바깥쪽으로 확장됨!
+                이런박스를 이름하여 "content-box"
+                box-sizing 속성값으로 "border-box"라고 설정하면
+                설정된 크기 안쪽으로 패딩과 보더가 설정됨!
+                필요한 경우 사용함!
+
+                참고)
+                https://www.w3schools.com/css/css_boxmodel.asp
 
             */
 
@@ -58,10 +74,39 @@
                 /* 4. 경계선 : 두께 종류 색상(두종색)*/
                 border: 2px solid silver;/* bd */
                 /* 5. 바깥여백 */
-                margin: 20px;/* m20 */
+                margin: 20px auto;/* m20 */
+                /* 
+                    [블록박스 가로중앙정렬]
+                    margin: 0 auto; -> 마영오!
+                    양쪽마진 auto의 의미는? 양쪽마진 등분할!
 
+                    [마진 값 주기 === 패딩값도 동일함!]
+                    margin: 하나; -> 4방향마진
+                    margin: 하나 둘 -> 위아래 양쪽
+                    margin: 하나 둘 셋 -> 위 양쪽 아래
+                    margin: 하나 둘 셋 넷 -> 위부터 시계방향 
+                */
+
+                /* 박스크기유지 속성! : 패딩과 보더크기 포함! */
+                box-sizing: border-box;
+
+            }
+            
+            /* 상단과 하단만 배경색 
+            콤마(,)는 그룹선택자 */
+            #top, #info {
                 /* 배경색 */
-                background-color: #b9ffb5;
+                background-color: #d7ffd5;/* bgc */
+                /* 블록박스 인라인내용 중앙정렬 */
+                text-align: center;/* tac */
+                /* 
+                    text-align 텍스트 정렬
+                    (값)
+                    left - 왼쪽정렬
+                    right - 오른쪽정렬
+                    center - 중앙정렬
+                    justify - 양쪽정렬
+                */
             }
 
             /* 2. 메인영역 */
