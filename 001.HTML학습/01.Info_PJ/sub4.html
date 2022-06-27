@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>네이버 요약뉴스 - IT/과학</title>
     <!-- title : 브라우저 탭메뉴 타이틀 -->
     <meta charset="utf-8" />
     <!-- meta태그 초기정보 셋업 : 
             charset 문자인코딩형식 지정 -->
     <!-- 구글웹폰트 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet" />
     <!-- 외부스타일시트 불러오기 :  익스터널방식 -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/sub.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- 1. 상단영역 -->
     <header id="top" class="bxc">
-      <!-- 1-1. 타이틀 -->
-      <h1>네이버 요약뉴스 - IT/과학</h1>
-      <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
-      <nav class="nav">
-        <a href="index.html">
-          <img src="./images/logo.png" alt="네이버로고" style="width: 20px" />
-          <!-- 
+        <!-- 1-1. 타이틀 -->
+        <h1>네이버 요약뉴스 - IT/과학</h1>
+        <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
+        <nav class="nav">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="네이버로고" style="width: 20px" />
+                <!-- 
                         style 속성
                         (인라인방식)
                         - 어느요소나 사용가능
@@ -34,8 +32,8 @@
                         - JS에서 이방식을 사용!
                         - 우선순위 가장높음!
                      -->
-        </a>
-        <!-- 
+            </a>
+            <!-- 
                     img 요소 : image
                     - 이미지를 경로에서 불러와서
                     화면에 보여주는 요소
@@ -61,91 +59,107 @@
                         / 루트부터출발
                         예) /aaa/bbb 
                  -->
-        <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> |
-        <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
-        <a href="sub5.html">TV/연예</a>
-      </nav>
+            <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </nav>
     </header>
     <!-- 2. 메인영역 -->
     <main id="cont" class="bxc">
-      <!-- 2-1. 언론사로고 -->
-      <div class="prlogo">
-        <a href="" target="_blank">
-          <img src="./images/pr4.png" alt="서울신문사로고" />
-        </a>
-      </div>
-      <!-- 2-2. 기사제목 -->
-      <h2 class="atit">
-        [우주를 보다] 태양계 ‘8개 행성’ 모두 담긴 희귀 사진 공개
-      </h2>
-      <!-- 2-3. 기사사진(+사진설명) -->
-      <figure class="afig">
-        <img src="./images/arti4.jpg" alt="IT/과학기사이미지" />
-        <!-- 이미지설명 -->
-        <figcaption>
-          <small>한 이미지에 담겨 있는 태양계 8개 행성. / APOD NASA</small>
-        </figcaption>
-        <!-- 이미지설명 하단에 다른 태그 못씀! -->
-      </figure>
-      <!-- 
+        <!-- 2-1. 언론사로고 -->
+        <div class="prlogo">
+            <a href="https://www.seoul.co.kr/" target="_blank">
+                <img src="./images/pr4.png" alt="서울신문사로고" />
+            </a>
+        </div>
+        <!-- 2-2. 기사제목 -->
+        <h2 class="atit">
+            [우주를 보다] 태양계 ‘8개 행성’ 모두 담긴 희귀 사진 공개
+        </h2>
+        <!-- 2-3. 기사사진(+사진설명) -->
+        <figure class="afig">
+            <img src="./images/arti4.jpg" alt="IT/과학기사이미지" />
+            <!-- 이미지설명 -->
+            <figcaption>
+                <small>한 이미지에 담겨 있는 태양계 8개 행성. / APOD NASA</small>
+            </figcaption>
+            <!-- 이미지설명 하단에 다른 태그 못씀! -->
+        </figure>
+        <!-- 
             figure 요소 : 이미지나 표, 그림 등을 넣는 요소
             - figcaption 요소 : 이미지 설명박스(옵션)
             -> 주의: 하단에 다른 태그 사용불가!
          -->
-      <!-- 2-4. 기사내용 -->
-      <section class="arti">
-        <p>
-          <b>태양계 행성 8개</b>가 모두 담긴 사진이 공개돼 관심을 모으고 있다.
-          <strong>‘오늘의 천체사진’</strong>(APOD) 25일자에 따르면, 낭만적인
-          분위기의 새벽 하늘 풍경을 담은 이 사진은
-          <i> 카메라 4대가 동시 촬영한 이미지 </i>를 합쳐 만들었다.
-        </p>
+        <!-- 2-4. 기사내용 -->
+        <section class="arti">
+            <p>
+                <b>태양계<sup>①</sup> 행성<sup>②</sup> 8개</b>가 모두 담긴 사진이 공개돼 관심을 모으고 있다.
+                <strong>‘오늘의 천체사진’</strong>(APOD) 25일자에 따르면, 낭만적인
+                분위기의 새벽 하늘 풍경을 담은 이 사진은
+                <i> 카메라 4대가 동시 촬영한 이미지 </i>를 합쳐 만들었다.
+            </p>
 
-        <p>
-          이 아름다운 천체 파노라마 사진은 지난 24일 해돋이 직전,
-          <em>태양계의 모든 행성</em>을 담고 있다.
-        </p>
+            <p>
+                이 아름다운 천체 파노라마 사진은 지난 24일 해돋이 직전,
+                <em>태양계의 모든 행성</em>을 담고 있다.
+            </p>
 
-        <p>
-          안개가 자욱한 아침, 가장 안쪽에 있는 행성인 수성은 지평선에 바짝 붙어
-          있는데 아침놀을 배경으로 <mark>찬연하게 빛나는 금성</mark>의 왼쪽
-          아래에서 볼 수 있다.
-          <del>하지만 나는 볼 수 없었다!흑흑ㅠ.ㅠ</del>
-        </p>
+            <p>
+                안개가 자욱한 아침, 가장 안쪽에 있는 행성인 수성은 지평선에 바짝 붙어
+                있는데 아침놀을 배경으로 <mark>찬연하게 빛나는 금성</mark>의 왼쪽
+                아래에서 볼 수 있다.
+                <del>하지만 나는 볼 수 없었다!흑흑ㅠ.ㅠ</del>
+            </p>
 
-        <p>
-          맨눈으로 볼 수 있는 행성들인 화성, 목성, 토성은 이울어가는 초승달의
-          오른쪽으로 큰 호를 그리며 황도 근처에서 빛나고 있다.
-        </p>
+            <p>
+                맨눈으로 볼 수 있는 행성들인 화성<sub>Mars</sub>, 목성<sub>Jupiter</sub>, 토성<sub>Saturn</sub>은 이울어가는 초승달의
+                오른쪽으로 큰 호를 그리며 황도 근처에서 <ins>아름답게</ins> 빛나고 있다.
+            </p>
 
-        <p>
-          이들보다 훨씬 희미한 행성인 천왕성과 해왕성은 발견하는 데 쌍안경이
-          필요했을 것이다. 비록 두 행성은 하늘의 황도를 따라 있지만 말이다.
-        </p>
+            <p>
+                이들보다 훨씬 희미한 행성인 천왕성과 해왕성은 발견하는 데 쌍안경이
+                필요했을 것이다. 비록 두 행성은 하늘의 황도를 따라 있지만 말이다.
+            </p>
 
-        <p>
-          태양계 행성 8개는 이 사진에 100% 출석했다. 앞서 나온 일곱 행성 외의
-          지구는 바로 사진작가의 발 아래 있기 때문이다. 사진을 촬영한 위치는
-          이탈리아의 마리나 디 산 니콜라 근처에 있는 고대 로마 빌라의 유적지인
-          것으로 알려졌다.
-        </p>
-      </section>
-      <!-- 
+            <p>
+                태양계 행성 8개는 이 사진에 100% 출석했다. 앞서 나온 일곱 행성 외의
+                지구는 바로 사진작가의 발 아래 있기 때문이다. 사진을 촬영한 위치는
+                이탈리아의 마리나 디 산 니콜라 근처에 있는 고대 로마 빌라의 유적지인
+                것으로 알려졌다.
+            </p>
+        </section>
+        <!-- 
             p요소 : paragraph 문단요소
             -> 문단을 나눌때 사용하는 요소
             -> 주의: p요소 내부에 다른 블록요소를 못씀!
          -->
-      <!-- 2-5. 기자정보 -->
-      <div class="rinfo">이광식 과학 칼럼니스트 joand999@naver.com</div>
+
+        <hr><!-- 가로구분선 -->
+        <!-- horizontal line -->
+        <h3>▣주해:</h3>
+        <small>
+            ① 태양계는 항성인 태양과 그 중력에 이끌려 있는 주변 천체가 이루는 체계를 말한다.
+            <br><br>
+            ② 행성 또는 혹성, 떠돌이별은 우주에서 항성의 둘레를 도는 천체의 한 부류이다. 대체로 갈색왜성보다는 작지만, 지름이 수천 킬로미터 이상의 천체를 행성이라 부른다. 
+            <br><br>
+        </small>
+        <hr>
+
+        <!-- 2-5. 기자정보 -->
+        <div class="rinfo">이광식 과학 칼럼니스트 joand999@naver.com</div>
+
+        <h5>
+            <a href="https://n.news.naver.com/mnews/article/081/0003282618?sid=105" target="_blank">기사원문</a>
+        </h5>
     </main>
     <!-- 3. 하단영역 -->
     <footer id="info" class="bxc">
-      <!-- 회사주소 및 정보 -->
-      <address>
-        서울시 강남구 역삼동 119 대호B 8F <br />
-        대표: Tom Brace Parker <br />
-        전화: 010-2222-3333
-      </address>
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br />
+            대표: Tom Brace Parker <br />
+            전화: 010-2222-3333
+        </address>
     </footer>
 
     <!-- 
@@ -176,10 +190,11 @@
         <ins>- 삽입된 텍스트(inserted text)
             -> text-decoration: underline
 
-
-        <sub>- 아래 첨자 텍스트
-        <sup>- 위 첨자 텍스트
+        7. 윗첨자, 아랫첨자
+        <sub>- 아래 첨자 텍스트(subscript text)
+        <sup>- 위 첨자 텍스트(superscript text)
 
          -->
-  </body>
+</body>
+
 </html>
