@@ -181,6 +181,15 @@
     같은종류중 n번째요소
     :last-of-type
     같은종류중 마지막째요소
+    _____________________
+
+    -> 태그종류가 한가지일때
+    :first-child 
+    형제요소 중 첫번째요소
+    :nth-child(n)
+    형제요소 중 n번째요소
+    :last-child
+    형제요소 중 마지막째요소
 */
 
 /* 오늘의 작품&느낌 박스 */
@@ -199,6 +208,48 @@ article.work {
     font-family: "궁서";
     font-style: normal;
     font-weight: bold;
+}
+
+/* 사진뉴스 박스 */
+.pnews table{
+    /* 마진: 양쪽 auto 가로중앙정렬 */
+    margin: 0 auto;
+    /* 블록요소와 같이 table도 마영오! 적용 */
+}
+/* 첫번째 td - 숫자td */
+.pnews td:first-child {
+    width: 50px;
+    height: 70px;
+    background-color: #ccc;
+    text-align: center;
+}
+/* 두번째 td - 뉴스제목링크 */
+.pnews td:nth-child(2) {
+    background: #f0f0f0;
+    padding-right: 116px;
+    padding-left: 20px;
+}
+/* 사진뉴스 이미지 */
+.pnews img {
+    width: 151px;
+    height: 103px;
+    vertical-align: middle;
+}
+/* 사진뉴스 테이블 설정 */
+.pnews table {
+    /* 기본 사이간극: 
+    collapse 주면 간극없앰(seperate기본값) */
+    border-collapse: separate;
+    /* 사이간격 설정: 
+    주의-seperate상태에서만 설정됨! */
+    border-spacing: 7px;
+}
+
+/* 기자정보,기사원문 박스 */
+#cont h5 a, .rinfo {
+    padding-left: 18px;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 
