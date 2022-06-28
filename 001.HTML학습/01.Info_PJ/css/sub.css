@@ -135,5 +135,52 @@
     font-family: "돋움","궁서";
     /* 줄간격 */
     line-height: 2.5;
+    /* 자간 */
+    letter-spacing: -1px;
 }
+/* a요소 마우스 오버시
+:hover 가상클래스 */
+#cont a:hover{
+    /* 글자데코:밑줄 */
+    text-decoration: underline;
+    /* 글자색 */
+    color: orangered;
+}
+/* ul,ol 블릿타입변경 */
+#cont ul{
+    list-style-type: square;
+}
+#cont ol{
+    list-style-type: upper-roman;
+}
+
+/* 분야별 뉴스 dt */
+.secnews dt {
+    font-family: 'Black And White Picture', sans-serif;
+    margin-top: 27px;
+    padding-left: 11px;
+    font-size: 22px;    
+}
+/* dt순서별 글자색변경 */
+.secnews dt:first-of-type {
+    color: lightsalmon;
+}
+.secnews dt:nth-of-type(2) {
+    color: green;
+}
+.secnews dt:last-of-type {
+    color: hotpink;
+}
+/* 
+    [ 자식요소 순번선택하기 ]
+    -> 태그가 여러종류 섞인경우
+    
+    :first-of-type 
+    같은종류중 첫번째요소
+    :nth-of-type(n)
+    같은종류중 n번째요소
+    :last-of-type
+    같은종류중 마지막째요소
+*/
+
 
