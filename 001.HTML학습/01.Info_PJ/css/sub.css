@@ -15,6 +15,11 @@
 /* @import url(파일주소); */
 @import url(common.css);
 
+/* 메인영역박스 */
+#cont{
+    padding: 15px;
+}
+
 /* 2-1. 언론사 로고 */
 .prlogo img{
     height: 32px;/* h32 */
@@ -83,10 +88,52 @@
     font-size: 17px;
     /* 줄간격: 숫자만쓰면 배수 */
     line-height: 1.6;
+    /* 패딩양쪽 */
+    padding: 0 10px;
 
 }
 /* 기타 타이틀 h3 */
 #cont h3{
+    /* 글자체: 웹폰트적용 */
     font-family: 'Black And White Picture', sans-serif;
+    /* 글자두께: 얇은체 */
+    font-weight: normal;
+    /* 글자크기 */
+    font-size: 25px;
+    /* 패딩왼쪽 */
+    /* padding-left: 20px; */
+}
+
+/* 공통박스 */
+#cont article {
+    border-top: 2px dashed #ccc;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+/* 블록인용구 박스 */
+.bquote blockquote {
+    margin: 0;
+    padding: 5px;
+    /* 글자정렬: 양쪽정렬 */
+    text-align: justify;
+    font-family: gulim;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 메인 컨텐츠 아래 a요소
+주의사항 - 글자색, 밑줄은 반드시 a요소에서 할것! */
+#cont a{
+    /* 글자색 */
+    color: #222;
+    /* 글자데코: 밑줄없앰 */
+    text-decoration: none;
+    /* 글자크기 */
+    font-size: 14px;
+    /* 글자체 */
+    font-family: "돋움","궁서";
+    /* 줄간격 */
+    line-height: 2.5;
 }
 
