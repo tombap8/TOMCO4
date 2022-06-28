@@ -1,9 +1,47 @@
 @charset "utf-8";
 /* Info PJ 서브페이지 공통 CSS - sub.css */
 
+/* 공통 클래스 불러오기 */
+/* 
+    import 로 파일 합치기
+    외부 CSS파일에서 다른 외부CSS를 
+    import방식으로 불러올때의 장점은?
+    html파일에서 link요소로 호출할 경우
+    http request(웹요청)이 많아져서
+    페이지 랜더링 솓고가 더뎌진다!
+    따라서 이 방식을 쓰면 한번에 여러 CSS를
+    불러올 수 있어서 속도에 유리하다!
+*/
+/* @import url(파일주소); */
+@import url(common.css);
+
 /* 2-1. 언론사 로고 */
 .prlogo img{
     height: 32px;/* h32 */
     /* 이미지는 가로나 세로중 하나만
     변경하면 나머지는 자동으로 비율유지함! */
+}
+/* 기사제목 */
+.atit{
+    /* 글자크기 */
+    font-size: 30px;
+    /* 글자두께:보통 */
+    font-weight: normal;
+    /* 글자체: 순서대로 적용 */
+    font-family: "굴림","궁서",sans-serif;
+    /* 자간: 0기준으로 조정 */
+    letter-spacing: -2px;
+    /* 단어간격: 0기준조정 */
+    word-spacing: -1px;
+
+    /* 줄바꿈방지: 보통 박스는 자동으로 줄바꿈 처리하여 글자가 떨어지는데 nowrap으로 설정하면 글자가 줄바꿈안되고 밖으로 나감 */
+    /* white-space: nowrap; */
+}
+/* 제목 중 특정 글자만 변경 */
+.atit span{
+    /* 글자색 */
+    color: rgb(33, 152, 33);
+    /* 글자그림자 */
+    /* text-shadow: x축 y축 블러 색; */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.595);
 }

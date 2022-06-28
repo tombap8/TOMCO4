@@ -10,7 +10,9 @@
     <!-- 구글웹폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet" />
     <!-- 외부스타일시트 불러오기 :  익스터널방식 -->
-    <link rel="stylesheet" href="./css/common.css" />
+    <!-- <link rel="stylesheet" href="./css/common.css" /> -->
+    <!-- common.css를 직접 부르지말고 sub.css에 import하여
+    불러온다! -->
     <link rel="stylesheet" href="./css/sub.css" />
 </head>
 
@@ -74,8 +76,14 @@
         </div>
         <!-- 2-2. 기사제목 -->
         <h2 class="atit">
-            [우주를 보다] 태양계 ‘8개 행성’ 모두 담긴 희귀 사진 공개
+            [우주를 보다] 태양계 <span>‘8개 행성’</span> 모두 담긴 희귀 사진 공개
         </h2>
+        <!-- 
+            span요소 : 인라인컨텐츠 범위를 잡는요소
+            span은 '범위'의 뜻
+            - 인라인요소로 아무런 특징이 없음!
+         -->
+
         <!-- 2-3. 기사사진(+사진설명) -->
         <figure class="afig">
             <img src="./images/arti4.jpg" alt="IT/과학기사이미지" />
