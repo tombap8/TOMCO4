@@ -174,7 +174,7 @@
 /* 
     [ 자식요소 순번선택하기 ]
     -> 태그가 여러종류 섞인경우
-    
+
     :first-of-type 
     같은종류중 첫번째요소
     :nth-of-type(n)
@@ -182,5 +182,23 @@
     :last-of-type
     같은종류중 마지막째요소
 */
+
+/* 오늘의 작품&느낌 박스 */
+article.work {
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+}
+/* 작품설명박스 */
+.work figcaption {
+    padding-top: 12px;
+    font-size: 14px;
+}
+/* 작품명 */
+.work cite {
+    color: red;
+    font-family: "궁서";
+    font-style: normal;
+    font-weight: bold;
+}
 
 
