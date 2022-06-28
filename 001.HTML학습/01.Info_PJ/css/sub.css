@@ -45,3 +45,48 @@
     /* text-shadow: x축 y축 블러 색; */
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.595);
 }
+/* 기사이미지박스 */
+.afig{
+    /* 마진: 위아래 양쪽 */
+    margin: 15px 0;
+}
+/* 기사이미지 */
+.afig img{
+    /* 가로크기: 부모박스 채움 */
+    width: 100%;
+}
+/* 기사이미지 설명박스 */
+.afig figcaption{
+    /* 글자정렬: 중앙 */
+    text-align: center;
+    /* 유의사항 - 글자정렬은
+    블록박스에서 적용해야 내부의
+    인라인요소의 정렬이 변경됨!
+    (인라인에서 적용하면 안됨!) */
+
+    /* 마진하단 */
+    margin-bottom: 50px;
+}
+/* 기사이미지 설명글 small */
+.afig small{
+    /* 글씨체 */
+    font-family: gulim;
+    /* 글자색 */
+    color: #666;
+}
+
+/* 기사내용박스 */
+.arti p{
+    /* 글씨체 */
+    font-family: "굴림",sans-serif;
+    /* 글자크기 */
+    font-size: 17px;
+    /* 줄간격: 숫자만쓰면 배수 */
+    line-height: 1.6;
+
+}
+/* 기타 타이틀 h3 */
+#cont h3{
+    font-family: 'Black And White Picture', sans-serif;
+}
+
