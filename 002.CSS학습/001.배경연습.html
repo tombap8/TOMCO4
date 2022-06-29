@@ -1,15 +1,132 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>001.배경연습</title>
     <style>
- 
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 하위 요소의 높이값 %의 기준임! */
+
+        }
+
+        /* html과 body는 기본적으로 block 요소다!
+        html의 부모는? window객체임!
+        body의 부모는? html
+
+        블록요소는 어떤 속성인가? display속성
+        -> 브라우저 화면에 요소를 어떻게 보이게할지를
+        결정해주는 속성! 
+        블록요소의 역할은 "내용구분!"
+
+        [ 블록요소의 일반적인 특징 ]
+
+        1. width: auto -> 셋팅이 없을 경우 기본값
+        -> 싸고 있는 부모요소 끝까지 차지함(단, 마진,패딩고려!)
+        -> width크기를 설정하여 작아져도 옆에 다른요소 못옴!
+
+        2. height: auto -> 내용만큼 늘어남!
+        -> 내용이 없으면 높이값이 0나옴!
+        
+        3. 자식요소에서 블록요소 마진인
+            margin-top, margin-bottom
+            값을 주면 부모요소 바깥으로 마진설정이 나감!
+            내부로 포함시키려면
+            overflow:hidden 를 사용하면 됨!
+
+            내부공간을 확보하려면 패딩으로 설정하도록 한다!
+  */
+
+        body{
+            /* 전체 배경이미지는 body에 코딩함!
+            html에 하지마! */
+
+            /* 1. 배경색 */
+            background-color: pink;
+
+            /* 2. 배경이미지: url(경로) */
+            background-image: url(./imgs/bg_logo_a_01.png);
+
+            /* 3. 배경반복여부:
+            no-repeat 반복안함
+            repeat-x x축반복 
+            repeat-y y축반복 
+            repeat 모두반복(기본값)
+            */
+            background-repeat: no-repeat;
+
+            /* 4. 배경고정: fixed는 고정할 경우
+            스크롤이 생기면 확인됨!
+            고정의 기준은 보이는 화면(window)임! */
+            background-attachment: fixed;
+
+            /* 5. 배경위치: 가로 세로
+                값 - px, % 수치단위
+                가로 - left, center, right
+                세로 - top, center, bottom
+            */
+            background-position: right bottom;
+
+            /* 6. 배경크기: 가로 세로 
+                가로와 세로중 한쪽만 주면 이미지 비율이 유지됨!
+                auto 값 -> 세로값만 변경 가로는 자동
+                값 auto -> 가로값만 변경 세로는 자동
+                위 같은게 값 하나만 쓰면 됨!(뒤의 auto는 생략가능함!)
+
+                특정값:
+                - contain 보두 보이게 박스에 채움
+                (비율유지함)
+                - cover 박스를 모두 채우고 비율도 유지하는데 이미지가 잘릴 수 있음!
+            */
+            background-size: 150px auto;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 40px 0;
+            /* 마진이 부모 바깥으로 나갈경우 패딩으로 셋팅!  */
+            text-align: center;
+        }
+
+        .wrap {
+            height: 100%;
+            /* 높이값 100% 의 기준은?  */
+
+
+            /* 
+                [ 배경을 여러개 셋팅하려면? ]
+                -> 한번에 배경셋팅법으로 콤마로
+                연결하여 여러개 셋팅가능!
+
+                background: 색이반고윙/크
+
+                여러배경 셋팅시 처음것이위 다음것이 아래에 옴!
+
+                위치값에서 세로값을 생략하면 center가 기본임!
+                -> center하나만 쓰면 정중앙이됨!
+
+                만약 위치값을 안쓰고 크기만 잡고 싶어도
+                위치값을 0을 쓰고 슬래쉬를 써야 크기가 적용됨!
+            */
+            background: 
+            url(./imgs/dc1.png) no-repeat center/400px,
+            url(./imgs/dc2.png) no-repeat right top/auto 150px,
+            url(./imgs/dc3.png) no-repeat left bottom/300px,
+            url(./imgs/dc4.png) no-repeat right/250px,
+            url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%;
+
+        }
     </style>
 </head>
+
 <body>
     <div class="wrap">
         <h1>001.배경넣기 연습</h1>
     </div>
 </body>
+
 </html>
