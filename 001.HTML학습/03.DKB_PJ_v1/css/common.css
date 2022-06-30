@@ -1,3 +1,27 @@
 @charset "utf-8";
 /* 도깨비 PJ 공통 디자인 CSS - common.css */
 /* 상단영역, 하단영역 반복디자인 */
+
+/* 공사중 표시
+ 별표(*)는 모든요소 선택 */
+body *{
+    outline: 2px dashed gray;
+    /* 외곽선 - 박스요소의 외곽선만 표현
+    박스 바깥쪽으로 생성됨
+    (자신또는 다른요소에 영향이 없음)
+    - 사용법이 border와 유사함!
+    outline: 두께 종류 색상; */
+}
+
+/* 1. 상단영역 */
+.top{
+    height: 125px;
+}
+/* 2. 메인영역 */
+.cont{
+    height: 800px;
+}
+/* 3. 하단영역 */
+.info{
+    height: 240px;
+}
