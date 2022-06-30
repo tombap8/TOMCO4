@@ -9,18 +9,18 @@
 
 
 /* 컨텐츠 파트 최상위부모 */
-body{
+body {
    /* 한번에 배경주기
-   background: 색이반고윙/크 */ 
-   background: 
-   url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
-   url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+   background: 색이반고윙/크 */
+   background:
+      url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+      url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
    /* 로고이미지 가로위치 10%, 세로위치 30%, 
    가로크기 10% 세로크기 auto(생략) */
 }
 
 /* 메인영역 */
-.cont{
+.cont {
    padding-top: 500px;
    /* 상단패딩: 첫번째 요소 위치밀기의 기본!
    첫번째요소에 마진탑으로 위치를 이동할 경우
@@ -40,19 +40,21 @@ body{
 }
 
 /* 캐릭터 박스 */
-.cbx{
+.cbx {
    width: 90%;
    margin: 0 auto;
-   
+
 }
+
 /* float자식의 부모에 가상요소로 clear설정 */
-.cbx::after{
+.cbx::after {
    content: '';
    display: block;
    clear: both;
 }
+
 /* 캐릭터 개별박스 공통 */
-.cat{
+.cat {
    /* 가로크기 : 4등분(25%) */
    width: 25%;
    /* 블록요소 옆으로 흐르게! */
@@ -60,7 +62,44 @@ body{
    /* 나는 왼쪽~ 너는 오른쪽에 와! */
 
 }
-/* 캐릭터 이미지 */
-.cat img{
+
+/* 캐릭터 이미지 
+- .ci의 직계자식 img만 선택! */
+.ci > img {
    width: 100%;
+}
+/* 캐릭터 이름이미지 박스 span */
+.ci span{
+   display: block;
+   /* 원래 inline이지만 출신변경! */
+   text-align: center;
+   /* 블록요소 내부의 인라인 컨텐츠를 중앙에 오게함! */
+   
+   /* 마진탑으로 위치이동하기 */
+   margin-top: -20%;
+   /* 
+      마진값을 마이너스로 주면 위의 요소와 겹칠 수 있다.
+      포지션을 쓰지 않고 겹치게 하는 방법이다.
+      일반적인 위치이동은 마진으로 함.
+      단위로 %를 사용하면 마진에 있어서
+      margin-top 은 기존 부모박스이 height값에 대한 %이고
+      margin-left 는 기존 부모박스이 width값에 대한 %이다!
+   */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+   width: 40%;
+}
+/* 캐릭터 이름 이미지 첫번째 숨김! */
+.ci span img:first-child{
+   display: none;
+}
+/* 캐릭터 이름 이미지 첫번째 .cat에 오버시 보이기 */
+.cat:hover .ci span img:first-child{
+   display: inline;
+}
+/* 캐릭터 이름 이미지 두번째 .cat에 오버시 숨기기 */
+.cat:hover .ci span img:last-child{
+   display: none;
 }
