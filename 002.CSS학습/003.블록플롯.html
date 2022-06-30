@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>003.블록요소의 float</title>
     <style>
-
         /* 
             [ 블록요소의 float ]
             - 필요성: 블록요소는 옆에 다른요소가 올 수
@@ -63,18 +63,19 @@
         */
 
 
-        h1{
+        h1 {
             text-align: center;
         }
 
         /* 부모박스 */
-        .wrap{
+        .wrap {
             border: 5px dashed #5e87f5;
             margin: 10px;
             padding: 10px;
         }
+
         /* 블록박스 공통 디자인 */
-        .bx{
+        .bx {
             width: 300px;
             height: 200px;
             border: 5px ridge #ccc;
@@ -84,44 +85,59 @@
             background-position: center;
             background-size: cover;
         }
+
         /* 개별 디자인 */
-        .bx1{
+        .bx1 {
             background-image: url(imgs/dc1.png);
         }
-        .bx2{
+
+        .bx2 {
             background-image: url(imgs/dc2.png);
         }
-        .bx3{
+
+        .bx3 {
             background-image: url(imgs/dc3.png);
         }
-        .bx4{
+
+        .bx4 {
             background-image: url(imgs/dc4.png);
         }
 
         /* 플롯관련 class */
-        .fll{
+        .fll {
             float: left;
             /* 나는 왼쪽에 너는 오른쪽에 */
         }
-        .flr{
+
+        .flr {
             float: right;
             /* 나는 오른쪽에 너는 왼쪽에 */
         }
-        .clb{
+
+        .clb {
             clear: both;
             /* 양쪽다 지워! */
         }
-        .cll{
+
+        .cll {
             clear: left;
             /* 왼쪽float지워! */
         }
-        .clr{
+
+        .clr {
             clear: right;
             /* 오른쪽float지워! */
         }
 
         /* float해제용 가상요소 */
-        
+        .flclb::after {
+            content: '';
+            /* 이것만 쓰면 span태그 같다! */
+            display: block;
+            /* 이것을 쓰면 div태그 같다! */
+            clear: both;
+        }
+
 
         /* 
             가상요소란?
@@ -147,26 +163,38 @@
         */
 
         /* 경우4 */
-        
+        .case4{
+            overflow: hidden;
+            /* float해제 효과가 있음! */
+        }
+        .case4 .bx{
+            float: left;
+        }
 
         /* 경우5 */
-        
-       
-
+        .case5::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .case5 .bx{
+            float: right;
+        }
     </style>
 </head>
+
 <body>
     <h1>003.블록요소의 float</h1>
-    
+
     <h2>경우1</h2>
     <h3>
-        첫번째 float:left, 두번째 float:right, 
+        첫번째 float:left, 두번째 float:right,
         세번째 clear:right
     </h3>
     <div class="wrap">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clr"></div>
         <div class="bx bx4"></div>
     </div>
 
@@ -177,13 +205,13 @@
         clear:both를 위한 div를 마지막에 사용함!
     </h3>
     <div class="wrap">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
-        <div class="bx bx4"></div>
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
 
         <!-- clear를 위한 block박스 -->
-        <!-- <div class="clb"></div> -->
+        <div class="clb"></div>
     </div>
 
     <h2>경우3</h2>
@@ -193,10 +221,10 @@
         부모요소에 가상요소 after를 사용하여 clear:both구현
     </h3>
     <div class="wrap flclb">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
-        <div class="bx bx4"></div>
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
     </div>
 
     <h2>경우4</h2>
@@ -222,6 +250,7 @@
         <div class="bx bx3"></div>
         <div class="bx bx4"></div>
     </div>
-    
+
 </body>
+
 </html>
