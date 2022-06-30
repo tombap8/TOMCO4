@@ -4,24 +4,29 @@
 
 /* 공사중 표시
  별표(*)는 모든요소 선택 */
-body *{
-    outline: 2px dashed gray;
-    /* 외곽선 - 박스요소의 외곽선만 표현
+body * {
+  outline: 2px dashed gray;
+  /* 외곽선 - 박스요소의 외곽선만 표현
     박스 바깥쪽으로 생성됨
     (자신또는 다른요소에 영향이 없음)
     - 사용법이 border와 유사함!
     outline: 두께 종류 색상; */
 }
 
+/* 속박스에 높이값을 설정한 이유는 겉박스는 속박스 크기만큼
+자동으로 늘어나게 하여 편리한 셋팅을 유도함! */
+
 /* 1. 상단영역 */
-.top{
-    height: 125px;
+.top {
+  height: 125px;
 }
 /* 2. 메인영역 */
-.cont{
-    height: 800px;
+.cont {
+  min-height: 800px;
+  /* 최소높이800px유지
+    -내용넘치면 늘어남! */
 }
 /* 3. 하단영역 */
-.info{
-    height: 240px;
+.info {
+  height: 240px;
 }
