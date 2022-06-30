@@ -49,25 +49,51 @@
          }
 
          /* 
+            [ 최대높이값 / 최소높이값 설정에 대하여 ]
+
+            1. max-height: 최대높이값 설정으로 제한함
+            -> 최대높이보다 내용이 적으면 auto(내용만큼 늘어남)
+
+            2. min-height: 최소높이값 설정으로 제한함
+            -> 최소높이보다 내용이 많으면 auto(내용만큼 늘어남)
+
+         */
+
+         /* 
             overflow 속성은 넘치는 컨텐츠를 어떻게 
             보이게 할 것인가를 지정하는 속성
           */
           /* overflow:visible */
           .ov1{
               overflow: visible;
+              /* 
+                visible 은 기본값 - 박스보다 내용이 많으면
+                나간상태 그대로 보임!
+              */
           }
           /* overflow:hidden */
           .ov2{
               overflow: hidden;
+              /* 
+                hidden은 넘치는 자식요소 숨기기
+              */
           }
           /* overflow-y:scroll */
           .ov3{
               overflow-y: scroll;
+              /* 
+                y축만 스크롤바 트랙이 처음부터 보이며
+                내용이 많아지면 스크롤바가 생성됨!
+                (유의: overflow: scroll 할경우 가로스크롤바
+                가 같이 생성되어 불편함!)
+              */
           }
 
           /* overflow:auto */
           .ov4{
-              overflow: auto;              
+              overflow: auto;
+              /* 내용이 넘칠경우에 자동으로 스크롤바 트랙과
+              스크롤바가 생성됨! */              
           }
 
     </style>
