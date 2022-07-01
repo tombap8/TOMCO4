@@ -55,8 +55,11 @@ body {
 
 /* 캐릭터 개별박스 공통 */
 .cat {
-   /* 가로크기 : 4등분(25%) */
-   width: 25%;
+   /* 가로크기 : 4등분(25%) - 양쪽마진(1%) = 24% */
+   width: 24%;
+   /* 양쪽마진 : 위아래0 양쪽0.5% */
+   margin: 0 .5%;
+   /* 보통 0.5%와 같이 0.소수점은 앞에 0생략가능 */
    /* 블록요소 옆으로 흐르게! */
    float: left;
    /* 나는 왼쪽~ 너는 오른쪽에 와! */
@@ -102,4 +105,10 @@ body {
 /* 캐릭터 이름 이미지 두번째 .cat에 오버시 숨기기 */
 .cat:hover .ci span img:last-child{
    display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+   /* 배경: 색이반고윙/크 */
+   background: url(../images/eachBG.jpg) no-repeat center/cover;
 }
