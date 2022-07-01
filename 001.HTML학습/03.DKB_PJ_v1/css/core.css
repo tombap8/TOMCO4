@@ -2,6 +2,14 @@
 /* 도깨비 PJ 핵심공통모듈 CSS - core.css */
 /* 공통 class / 웹폰트 */
 
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
+/* 
+    font-family: 'Single Day', cursive;
+    font-family: 'Yeon Sung', cursive;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+*/
+
 /* 속박스 class */
 .ibx{
     max-width: 1200px;
