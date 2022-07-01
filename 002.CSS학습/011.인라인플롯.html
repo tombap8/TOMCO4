@@ -113,16 +113,16 @@
          }
 
          /* 가상요소::first-line .bx별 글자색 변경 */
-         .bx:first-of-type:first-line{
+         .bx:first-of-type::first-line{
             color: cyan;
          }
-         .bx:nth-of-type(2):first-line{
+         .bx:nth-of-type(2)::first-line{
             color: orange;
          }
-         .bx:nth-of-type(3):first-line{
+         .bx:nth-of-type(3)::first-line{
             color: hotpink;
          }
-         .bx:nth-of-type(4):first-line{
+         .bx:nth-of-type(4)::first-line{
             color: lightgreen;
          }
 
@@ -143,10 +143,11 @@
         도깨비(김신), 939세 <br><br>
 
         백성들은 그를 신(神)이라고 불렀다. 시뻘건 피를 뒤집어쓴 채 푸르게 <!-- 안광을 빛내며 적들을 베는 그는 문자 그대로의 무신(武神)이었으나, 자신이 지키던 주군의 칼날에 죽었다. <br><br> -->
-        <div class="">
+        <div class="clb">
             영웅으로 살다 역적으로
             죽어가던 김신에게 천상의 존재는 상인지 벌인지 모를 늙지도 죽지도 않는 생을 주었고, 그로부터 935년 동안 도깨비로 살았다. 심장에 검을 꽂은 채로.
         </div>
+        <!-- clear:both 속성은 블록요소에만 적용됨! -->
         <br><br>
         <!-- 
             이미지에서 float설정된 경우 float적용을 해제하고자
@@ -169,8 +170,8 @@
 
         지은탁, 19세 <br><br>
 
-        대한민국의 평범한 고3 수험생, 이고 싶지만 그녀의 인생은 태어날 때부터 평범하지 않았다. 어려서부터 다른 사람들 눈엔 보이지 않는 죽은 혼들이 보였고, 때문에 친구들 사이에선 늘 외톨이였다. <br><br>
-        <div class="">
+        대한민국의 평범한 고3 수험생, 이고 싶지만 그녀의 인생은 태어날 때부터 평범하지 않았다. <!-- 어려서부터 다른 사람들 눈엔 보이지 않는 죽은 혼들이 보였고, 때문에 친구들 사이에선 늘 외톨이였다. <br><br> -->
+        <div class="clb">
             엄마
             없는 하늘 아래 못된 이모와 이모를 꼭 닮은 이모 자식들의 모진 구박을 견디며 지낸 지 꼬박 십년. 온갖 불행 소스를 다 때려 넣은 잡탕 같은 이 인생이 어이가 없는 와중에, 도깨비를 만났다.
             그리고
