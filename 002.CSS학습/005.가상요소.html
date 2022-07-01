@@ -50,10 +50,65 @@
 
              */
         /* h2요소 맨앞에 이미지 넣기 */
-        
-        
+        h2::before{
+            content: url(./imgs/blogo.png);
+            width: 20px;
+            height: 10px;
+            /* 이미지는 원본 그대로 표시됨
+            가로,세로 크기조정불가!
+            - 박스로 만들고 이미지배경사용으로 조정 */
+            margin-right: 20px;
+            vertical-align: middle;
+            /* 인라인요소간 세로정렬 
+            -top,middle,bottom, 숫자px 등*/
+            
+        }
 
         /* 맨뒤 추가요소 ::after */
+        h2::after{
+            content: '';
+            /* content만 빈것으로 쓰면
+            마치 span태그를 쓴것과 같다
+            크기가 적용안된다!
+            display를 적용하여 크기를 
+            변경할 수 있다!
+            display: block -> div와 비슷
+            줄바꿈 안되고 디자인적용하려면?
+            display: inline-block
+             */
+             display: inline-block;
+            width: 40px;
+            height: 60px;
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/80%;
+            /* 둥근모서리 */
+            border-radius: 5px;
+            /* 왼쪽마진 */
+            margin-left: 20px;
+            vertical-align: middle;
+
+            box-shadow: 0 0 10px #999;
+
+            /* 다중 그림자(앞순서가 위) */
+            /* box-shadow: 
+            3px 3px 3px 5px red,
+            5px 5px 5px 10px purple; */
+
+            /* 그림자확장(spread) */
+            /* box-shadow: 5px 5px 5px 10px purple; */
+
+            /* 내부그림자 */
+            /* box-shadow: inset 0px 0px 12px blue; */
+
+            /* [박스그림자]
+            box-shadow: 
+            inset - 내부그림자
+            hoff - x축이동
+            voff - y축이동
+            blur - 경계선 흐림
+            spread - 그림자 크기
+            color - 그림자색 
+            */
+        }
         
         
 
@@ -67,27 +122,72 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
-        
+        dl dt::before{
+            content: '♥';
+            color: red;
+            font-size: 30px;
+            margin-right: 10px;
+            vertical-align: 1px;
+        }        
         
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
-        
-        
-        
+        dl dd::before,
+        dd.story>h3::before{
+            content: '😍';
+            /* 이모지는 윈도우키+점(.) */
+            margin-right: 5px;
+            font-size: 20px;
+            vertical-align: 2px;
+        }
+
+        /* 출연배우의 dd부터 아이콘변경 */
+        dl dd:nth-of-type(5)~dd::before{
+            content: '😪';
+        }
+        /* 아티스트의 dd부터 아이콘변경 */
+        dl dd:nth-of-type(10)~dd::before{
+            content: '😎';
+        }
 
         /* 스토리의 dd는 가상요소 없애기 */
-        
+        /* dd:last-of-type:before{ */
+        dd.story:before{
+            display: none;
+        }
         
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            color: hotpink;
+            font-weight: bold;
+        }
         
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
+        dd.story p:first-of-type::first-line{
+            color: blue;
+        }
         
         
 
         /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            color: hotpink;
+        }
         
+        dd.story p:last-of-type span{
+            color: blue;
+        }
+        
+        /* 기타 가상요소 ::selection */
+        /* 드래그 선택시 글자색 배경색 설정변경! */
+        p::selection{
+            color: red;
+            background-color: yellow;
+        }
         
 
     </style>
