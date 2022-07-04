@@ -62,6 +62,24 @@
                 스크롤이 생겨도 스크롤 위쪽에 보이는 화면
                 만을 지칭한다!
 
+                ->>> 또한!!!
+                >>>>>>>>> width나 height 값을
+                %로 줄 경우 부모자격이 있는 요소를
+                기준하여 크기를 잡는다!
+
+                2) 앱솔루트 가로, 세로 크기를 주지 않은 경우
+                일반적으로 block 요소 이므로
+                width: auto 로써 부모끝까지 차지하지만
+                앱솔루트는...
+                내용만큼 그 크기가 자동으로 설정됨!
+                [-> 앱솔루트 판타롱스타킹!]
+
+                3) 인라인요소에 앱솔루트를 준 경우
+                자동으로 display:block 로 설정됨!
+                이유는 자동크기를 설정할 경우 블록이 아니면
+                크기설정 안되므로 자동전환된다!
+                -> 일반적으로 모든 앱솔루트는 block이다!
+
 
             ******************************************/
 
@@ -107,15 +125,19 @@
         }
         /* 각 부모박스 */
         .s5{
+            position: relative;
             background-color: lightblue;
         }
         .s6{
+            position: relative;
             background-color: lightcoral;
         }
         .s7{
+            position: relative;
             background-color: lightgreen;
         }
         .s8{
+            position: relative;
             background-color: lightsalmon;
         }
         /* 부모찾는 앱솔루트 박스 */
@@ -127,7 +149,33 @@
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
-        
+        .a4{
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+            width: 20%;
+            height: 40%;
+            /* 앱솔루트인데 %로 가로,세로크기를
+            설정할 경우 부모자격요소를 기준한다! */
+
+        }
+
+        /* 앱솔루트 : 판타롱스타킹 */
+        .a5{
+            position: absolute;
+            /* 크기를 안주면 내용만큼 늘어남! */
+            top: 20%;
+            right: 10%;
+            /* 부모는? 보이는 화면! */
+
+            z-index: 999;
+
+        }
+        .a5 img{
+            vertical-align: top;
+            /* 하단간극 없앰 */
+        }
+
 
     </style>
 </head>
@@ -137,6 +185,11 @@
     <div class="bx" id="a1">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
+
+    <!-- 앱솔루트 : 판타롱스타킹! -->
+    <div class="a5">
+        <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
 
     <!-- 부모를 찾는 앱솔루트! -->
     <div class="bx2 s5">s5
