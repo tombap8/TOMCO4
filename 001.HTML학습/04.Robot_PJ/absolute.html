@@ -184,6 +184,33 @@
             border: 4px dotted red;
         }
 
+        /* 앱솔루트 끼리는 서로 겹친다! */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* ridge 액자틀모양 */
+        }
+        /* 이미지가 앱솔루트! */
+        .absimg img{
+            position: absolute;
+            /* 위치값을 안잡으면 그 박스에 그대로 있는
+            젠틀앱솔루트 상태를 유지한다!!!
+            -> 앱솔루트끼리의 형제요소는 서로겹친다!
+            나중에 그려진 요소가 위에온다!(z-index조절가능) */
+        }
+        /* 두번째 (위에 있는 것) 닥스를 투명하게 변경 */
+        .absimg img:last-child{
+            opacity: 0;
+            /* opacity 는 투명도 : 0투명, 1불투명
+            반투명은 0.소수점값 */
+            transition: 1s;
+        }
+        /* 박스에 오버시 닥스 보이기! */
+        .absimg:hover img:last-child{
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
