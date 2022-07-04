@@ -176,6 +176,13 @@
             /* 하단간극 없앰 */
         }
 
+        /* span을 앱솔루트로! */
+        .spabs{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 4px dotted red;
+        }
 
     </style>
 </head>
@@ -191,6 +198,12 @@
         <img src="./ab_img/ab2.jpg" alt="타노스">
     </div>
 
+    <!--  앱솔루트끼리는 서로 겹친다! -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="토르">
+        <img src="./ab_img/ab4.jpg" alt="닥스">
+    </div>
+
     <!-- 부모를 찾는 앱솔루트! -->
     <div class="bx2 s5">s5
         <div class="bx2 s6">s6
@@ -198,6 +211,9 @@
                 <div class="bx2 s8">s8
                     <div class="abs a3">a3</div>
                     <div class="abs a4">a4</div>
+                    <span class="spabs">
+                        나는 span앱솔루트다!
+                    </span>
                 </div>
             </div>
         </div>
