@@ -122,11 +122,30 @@ body{
 }
 /************** 2-1-2.로봇몸 **************/
 .body{
+    position: relative;
+    /* 부모자격! */
     width: 250px;
     height: 310px;
     /* 마영오! - 블록가로중앙 */
     margin: 0 auto;
     margin-top: 50px;
+
+}
+/* 목 */
+.neck{
+    top: -50px;
+    left: 95px;
+    width: 60px;
+    height: 50px;
+}
+/* 팔 */
+/* !important없이 우선순위
+높이는 방법은 부모를 써준다! */
+.robx .arm{
+    width: 50px;
+    height: 200px;
+    background-size: 100%;
+    background-repeat: repeat-y;
 
 }
 /************** 2-2. 로봇설명박스 **************/
