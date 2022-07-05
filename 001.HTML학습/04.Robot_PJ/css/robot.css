@@ -83,6 +83,43 @@ body{
     right: 50px;
     background-image: url(../images/e2.jpg);
 }
+/* 코 */
+.nose{
+    top: 106px;
+    left: 98px;
+    width: 50px;
+    height: 53px;
+    background-image: url(../images/nose.jpg);
+    background-position-x: 0px !important;
+    background-position-y: -3px !important;
+    background-size: auto 106% !important;
+    border-radius: 30px;
+}
+/* 입 */
+.mouth{
+    bottom: 24px;
+    left: 82px;
+    width: 83px;
+    height: 46px;
+    background-image: url(../images/mouth.png);
+}
+
+/* 귀공통 */
+.ear{
+    top: 80px;
+    width: 60px;
+    height: 90px;
+}
+/* 왼귀 */
+.el{
+    left: -60px;
+    border-radius: 30px 0 0 30px;
+}
+/* 오른귀 */
+.er{
+    right: -60px;
+    border-radius: 0 30px 30px 0;
+}
 /************** 2-1-2.로봇몸 **************/
 .body{
     width: 250px;
