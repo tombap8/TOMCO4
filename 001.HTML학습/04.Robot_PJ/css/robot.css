@@ -1,1 +1,16 @@
 @charset "utf-8";
+/* 로봇 PJ CSS - robot.css */
+
+/* 초기화 */
+html,body,h1,h2,h3,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* height: 3000px; */
+
+    /* 배경: 색이반고윙/크 */
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
