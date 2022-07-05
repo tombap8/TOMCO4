@@ -259,6 +259,7 @@ body{
     bottom: -30px;
     width: 70px;
     height: 40px;
+    /* 둥근모서리 - 위쪽만 둥글게 */
     border-radius: 30px 30px 0 0;
     border: 1px solid #222;
     border-bottom: 20px solid #000;
@@ -288,6 +289,33 @@ body{
 .s2{
     right: -80px;
     border-radius: 5px 50% 50% 5px;
+}
+/* TV */
+.tv{
+    top: 66px;
+    left: 15px;
+    width: 220px;
+    height: 166px;
+    border-radius: 5px;
+    background-image: url(../images/tv.jpg);
+}
+/* 스크린 */
+.screen{
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    /* 부모는? .tv */
+    width: 154px;
+    height: 118px;
+    background-color: #000;
+    border-radius: 10px;
+}
+/* 아이프레임 */
+.screen iframe{
+    width: 100%;
+    height: 100%;
+    /* 프레임 보더 없앰! */
+    border: none;
 }
 /************** 2-2. 로봇설명박스 **************/
 /************** 3. 하단영역 **************/
