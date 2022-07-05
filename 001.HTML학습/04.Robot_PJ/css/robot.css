@@ -39,6 +39,7 @@ body{
 /************** 2-1. 로봇박스 **************/
 .robx{
     padding-top: 200px;
+    padding-bottom: 400px;
 }
 /* 하위요소 공통설정 */
 .robx>div>div{
@@ -138,15 +139,41 @@ body{
     width: 60px;
     height: 50px;
 }
-/* 팔 */
+/* 팔공통 */
 /* !important없이 우선순위
 높이는 방법은 부모를 써준다! */
 .robx .arm{
     width: 50px;
-    height: 200px;
+    height: 250px;
     background-size: 100%;
     background-repeat: repeat-y;
+}
+/* 왼팔 */
+.a1{
+    left: -50px;
+}
+/* 오른팔 */
+.a2{
+    right: -50px;
+}
 
+/* 다리공통 */
+/* !important없이 우선순위
+높이는 방법은 부모를 써준다! */
+.robx .leg{
+    top: 100%;
+    width: 70px;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼다리 */
+.l1{
+    left: 0;
+}
+/* 오른다리 */
+.l2{
+    right: 0;
 }
 /************** 2-2. 로봇설명박스 **************/
 /************** 3. 하단영역 **************/
