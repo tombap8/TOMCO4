@@ -81,6 +81,33 @@
             background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%;
         }
 
+        /* 가장 말단 요소 fixed만들기 */
+        .f3{
+            position: fixed;
+            top: 40%;
+            right: -150px;
+            z-index: 99999;
+
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 30px 0 0 30px;
+            /* 모서리 둥글게: 
+            왼쪽 위부터 시계방향셋팅 */
+            background: lightcyan url(./ab_img/ab0.jpg) no-repeat right/auto 100%;
+            /* 글자진행방향변경 */
+            writing-mode: vertical-lr;
+            padding-left: 20px;
+
+            /* 트랜지션: 속시이지 */
+            transition: right .3s;
+
+        }
+        /* 마우스 오버시 포스터나오기 */
+        .f3:hover{
+            right: 0;
+        }
+
 
         #a1{
             position: absolute;           
@@ -250,6 +277,10 @@
                     <span class="spabs">
                         나는 span앱솔루트다!
                     </span>
+                    <!-- 가장말단요소를 fixed만들기! -->
+                    <div class="f3">
+                        포스터보기
+                    </div>
                 </div>
             </div>
         </div>
