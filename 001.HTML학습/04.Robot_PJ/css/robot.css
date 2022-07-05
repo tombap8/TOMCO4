@@ -158,9 +158,12 @@ body{
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    border: 1px solid #222;
     /* CSS3 그라데이션 */
     background-image: radial-gradient(farthest-side at 20px 20px,white,#333);
     /* 
+
+    [ 배경이미지에 있다! 뭐가? 그라데이션이!!! ]
 
     [선형 그라데이션]
     linear-gradient(방향/각도,색1 비율%, 색2 비율%,...)
@@ -175,13 +178,16 @@ body{
     [ 원형 그라데이션 ]
     radial-gradient(옵션,색1 비율%, 색2 비율%);
     - 옵션: circle - 원형, 안쓰면 박스에 맞춤
-    - 세밀한 옵션주기!
+    - 세밀한 옵션주기! (특정위치를 중심으로 빛반사효과)
         ->>> 세부옵션 at 가로위치 세로위치
         ->>> 세부옵션 종류 4가지:
             1) closest-side / 2)farthest-side
             3) closest-corner / 4)farthest-corner
             예) 
-            radial-gradient(closest-corner at 30px 15px,white,blue)
+            radial-gradient(
+                closest-corner at 30px 15px,white,blue)
+        -> 가로, 세로 위치는 px, % 단위사용가능
+
     -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
     -> 색상 뒤 비율을 안쓰면 등분할됨
 
@@ -189,13 +195,32 @@ body{
     radial-gradient(circle,red 30%, blue 40%, yellow);
     */
 }
-/* 왼팔가상요소 */
+/* 왼손가상요소 */
 .arm.a1::before{
     left: -15px;
 }
-/* 오른팔가상요소 */
+/* 오른손가상요소 */
 .arm.a2::before{
     right: -15px;
+}
+/* 가상요소로 손그림자주기 */
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 0 0 5px 5px;
+}
+/* 왼손그림자 가상요소 */
+.arm.a1::after{
+    left: 12px;
+}
+/* 오른손그림자 가상요소 */
+.arm.a2::after{
+    right: 12px;
 }
 /* 왼팔 */
 .a1{
