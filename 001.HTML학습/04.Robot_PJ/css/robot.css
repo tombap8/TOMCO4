@@ -155,11 +155,11 @@ body{
     position: absolute;
     bottom: -25px;
 
-    width: 170px;
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     /* CSS3 그라데이션 */
-    background-image: radial-gradient(circle,red 30%, blue 40%, yellow);
+    background-image: radial-gradient(farthest-side at 20px 20px,white,#333);
     /* 
 
     [선형 그라데이션]
