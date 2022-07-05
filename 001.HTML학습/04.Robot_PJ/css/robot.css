@@ -40,6 +40,15 @@ body{
 .robx{
     padding-top: 200px;
 }
+/* 하위요소 공통설정 */
+.robx>div>div{
+    /* 앱솔루트 포지션 */
+    position: absolute;
+    /* 배경공통 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 /************** 2-1-1.로봇머리 **************/
 .head{
     position: relative;
@@ -53,14 +62,10 @@ body{
 }
 /* 눈공통 */
 .eye{
-    position: absolute;
     width: 50px;
     height: 50px;
-    /* 배경공통설정 */
     background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    
     /* 둥근모서리: 50% 원 */
     border-radius: 50%;
     /* 보더 이중선 */
