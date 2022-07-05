@@ -213,6 +213,16 @@ body{
     height: 40px;
     background-color: #000;
     border-radius: 0 0 5px 5px;
+    /* 클리핑기법을 사용하여
+    그림자를 삼각형으로 만들자! 
+    -> 다각형 클리핑
+    clip-path: polygon(x1 y1,x2 y2,...)
+    -> 소괄호안은 비울 수 없다!
+    -> 각 좌표값은 px,%로 대상 내부영역임
+    예컨데 삼각형 점을 세개 찍어준다!
+    */
+    clip-path: polygon(0% 100%,50% 0%,100% 100%);
+
 }
 /* 왼손그림자 가상요소 */
 .arm.a1::after{
