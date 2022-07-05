@@ -148,13 +148,62 @@ body{
     background-size: 100%;
     background-repeat: repeat-y;
 }
+/* 가상요소로 손만들기 */
+.arm::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -25px;
+
+    width: 170px;
+    height: 70px;
+    border-radius: 50%;
+    /* CSS3 그라데이션 */
+    background-image: radial-gradient(circle,red 30%, blue 40%, yellow);
+    /* 
+
+    [선형 그라데이션]
+    linear-gradient(방향/각도,색1 비율%, 색2 비율%,...)
+    - 방향값은 to top, to bottom, to left, to right
+    - 각도는 숫자deg
+    -> 방향 또는 각도를 사용, 안쓰면 to bottom 기본값
+    -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
+    -> 색상 뒤 비율을 안쓰면 등분할됨
+    예)
+    linear-gradient(45deg,red 30%, blue 70%,yellow); 
+
+    [ 원형 그라데이션 ]
+    radial-gradient(옵션,색1 비율%, 색2 비율%);
+    - 옵션: circle - 원형, 안쓰면 박스에 맞춤
+    - 세밀한 옵션주기!
+        ->>> 세부옵션 at 가로위치 세로위치
+        ->>> 세부옵션 종류 4가지:
+            1) closest-side / 2)farthest-side
+            3) closest-corner / 4)farthest-corner
+            예) 
+            radial-gradient(closest-corner at 30px 15px,white,blue)
+    -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
+    -> 색상 뒤 비율을 안쓰면 등분할됨
+
+    예)
+    radial-gradient(circle,red 30%, blue 40%, yellow);
+    */
+}
+/* 왼팔가상요소 */
+.arm.a1::before{
+    left: -15px;
+}
+/* 오른팔가상요소 */
+.arm.a2::before{
+    right: -15px;
+}
 /* 왼팔 */
 .a1{
-    left: -50px;
+    left: -60px;
 }
 /* 오른팔 */
 .a2{
-    right: -50px;
+    right: -60px;
 }
 
 /* 다리공통 */
@@ -174,6 +223,22 @@ body{
 /* 오른다리 */
 .l2{
     right: 0;
+}
+/* 어깨공통 */
+.shd{
+    top: -20px;
+    width: 90px;
+    height: 80px;    
+}
+/* 왼어깨 */
+.s1{
+    left: -80px;
+    border-radius: 50% 5px 5px 50%;
+}
+/* 오른어깨 */
+.s2{
+    right: -80px;
+    border-radius: 5px 50% 50% 5px;
 }
 /************** 2-2. 로봇설명박스 **************/
 /************** 3. 하단영역 **************/
