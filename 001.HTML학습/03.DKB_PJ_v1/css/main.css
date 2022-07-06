@@ -192,11 +192,12 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3{
    font-family: 'Single Day', cursive;
-   font-size: 26px;
+   font-size: min(1.9vw,26px);
+   /* 최대글자크기 26px, 이하는 유동적 */
    font-weight: normal;
    padding: 15px 10px 5px;
    /* 줄바꿈방지 */
-   /* white-space: nowrap; */
+   white-space: nowrap;
    letter-spacing: -1px;
 }
 
@@ -214,7 +215,8 @@ body {
 /* 캐릭터 설명 문단 */
 .cd p{
    font-family: 'Yeon Sung', 'ZCOOL QingKe HuangYou';
-   font-size: 16px;
+   font-size: min(1.1vw,16px);
+   /* 최대글자크기 16px, 이하는 유동적 */
    line-height: 1.7;
    padding: 10px;
    text-align: justify;

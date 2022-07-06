@@ -18,3 +18,14 @@
     즉, 가로스크롤 안생김! */
     margin: 0 auto;
 }
+
+/* float설정 class */
+.fll>li{
+    float: left;
+}
+/* clear설정 class */
+.fll::after{
+    content: '';
+    display: block;
+    clear: both;
+}
