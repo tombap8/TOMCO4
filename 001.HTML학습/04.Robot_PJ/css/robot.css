@@ -382,9 +382,49 @@ body{
     letter-spacing: 1px;
     /* 단어사이 */
     word-spacing: 2px;
+
+    /* 가독성을 위한 다단설정 */
+    /* 다단표시(다중열속성) */
+
+    /* 다중열 개수 */
+    column-count: 3;
+    /* 다중열 구분선 
+    보더설정과 비슷
+    두께 종류 색상(두종색)*/
+    column-rule: 5px dotted lightgreen;
+    /* 다중열 사이간격 */
+    column-gap: 55px;
+
+    /* 양쪽정렬 */
+    text-align: justify;
+    /* 단어깨기
+    break-all 모든단어깨기 */
+    word-break: break-all;
+}
+/* 설명문단 첫글자 가상요소 */
+.dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
 }
 
 /************** 3. 하단영역 **************/
+
+
+/* 미디어쿼리 */
+@media screen and (max-width:770px) {    
+    /* 설명문단 다단변경 */
+    .dcbx p{
+        column-count: 2;
+    }
+} /* 미디어쿼리 770px이하 */
+
+@media screen and (max-width:550px) {
+    /* 설명문단 다단변경 */
+    .dcbx p{
+        column-count: 1;
+    }
+} /* 미디어쿼리 550px이하 */
 
 
 
