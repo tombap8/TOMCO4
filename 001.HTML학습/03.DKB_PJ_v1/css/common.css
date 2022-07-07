@@ -163,8 +163,8 @@
 }
 
 /* 서브메뉴 끝까지 차는 배경박스 
-가상요소로 만들기! */
-.gnb>ul>li:first-child::after{
+가상요소로 만들기! -> .sm인li만 생성됨! */
+.gnb>ul>li.sm::after{
   content: '';
   display: block;
   position: absolute;
@@ -182,6 +182,11 @@
   
   /* 트랜지션: 속시이지 */
   transition: height .4s ease-out;
+}
+/* 상위메뉴 li마우스 오버시 
+서브메뉴 가상요소 배경 보이기 */
+.gnb>ul>li:hover::after{
+  height: 200px;
 }
 
 
