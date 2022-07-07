@@ -71,12 +71,16 @@ body {
    float: left;
    /* 나는 왼쪽~ 너는 오른쪽에 와! */
 
+   /* 영역보정값(자식요소 마진변동에 의한
+   불일치 부분을 값으로 보정함) */
+   padding-bottom: 10px;
+
 }
 
 /* 캐릭터 이미지박스 */
 .ci{
    /* 트랜지션: 속시이지 */
-   transition: .4s ease-out;
+   transition: .4s ease-in-out;
 }
 /* .cat에 오버시 .ci변경 */
 .cat:hover .ci{
@@ -90,13 +94,17 @@ body {
 }
 /* 캐릭터 이름이미지 박스 span */
 .ci span{
+   position: absolute;
+   bottom: 10%;
+   width: 100%;
+   /* 부모는? .cat */
    display: block;
    /* 원래 inline이지만 출신변경! */
    text-align: center;
    /* 블록요소 내부의 인라인 컨텐츠를 중앙에 오게함! */
    
-   /* 마진탑으로 위치이동하기 */
-   margin-top: -20%;
+   /* 마진탑으로 위치이동하기 X -> 포지션으로 변경! */
+   /* margin-top: -20%; */
    /* 
       마진값을 마이너스로 주면 위의 요소와 겹칠 수 있다.
       포지션을 쓰지 않고 겹치게 하는 방법이다.
