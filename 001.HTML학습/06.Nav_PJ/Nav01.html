@@ -26,6 +26,10 @@
 
       /* GNB메뉴박스 */
       .gnb {
+        position: relative;
+        z-index: 999;
+        /* 포지션이 있어야 z-index적용됨!
+        GNB 하위메뉴가 위에 오도록 z-index를 높인다! */
         background-color: lightskyblue;
       }
       /* ul 초기화 */
@@ -176,6 +180,10 @@
 
       /* 본문내용 */
       .cont {
+        position: relative;
+        /* 하위 박스가 포지션이 있으면 나중에 그린박스가
+        윗박스보다 위에 올라온다! 따라서 메뉴박스가 위에 오도록
+        z-index를 상위박스에서 높여줘야 하위메뉴가 밑에 깔리지 않는다! */
         background-color: #fdfccf;
         text-align: center;
         line-height: 50;
