@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>유형1. 가로네비 서브별 드롭다운 세로형</title>
+    <style>
+      /* 초기화 */
+      html,
+      body,
+      ul,
+      ol {
+        margin: 0;
+        padding: 0;
+      }
+      /* ul,ol초기화 */
+      ul,
+      ol {
+        /* 리스트박스 기본3無
+            - 마진0, 패딩0, 리스트스타일없음 */
+        list-style: none;
+      }
+      
+      h1{
+        text-align: center;
+      }
+
+      /* GNB메뉴박스 */
+      .gnb {
+        
+      }
+      /* ul 초기화 */
+      .gnb ul {
+       
+      }
+      /* 가상요소로 clear설정하기 */
+     
+      /* li 리스트요소 */
+      
+      /* li 하위 a요소 */
+      
+      /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
+      
+
+      /* 서브메뉴 */
+      
+
+      /* 본문내용 */
+      .cont {
+        background-color: #fdfccf;
+        text-align: center;
+        line-height: 50;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>유형1. 가로네비 서브별 드롭다운 세로형</h1>
+    <!-- GNB 네비게이션 -->
+    <nav class="gnb">
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">웹개발</a>
+          <!-- 서브메뉴 -->
+          <!-- <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">웹디자인</a>
+              </li>
+              <li>
+                <a href="#">HTML5+CSS3</a>
+              </li>
+              <li>
+                <a href="#">jQuery</a>
+              </li>
+              <li>
+                <a href="#">웹+모바일</a>
+              </li>
+            </ol>
+          </div> -->
+        </li>
+        <li>
+          <a href="#">게시판</a>
+          <!-- 서브메뉴 -->
+          <!-- <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">Q&amp;A</a>
+              </li>
+              <li>
+                <a href="#">방명록</a>
+              </li>
+            </ol>
+          </div> -->
+        </li>
+        <li>
+          <a href="#">프로필</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 내용박스 -->
+    <div class="cont">본문내용</div>
+  </body>
+</html>
