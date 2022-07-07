@@ -145,14 +145,18 @@
   /* 트랜지션: 속시이지 */
   transition: height .4s ease-out;
 }
-/* 상위메뉴 li마우스 오버시 서브메뉴 보이기 */
-.gnb>ul>li:nth-child(1):hover .smenu{
+/* 상위메뉴 li마우스 오버시 서브메뉴 보이기
++ 서브메뉴 가상요소 배경 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu,
+.gnb>ul>li:nth-child(1):hover::after{
   height: 120px;
 }
-.gnb>ul>li:nth-child(3):hover .smenu{
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after{
   height: 150px;
 }
-.gnb>ul>li:nth-child(4):hover .smenu{
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after{
   height: 90px;
 }
 /* 서브메뉴 a */
@@ -178,17 +182,11 @@
   left를 줬으므로 보이는 화면기준!
   top은 안줘서 젠틀함! a요소 아래위치!*/
   height: 0;/* 200px-> 오버시 각 수치로! */
-  background-color: red;
+  background-color: #fff;
   
   /* 트랜지션: 속시이지 */
   transition: height .4s ease-out;
 }
-/* 상위메뉴 li마우스 오버시 
-서브메뉴 가상요소 배경 보이기 */
-.gnb>ul>li:hover::after{
-  height: 200px;
-}
-
 
 /******************* 2. 메인영역 *******************/
 .cont {
