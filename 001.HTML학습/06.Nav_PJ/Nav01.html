@@ -95,23 +95,36 @@
       .smenu{
         position: absolute;
         width: 200px;
+        /* 서브메뉴 박스 숨기기 */
+        height: 0;/* 1 */
+        overflow: hidden;/* 2 */
+        
         background-color: darkblue;
+        border-radius: 0 0 5px 5px;
+
+        /* 트랜지션 */
+        transition: .4s;
+      }
+      /* 서브메뉴 보이기 */
+      .gnb>ul>li:hover .smenu{
+        height: 180px;
       }
       /* 서브메뉴 ol */
       .smenu ol{
         padding: 15px;
-        outline: 1px dashed red;
+        /* outline: 1px dashed red; */
       }
       /* 서브메뉴 li */
-      .smenu li{
+      /* .smenu li{
         outline: 1px dotted blue;
-      }
+      } */
 
       .smenu a{
+        /* a확장 */
         display: block;
         width: 100%;
         height: 100%;
-        
+
         font-size: 14px;
         color: lightskyblue;
         text-decoration: none;
