@@ -25,8 +25,9 @@
 
 /* 속박스 */
 .top {
-  position: relative;
-  /* 부모자격! */
+  /* position: relative; */
+  /* 부모자격! 없앰! - 이유는 서브메뉴배경 li
+  가상요소가 끝까지 가야해서 ㅠ.ㅠ */
   /* height: 125px; */
 }
 
@@ -41,10 +42,19 @@
 
 /* 1-2.탑메뉴 */
 .tmenu{
+  position: relative;
+  /* 부모자격! 
+  상태는 로고박스와 GNB박스 사이에 있고
+  자식ul이 앱솔루트라서 높이값이 0임! 
+  가로는 자동으로 .inbox의 크기인 1200px을
+  채움!*/
+}
+/* 탑메뉴 ul */
+.tmenu>ul{
   position: absolute;
-  top: 30px;
+  top: -50px;
   right: 0;
-  /* 부모는? .top */
+  /* 부모는? .tmenu */
 }
 
 /* 탑메뉴 상위li */
@@ -148,6 +158,22 @@
   display: block;
   font-size: 1.4rem;
   padding: 10px 0;
+}
+
+/* 서브메뉴 끝까지 차는 배경박스 
+가상요소로 만들기! */
+.gnb>ul>li:first-child::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  /* 가로크기를 %로 주면 
+  부모자격에 기준을 둔다!
+  -> 화면을 채워야 하므로 싸고있는
+  요소중에는 부모가 없어야한다!
+  그래야 화면이 부모가 된다! */
+  height: 200px;
+  background-color: red;
 }
 
 
