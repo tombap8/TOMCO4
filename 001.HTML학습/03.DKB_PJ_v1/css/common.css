@@ -134,6 +134,8 @@
 /* 서브메뉴 */
 .smenu{
   position: absolute;
+  z-index: 1;
+  /* li가상요소 after보다 위! */
   background-color: #fff;
 
   /* 서브메뉴 숨기기 */
@@ -166,14 +168,20 @@
   content: '';
   display: block;
   position: absolute;
+  left: 0;
   width: 100%;
   /* 가로크기를 %로 주면 
   부모자격에 기준을 둔다!
   -> 화면을 채워야 하므로 싸고있는
   요소중에는 부모가 없어야한다!
-  그래야 화면이 부모가 된다! */
-  height: 200px;
+  그래야 화면이 부모가 된다! 
+  left를 줬으므로 보이는 화면기준!
+  top은 안줘서 젠틀함! a요소 아래위치!*/
+  height: 0;/* 200px-> 오버시 각 수치로! */
   background-color: red;
+  
+  /* 트랜지션: 속시이지 */
+  transition: height .4s ease-out;
 }
 
 
