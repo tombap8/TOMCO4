@@ -41,8 +41,8 @@
         clear: both;
       }
      
-      /* li 리스트요소 */
-      .gnb li{
+      /* 상위li 리스트요소 */
+      .gnb>ul>li{
         width: 200px;
         /* height: 40px; */
         text-align: center;
@@ -51,7 +51,7 @@
         /* box-sizing: border-box; */
       }
       /* li사이에 구분선 넣기 */
-      .gnb li+li::before{
+      .gnb>ul>li+li::before{
         content: '';
         display: block;
         position: absolute;
@@ -65,8 +65,8 @@
         /* border-left: 1px solid #000; */
       }
       
-      /* li 하위 a요소 */
-      .gnb a{
+      /* li 상위메뉴 a요소 */
+      .gnb>ul>li>a{
         /* a요소 확장 */
         display: block;
         width: 100%;
@@ -86,8 +86,44 @@
         background-color: darkblue;
       }
       
+      /* 
+        [ 부모요소로 부터 상속되는 속성은 무엇인가? ]
+        글자체, 글자색, 글자크기, 글자정렬 등 글자관련속성들
+      */
 
       /* 서브메뉴 */
+      .smenu{
+        position: absolute;
+        width: 200px;
+        background-color: darkblue;
+      }
+      /* 서브메뉴 ol */
+      .smenu ol{
+        padding: 15px;
+        outline: 1px dashed red;
+      }
+      /* 서브메뉴 li */
+      .smenu li{
+        outline: 1px dotted blue;
+      }
+
+      .smenu a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        
+        font-size: 14px;
+        color: lightskyblue;
+        text-decoration: none;
+        line-height: 35px;
+        /* 트랜지션 */
+        transition: .2s;
+      }
+      /* 서브메뉴 오버시 */
+      .smenu a:hover{
+        background-color: lightskyblue;
+        color: darkblue;
+      }
       
 
       /* 본문내용 */
@@ -109,7 +145,7 @@
         <li>
           <a href="#">웹개발</a>
           <!-- 서브메뉴 -->
-          <!-- <div class="smenu">
+          <div class="smenu">
             <ol>
               <li>
                 <a href="#">웹디자인</a>
@@ -124,7 +160,7 @@
                 <a href="#">웹+모바일</a>
               </li>
             </ol>
-          </div> -->
+          </div>
         </li>
         <li>
           <a href="#">게시판</a>
