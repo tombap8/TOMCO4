@@ -3,12 +3,21 @@
 /* 공통 class / 웹폰트 */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&family=Nanum+Gothic&display=swap');
 /* 
     font-family: 'Single Day', cursive;
     font-family: 'Yeon Sung', cursive;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
 */
+/* 폰트 상대단위를 위한 html폰트크기 설정 */
+html{
+    font-size: 10px;
+}
+/* 전체 웹폰트 일반적용! */
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
 
 /* 속박스 class */
 .ibx{
