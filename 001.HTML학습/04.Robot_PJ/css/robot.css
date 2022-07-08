@@ -104,6 +104,27 @@ body{
 
     1. 이름(animation-name) : 키프레임 이름
 
+    2. 시간(animation-duration) : 애니메이션 동작시간
+        -> 초단위(s)
+    
+    3. 이징(animation-timing-function) : easing 가속도
+
+    4. 지연(animation-delay) : 애니메이션 지연시간(s)
+
+    5. 반복(animation-iteration-count) : 애니메이션 반복
+        - 기본값 1, 숫자를 숫자만큼 반복함
+        - 영원히 infinite(인피니트)
+
+    6. 방향(animation-direction) : 시작 -> 끝
+        - 두번이상 반복할 경우 반대경로로 애니메이션 설정
+        -> alternate : 시작 -> 끝, 끝 -> 시작
+
+    7. 마지막 상태(animation-fill-mode) :
+        - 애니메이션이 끝났을때 처음으로 돌아가는게 기본!
+        -> forwards (앞쪽에...즉, 애니끝장면으로 마무리!)
+        -> 기본값 : backwards(뒤쪽으로,즉 처음으로)
+        -> 유의사항: infinite(영원히)일때는 해당사항 없음!
+
 
 
 
