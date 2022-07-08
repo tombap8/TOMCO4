@@ -194,13 +194,13 @@ body{
 @keyframes logoAni {
     /* from{} - 최초값이 같으면 생략! */
     80%{
-        /* 왼쪽위에 위치, 원래크기복원 */
+        /* 왼쪽위에 위치, 원래크기복원, 회전0 */
         top: 50px;
         left: 50px;
         transform: scale(1) rotate(0deg);
     }
     100%{
-        /* 왼쪽위에 위치, 원래크기복원 */
+        /* 기존값 유지 + 회전20도 */
         top: 50px;
         left: 50px;
         transform: scale(1) rotate(20deg);
@@ -217,14 +217,33 @@ body{
     }
 }
 
+/* 내용링크, 위로가기버튼, TV
+를 위한 투명도 애니용 클래스 만들기 */
+.opa-ani{
+    opacity: 0;
+    /* 애니메이션: 이시이지반방마 */
+    animation: opaAni .2s linear 5s 5 alternate forwards;
+}
+/* 지연시간추가 */
+.opa-ani2{
+    animation-delay: 6s;
+}
+.opa-ani3{
+    animation-delay: 7s;
+}
+/* 투명도 애니 키프레임 */
+@keyframes opaAni {
+    to{
+        opacity: 1;
+    }
+} /* 키프레임 */
+
 
 /************** 1-2. 내용링크 **************/
 .link{
     position: absolute;
     top: 100px;
     right: 50px;
-    /* 투명도 -> 애니대상! */
-    opacity: 0;
 }
 .link a{
     /* a요소에서 글자색, 밑줄 처리함! */
@@ -259,8 +278,6 @@ body{
         https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_border-style&preval=none
     */
     
-    /* 투명도 -> 애니대상! */
-    opacity: 0;
 }
 /* 위로가기 버튼 오버시 */
 .btnTop:hover{
@@ -317,7 +334,19 @@ body{
     margin: 0 auto;
     /* 둥근모서리 : 왼위 오른위 오른아래 왼아래 */
     border-radius: 50px 50px 0 0;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: headAni 1s ease-out 4s forwards;
 }
+
+
+/* 헤드애니 키프레임 */
+@keyframes headAni {
+    to{
+        top: 0;
+    }
+}/* 키프레임 */
+
 /* 눈공통 */
 .eye{
     width: 50px;
@@ -360,7 +389,16 @@ body{
     width: 83px;
     height: 46px;
     background-image: url(../images/mouth.png);
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: mouthAni .05s linear 7s infinite alternate;
 }
+/* 입애니 키프레임 */
+@keyframes mouthAni {
+    to{
+        transform: scaleY(.5);
+    }
+} /* 키프레임 */
 
 /* 귀공통 */
 .ear{
@@ -392,7 +430,19 @@ body{
     /* 마영오! - 블록가로중앙 */
     margin: 0 auto;
     margin-top: 50px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: bodyAni 1s ease-out 3s forwards;
 }
+
+/* 바디애니 키프레임 */
+@keyframes bodyAni {
+    to{
+        left: 0;
+    }
+}/* 키프레임 */
+
+
 /* 로봇몸에 가상요소로 하단 바 만들기 */
 .body::after{
     content: '';
