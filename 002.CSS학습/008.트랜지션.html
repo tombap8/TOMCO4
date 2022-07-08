@@ -47,6 +47,10 @@
                     
                 ->>>> 마우스 오버시에 트랜지션설정을 양방향 동일하게
                 설정하려면 :hover가 아닌 원본에 설정하면 된다!
+                
+
+                ->>>> 기존 트랜지션 없애는 설정은?
+                        transition: none;
             */
         body{
             padding-bottom: 400px;
@@ -97,28 +101,44 @@
         /* 트랜지션을 hover가 아닌 원래 요소에 주면
         양방향 모두 동시적용된다! */
         #tr1 span{
-            
+            transition: 2s;
+            /* 앞에 속성을 생략하면 all과 같다!
+            즉, 모든 속성이 변경될때 애니메이션 함! */
         }
         #tr1:hover span{
-           
+           left: 50%;
+           background-color: red;
         }
         
         /* #tr2에 트랜지션 설정 하지 않음! */
         #tr2 span{
-            
+            left: -5%;
+            background-color: orange;
         }
         /* 오버시에만 트랜지션을 주면 오버시에만 적용됨! */
         #tr2:hover span{
-            
+            left: 70%;
+            background-color: lime;
+            transition: all 3s;
         }
 
         /* #tr3에 트랜지션 설정 */
         #tr3 span{
+            /* 오버시에도 트랜지션 설정시 원본에 설정하는
+            트랜지션은 돌아올때 적용됨! */
+            transition: all 5s ease-in-out 2s;
+            /* 모든 속성이 5초동안 처음과 마지막에 천천히
+            2초후 애니시작! */
             
         }
         /* 오버시에 트랜지션 별도 설정하기! */
         #tr3:hover span{
-           
+            left: 60%;
+            background-color: pink;
+            /* 원을 사각형으로! */
+            border-radius: 0;
+            /* 트랜지션: 속시이지 -> 오버시에 적용! */
+            transition: 1s ease-out;           
         }
         
         /* #tr4에 트랜지션 설정 */
