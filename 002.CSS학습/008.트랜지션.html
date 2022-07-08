@@ -147,18 +147,31 @@
             속시이지 순으로 셋팅하고 콤마로 구분한다!
         */
         #tr4 span{
-            
+            transition: 
+            left 5s ease-in-out,
+            /* left속성을 5초간 처음과 끝에 천천히 */
+            transform 3s linear 5s;
+            /* 트랜스폼을 3초간 등속도로 5초후 애니 */
         }
         #tr4 span b{
-            
+            transition: 
+            background-color 2s ease-in 3s,
+            /* 배경색 2초간 처음에 천천히 3초후 애니 */
+            border-radius 3s ease-out 5s,
+            /* 둥근모서리 3초간 나중에 천천히 5초후 애니 */
+            transform 1s linear 8s;
+            /* 트랜스폼 3초간 등속도로 5초후 애니 */
         }
         /* 오버시 span 변경 */
         #tr4:hover span{
-           
+           left: 70%;
+           transform: rotate(720deg);
         }
         /* 오버시 span>b 변경 */
         #tr4:hover b{
-           
+           background-color: hotpink;
+           border-radius: 0;
+           transform: scale(2);
         }
        
         
