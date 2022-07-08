@@ -182,18 +182,40 @@ body{
     border: 2px solid #ccc;
 
     /* 애니메이션: 이시이지반방마 */
-    animation: logoAni 2s ease-in-out 2s;
+    animation: 
+    logoAni 1.5s ease-in-out 2s forwards,
+    logoAni2 .6s ease-in-out 3.5s infinite alternate;
+
+
+
+    /* animation: logoAni 1s ease-in-out 1s infinite alternate forwards; */
 }
 /* 로고 애니 키프레임 */
 @keyframes logoAni {
     /* from{} - 최초값이 같으면 생략! */
-    to{
+    80%{
         /* 왼쪽위에 위치, 원래크기복원 */
         top: 50px;
         left: 50px;
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
+    }
+    100%{
+        /* 왼쪽위에 위치, 원래크기복원 */
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(20deg);
     }
 }/* 키프레임 */
+
+/* 로고 흔들기 애니 키프레임 */
+@keyframes logoAni2 {
+    0%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
+}
 
 
 /************** 1-2. 내용링크 **************/
