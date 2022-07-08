@@ -561,7 +561,32 @@ body{
 /* 오른팔 */
 .a2{
     right: -60px;
+    /* 트랜스폼 회전기준 */
+    transform: rotate(0deg);
+    /* 회전축변경 : 가로중앙 세로20px 위치 */
+    transform-origin: center 20px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    /* 애니1 - 팔들기 */
+    a2Ani .6s ease-in-out 8s forwards,
+    /* 애니2 - 팔흔들기 */
+    a2Ani2 .3s ease-in-out 8.6s infinite alternate;
 }
+
+/* 오른팔 들기 키프레임 */
+@keyframes a2Ani {
+    to{
+        transform: rotate(-158deg);
+    }
+} /* 키프레임 */
+
+/* 오른팔 흔들기 키프레임 */
+@keyframes a2Ani2 {
+    to{
+        transform: rotate(-128deg);
+    }
+} /* 키프레임 */
 
 /* 다리공통 */
 /* !important없이 우선순위
