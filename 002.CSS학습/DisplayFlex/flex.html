@@ -4,7 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>flex 레이아웃 연습</title>
-    <style></style>
+    <style>
+      html,body,ul,ol{
+        margin: 0;
+        padding: 0;
+      }
+      ul,ol{
+        list-style: none;
+      }
+
+      #wrap{
+        height: 100vh;
+        /* vh 로 보이는 화면 채움! */
+      }
+
+      #wrap ul{
+        /* 플렉스 박스 */
+        display: flex;
+        height: 100%;
+      }
+      
+      #wrap li{
+        flex: 1;
+      }
+
+      #wrap li:nth-child(1){
+        background: url(./images/m01_bg.jpg) no-repeat center/cover;
+      }
+      #wrap li:nth-child(2){
+        background: url(./images/m02_bg.jpg) no-repeat center/cover;
+      }
+      #wrap li:nth-child(3){
+        background: url(./images/m03_bg.jpg) no-repeat center/cover;
+      }
+      #wrap li:nth-child(4){
+        background: url(./images/m04_bg.jpg) no-repeat center/cover;
+      }
+      #wrap li:nth-child(5){
+        background: url(./images/m05_bg.jpg) no-repeat center/cover;
+      }
+
+
+    </style>
   </head>
 
   <body>
