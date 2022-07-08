@@ -153,7 +153,7 @@
                         - 는 왼쪽/윗쪽
           */
         #trans5:hover img {
-           
+           transform: translate(-200px, -200px);
         }
 
         /* 
@@ -164,12 +164,20 @@
                 (변경가능: transform-origin)
            */
         #trans6:hover img {
-            
+            transform: rotate(5478deg);
+            /* 트랜지션 시간늘림 */
+            transition-duration: 10s;
         }
 
         /* 회전축 변경하기 */
         #trans6 img {
-            
+            transform-origin: 70% 70%;
+
+            /* [ 트랜스폼 축변경 속성 ]
+            transform-origin: 가로 세로;
+            - 가로값: left,right,center,몇px,몇%
+            - 세로값: top,bottom,center,몇px,몇%
+            - 기본값은 가로,세로 center임! */
         }
 
         /* 
@@ -179,22 +187,21 @@
             - 각도가 양수/음수에 따라 기울임 방향달라짐                
         */
         #trans7:hover img {
-           
+           transform: skewX(-30deg);
         }
 
         /* 
-               8. scale(x축배수,y축배수)
-               - 값을 하나만 쓰면 양방향 같은값
-               - 배수가 1보다 크면 확대, 작으면 축소
-               - scaleX(배수), scaleY(배수) - x,y축별
-               - 값이 0이면 사라짐
-             */
+            8. scale(x축배수,y축배수)
+            - 값을 하나만 쓰면 양방향 같은값
+            - 배수가 1보다 크면 확대, 작으면 축소
+            - scaleX(배수), scaleY(배수) - x,y축별
+            - 값이 0이면 사라짐
+        */
         #trans8 img {
-            
+            transform: scale(.5);
         }
-
-        #trans8:hover img {
-          
+        #trans8:hover img{
+            transform: scale(2);
         }
 
         /* 
@@ -202,7 +209,8 @@
             transform: 속성1 속성2 속성3 .....;
         */
         #trans9:hover img {
-            
+            transform: scale(5) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+            transition-duration: 20s;
         }
 
         /* 
