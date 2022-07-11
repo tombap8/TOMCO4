@@ -252,6 +252,59 @@
         부모박스 바깥으로 나가게 됨~!
       */
     }
+
+    /* 타이틀박스6 */
+    .t6{
+      top: 500px;
+      height: 250px;
+
+      /* 플렉스 박스 */
+      display: flex;
+      /* 플렉스 랩핑설정! */
+      flex-wrap: wrap;
+      /********************************** 
+        [ flex-wrap 속성 ]
+        - 박스 가로크기 보다 아이템(자식요소)
+        이 많을 경우 아랫줄로 줄바꿈 하려면
+        wrap으로 설정함!
+        - 기본값은 nowrap
+        
+        -> 이 설정을 하지 않으면?
+        자동적으로 가로크기가 줄어져서
+        한줄에 모두 나옴! 이유는 자식요소의
+        flex 속성값으로 flex-shrink가 1로
+        기본설정 되어 있기때문이다!
+
+      **********************************/
+
+      /* 진행방향 수평정렬 */
+      justify-content: center;
+
+      align-content: space-around;
+      /* 
+        align-content 속성:
+        - 진행방향의 수직으로 정렬
+        - 진행방향의 수직으로 여러줄이므로 content!
+
+        1) flex-start : 처음위치(기본값)
+        2) flex-end : 끝위치
+        3) center : 중앙
+        4) space-between : 
+          아이템요소 양쪽끝에 붙고 사이간격 일정
+        5) space-around : 
+          아이템요소 양쪽간격 일정
+        6) space-evenly : 
+          아이템요소 양쪽과 사이간격 일정
+        7) stretch :
+          높이값이 auto인 경우 등분할 늘려주기!
+
+      */
+    }
+    /* 글자수 조정을 위해 li에
+    마진설정하기 */
+    .t6 li{
+      margin: 0 14px;
+    }
   </style>
 </head>
 
