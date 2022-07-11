@@ -1,73 +1,152 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>flex 레이아웃 연습</title>
-    <style>
-      html,body,ul,ol{
-        margin: 0;
-        padding: 0;
-      }
-      ul,ol{
-        list-style: none;
-      }
 
-      #wrap{
-        height: 100vh;
-        /* vh 로 보이는 화면 채움! */
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flex 레이아웃 연습</title>
+  <style>
+    html,
+    body,
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+    }
 
-      #wrap ul{
-        /* 플렉스 박스 */
-        display: flex;
-        height: 100%;
-      }
-      
-      #wrap li{
-        flex: 1;
-      }
+    ul,
+    ol {
+      list-style: none;
+    }
 
-      #wrap li:nth-child(1){
-        background: url(./images/m01_bg.jpg) no-repeat center/cover;
-      }
-      #wrap li:nth-child(2){
-        background: url(./images/m02_bg.jpg) no-repeat center/cover;
-      }
-      #wrap li:nth-child(3){
-        background: url(./images/m03_bg.jpg) no-repeat center/cover;
-      }
-      #wrap li:nth-child(4){
-        background: url(./images/m04_bg.jpg) no-repeat center/cover;
-      }
-      #wrap li:nth-child(5){
-        background: url(./images/m05_bg.jpg) no-repeat center/cover;
-      }
+    #wrap {
+      height: 100vh;
+      /* vh 로 보이는 화면 채움! */
+    }
+
+    #wrap ul {
+      /* 플렉스 박스 */
+      display: flex;
+      /****************************************** 
+          [ 플렉스 박스!!! ]
+          flex란? - flexible(유연한-에서 나온말)
+
+          - 가변적인 자식요소를 컨트롤하기 위해
+          CSS3에서 새롭게 선보인 display 기술
+
+          - 자식요소를 같은 비율로 혹은 다른비율로
+          분할이 쉽다
+          - 자식요소의 순서를 일괄적으로 변경할 수 있다
+          - 무엇보다도 블록요소를 옆으로 흐르게 하는데
+          탁월하다!
+
+          [ 셋팅법 ]
+          - 옆으로 흐르게할 요소들의 부모요소에
+           display: flex 로 설정함!
+          - 자식요소를 flex:1 로 설정하면 등분할 됨!
+          - 자식요소의 높이값은 자동으로 부모의 높이값을
+          채운다!
+        
+        ******************************************/
+
+      flex-direction: row-reverse;
+      /* 
+          flex-direction 속성 : 진행방향과 순서를 정함
+          1) row : 좌->우(기본값)
+          2) row-reverse : 우->좌
+          3) column : 위->아래
+          4) column-reverse : 아래->위
+        */
+
+      height: 100%;
+    }
+
+    #wrap>ul>li {
+      /* flex자식요소 등분할 셋팅 */
+      flex: 1;
+      /* 
+          [ flex 속성 : 플렉스 자식요소에 주는 속성 ]
+          -> flex : 한번에 아래 3가지 속성을 줌
+
+          flex: 1 숫자하나만 쓰면 
+          flex: 1 1 0 과 동일
+          해석) 
+          커질래? 응(1), 작아질래? 응(1), 가로크기 0 (설정없음)
+
+          따로 설정시 아래와 같다!
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+
+          1) flex-grow: 1 | 0 -> 커질래? 1 응 | 0 아니
+          2) flex-shrink: 1 | 0 -> 작아질래? 1 응 | 0 아니
+          3) flex-basis: 설정값(px,%,em,rem,vw등)
+          -> width 가로크기를 설정하는 속성
+          -> 만약 0을 쓰면 속성값 없음!
+
+        */
+    }
+
+    #wrap>ul>li:nth-child(1) {
+      background: url(./images/m01_bg.jpg) no-repeat center/cover;
+    }
+
+    #wrap>ul>li:nth-child(2) {
+      background: url(./images/m02_bg.jpg) no-repeat center/cover;
+    }
+
+    #wrap>ul>li:nth-child(3) {
+      background: url(./images/m03_bg.jpg) no-repeat center/cover;
+    }
+
+    #wrap>ul>li:nth-child(4) {
+      background: url(./images/m04_bg.jpg) no-repeat center/cover;
+    }
+
+    #wrap>ul>li:nth-child(5) {
+      background: url(./images/m05_bg.jpg) no-repeat center/cover;
+    }
+
+    /* 타이틀 공통 */
+    .tit{
+      position: absolute;
+      top: 100px;
+      left: calc(50% - 250px);
+      /* calc(화면절반% - 자기크기절반) */
+      /* 가로중앙계산 (가로500px의 절반을 뺌) */
+      width: 500px;
+      height: 100px;
+      border: 5px double #fff;
+
+    }
 
 
-    </style>
-  </head>
 
-  <body>
-    <div id="wrap">
-      <!-- 파티션박스 -->
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    
-    
-    <!-- <ol class="tit t1">
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- 파티션박스 -->
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- 타이틀박스1 -->
+    <ol class="tit t1">
       <li>L</li>
       <li>O</li>
       <li>T</li>
       <li>T</li>
       <li>E</li>
     </ol>
+  </div>
+
+
+  <!-- 
     <ol class="tit t2">
       <li>W</li>
       <li>O</li>
@@ -76,5 +155,6 @@
       <li>D</li>
     </ol> -->
 
-  </body>
+</body>
+
 </html>
