@@ -108,7 +108,7 @@
     }
 
     /* 타이틀 공통 */
-    .tit{
+    .tit {
       position: absolute;
       top: 100px;
       left: calc(50% - 250px);
@@ -119,8 +119,9 @@
       border: 5px double #fff;
 
     }
+
     /* 타이틀 하위 li 공통 */
-    .tit > li{
+    .tit>li {
       width: 50px;
       height: 50px;
       border: 3px solid #fff;
@@ -132,7 +133,8 @@
     }
 
     /* 타이틀1 */
-    .t1{
+    .t1 {
+      top: 50px;
       /* 플렉스박스 */
       display: flex;
       justify-content: space-evenly;
@@ -151,11 +153,105 @@
         6) space-evenly : 
           아이템요소 양쪽과 사이간격 일정
       */
-      
+      align-items: center;
+      /* 
+        align-items 속성 :
+        - 진행방향의 수직 정렬 속성
+        - 수직방향의 아이템(요소)이 하나씩일때 사용
+
+        1) flex-start : 처음위치(기본값)
+        2) flex-end : 끝위치
+        3) center : 중앙
+        4) stretch : 수직방향 부모박스에 꽉채워 늘림!
+          (단, height값이 auto여야함!)
+        5) baseline : 각 요소에 글자가 있다면 
+          글자기준선(baseline)을 기준으로 정렬함!
+          (글자의 line-height를 변경해서 적용해봄!)
+      */
+
     }
 
+    /* 타이틀박스2 */
+    .t2{
+      top: 200px;
 
+      /* 플렉스박스 */
+      display: flex;
+      justify-content: space-between;
+      /* 수직방향 정렬 글자아랫선 */
+      align-items: baseline;
+    }
+    /* 줄간격변경 */
+    .t2 li:nth-child(2){
+      line-height: 80px;
+    }
+    .t2 li:nth-child(4){
+      line-height: 30px;
+    }
 
+    /* 타이틀박스3 */
+    .t3{
+      top: 350px;
+
+      /* 플렉스박스 */
+      display: flex;
+      align-items: center;
+    }
+    /* 세번째 li부터 끝으로 보내기 */
+    .t3 li:nth-child(3){
+      margin-left: auto;
+      /* 선택요소의 떨어뜨리려는
+      방향의 마진을 auto로 설정하면
+      flex에서 끝으로 이동시켜줌! */
+    }
+
+    /* 타이틀박스4 */
+    .t4{
+      top: 200px;
+      left: 50px;
+      width: 150px;
+      height: 500px;
+
+      /* 플렉스박스 */
+      display: flex;
+      flex-direction: column;
+      /* 진행방향의 수직정렬 중앙 */
+      align-items: center;
+    }
+    /* 4번째 li부터 맨아래 끝으로 보내기 */
+    .t4 li:nth-child(4){
+      margin-top: auto;
+      /* 보내고자 하는 요소의 마진탑을 auto
+      로 설정하면 flex에서 아래쪽 끝으로 배치함 */
+    }
+
+    /* 타이틀박스5 */
+    .t5{
+      top: 50px;
+      left: 50px;
+      width: 150px;
+
+      /* 플렉스박스 */
+      display: flex;
+    }
+    /* 자식요소에 flex-shrink 설정으로 크기유지하기 */
+    .t5 li{
+      /* 부모박스가 줄어들때 같이 자동으로
+      줄어들래? 0 아니! */
+      flex-shrink: 0;
+      /* 
+        flex속성을 자식요소에 셋팅하지 않으면
+        기본값은 아래와 같다!
+        flex: initial
+        즉, 아래와 동일함
+        flex: 0 1 auto
+        -> 두번째 값이 flex-shrink:1 로 셋팅!
+        그래서 부모박스 크기가 작아지면
+        자식요소도 가로크기를 줄이게 됨!
+        이 값을 0으로 하면 자기 원래 크기를 유지하며
+        부모박스 바깥으로 나가게 됨~!
+      */
+    }
   </style>
 </head>
 
@@ -177,17 +273,67 @@
       <li>T</li>
       <li>E</li>
     </ol>
-  </div>
 
-
-  <!-- 
+    <!-- 타이틀박스2 -->
     <ol class="tit t2">
       <li>W</li>
       <li>O</li>
       <li>R</li>
       <li>L</li>
       <li>D</li>
-    </ol> -->
+    </ol>
+
+    <!-- 타이틀박스3 -->
+    <ol class="tit t3">
+      <li>L</li>
+      <li>O</li>
+      <li>T</li>
+      <li>T</li>
+      <li>E</li>
+    </ol>
+
+    <!-- 타이틀박스4 -->
+    <ol class="tit t4">
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+    </ol>
+
+    <!-- 타이틀박스5 -->
+    <ol class="tit t5">
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+    </ol>
+
+    <!-- 타이틀박스6 -->
+    <ol class="tit t6">
+      <li>L</li>
+      <li>O</li>
+      <li>T</li>
+      <li>T</li>
+      <li>E</li>
+      
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+    </ol>
+
+  </div>
+
+
 
 </body>
 
