@@ -64,7 +64,7 @@
     #wrap>ul>li {
       position: relative;
       /* 부모자격 */
-      
+
       /* flex자식요소 등분할 셋팅 */
       flex: 1;
       /* 
@@ -96,6 +96,28 @@
 
         /* 트랜지션: 속시이지 */
         transition: flex .4s ease-in-out;
+    }
+
+    /* 가상요소로 오버레이효과 주기! */
+    /* 참고:  밝게 처리하는것이 트랜스페런트(transparent) 효과,
+    어둡게 처리하는것이 오버레이(overlay)효과라고 한다! */
+    #wrap>ul>li::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      /* 앱솔루트로 부모박스 채우기! */
+      background-color: #000;
+      opacity: 0.5;
+      /* 트랜지션 */
+      transition: opacity .4s;
+    }
+    /* 마우스 오버시 가상요소 투명도0 */
+    #wrap>ul>li:hover::before{
+      opacity: 0;
     }
 
     /* 등분할 li에 마우스 오버시 
@@ -132,6 +154,31 @@
     #wrap>ul>li:nth-child(5) {
       background-color: #3483d8;
       background-image: url(./images/m05_bg.jpg);
+    }
+
+    /* 각 파트 타이틀 */
+    #wrap>ul>li>img:first-child{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* 부모자격? 싸고있는 li */
+      transform: translate(-50%, -50%);
+      /* [정중앙정렬하기]
+      top,left 50%, 
+      트랜스폼 트랜스레이트 -50%위치이동
+      박스 정중앙이동! */
+      width: min(14vw,190px);
+      /* min(유동적인값,특정값)
+      -> 둘중 작은값 선택-> 최대크기지정! */
+    }
+
+    /* 각 파트 로고 */
+    #wrap>ul>li>img:last-child{
+      position: absolute;
+      bottom: 10vh;
+      left: 50%;
+      /* 부모는? 싸고있는 li */
+      transform: translateX(-50%);
     }
 
     /* 타이틀 공통 */
@@ -192,6 +239,17 @@
       height: 0;
       border: none;
     }
+
+    /* 하단바 */
+    .info{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      padding: 10px;
+      text-align: center;
+      background-color: #d9041c;
+    }
   </style>
 </head>
 
@@ -242,6 +300,11 @@
   </div>
 
 
+
+  <!-- 하단바 -->
+  <footer class="info">
+    <img src="images/lotte_logo.gif" alt="하단로고">
+  </footer>
 
 </body>
 
