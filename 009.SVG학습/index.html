@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 애니메이션</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        body{
+            background-image: linear-gradient(to bottom, rgb(255, 210, 210), rgb(216, 255, 216), rgb(179, 238, 255));
+        }
+
+        /* 플렉스 박스 */
+        .wrap{
+            display: flex;
+            /* 랩핑설정 */
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        /* 내부박스 4등분 */
+        .wrap section{
+            position: relative;
+            /* 부모자격 */
+            width: 50%;
+            height: 50%;
+            outline: 1px dashed red;
+        }
+        /* 컨텐츠 박스 */
+        .cbx{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 앱솔루트 정중앙! 오십퍼오십퍼마오마오!
+            (50%,50%,-50%,-50%) */
+            width: 200px;
+            height: 200px;
+            outline: 2px dotted blue;
+        }
+
+        /* svg요소 공통 */
+        .cbx svg{
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* circle 설정 */
+        .c1{
+            fill: none;
+            /* 채우기색 - 기본색은 검정
+            투명(transparent), none(없음) */
+            stroke: red;
+            /* 선색(안쓰면 안나옴) */
+            stroke-width:20;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        [ SVG란? ]
+        SVG - Scalable Vetor Graphic
+        -> 이미지를 확대해도 깨지지 않는 벡터방식의 그래픽요소
+        -> 이미지소스가 코드로 되어있음
+        -> 벡터 그래픽: 일러스트레이터 같은 툴에서 제작함
+        참고)
+        https://www.w3schools.com/graphics/svg_intro.asp
+        
+        비교) 포토샵에서 픽셀로 특정 크기로 제작되는 이미지
+        -> 비트맵 이미지!
+        ->>>>>>> canvas 요소 : 비트맵 이미지 그래픽요소
+        - canvas는 JS로 주로 코딩됨!
+        참고)
+        http://www.effectgames.com/demos/canvascycle/
+
+        [ svg 요소 표현법 ]
+        - svg요소 내부에 자식요쇼로 각 도형요소를 넣고 코딩함
+
+        [ circle 요소 : 원 ]
+        - cx : 중심원 x좌표 (center x) 단위없는 숫자는 px임
+        - cy : 중심원 y좌표 (center y) 단위없는 숫자는 px임
+        - r : 반지름(radius)
+
+
+     -->
+    <div class="wrap">
+        <!-- 1. 아이언맨 박스 : 원 -->
+        <section>
+            <div class="cbx">
+                <svg>
+                    <circle class="c1" cx="100" cy="100" r="90"></circle>
+                </svg>
+            </div>
+
+        </section>
+        <!-- 2. 블랙위도우 박스 : 사각형 -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+        <!-- 3. 닥스박스 : 삼각형 -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+        <!-- 4. 완다박스 : 다각형(6각형) -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>
