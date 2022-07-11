@@ -49,7 +49,7 @@
         
         ******************************************/
 
-      flex-direction: row-reverse;
+      /* flex-direction: row-reverse; */
       /* 
           flex-direction 속성 : 진행방향과 순서를 정함
           1) row : 좌->우(기본값)
@@ -83,7 +83,15 @@
           3) flex-basis: 설정값(px,%,em,rem,vw등)
           -> width 가로크기를 설정하는 속성
           -> 만약 0을 쓰면 속성값 없음!
+          _______________________________
 
+          [ 자식요소 속성 중 order란? ]
+          - 원하는 순서로 정해서 박스가 나열되게함!
+          단, 부모 플렉스 박스에 flex-direction을 주지말것!(order쓰기 때문!)
+
+
+          소스참고:
+          https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_order_2
         */
     }
 
@@ -349,11 +357,11 @@
   <div id="wrap">
     <!-- 파티션박스 -->
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li style="order: 3;"></li>
+      <li style="order: 5;"></li>
+      <li style="order: 2;"></li>
+      <li style="order: 1;"></li>
+      <li style="order: 4;"></li>
     </ul>
     <!-- 타이틀박스1 -->
     <ol class="tit t1">
