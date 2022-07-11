@@ -305,6 +305,43 @@
     .t6 li{
       margin: 0 14px;
     }
+
+    /* 타이틀박스7 */
+    .t7{
+      top: 50px;
+      right: 50px;
+      left: auto;
+      /* 기존left셋팅해제! */
+      width: 450px;
+      height: 200px;
+
+      /* 플렉스박스 */
+      display: flex;
+      /* 랩핑박스 */
+      flex-wrap: wrap;
+      /* 수평정렬 */
+      justify-content: space-evenly;
+      /* 수직정렬(여러줄) */
+      align-content: center;
+    }
+    /* .brk뒤의 li 마진탑 */
+    .t7 li.brk~li{
+      margin-top: 20px;
+    }
+
+    /* 자체 응용 - 줄바꿈을 위한 li */
+    /* 원리는 줄바꿈을 할 부분에서
+    가로크기 100%를 차지하게 해서
+    줄바꿈효과를 준다! */
+    .t7 li.brk{
+      /* width: 100%; */
+      flex-basis: 100%;
+      /* flex-basis는 width와 같다! */
+
+      /* 기존디자인을 없애고 안보이게 처리함! */
+      height: 0;
+      border: none;
+    }
   </style>
 </head>
 
@@ -376,6 +413,24 @@
       <li>R</li>
       <li>L</li>
       <li>D</li>
+
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+    </ol>
+
+    <!-- 타이틀박스7 -->
+    <ol class="tit t7">
+      <li>L</li>
+      <li>O</li>
+      <li>T</li>
+      <li>T</li>
+      <li>E</li>
+      
+      <!-- 줄바꿈요소 -->
+      <li class="brk"></li>
 
       <li>W</li>
       <li>O</li>
