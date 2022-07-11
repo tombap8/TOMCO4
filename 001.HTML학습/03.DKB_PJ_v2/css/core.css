@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* 도깨비 PJ 핵심공통모듈 CSS - core.css */
+/* 공통 class / 웹폰트 */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&family=Nanum+Gothic&display=swap');
+/* 
+    font-family: 'Single Day', cursive;
+    font-family: 'Yeon Sung', cursive;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
+*/
+/* 폰트 상대단위를 위한 html폰트크기 설정 */
+html{
+    font-size: 10px;
+    /* 글자체나 글자크기는 하위요소 상속됨!
+    10px로 html에 설정한 이유는 상대단위인 
+    rem으로 설정시 계산하기 쉽게하기위함! */
+}
+/* 전체 웹폰트 일반적용! */
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 속박스 class */
+.ibx{
+    max-width: 1200px;
+    /* 최대가로크기 1200px이면
+    이것보다 작아질경우 auto로 자동전환됨!
+    즉, 가로스크롤 안생김! */
+    margin: 0 auto;
+}
+
+/* 플렉스 박스 클래스 */
+.fbx{
+    /* 플렉스박스 */
+    display: flex;
+}
+.fxw{
+    /* 랩핑박스 */
+    flex-wrap: wrap;
+}
+.jcc{
+    /* 수평방향 중앙정렬 */
+    justify-content: center;
+}
+
+/* IR(Image Replacement) 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 밴더사명(크롬,사파리) 접두어
+(참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스) */
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
+}

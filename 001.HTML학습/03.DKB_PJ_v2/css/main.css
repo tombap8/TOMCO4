@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* 도깨비 PJ 메인 페이지 CSS - main.css */
+/* 메인 페이지에만 적용되는 CSS */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+
+/* 컨텐츠 파트 최상위부모 */
+body {
+   /* 한번에 배경주기
+   background: 색이반고윙/크 */
+   background:
+      url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+      url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+   /* 로고이미지 가로위치 10%, 세로위치 30%, 
+   가로크기 10% 세로크기 auto(생략) */
+}
+
+/* 메인영역 */
+.cont {
+   padding-top: 500px;
+   /* 상단패딩: 첫번째 요소 위치밀기의 기본!
+   첫번째요소에 마진탑으로 위치를 이동할 경우
+   부모요소 바깥으로 마진이 나감(원래디자인속성임!)
+   마진을 포함하려면 부모요소에 overflow:hidden을
+   주면 포함되지만 첫번째 요소의 위치는 부모의
+   패딩으로 밀어주는 것이 정석이다! */
+
+   box-sizing: border-box;
+   /* 일반적인 박스는 content-box이며 가로,세로크기를
+   설정할 경우 그 크기는 컨텐트 영역의 크기다!
+   박스의 보더와 패딩을 제외한 내용영역을 컨텐트 영역이라고 한다!
+   패딩과 보더를 포함하여 크기를 정하려면
+   box-sizing: border-box라고 셋팅하면 된다!
+   여기에서는 min-height: 800px크기에 패딩 500px이 포함됨! */
+
+}
+
+/* 캐릭터 박스 */
+.cbx {
+   width: 90%;
+   margin: 0 auto;
+
+}
+
+/* float자식의 부모에 가상요소로 clear설정 */
+.cbx::after {
+   content: '';
+   display: block;
+   clear: both;
+}
+
+/* 캐릭터 개별박스 공통 */
+.cat {
+   position: relative;
+   /* 부모자격 */
+
+   /* 가로크기 : 4등분(25%) - 양쪽마진(1%) = 24% */
+   width: 24%;
+   /* 양쪽마진 : 위아래0 양쪽0.5% */
+   margin: 0 .5%;
+   /* 보통 0.5%와 같이 0.소수점은 앞에 0생략가능 */
+
+   /* 가로, 세로 크기나 마진값으로 %를 쓰면 기준은 싸고있는
+   부모박스다! */
+
+   /* 블록요소 옆으로 흐르게! */
+   float: left;
+   /* 나는 왼쪽~ 너는 오른쪽에 와! */
+
+   /* 영역보정값(자식요소 마진변동에 의한
+   불일치 부분을 값으로 보정함) */
+   padding-bottom: 10px;
+
+}
+
+/* 캐릭터 이미지박스 */
+.ci{
+   /* 트랜지션: 속시이지 */
+   transition: .4s ease-in-out;
+}
+/* .cat에 오버시 .ci변경 */
+.cat:hover .ci{
+   margin-top: -53%;
+}
+
+/* 캐릭터 이미지 
+- .ci의 직계자식 img만 선택! */
+.ci > img {
+   width: 100%;
+}
+/* 캐릭터 이름이미지 박스 span */
+.ci span{
+   position: absolute;
+   bottom: 10%;
+   width: 100%;
+   /* 부모는? .cat */
+   display: block;
+   /* 원래 inline이지만 출신변경! */
+   text-align: center;
+   /* 블록요소 내부의 인라인 컨텐츠를 중앙에 오게함! */
+   
+   /* 마진탑으로 위치이동하기 X -> 포지션으로 변경! */
+   /* margin-top: -20%; */
+   /* 
+      마진값을 마이너스로 주면 위의 요소와 겹칠 수 있다.
+      포지션을 쓰지 않고 겹치게 하는 방법이다.
+      일반적인 위치이동은 마진으로 함.
+      단위로 %를 사용하면 마진에 있어서
+      margin-top 은 기존 부모박스이 height값에 대한 %이고
+      margin-left 는 기존 부모박스이 width값에 대한 %이다!
+   */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+   width: 40%;
+}
+/* 캐릭터 이름 이미지 첫번째 숨김! */
+.ci span img:first-child{
+   display: none;
+}
+/* 캐릭터 이름 이미지 첫번째 .cat에 오버시 보이기 */
+.cat:hover .ci span img:first-child{
+   display: inline;
+}
+/* 캐릭터 이름 이미지 두번째 .cat에 오버시 숨기기 */
+.cat:hover .ci span img:last-child{
+   display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+   position: absolute;
+   /* 높이값 설정 : 
+   0 -> 250px 오버시변경 */
+   height: 0px;
+   /* 넘치는 내용 자동스크롤!
+   높이값에 따라 스크롤이 자동변경됨!
+   높이값이 0이면 모두 숨겨짐! */
+   overflow: auto;
+   /* 배경: 색이반고윙/크 */
+   background: url(../images/eachBG.jpg) no-repeat center/cover;
+
+   /* 트랜지션: 속성 시간 이징 지연 */
+   transition: height 0.4s ease-out;
+}
+/* .cat 개별박스에 오버시 .cd 보이기 */
+.cat:hover .cd{
+   height: 250px;
+}
+
+/********************************************** 
+   [ 트랜지션(Transition) 애니메이션 효과주기 ]
+   -> 속성값의 변화과정을 보여주면서 애니메이션
+   하는 속성
+   (기본설정)
+   transition: 속성 시간 이징 지연 -> 속시이지!
+
+   1. 속성 (transition-property)
+   - 변경 애니메이션 대상 속성
+      (안쓰거나 all을 쓰면 모든 속성이 애니메이션 적용됨!)
+      -> 속성을 따로 쓰는 이유는 개별적으로
+      속성별로 애니메이션을 따로 설정할 수 있기때문!
+      예) 
+      transition: all .4s; -> 모두 적용!
+      transition: .4s; -> 모두 적용!
+      transition: 
+      margin-top .3s ease-in, height 2s linear 1s;
+      -> 속시이지 순으로 콤마를 사용하면 다양하게 설정가능!
+   
+   2. 시간 (transition-duration)
+   - 애니메이션 시간 : 초단위(s)
+   3. 이징(easing->transition-timing-function) - 가속도
+      1) ease : 앞뒤로 약간씩 느림(기본값)
+      2) ease-in : 처음에 천천히 나중에 빨라짐
+      3) ease-out : 나중에 천천히 처음에 빠름
+      4) ease-in-out : 처음과 끝에 천천히
+      5) linear : 등속도
+      -> 베지어곡선으로 매우 다채로운 가속도 생성가능!
+
+      참고)
+      https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_speed
+
+   4. 지연 (transition-delay)
+   - 지연시간 즉, 처음에 대기시간(초단위:s)
+   5. 적용법: 오버시 또는 클래스로 중간에 값을 변경하는 경우
+            시작과 다시 복귀할때 애니메이션이 같다면
+            오버시가 아닌 원본에 트랜지션을 주면된다!
+            만약에 다르다면 오버시(또는 클래스)에 따로
+            트랜지션을 설정하면 다르게 애니메이션 된다! 
+
+
+
+**********************************************/
+
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+   font-family: 'Single Day', cursive;
+   font-size: min(1.9vw,26px);
+   /* 최대글자크기 26px, 이하는 유동적 */
+   font-weight: normal;
+   padding: 15px 10px 5px;
+   /* 줄바꿈방지 */
+   white-space: nowrap;
+   letter-spacing: -1px;
+}
+
+/* 가상요소로 설명타이틀 앞에 도깨비아이콘 넣기 */
+.cd h3::before{
+   content: '';
+   display: inline-block;
+   width: 18px;
+   height: 30px;
+   background: url(../images/bg_logo_a_01.png) no-repeat right -183px;
+   vertical-align: -5px;
+   /* outline: 1px solid red; */
+}
+
+/* 캐릭터 설명 문단 */
+.cd p{
+   font-family: 'Yeon Sung', 'ZCOOL QingKe HuangYou';
+   font-size: min(1.1vw,16px);
+   /* 최대글자크기 16px, 이하는 유동적 */
+   line-height: 1.7;
+   padding: 10px;
+   text-align: justify;
+}
+
+/* 캐릭터 설명 첫번째 p요소의 첫번째 글자
+가상요소로 변경하기! */
+.cd p:first-of-type::first-letter{
+   font-size: 35px;
+   color: cyan;
+   /* 글자그림자로 테두리 만들기
+   그림자 4개를 각방향으로 1px밀기 */
+   text-shadow: 
+   1px 0 #000,-1px 0 #000,
+   0 1px #000,0 -1px #000;
+}
