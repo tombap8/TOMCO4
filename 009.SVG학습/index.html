@@ -37,8 +37,8 @@
             transform: translate(-50%, -50%);
             /* 앱솔루트 정중앙! 오십퍼오십퍼마오마오!
             (50%,50%,-50%,-50%) */
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             outline: 2px dotted blue;
         }
 
@@ -48,16 +48,73 @@
             height: 100%;
         }
 
-
+        /* 1. 아이언맨 */
+        .avg1 svg{
+            border-radius: 50%;
+            background: url(images/man.jpg) no-repeat top/cover;
+        }
+        
+        
         /* circle 설정 */
         .c1{
-            fill: none;
             /* 채우기색 - 기본색은 검정
             투명(transparent), none(없음) */
-            stroke: red;
+            fill: none;
             /* 선색(안쓰면 안나옴) */
+            stroke: red;
+            /* 선두께 (안쓰면 1px)
+            -단위 없으면 기본px */
             stroke-width:20;
+            /* 선끝속성 : 둥글게 */
+            stroke-linecap: round;
+            /* 데쉬선속성 : 
+            - 선 공백 순으로 셋팅 */
+            stroke-dasharray: 300%;
+            /* 데쉬시작위치 속성 */
+            stroke-dashoffset: 300%;
+            /* 
+                데쉬셋팅을 이용한 
+                svg 선 애니메이션
+                ________________
+                stroke-dasharray 의 값으로
+                50%를 주고 선공백이 몇조각
+                나오는지 센다! (여기선 6개)
+                50% * 6 = 300% 
+                이렇게 셋팅하면 선으로 채워짐
+
+                stroke-dashoffset 속성에
+                같은 수치를 주면 공백부터시작
+
+                애니메이션으로 
+                stroke-dashoffset: 0
+                선이 들어오면서 애니메이션됨!
+                (트랜지션/애니메이션 설정필수!)
+            */
+
+            /* 트랜지션: 속시이지 */
+            transition: stroke-dashoffset .4s ease-in-out;
         }
+        /* 컨텐츠 박스에 마우스 오버시 */
+        .cbx:hover .c1{
+            stroke-dashoffset: 0;
+        }
+
+
+        /* 사각형 */
+        .rt1{
+            /* 채우기(색) */
+            fill:none;
+            /* 선색 */
+            stroke: black;
+            /* 선끝처리 */
+            stroke-linecap: square;
+            /* 선두께 */
+            stroke-width: 10;
+            /* 데쉬선 : 50% * 8 = 400% */
+            stroke-dasharray: 400%;
+        }
+
+
     </style>
 </head>
 <body>
@@ -84,34 +141,45 @@
         - cx : 중심원 x좌표 (center x) 단위없는 숫자는 px임
         - cy : 중심원 y좌표 (center y) 단위없는 숫자는 px임
         - r : 반지름(radius)
+        - transform 속성 : svg 요소를 변형하기 위한 속성
+            rotate(각도,x위치,y위치)
+            -> 회전속성으로 각도를 단위없이 사용하며 마이너스는 반시계방향
+            -> 이 속성을 쓰는 이유는 circle에는 일반 transform이
+            적용되지 않는다!
+            (svg에는 transform이 적용됨!)
+
+        [ rect 요소 : 사각형 ]
+        - 가로(width), 세로(height), x축(x), y축(y)
 
 
      -->
     <div class="wrap">
         <!-- 1. 아이언맨 박스 : 원 -->
         <section>
-            <div class="cbx">
+            <div class="cbx avg1">
                 <svg>
-                    <circle class="c1" cx="100" cy="100" r="90"></circle>
+                    <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,150,150)"></circle>
                 </svg>
             </div>
 
         </section>
         <!-- 2. 블랙위도우 박스 : 사각형 -->
         <section>
-            <div class="cbx">
-                
+            <div class="cbx avg2">
+                <svg>
+                    <rect class="rt1" width="290" height="290" x="5" y="5"></rect>
+                </svg>
             </div>
         </section>
         <!-- 3. 닥스박스 : 삼각형 -->
         <section>
-            <div class="cbx">
+            <div class="cbx avg3">
                 
             </div>
         </section>
         <!-- 4. 완다박스 : 다각형(6각형) -->
         <section>
-            <div class="cbx">
+            <div class="cbx avg4">
                 
             </div>
         </section>
