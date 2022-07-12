@@ -91,14 +91,23 @@
                 (트랜지션/애니메이션 설정필수!)
             */
 
-            /* 트랜지션: 속시이지 */
-            transition: stroke-dashoffset .4s ease-in-out;
         }
-        /* 컨텐츠 박스에 마우스 오버시 */
-        .cbx:hover .c1{
+        
+        /* 라인애니 공통 트랜지션 */
+        .sv{
+            /* 트랜지션: 속시이지 */
+            transition: stroke-dashoffset .8s ease-in-out;
+        }
+
+        /* 컨텐츠 박스에 마우스 오버시 라인애니 공통 */
+        .cbx:hover .sv{
             stroke-dashoffset: 0;
         }
 
+        /* 2. 블랙위도우 */
+        .avg2 svg{
+            background: url(images/black.jpg) no-repeat top/cover;
+        }
 
         /* 사각형 */
         .rt1{
@@ -107,12 +116,45 @@
             /* 선색 */
             stroke: black;
             /* 선끝처리 */
-            stroke-linecap: square;
+            stroke-linecap: round;
+            /* 
+                stroke-linecap 선끝옵션
+                1) butt - 끝에 중심선이 보임(기본값)
+                2) square - 끝에 사각형으로 덮음
+                3) round - 끝에 둥근모양으로 덮음
+            */
             /* 선두께 */
-            stroke-width: 10;
+            stroke-width: 20;
             /* 데쉬선 : 50% * 8 = 400% */
-            stroke-dasharray: 400%;
+            stroke-dasharray: 15%;
+            stroke-dashoffset: 100%;
         }
+
+        /* 3. 닥스 */
+        .avg3 svg{
+            background: url(images/doc.jpg) no-repeat top/cover;
+            /* 클리핑적용 - 다각형
+            polygon(x1 y1,x2 y2,...)
+            단위 반드시 쓸것! */
+            clip-path: polygon(150px 0px,300px 100px,300px 200px,150px 300px,0px 200px,0px 100px);
+        }
+ 
+        /* 다각형 */
+        .pg1{
+            /* 채우기 */
+            fill: none;
+            /* 선색 */
+            stroke: lightgreen;
+            /* 선두께 */
+            stroke-width: 20;
+            /* 선끝처리 */
+            stroke-linecap: square;
+            /* 데쉬설정 50% * 6 */
+            stroke-dasharray: 300%;
+            stroke-dashoffset: 300%;
+        }
+
+
 
 
     </style>
@@ -151,6 +193,29 @@
         [ rect 요소 : 사각형 ]
         - 가로(width), 세로(height), x축(x), y축(y)
 
+        [ polygon 요소 : 다각형 ]
+        - points 속성
+        - 표현법: <polygon points="x1,y1 x2,y2 ...">
+            -> x,y좌표를 콤마로 구분하고
+            다른좌표는 띄어쓰기로 구분함
+
+        [ path 요소 : 자유로운 선 ]
+
+        <path> 요소는 경로를 정의하는 데 사용됩니다.
+        경로 데이터에 대해 다음 명령을 사용할 수 있습니다.
+
+        M = 이동(시작점)
+        L = 직선
+        H = 수평선
+        V = 수직선
+        C = 곡선
+        S = 부드러운 곡선
+        Q = 2차 베지어 곡선
+        T = 부드러운 2차 베지어 곡선
+        A = 타원형 호
+        Z = 마지막점
+        참고: 위의 모든 명령은 소문자로도 표현할 수 있습니다. 대문자는 절대 위치를 의미하고 소문자는 상대적 위치를 의미합니다.
+
 
      -->
     <div class="wrap">
@@ -158,7 +223,7 @@
         <section>
             <div class="cbx avg1">
                 <svg>
-                    <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,150,150)"></circle>
+                    <circle class="c1 sv" cx="150" cy="150" r="140" transform="rotate(-90,150,150)"></circle>
                 </svg>
             </div>
 
@@ -167,20 +232,24 @@
         <section>
             <div class="cbx avg2">
                 <svg>
-                    <rect class="rt1" width="290" height="290" x="5" y="5"></rect>
+                    <rect class="rt1 sv" width="280" height="280" x="10" y="10"></rect>
                 </svg>
             </div>
         </section>
-        <!-- 3. 닥스박스 : 삼각형 -->
+        <!-- 3. 닥스박스 : 다각형(6각형) -->
         <section>
             <div class="cbx avg3">
-                
+                <svg>
+                    <polygon class="pg1 sv" points="150,10 290,100 290,200 150,290 10,200 10,100"></polygon>
+                </svg>
             </div>
         </section>
-        <!-- 4. 완다박스 : 다각형(6각형) -->
+        <!-- 4. 완다박스 : 자유곡선 -->
         <section>
             <div class="cbx avg4">
-                
+                <svg>
+
+                </svg>
             </div>
         </section>
     </div>
