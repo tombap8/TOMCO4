@@ -191,6 +191,79 @@
             또는
             document.getElementsByClassName(클래스명)[2]
 
+            _______________________________
+
+            3. 태그요소 선택법:
+            getElementsByTagName() 메서드
+
+            document.getElementsByTagName(태그명)
+            -> html요소 중 태그요소는 여러개 올 수
+            있으므로 컬렉션집합을 만들어서 관리하기 때문에
+            선택시 순번을 써야함!
+            -> .item(순번) 또는 [순번]
+            -> 순번은 0부터!
+            -> 컬렉션 집합의 개수 : length
+            (컬렉션은 html요소를 모아놓은 메모리공간이다!)
+
+            - 메서드 이름 분석
+            get -> 가져와라
+            Elements -> 요소들을
+            By Tag Name -> 태그 이름에 의한 것으로!
+
+            예)
+            해당태그 중 세번째 것 선택
+            document.getElementsByTagName(태그명).item(2)
+            또는
+            document.getElementsByTagName(태그명)[2]
+
+            ->>> 위의 3가지 기본 선택법은 불편한 점이 많다!
+            예컨데 div>a>span를 선택하게되면
+            document.getElementsByTagName("div").item(0)
+            .getElementsByTagName("a").item(0)
+            .getElementsByTagName("span").item(0)
+            매우길어진다....
+
+            CSS선택자로 선택하는 메서드가 2개 추가된다!
+
+            이 방법으로 쓰면...
+            document.querySelector("div>a>span")
+            ________________________________________
+
+            [ CSS 선택자를 그대로 사용하는 선택법 ]
+
+            1. 하나의 요소 선택법
+            querySelector(CSS선택자)
+
+            -> 선택요소가 여러개여도 처음 만나는 하나의 요소를 선택함!
+            -> 이것은 몇번째라는 부가적인 선택이 불필요!!!
+
+            - 메서드 이름 분석
+            query 쿼리 -> 질의(기술적인 질문,요청)
+            Selector 선택자 -> CSS선택자
+            -> 브라우저에게 CSS 선택자로 질의를 한다!
+            그러면 결과로 요소를 선택한다!
+
+            ______________________________
+
+            2. 여러개의 요소 선택법
+            querySelectorAll(CSS선택자)
+
+            -> 선택시 컬렉션 집합에 결과를 담는다!
+            -> 요소가 아나일 지라도 순번으로 선택한다!
+
+            (1) 순번선택법
+                .item(순번) 또는 [순번]
+                -> 순번은 0부터!
+
+            (2) 선택요소 개수 알아오기 : length
+
+            - 메서드 이름 분석
+            query 쿼리 -> 질의해!
+            Selector -> 선택자로
+            All -> 전부다 가져와!
+            -> 브라우저로 CSS선택자로 질의를 한다!
+            그러면 요소들을 선택한다!
+
 
             ___________________________________________
 
@@ -309,6 +382,10 @@
         
        } //////////// 보여줘 함수 ////////////////
        //////////////////////////////////////////
+
+       /******************************************* 
+       
+       *******************************************/
         
 
     </script>
@@ -341,6 +418,32 @@
             width: 30%;
             vertical-align: middle;
         }
+
+        /* 원모양 */
+        .원이야{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 원모양 개별 셋팅 */
+        .원이야:nth-child(1){
+            right: 400px;
+            background-image: url(./images/01.png);
+        }
+        .원이야:nth-child(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-child(3){
+            background-image: url(./images/03.png);
+        }
     </style>
 </head>
 
@@ -351,6 +454,17 @@
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
+
+    <!-- 원모양 박스 -->
+    <div class="박스야">
+        <!-- 원모양 -->
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+
+        <!-- 사각형으로 변할 원박스 -->
+        <div class="넌뭐냐"></div>
+    </div>
 
 </body>
 
