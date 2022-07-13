@@ -17,13 +17,56 @@
 
         /* 비율유지박스 */
         .rbx {
-            
+            position: relative;
+            /* 비율유지 속박스의 부모자격! */
+            width: 60%;
+            /* height: 50%; */
+
+            background: url(./images/mobum.jpg) no-repeat center/cover;
+
+            margin: 0 auto;
         }
 
+        /* 자식요소 블록박스에 패딩탑%로 주면?
+        -> 부모박스 가로크기에 대한 정확한 비율로 패딩이 생김
+        -> 100%는 부모의 가로크기와 동일함! 1:1
+        -> 직접 블록요소를 넣으면 변경위험이 있으므로
+        가상요소 ::before를 사용하여 블록요소를 대신한다! */
+
+        /* .jasik{
+            padding-top: 100%;
+        } */
+
         /* 비율유지 가상요소 */
+        .rbx::before{
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+            /* 
+                가로 : 세로 = 16 : 9 = 100 : x
+                x = 9 * 100 / 16 = 56.25%
+            */
+        }
+
+        /* 4:3 비율변경 class */
+        .rbx2::before{
+            padding-top: 75%;
+            /* 
+                4 : 3 = 100 : x
+                x = 300 / 4 = 75%
+            */
+        }
         
 
-        /* 비율유지 속박스 */
+        /* 비율유지 속박스
+        -> 비율유지 부모박스 내부에 공간확보! */
+        .rbxIn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
         
 
         /* 내용셋팅 */
@@ -91,18 +134,24 @@
 <body>
     <!-- 비율유지박스 -->
     <div class="rbx">
-        
+        <div class="rbxIn">
+
+            <dl class="cat">
+                <dt>출연진</dt>
+                <dd>이제훈(김도기역)</dd>
+                <dd>이솜(강하나역)</dd>
+                <dd>김의성(장성철역)</dd>
+            </dl>
+
+        </div>
+
+
+        <!-- <div class="jasik"></div> -->
     </div>
     
     
     
     
-    <!-- <dl class="cat">
-        <dt>출연진</dt>
-        <dd>이제훈(김도기역)</dd>
-        <dd>이솜(강하나역)</dd>
-        <dd>김의성(장성철역)</dd>
-    </dl> -->
 
 </body>
 
