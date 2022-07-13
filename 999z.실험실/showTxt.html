@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .txtbx{
+            width: 50%;
+            margin: 0 auto;
+            font-size: 5vw;
+            background-color: rgba(0, 0, 0, 0.418);
+            padding: 50px;
+        }
+        .txtbx ul{
+            display: flex;
+        }
+        .txtbx li{
+            position: relative;
+            width: 50px;
+            text-align: center;
+        }
+        /* 커서가상요소 */
+        .txtbx li:first-child::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #000;
+            opacity: 0;
+        }
+        .txtbx li span{
+            opacity: 0;
+            animation: downTxt .1s 1s forwards;
+        }
+        .txtbx li:nth-child(2) span{
+            animation-delay: 2s;
+        }
+        .txtbx li:nth-child(3) span{
+            animation-delay: 3s;
+        }
+        .txtbx li:nth-child(4) span{
+            animation-delay: 4s;
+        }
+        .txtbx li:first-child::after{
+            animation: 
+            downTxt 0.4s linear infinite alternate,
+            mvTxt 3s linear 1s forwards;
+        }
+       
+        @keyframes downTxt {
+            to{
+                opacity: 1;
+            }
+        }
+        @keyframes mvTxt {
+            0%{
+                left: 0;
+            }
+            33%{
+                left: 0;
+            }
+            33.33%{
+                left: 50px;
+            }
+            66%{
+                left: 50px;
+            }
+            66.66%{
+                left: 100px;
+            }
+            99%{
+                left: 100px;
+            }
+            100%{
+                left: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="txtbx">
+        <h2>I am</h2>
+        <h2>
+            <ul>
+                <li><span>S</span></li>
+                <li><span>h</span></li>
+                <li><span>e</span></li>
+                <li><span>r</span></li>
+            </ul>
+        </h2>
+        <h2>lock</h2>
+    </div>
+    
+</body>
+</html>
