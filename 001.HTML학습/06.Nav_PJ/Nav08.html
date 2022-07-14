@@ -191,36 +191,68 @@
             z-index: 99999;
             width: 70px;
             height: 90vh;
-            border: 3px solid #333;
             border-radius: 7px;
             background-color: #ccc;
         }
 
+       
         /* 햄버거버튼 */
-        #ham {
-            position: fixed;
-        }
-
-        /* 닫기버튼 */
-        #cbtn {
+        .ham {
             position: absolute;
-        }
-
-        /* 버튼공통 */
-        .btns {
-            top: 5vh;
-            right: 3vw;
+            top: 0;
+            left: 0;
             width: 70px;
-            height: 90vh;
-            border-radius: 5px;
-            border: 2px solid #000;
+            height: 100%;
+            border: none;
+            /* button요소는 기본 보더가 있음! */
+            border-radius: 7px;
             background-color: #fff;
             font-size: 50px;
-            line-height: 66px;
+            line-height: 70px;
             padding: 0;
             margin: 0;
             cursor: pointer;
             /* 오버시 손가락모양 */
+            
+            /* 트랜지션: 속시이지 */
+            transition: .2s;
+        }
+        /* 버튼 오버시 스케일변경 */
+        .ham:hover{
+            transform: scale(0.9,0.98);
+        }
+
+        /* 햄버거 막대 */
+        .ham span{
+            position: absolute;
+            left: 30%;
+            display: block;
+            width: 40%;
+            height: 4px;
+            background-color: #000;  
+            border-radius: 2px;          
+        }
+        /* 막대1 */
+        .ham span:first-child{
+            transform: translateY(-4px);
+        }
+        /* 막대2 */
+        .ham span:last-child{
+            transform: translateY(4px);
+        }
+
+
+        /* 메뉴 확장 액션 상태 클래스 */
+        /* 클래스 이름명명법: 기존이름.on */
+        .gbx.on .ham{
+            top: 50%;
+            transform: translateY(-50%) scale(.9);
+            height: 70px;
+            border-radius: 50%;
+        }
+        /* 액션상태에서 햄버거 오버시 */
+        .gbx.on .ham:hover{            
+            transform: translateY(-50%) scale(1);
         }
     </style>
 
@@ -273,12 +305,13 @@
         </ul>
 
     </nav>
-    
+
     <!-- 숨김 네비게이션 박스 -->
     <section class="gbx">
         <!-- 햄버거버튼 -->
         <button class="ham">
-            <span>＝</span>
+            <span></span>
+            <span></span>
         </button>
     </section>
 
