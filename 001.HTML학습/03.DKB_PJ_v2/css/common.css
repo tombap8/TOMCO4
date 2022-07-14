@@ -20,6 +20,9 @@
 
 /* 겉박스 */
 #top{
+  position: relative;
+  /* 부모자격 */
+
   /* 하단 구분선 */
   border-bottom: 1px solid #ccc;
   /* 배경흰색 */
@@ -208,6 +211,35 @@
 /* 상위li에 오버시 가상요소 하단 보더 공통생성 */
 .gnb>ul>li:hover::after{
   border-bottom: 2px solid red;
+}
+
+/* 햄버거버튼 */
+.ham{
+  position: absolute;
+  top: 50%;
+  transform: 
+  translateY(-50%) scaleX(1.3);
+  right: 5vw;
+  border: none;
+  background-color: transparent;
+  font-size: 10vw;
+  padding: 0;
+  margin: 0;
+
+}
+/* 햄거거 가상요소 */
+.ham::before{
+  content: '≡';
+}
+/* GNB메뉴 보이는 상태일때 햄버거버튼 */
+.top.on .ham{
+  transform: 
+  translateY(-50%) scale(1.2);
+  color: #fff;
+  z-index: 9999;
+}
+.top.on .ham::before{
+  content: '×';
 }
 
 /******************* 2. 메인영역 *******************/

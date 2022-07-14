@@ -72,7 +72,7 @@
         min-height: auto;
     }
 
-    /* 7. 사라질요소들 : .tmenu, .gnb, .blink */
+    /* 7. 사라질요소들 : .tmenu, .blink */
     .tmenu, .blink{
         display: none;
     }
@@ -90,6 +90,8 @@
         width: 100vw;
         height: 100vh;
         background-color: #000000b3;
+        /* 처음에 안보임! */
+        display: none;
     }
     .gnb ul{
         /* 세로방향 */
@@ -111,6 +113,14 @@
     /* 상위메뉴 오버시 밑줄없앰! */
     .gnb>ul>li:hover>a{
         border-bottom-color: transparent;
+    }
+    /* 10. 햄버거버튼 보이기 */
+    .ham{
+        display: block;
+    }
+    /* 11. GNB메뉴 보이기 */
+    .top.on .gnb{
+        display: block;
     }
 
 }
