@@ -31,7 +31,34 @@
         /* 포지션이 있어야 z-index적용됨!
         GNB 하위메뉴가 위에 오도록 z-index를 높인다! */
         background-color: lightskyblue;
+        
+        /* 트랜지션:속시이지 */
+        transition: .3s;
       }
+      /* GNB 오버시 배경색 변경 */
+      .gnb:hover{
+        background-color: darkblue;
+      }
+
+      /* GNB 오버시 나올 전체 배경 가상요소 */
+      .gnb::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        /* left,top의 부모는? .gnb */
+        height: 0; /* 170px -> 오버시 */
+        background-color: darkblue;
+
+        /* 트랜지션 */
+        transition: 0.4s;
+      }
+      /* GNB 오버시 가상요소 보이기 */
+      .gnb:hover::after{
+        height: 180px;
+      }
+
       /* ul 초기화 */
       .gnb ul {     
         display: flex;  
@@ -87,9 +114,9 @@
       }
       
       /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
-      .gnb>ul>li:hover>a{
+      .gnb:hover>ul>li>a{
         color: lightskyblue;
-        background-color: darkblue;
+        /* background-color: darkblue; */
       }
 
       /* 상단 메뉴 글자에 밑줄애니 */
@@ -126,6 +153,7 @@
       /* 서브메뉴 */
       .smenu{
         position: absolute;
+        z-index: 1;/* 가상요소 배경보다 위! */
         width: 200px;
         /* 서브메뉴 박스 숨기기 */
         height: 0;/* 1 */
@@ -141,14 +169,11 @@
         /* 트랜지션 */
         transition: .4s;
       }
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번li */
-      .gnb>ul>li:nth-child(2):hover .smenu{
+      /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+      .gnb:hover>ul>li .smenu{
         height: 170px;
       }
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번li */
-      .gnb>ul>li:nth-child(3):hover .smenu{
-        height: 100px;
-      }
+
       /* 서브메뉴 ol */
       .smenu ol{
         padding: 15px;
