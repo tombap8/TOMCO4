@@ -45,6 +45,7 @@
         /* flex 설정 클래스 */
         .fll {
             display: flex;
+            flex-direction: column;
         }
 
         /* body *{
@@ -53,36 +54,17 @@
 
         /* GNB메뉴 */
         .gnb {
-            position: fixed;
-            top: -100%;
-            /* 위에 올라가있음(숨김) */
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000;
-
-            /* 트랜지션: 속시이지 */
-            transition: top 1s ease-in-out;
-
-            z-index: 9999;
-            /* 가장위! */
+            width: 100%;
+            height: 100%;
         }
 
-        /* GNB메뉴 보이게 하는 class */
-        .gnb.on {
-            top: 0;
-        }
-
+        
         .gnb>ul {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             /* 정중앙 위치이동 */
-
-            width: 800px;
-            margin: 0 auto;
-            /* 크기를 가진 블록박스 가로중앙 */
 
             border: 4px dotted rgb(0, 247, 255);
             border-radius: 20px;
@@ -185,7 +167,7 @@
         }
 
         /* 숨김 네이게이션 박스 */
-        .gbx{
+        .gbx {
             position: fixed;
             top: 5vh;
             right: 5vh;
@@ -197,15 +179,19 @@
             /* 트랜지션 */
             transition: .3s;
         }
+
         /* 액션상태일때 가로크기확장! */
-        .gbx.on{
+        .gbx.on {
+            top: 0;
+            right: 0;
             width: 500px;
+            height: 100vh;
             /* 트랜지션 */
             transition: .3s ease-out .2s;
         }
 
 
-       
+
         /* 햄버거버튼 */
         .ham {
             position: absolute;
@@ -223,44 +209,48 @@
             margin: 0;
             cursor: pointer;
             /* 오버시 손가락모양 */
-            
+
             /* 트랜지션: 속시이지 - 돌아올때 */
-            transition: .2s .2s,left .2s;
+            transition: .2s .2s, left .2s;
         }
+
         /* 버튼 오버시 스케일변경 */
-        .ham:hover{
-            transform: scale(0.9,0.98);
+        .ham:hover {
+            transform: scale(0.9, 0.98);
         }
 
         /* 햄버거 막대 */
-        .ham span{
+        .ham span {
             position: absolute;
             left: 30%;
             display: block;
             width: 40%;
             height: 4px;
-            background-color: #000;  
-            border-radius: 2px;   
-            /* 트랜지션 */ 
-            transition: .2s .2s;      
+            background-color: #000;
+            border-radius: 2px;
+            /* 트랜지션 */
+            transition: .2s .2s;
         }
+
         /* 막대1 */
-        .ham span:first-child{
-            transform: translate(1px,-4px);
+        .ham span:first-child {
+            transform: translate(1px, -4px);
         }
+
         /* 막대2 */
-        .ham span:last-child{
-            transform: translate(1px,4px);
+        .ham span:last-child {
+            transform: translate(1px, 4px);
         }
 
         /* 액션상태일때 x버튼으로 변경! */
         /* 막대1 */
-        .gbx.on .ham span:first-child{
-            transform: translate(1px,0) rotate(45deg) scaleX(.8);
+        .gbx.on .ham span:first-child {
+            transform: translate(1px, 0) rotate(45deg) scaleX(.8);
         }
+
         /* 막대2 */
-        .gbx.on .ham span:last-child{
-            transform: translate(1px,0) rotate(-45deg) scaleX(.8);
+        .gbx.on .ham span:last-child {
+            transform: translate(1px, 0) rotate(-45deg) scaleX(.8);
         }
 
 
@@ -268,7 +258,7 @@
 
         /* 메뉴 확장 액션 상태 클래스 */
         /* 클래스 이름명명법: 기존이름.on */
-        .gbx.on .ham{
+        .gbx.on .ham {
             top: 50%;
             left: -50px;
             transform: translateY(-50%) scale(.9);
@@ -276,24 +266,27 @@
             border-radius: 50%;
 
             /* 트랜지션: 속시이지 */
-            transition: .2s,left .2s .2s;
+            transition: .2s, left .2s .2s;
         }
+
         /* 액션상태에서 햄버거 오버시 */
-        .gbx.on .ham:hover{            
+        .gbx.on .ham:hover {
             transform: translateY(-50%) scale(1);
         }
 
         /* 메뉴박스 내부 컨텐츠박스 */
-        .gcont{
+        .gcont {
             position: absolute;
-            top: 20px;
+            top: 10px;
             left: 70px;
-            right: 20px;
-            bottom: 20px;
+            right: 10px;
+            bottom: 10px;
             /* 부모는? .gbx */
             border-radius: 15px;
             background-color: gray;
             box-shadow: inset 20px 20px 50px 30px rgba(0, 0, 0, 0.3);
+            /* 넘치는 자식요소 숨기기 */
+            overflow: hidden;
         }
     </style>
 
@@ -303,71 +296,71 @@
     <h1>유형8.숨긴네비 고정전체창형</h1>
 
     <!-- GNB 네비게이션 -->
-    <nav class="gnb">
-        <ul class="fll">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">웹개발</a>
-                <div class="smenu">
-                    <ol>
-                        <li>
-                            <a href="#">웹디자인</a>
-                        </li>
-                        <li>
-                            <a href="#">HTML5+CSS3</a>
-                        </li>
-                        <li>
-                            <a href="#">jQuery</a>
-                        </li>
-                        <li>
-                            <a href="#">웹+모바일</a>
-                        </li>
-                    </ol>
-                </div>
-            </li>
-            <li>
-                <a href="#">게시판</a>
-                <div class="smenu">
-                    <ol>
-                        <li>
-                            <a href="#">Q&amp;A</a>
-                        </li>
-                        <li>
-                            <a href="#">방명록</a>
-                        </li>
-                    </ol>
-                </div>
-            </li>
-            <li>
-                <a href="#">프로필</a>
-            </li>
-        </ul>
 
-    </nav>
 
     <!-- 숨김 네비게이션 박스 -->
     <section class="gbx">
         <!-- 햄버거버튼 -->
-        <button class="ham">
+        <button class="ham" onclick="document.querySelector('.gbx').classList.toggle('on')">
             <span></span>
             <span></span>
         </button>
         <!-- 컨텐츠박스 -->
         <div class="gcont">
+            <nav class="gnb">
+                <ul class="fll">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">웹개발</a>
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">웹디자인</a>
+                                </li>
+                                <li>
+                                    <a href="#">HTML5+CSS3</a>
+                                </li>
+                                <li>
+                                    <a href="#">jQuery</a>
+                                </li>
+                                <li>
+                                    <a href="#">웹+모바일</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">게시판</a>
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">Q&amp;A</a>
+                                </li>
+                                <li>
+                                    <a href="#">방명록</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">프로필</a>
+                    </li>
+                </ul>
 
+            </nav>
         </div>
     </section>
 
-    <!-- 햄버거버튼 클릭시 .gnb에 .on을 넣기! 
+    <!-- 햄버거버튼 클릭시 .gbx에 .on을 넣기! 
         [ JS코드에 classList 객체사용! ]
         (( classList 메서드 3가지 ))
         1. add(클래스명) - 클래스넣기
         2. remove(클래스명) - 클래스빼기
         3. toggle(클래스명) - 클래스넣기/빼기
     -->
-    
+
 
     <!-- 글자출력 -->
     <h2 class="tit">SHOW ME THE MENU!!!</h2>
