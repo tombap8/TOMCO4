@@ -157,8 +157,17 @@
     /* 서브메뉴 */
     .smenu {
       position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      /* 가로중앙이동 */
       z-index: 1;
       /* li가상요소 앱솔루트 보다 위! */
+
+      /* 크기유지박스 왼쪽 패딩적용 */
+      width: 800px;
+      box-sizing: border-box;
+      padding-left: 80px;
+      /* outline: 1px dotted lime; */
 
       /* 플렉스박스 */
       display: flex;
@@ -178,10 +187,21 @@
       background-color: darkblue;
       border-radius: 0 0 5px 5px;
       color: lightskyblue;
+      text-align: center;
 
       /* 트랜지션 */
       transition: 0.4s;
     }
+
+    /* 두번째 li의 .smenu 배경 이미지 */
+    .gnb>ul>li:nth-child(2) .smenu{
+      background: url(./images/bgi001.jpg) no-repeat right 10px/auto 180px;
+    }
+    /* 세번째 li의 .smenu 배경 이미지 */
+    .gnb>ul>li:nth-child(3) .smenu{
+      background: url(./images/bgi002.jpg) no-repeat right 10px/auto 180px;
+    }
+
 
     /* 상위메뉴 li 오버시 서브메뉴 보이기 */
     .gnb>ul>li:hover .smenu {
@@ -218,11 +238,30 @@
       transition: 0.2s;
     }
 
-    /* 서브메뉴 오버시 */
-    .smenu a:hover {
+    /* 서브메뉴 dd하위 a에 오버시 */
+    .smenu dd a:hover {
       background-color: lightskyblue;
       color: darkblue;
     }
+
+    /* 서브메뉴 하위 디자인 */
+    .smenu dl{
+      width: 120px;
+      margin-left: 30px;
+    }
+    .smenu dt{
+      border-bottom: 1px solid lightskyblue;
+      margin-bottom: 5px;
+    }
+    .smenu dt a{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .smenu dd{
+      margin: 0;
+    }
+
+
 
     /* 본문내용 */
     .cont {
