@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>유형4. 세로네비 서브별 드롭다운 세로형</title>
+    <title>유형5. 세로네비 서브별 드롭다운 사이드형</title>
     <style>
       /* 초기화 */
       html,
@@ -54,6 +54,8 @@
      
       /* 상위li 리스트요소 */
       .gnb>ul>li{
+        position: relative;
+        /* 부모자격 - .smenu */
         width: 200px;
         /* height: 40px; */
         text-align: center;
@@ -131,13 +133,21 @@
 
       /* 서브메뉴 */
       .smenu{
-        /* position: absolute; 
-        -> 앱솔루트가 아니면 자리를 차지한다!
-        서브메뉴가 밀고 나가도록 주석처리! */
+        position: absolute; 
+        top: 0;
+        left: 100%;
+        /* 부모는? 싸고있는 li */
         width: 200px;
+
+        /* 서브메뉴를 디스플레이 none으로
+        숨기고 보일때는 height:0, 숨기기코드가
+        필요없다! */
+        display: none;
+
+
         /* 서브메뉴 박스 숨기기 */
-        height: 0;/* 1 */
-        overflow: hidden;/* 2 */
+        /* height: 0; *//* 1 */
+        /* overflow: hidden; *//* 2 */
         /* 주의사항: 높이값 0으로
         숨기는 박스는 위아래 패딩,보더는
         숨겨지지 않으므로 쓰지 않는다!
@@ -146,17 +156,15 @@
         background-color: darkblue;
         border-radius: 0 0 5px 5px;
 
-        /* 트랜지션 */
-        transition: .4s;
+        /* 트랜지션 -> 불필요! */
+        /* transition: .4s; */
       }
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번li */
-      .gnb>ul>li:nth-child(2):hover .smenu{
-        height: 170px;
+      /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+      .gnb>ul>li:hover .smenu{
+        display: block;
+        /* 한번에 바로 보이기! */
       }
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번li */
-      .gnb>ul>li:nth-child(3):hover .smenu{
-        height: 100px;
-      }
+
       /* 서브메뉴 ol */
       .smenu ol{
         padding: 15px;
@@ -211,7 +219,7 @@
     </style>
   </head>
   <body>
-    <h1>유형4. 세로네비 서브별 드롭다운 세로형</h1>
+    <h1>유형5. 세로네비 서브별 드롭다운 사이드형</h1>
     <div class="wrap">
       <!-- GNB 네비게이션 -->
       <nav class="gnb">
