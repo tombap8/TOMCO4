@@ -79,6 +79,8 @@ body {
 
 /* 캐릭터 이미지박스 */
 .ci{
+   position: relative;
+   /* 부모자격: .ci span */
    /* 트랜지션: 속시이지 */
    transition: .4s ease-in-out;
 }
@@ -95,7 +97,7 @@ body {
 /* 캐릭터 이름이미지 박스 span */
 .ci span{
    position: absolute;
-   bottom: 10%;
+   bottom: 4%;
    width: 100%;
    /* 부모는? .cat */
    display: block;
@@ -144,6 +146,8 @@ body {
    overflow: auto;
    /* 배경: 색이반고윙/크 */
    background: url(../images/eachBG.jpg) no-repeat center/cover;
+   
+   border-radius: 20px 5px 5px 20px;
 
    /* 트랜지션: 속성 시간 이징 지연 */
    transition: height 0.4s ease-out;

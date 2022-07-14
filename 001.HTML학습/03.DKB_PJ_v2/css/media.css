@@ -3,6 +3,68 @@
 
 /************* 1070px 이하 시작 *************/
 @media screen and (max-width: 1070px) {
-    
+    /* 1. 전체 글자크기 조정 (Root변경->rem바뀜!) */
+    html{
+        font-size: 8px;
+    }
+    /* 2. 브랜드 바로가기 없앰 */
+    .brand{
+        display: none;
+    }
+    /* 3. 캐릭터박스 배치 변경! 한줄에 2개씩! */
+    .cat{
+        width: 49%;
+    }
+    /* 4. 컨텐츠 박스  */
+    .cont{
+        padding-top: 70px;
+        padding-bottom: 300px;
+    }
+    /* 5. 캐릭터 박스 오버시 */
+    .cat:hover .ci {
+        margin-top: 0;
+    }
+    /* 6. 3,4번째 캐릭터박스 마진탑 공간확보
+    틸드(~) : 선택요소 뒤의 모든 형제요소 */
+    .cat:nth-child(2)~.cat{
+        margin-top: 250px;
+    }
+    /* 7. 타이틀 글자 */
+    .cd h3{
+        font-size: 3vw;
+    }
+    /* 8. 설명문단 */
+    .cd p{
+        font-size: 2vw;
+    }
 }
 /************* 1070px 이하 끝 *************/
+
+
+
+/************* 870px 이하 시작 *************/
+@media screen and (max-width: 870px) {
+
+    /* 1. 캐릭터 박스 한줄에 하나씩 */
+    .cat{
+        width: 99%;
+    }
+    /* 2. 3,4번 캐릭터박스 마진없앰 */
+    .cat:nth-child(2)~.cat{
+        margin-top: 0;
+    }
+    /* 3. 설명박스 static전환(자리차지) */
+    .cd{
+        position: static;
+    }
+    /* 4. 타이틀 글자 */
+    .cd h3{
+        font-size: 6vw;
+    }
+    /* 5. 설명문단 */
+    .cd p{
+        font-size: 4vw;
+    }
+
+}
+/************* 870px 이하 끝 *************/
