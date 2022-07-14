@@ -27,6 +27,9 @@
       /* GNB메뉴박스 */
       .gnb {
         position: relative;
+        /* 왼쪽부터 시작하도록 크기지정! */
+        width: 200px;
+        height: 800px;
         z-index: 999;
         /* 포지션이 있어야 z-index적용됨!
         GNB 하위메뉴가 위에 오도록 z-index를 높인다! */
@@ -35,8 +38,10 @@
       /* ul 초기화 */
       .gnb ul {     
         display: flex;  
-        width: 800px;
-        margin: 0 auto;
+        /* 수직방향 진행! */
+        flex-direction: column;
+        /* width: 800px; */
+        /* margin: 0 auto; */
         /* outline: 1px solid red; */
       }
       /* 가상요소로 clear설정하기 */
@@ -125,7 +130,9 @@
 
       /* 서브메뉴 */
       .smenu{
-        position: absolute;
+        /* position: absolute; 
+        -> 앱솔루트가 아니면 자리를 차지한다!
+        서브메뉴가 밀고 나가도록 주석처리! */
         width: 200px;
         /* 서브메뉴 박스 숨기기 */
         height: 0;/* 1 */
