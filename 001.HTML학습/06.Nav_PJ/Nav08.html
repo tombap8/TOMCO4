@@ -174,10 +174,11 @@
             transform: translateY(-50%);
             width: 100vw;
             text-align: center;
-            font-size: 7vw;
+            font-size: 15vw;
             white-space: nowrap;
             /* 줄바꿈방지 */
-            color: rgb(255, 0, 191);
+            color: #222;
+            border: none;
 
             margin: 0;
             padding: 0;
@@ -193,7 +194,16 @@
             height: 90vh;
             border-radius: 7px;
             background-color: #ccc;
+            /* 트랜지션 */
+            transition: .3s;
         }
+        /* 액션상태일때 가로크기확장! */
+        .gbx.on{
+            width: 500px;
+            /* 트랜지션 */
+            transition: .3s ease-out .2s;
+        }
+
 
        
         /* 햄버거버튼 */
@@ -214,8 +224,8 @@
             cursor: pointer;
             /* 오버시 손가락모양 */
             
-            /* 트랜지션: 속시이지 */
-            transition: .2s;
+            /* 트랜지션: 속시이지 - 돌아올때 */
+            transition: .2s .2s,left .2s;
         }
         /* 버튼 오버시 스케일변경 */
         .ham:hover{
@@ -232,7 +242,7 @@
             background-color: #000;  
             border-radius: 2px;   
             /* 트랜지션 */ 
-            transition: .2s;      
+            transition: .2s .2s;      
         }
         /* 막대1 */
         .ham span:first-child{
@@ -260,13 +270,30 @@
         /* 클래스 이름명명법: 기존이름.on */
         .gbx.on .ham{
             top: 50%;
+            left: -50px;
             transform: translateY(-50%) scale(.9);
             height: 70px;
             border-radius: 50%;
+
+            /* 트랜지션: 속시이지 */
+            transition: .2s,left .2s .2s;
         }
         /* 액션상태에서 햄버거 오버시 */
         .gbx.on .ham:hover{            
             transform: translateY(-50%) scale(1);
+        }
+
+        /* 메뉴박스 내부 컨텐츠박스 */
+        .gcont{
+            position: absolute;
+            top: 20px;
+            left: 70px;
+            right: 20px;
+            bottom: 20px;
+            /* 부모는? .gbx */
+            border-radius: 15px;
+            background-color: gray;
+            box-shadow: inset 20px 20px 50px 30px rgba(0, 0, 0, 0.3);
         }
     </style>
 
@@ -327,6 +354,10 @@
             <span></span>
             <span></span>
         </button>
+        <!-- 컨텐츠박스 -->
+        <div class="gcont">
+
+        </div>
     </section>
 
     <!-- 햄버거버튼 클릭시 .gnb에 .on을 넣기! 
@@ -339,7 +370,7 @@
     
 
     <!-- 글자출력 -->
-    <h2 class="tit">Show Me The Menu!!!</h2>
+    <h2 class="tit">SHOW ME THE MENU!!!</h2>
 </body>
 
 </html>
