@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>유형7:가로네비 서브없는 디자인형</title>
     <style>
         /* 타이틀 */
-        .tit{
+        .tit {
             text-align: center;
-            background-image: 
-            linear-gradient(45deg,red 10%,green 30%,green 60%,yellow,blue);
+            background-image:
+                linear-gradient(45deg, red 10%, green 30%, green 60%, yellow, blue);
             padding: 10px;
             color: #fff;
         }
 
         /* 원형 그라데이션 연습 */
-        .circ{
+        .circ {
             display: inline-block;
             width: 50px;
             height: 50px;
@@ -23,8 +24,8 @@
             vertical-align: -14px;
 
             /* 원형 그라데이션 */
-            background-image: 
-            radial-gradient(closest-corner at 30px 15px,#fff,blue);
+            background-image:
+                radial-gradient(closest-corner at 30px 15px, #fff, blue);
             /* 
             radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,...);
             - 옵션4가지 : closest-side / farthest-side
@@ -85,67 +86,72 @@
 
              *********************************************/
 
-             /* GNB 최상위박스 */
-             .gnb{
-                 width: 900px;
-                 height: 40px;
-                 margin: 0 auto;
-                 /* outline: 1px dashed gray; */
-             }
-             .gnb ul{
-                 margin: 0;
-                 padding: 0;
-                 list-style: none;
-             }
-             .gnb li{
-                 width: 150px;
-                 height: 40px;
-                 float: left;
-                 /* 크기유지: 보더,패딩포함 */
-                 box-sizing: border-box;
-             }
-             .gnb a{
-                 display: block;
-                 width: 100%;
-                 height: 100%;
-                 text-align: center;
-                 font: 12px/40px Verdana;
-                 text-shadow: 0 -1px 0 #ccc;
+        /* GNB 최상위박스 */
+        .gnb {
+            width: 900px;
+            height: 40px;
+            margin: 0 auto;
+            /* outline: 1px dashed gray; */
+        }
 
-                 /* a요소에서 글자색, 밑줄 설정필수! */
-                 color: #333;
-                 text-decoration: none;
+        .gnb ul {
+            /* 플렉스박스 */
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-                 /* 그라데이션 주기 */
-                 background-image: linear-gradient(to bottom, #6d6d6d, #d6d6d6);
-                 
-             }
-             /* 사이구분선 
+        .gnb li {
+            width: 150px;
+            height: 40px;
+            /* 크기유지: 보더,패딩포함 */
+            box-sizing: border-box;
+        }
+
+        .gnb a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font: 12px/40px Verdana;
+            text-shadow: 0 -1px 0 #ccc;
+
+            /* a요소에서 글자색, 밑줄 설정필수! */
+            color: #333;
+            text-decoration: none;
+
+            /* 그라데이션 주기 */
+            background-image: linear-gradient(to bottom, #6d6d6d, #d6d6d6);
+
+        }
+
+        /* 사이구분선 
              li+li는 앞에 li가 있는 모든 li형제요소 선택 */
-             .gnb li+li{
-                border-left: 1px solid #777;
-             }
-             /* 첫번째 li의 a요소 둥근모서리 */
-             .gnb li:first-child a{
-                 border-radius: 5px 0 0 5px;
-             }
-             /* 마지막번째 li의 a요소 둥근모서리 */
-             .gnb li:last-child a{
-                 border-radius: 0 5px 5px 0;
-             }
+        .gnb li+li {
+            border-left: 1px solid #777;
+        }
 
-             /* 마우스 오버시 a변경 */
-             .gnb li:hover a{
-                 color: #fff;
-                 /* 그라데이션 주기 */
-                 background-image: linear-gradient(to top, #6d6d6d, #d6d6d6);
-                 text-shadow: 0 1px 0 #777;
-             }
+        /* 첫번째 li의 a요소 둥근모서리 */
+        .gnb li:first-child a {
+            border-radius: 5px 0 0 5px;
+        }
 
+        /* 마지막번째 li의 a요소 둥근모서리 */
+        .gnb li:last-child a {
+            border-radius: 0 5px 5px 0;
+        }
 
-
+        /* 마우스 오버시 a변경 */
+        .gnb li:hover a {
+            color: #fff;
+            /* 그라데이션 주기 */
+            background-image: linear-gradient(to top, #6d6d6d, #d6d6d6);
+            text-shadow: 0 1px 0 #777;
+        }
     </style>
 </head>
+
 <body>
     <h1 class="tit">
         <span class="circ"></span>
@@ -174,6 +180,7 @@
             </li>
         </ul>
     </div>
-    
+
 </body>
+
 </html>
