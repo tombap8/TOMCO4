@@ -230,16 +230,30 @@
             width: 40%;
             height: 4px;
             background-color: #000;  
-            border-radius: 2px;          
+            border-radius: 2px;   
+            /* 트랜지션 */ 
+            transition: .2s;      
         }
         /* 막대1 */
         .ham span:first-child{
-            transform: translateY(-4px);
+            transform: translate(1px,-4px);
         }
         /* 막대2 */
         .ham span:last-child{
-            transform: translateY(4px);
+            transform: translate(1px,4px);
         }
+
+        /* 액션상태일때 x버튼으로 변경! */
+        /* 막대1 */
+        .gbx.on .ham span:first-child{
+            transform: translate(1px,0) rotate(45deg) scaleX(.8);
+        }
+        /* 막대2 */
+        .gbx.on .ham span:last-child{
+            transform: translate(1px,0) rotate(-45deg) scaleX(.8);
+        }
+
+
 
 
         /* 메뉴 확장 액션 상태 클래스 */
