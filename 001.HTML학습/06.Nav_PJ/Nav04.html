@@ -34,6 +34,7 @@
         /* 포지션이 있어야 z-index적용됨!
         GNB 하위메뉴가 위에 오도록 z-index를 높인다! */
         background-color: lightskyblue;
+        padding-top: 30px;
       }
       /* ul 초기화 */
       .gnb ul {     
@@ -185,10 +186,19 @@
         color: darkblue;
       }
       
+      /* 전체 컨텐츠 랩핑박스 */
+      .wrap{
+        /* 플렉스박스 */
+        display: flex;
+      }
 
       /* 본문내용 */
       .cont {
         position: relative;
+        width: calc(100% - 200px);
+        /* 가로크기를 채울때 특정px을 뺀 나머지 %만들기는
+        calc() 함수로 계산한다! */
+        
         /* 하위 박스가 포지션이 있으면 나중에 그린박스가
         윗박스보다 위에 올라온다! 따라서 메뉴박스가 위에 오도록
         z-index를 상위박스에서 높여줘야 하위메뉴가 밑에 깔리지 않는다! */
@@ -200,53 +210,54 @@
   </head>
   <body>
     <h1>유형4. 세로네비 서브별 드롭다운 세로형</h1>
-    <!-- GNB 네비게이션 -->
-    <nav class="gnb">
-      <ul>
-        <li>
-          <a href="#"><span>Home</span></a>
-        </li>
-        <li>
-          <a href="#"><span>웹개발</span></a>
-          <!-- 서브메뉴 -->
-          <div class="smenu">
-            <ol>
-              <li>
-                <a href="#">웹디자인</a>
-              </li>
-              <li>
-                <a href="#">HTML5+CSS3</a>
-              </li>
-              <li>
-                <a href="#">jQuery</a>
-              </li>
-              <li>
-                <a href="#">웹+모바일</a>
-              </li>
-            </ol>
-          </div>
-        </li>
-        <li>
-          <a href="#"><span>게시판</span></a>
-          <!-- 서브메뉴 -->
-          <div class="smenu">
-            <ol>
-              <li>
-                <a href="#">Q&amp;A</a>
-              </li>
-              <li>
-                <a href="#">방명록</a>
-              </li>
-            </ol>
-          </div>
-        </li>
-        <li>
-          <a href="#"><span>프로필</span></a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- 내용박스 -->
-    <div class="cont">본문내용</div>
+    <div class="wrap">
+      <!-- GNB 네비게이션 -->
+      <nav class="gnb">
+        <ul>
+          <li>
+            <a href="#"><span>Home</span></a>
+          </li>
+          <li>
+            <a href="#"><span>웹개발</span></a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">웹디자인</a>
+                </li>
+                <li>
+                  <a href="#">HTML5+CSS3</a>
+                </li>
+                <li>
+                  <a href="#">jQuery</a>
+                </li>
+                <li>
+                  <a href="#">웹+모바일</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#"><span>게시판</span></a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">Q&amp;A</a>
+                </li>
+                <li>
+                  <a href="#">방명록</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#"><span>프로필</span></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 내용박스 -->
+      <div class="cont">본문내용</div>
+    </div>
   </body>
 </html>
