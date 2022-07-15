@@ -5,30 +5,32 @@
 @import url(reset.css);
 @import url(core.css);
 
-body{
+body {
     background-color: #000;
 }
 
 /* 공사중표시 */
-body *{
+body * {
     outline: 1px dotted lime;
 }
 
 /* 공통클래스 */
-.ibx{
+.ibx {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /***************** 1. 상단영역 *****************/
 /* 속박스 */
-.top{
+.top {
     position: relative;
     /* 부모자격 - .gnb */
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
+
 /* 1-1.로고 */
-.tit{
+.tit {
     font-family: 'Jua', sans-serif;
     color: aquamarine;
     font-size: 40px;
@@ -40,26 +42,31 @@ body *{
     /* 애니메이션: 이시이지반방마 */
     animation: titAni .5s ease-in infinite alternate;
 }
+
 /* 타이틀 글로우 효과 애니메이션 키프레임 */
 @keyframes titAni {
-    to{
+    to {
         text-shadow: 0 0 12px aquamarine;
     }
-} /* 키프레임 */
+}
+
+/* 키프레임 */
 
 /* 1-2.GNB메뉴 */
-.gnb{
+.gnb {
     position: absolute;
     bottom: 5px;
     right: 15px;
     /* 부모는? .top */
 }
+
 /* GNB ul */
-.glist{
+.glist {
     display: flex;
 }
+
 /* GNB li 리스트 */
-.glist>li{
+.glist>li {
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
@@ -70,15 +77,16 @@ body *{
 
 /***************** 2. 메인영역 *****************/
 /* 속박스 */
-.cont{
+.cont {
     position: relative;
     /* 부모자격 */
     /* height: 788px; 
     -> 비율유지박스 높이값 불필요! */
     background: url(../images/bg.jpg) no-repeat top/100%;
 }
+
 /* 비율유지 가상요소 */
-.cont::before{
+.cont::before {
     content: '';
     display: block;
     padding-top: 65.66%;
@@ -93,8 +101,9 @@ body *{
       = 65.66%    
     */
 }
+
 /* 2-1. 스크린박스 */
-#screen{
+#screen {
     position: absolute;
     top: 17.3%;
     left: 21.4%;
@@ -103,14 +112,16 @@ body *{
     /* 부모는? .cont */
     background-color: #000;
 }
+
 /* 유튜브 아이프레임 */
-#screen iframe{
+#screen iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
+
 /* 2-2. 예고편 선택메뉴 */
-.mlist{
+.mlist {
     position: absolute;
     width: 54%;
     /* 비율유지박스 자식으로 %설정! */
@@ -119,31 +130,73 @@ body *{
     transform: translateX(-50%);
     /* 가로정중앙이동 */
 }
+
 /* 예고편 ul */
-.mlist ul{
+.mlist ul {
     display: flex;
 }
+
 /* 예고편 li */
-.mlist>ul>li{
+.mlist>ul>li {
+    position: relative;
+    /* 부모자격! */
+
     /* 플렉스 자식요소 flex속성으로 등분할 설정! */
     flex: 1;
     /* width: 99px;
     height: 140px; */
 }
+
 /* 두번째 li부터 끝까지만 왼쪽마진! */
-.mlist>ul>li+li{
+.mlist>ul>li+li {
     margin-left: 10px;
 }
+
 /* 포스터 이미지 */
-.mlist img{
+.mlist img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     /* 이미지를 비율유지하여 박스에 채움 */
 }
 
+/* 영화정보박스 */
+.movtxt {
+    /* 수직방향 플렉스박스로 중앙정렬! */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    top: 100%;
+    /* 높이값만큼 내려가 있음! */
+    width: 100%;
+    height: 100%;
+    /* 부모는? 싸고있는 li */
+
+    /* 반투명배경색 */
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: min(1.3vw, 14px);
+    /* 글자최대크기 14px, 보이는 가로크기의 1.3% */
+    line-height: 2;
+    text-align: center;
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child {
+    color: aqua;
+    font-size: min(1.5vw, 17px);
+    /* 최대 17px, 화면가로의 1.5% */
+    letter-spacing: -1px;
+}
+
 /***************** 3. 하단영역 *****************/
 /* 속박스 */
-.info{
+.info {
     height: 100px;
 }
