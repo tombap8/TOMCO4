@@ -112,7 +112,9 @@ body *{
 /* 2-2. 예고편 선택메뉴 */
 .mlist{
     position: absolute;
-    bottom: 10px;
+    width: 54%;
+    /* 비율유지박스 자식으로 %설정! */
+    bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
     /* 가로정중앙이동 */
@@ -123,8 +125,10 @@ body *{
 }
 /* 예고편 li */
 .mlist>ul>li{
-    width: 99px;
-    height: 140px;
+    /* 플렉스 자식요소 flex속성으로 등분할 설정! */
+    flex: 1;
+    /* width: 99px;
+    height: 140px; */
 }
 /* 두번째 li부터 끝까지만 왼쪽마진! */
 .mlist>ul>li+li{
