@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>양쪽 사이드 반투명 흐림효과</title>
+    
     <style>
         html,body{
-            ++++++++++++++++++++++++++++++++++++++++                            
+            margin: 0;
+            padding: 0;                           
+        }
+        body{
+            background-color: #000;
+        }
+        #cont{
+            position: relative;
+            overflow: hidden;
+        }
+        .cont{
+            max-width: 1440px;
+            margin: 0 auto;
+            outline: 1px dashed red;
+        }
+        .cont img{
+            position: relative;
+            left: -200px;
+        }
+        /* 가상요소로 반투명막 만들기 */
+        .cont::before,.cont::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc((100% - 1440px)/2);
+            height: 100%;
+            background-color: #fff;
+            opacity: 0.5;
+            z-index: 99;
+        }
+        .cont::after{
+            left: auto;
+            right: 0;
         }
     </style>
 </head>
