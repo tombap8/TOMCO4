@@ -22,6 +22,8 @@ body *{
 /***************** 1. 상단영역 *****************/
 /* 속박스 */
 .top{
+    position: relative;
+    /* 부모자격 - .gnb */
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -45,14 +47,46 @@ body *{
     }
 } /* 키프레임 */
 
+/* 1-2.GNB메뉴 */
+.gnb{
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    /* 부모는? .top */
+}
+/* GNB ul */
+.glist{
+    display: flex;
+}
+/* GNB li 리스트 */
+.glist>li{
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+
 
 
 /***************** 2. 메인영역 *****************/
 /* 속박스 */
 .cont{
+    position: relative;
+    /* 부모자격 */
     height: 788px;
     background: url(../images/bg.jpg) no-repeat top/100%;
 }
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 17.3%;
+    left: 21.4%;
+    width: 58.4%;
+    height: 50.3%;
+    /* 부모는? .cont */
+    background-color: #f00;
+}
+
 /***************** 3. 하단영역 *****************/
 /* 속박스 */
 .info{
