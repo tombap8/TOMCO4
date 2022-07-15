@@ -73,8 +73,25 @@ body *{
 .cont{
     position: relative;
     /* 부모자격 */
-    height: 788px;
+    /* height: 788px; 
+    -> 비율유지박스 높이값 불필요! */
     background: url(../images/bg.jpg) no-repeat top/100%;
+}
+/* 비율유지 가상요소 */
+.cont::before{
+    content: '';
+    display: block;
+    padding-top: 65.66%;
+    /* 블록자식요소의 패딩탑을 %로 주면
+    부모박스 가로크기에 대한 비가 성립한다!
+    100%는 1:1비율! 
+    
+    [ 비율계산하기! ]
+    이미지 비율로 박스 비율을 적용함!
+    1200px : 788px = 100 : x
+    x = 788px * 100% / 1200px
+      = 65.66%    
+    */
 }
 /* 2-1. 스크린박스 */
 #screen{
@@ -82,9 +99,9 @@ body *{
     top: 17.3%;
     left: 21.4%;
     width: 58.4%;
-    height: 50.3%;
+    height: 50.4%;
     /* 부모는? .cont */
-    background-color: #f00;
+    background-color: #000;
 }
 
 /***************** 3. 하단영역 *****************/
