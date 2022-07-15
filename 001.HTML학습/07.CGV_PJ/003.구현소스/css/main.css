@@ -10,9 +10,9 @@ body {
 }
 
 /* 공사중표시 */
-body * {
+/* body * {
     outline: 1px dotted lime;
-}
+} */
 
 /* 공통클래스 */
 .ibx {
@@ -214,5 +214,62 @@ body * {
 /***************** 3. 하단영역 *****************/
 /* 속박스 */
 .info {
+    position: relative;
+    /* 부모자격 - .sns */
     height: 100px;
+}
+
+/* 3-1.회사정보 */
+.info address{
+    color: #c3c3c3;
+    font-style: normal;
+    /* address 기본 이탤릭해제 */
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+/* 하단로고 이미지 */
+.info img{
+    float: left;
+    /* 이미지 자신은 왼쪽, 글자는 오른쪽 */
+    margin-right: 20px;
+}
+
+/* 3-2. sns 박스 */
+.sns{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+
+    /* 플렉스박스 */
+    display: flex;
+}
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat;
+    margin: 0 2px;
+    /* 필터: 흑백적용 */
+    filter: grayscale(100%);
+    /* 손가락모양 */
+    cursor: pointer;
+}
+/* 오버시칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
+}
+/* 페이스북 */
+.sns li:first-child{
+    background-position: -509px -428px;
+}
+/* 트위터 */
+.sns li:nth-child(2){
+    background-position: -550px -428px;
+}
+/* 인스타그램 */
+.sns li:last-child{
+    background-position: -592px -428px;
 }
