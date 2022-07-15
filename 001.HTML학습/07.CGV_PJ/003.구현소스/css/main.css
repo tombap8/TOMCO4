@@ -109,6 +109,34 @@ body *{
     height: 100%;
     border: none;
 }
+/* 2-2. 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 가로정중앙이동 */
+}
+/* 예고편 ul */
+.mlist ul{
+    display: flex;
+}
+/* 예고편 li */
+.mlist>ul>li{
+    width: 99px;
+    height: 140px;
+}
+/* 두번째 li부터 끝까지만 왼쪽마진! */
+.mlist>ul>li+li{
+    margin-left: 10px;
+}
+/* 포스터 이미지 */
+.mlist img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지를 비율유지하여 박스에 채움 */
+}
 
 /***************** 3. 하단영역 *****************/
 /* 속박스 */
