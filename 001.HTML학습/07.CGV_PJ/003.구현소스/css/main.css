@@ -140,11 +140,19 @@ body * {
 .mlist>ul>li {
     position: relative;
     /* 부모자격! */
+    overflow: hidden;
+    /* 부모자격이 있는 요소에서 숨기기가 적용됨
+    중간에 자격이 없으면 숨기기줘도 소용없음! */
 
     /* 플렉스 자식요소 flex속성으로 등분할 설정! */
     flex: 1;
     /* width: 99px;
     height: 140px; */
+}
+
+/* 오버시 아웃라인 보이기 */
+.mlist>ul>li:hover{
+    outline: 1px solid aqua;
 }
 
 /* 두번째 li부터 끝까지만 왼쪽마진! */
@@ -185,6 +193,14 @@ body * {
     text-align: center;
     /* 줄바꿈방지 */
     white-space: nowrap;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .3s ease-out;
+}
+
+/* 오버시 영화정보 보이기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
 }
 
 /* 첫번째 li 영화제목 */
