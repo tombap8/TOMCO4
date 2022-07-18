@@ -55,7 +55,7 @@ body {
 /* 1-2.GNB메뉴 */
 .gnb {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 15px;
     /* 부모는? .top */
     z-index: 999;
@@ -74,6 +74,8 @@ body {
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
+    padding-bottom: 5px;
+    /* 서브메뉴와 이어지게 하단공간 확장! */
 }
 /* GNB 서브메뉴 */
 .smenu{
@@ -136,6 +138,21 @@ body {
 /* "영화" 하위메뉴 이모지 */
 .glist>li:nth-child(1) .smenu li a:hover::after{
     content: '😍';
+    float: right;
+}
+/* "예매" 하위메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🎬';
+    float: right;
+}
+/* "극장" 하위메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '📣';
+    float: right;
+}
+/* "이벤트&컬처" 하위메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '🍋';
     float: right;
 }
 
