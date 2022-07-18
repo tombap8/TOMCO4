@@ -58,6 +58,8 @@ body {
     bottom: 5px;
     right: 15px;
     /* 부모는? .top */
+    z-index: 999;
+    /* 메인영역보다 위! */
 }
 
 /* GNB ul */
@@ -70,6 +72,10 @@ body {
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
+}
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
 }
 
 
