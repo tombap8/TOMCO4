@@ -44,6 +44,52 @@
             height: 280px;
             background:url(./images/seashore.jpg) no-repeat center/auto 100%;
             margin: 0 auto;
+
+            /* 
+                [ 3D 원근설정 ]
+                1. 셋팅위치: 3D원근 설정을 할 대상의 부모요소
+                2. 설정방법:
+                perspective: 수치;
+                - 수치는 px단위로 기준선에서 소실점까지의 거리
+                - 숫자가 크면 소실점이 멀리 있으므로 각도가 작음
+            */
+            perspective: 480px;
+            /* perspective-origin: center; */
+            /* 
+                [ 뷰포인트(관찰자위치) 변경옵션 ]
+                perspective-origin: 가로축 세로축;
+                - 가로축: left, center, right, px, % 등 단위
+                - 세로축: top, center, bottom, px, % 등 단위
+                -> 기본값은 center (정중앙)
+            */
+        }
+        /* 문짝 */
+        .door{
+            position: relative;
+            /* 부모자격 */
+            width: 150px;
+            height: 280px;
+            background-color: #c90;
+
+            /*  Y축회전 */
+            transform: rotateY(60deg);
+            transform-origin: left;
+            /* 트랜스폼 축변경
+                transform-origin: 가로축 세로축;
+                - 가로축: left, center, right, px, % 등 단위
+                - 세로축: top, center, bottom, px, % 등 단위
+                -> 기본값은 center (정중앙)
+            */
+        }
+        /* 손잡이 */
+        .handle{
+            position: absolute;
+            top: 140px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: blue;
         }
 
 
