@@ -161,6 +161,33 @@ body {
     border-top: 1px solid #ccc;
 }
 
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+/* 영사기 이미지 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 빔박스 보다 위!
+    포지션이 static이 아니여야 적용됨! */
+    width: 50px;
+}
+/* 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 9px;
+    width: 200px;
+    height: 70px;
+    outline: 1px dotted yellow;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+}
+
 
 
 
