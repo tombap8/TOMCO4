@@ -69,6 +69,8 @@ body {
 
 /* GNB li 리스트 */
 .glist>li {
+    position: relative;
+    /* 부모자격 - .smenu */
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
@@ -76,6 +78,40 @@ body {
 /* GNB 서브메뉴 */
 .smenu{
     position: absolute;
+    left: 50%;
+    /* 부모는? 싸고있는 li */
+    transform: translateX(-50%);
+    /* 가로방향 중앙이동 */
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* 삼각형만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid red;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
 }
 
 
