@@ -64,6 +64,9 @@ body {
 
 /* GNB ul */
 .glist {
+    position: relative;
+    z-index: 1;
+    /* 영사기 보다 위! */
     display: flex;
 }
 
@@ -164,8 +167,8 @@ body {
 /* 영사기박스 */
 #cam{
     position: absolute;
-    bottom: 0;
-    right: -50px;
+    bottom: -9px;
+    right: -61px;
 }
 /* 영사기 이미지 */
 #cam img{
@@ -174,18 +177,39 @@ body {
     /* 빔박스 보다 위!
     포지션이 static이 아니여야 적용됨! */
     width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 트랜지션: 속시이지 - 돌아올때 0.3초 지연 */
+    transition: .5s ease-out .3s;
+}
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시엔 트랜지션 지연시간 없음! */
+    transition-delay: 0s;
 }
 /* 빔박스 */
 .beam{
     position: absolute;
     top: -16px;
     right: 9px;
-    width: 200px;
+    width: 0;/* 200px;-> 오버시 */
     height: 70px;
-    outline: 1px dotted yellow;
+    /* outline: 1px dotted yellow; */
     background: url(../images/bim.png) no-repeat;
     background-position: right center;
     background-size: auto 100%;
+
+    /* 트랜지션: 속시이지 */
+    transition: width .3s linear;
+    /* linear 등속도 */
+}
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 트랜지션 지연시간 셋팅 */
+    transition-delay: .5s;
 }
 
 
