@@ -285,6 +285,8 @@ body {
 /* 예고편 ul */
 .mlist ul {
     display: flex;
+    /* 원근설정 */
+    perspective: 480px;
 }
 
 /* 예고편 li */
@@ -299,11 +301,22 @@ body {
     flex: 1;
     /* width: 99px;
     height: 140px; */
+
+    /* x축회전 */
+    transform: rotateX(30deg);
+    /* 회전축변경 */
+    transform-origin: bottom;
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
 }
+
 
 /* 오버시 아웃라인 보이기 */
 .mlist>ul>li:hover{
     outline: 1px solid aqua;
+    /* x축회전: 일어나! */
+    transform: rotateX(0deg);
+    z-index: 1;
 }
 
 /* 두번째 li부터 끝까지만 왼쪽마진! */
