@@ -210,7 +210,18 @@ body {
     width: 200px;
     /* 트랜지션 지연시간 셋팅 */
     transition-delay: .5s;
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni .04s linear infinite alternate;
 }
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+} /* 키프레임 */
 
 
 
@@ -350,6 +361,34 @@ body {
     /* 최대 17px, 화면가로의 1.5% */
     letter-spacing: -1px;
 }
+
+/* 영화보러 가는 길 애니박스 */
+.goMV{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 80px;
+    /* outline: 1px dashed yellow; */
+}
+/* 글자커버 */
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/curtain.jpg) no-repeat;
+    
+    /* 글자설정 */
+    font-family: 'Cute Font', cursive;
+    color: #fff;
+    font-size: 20px;
+    line-height: 80px;
+    text-align: center;
+
+}
+
 
 /***************** 3. 하단영역 *****************/
 /* 속박스 */
