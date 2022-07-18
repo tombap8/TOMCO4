@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html{
+        html {
             font-size: 10px;
         }
-        html,body{
+
+        html,
+        body {
             margin: 0;
             padding: 0;
 
         }
-        body *{
+
+        body * {
             outline: 1px dashed gray;
         }
-        .wrap{
+
+        .wrap {
             position: relative;
             height: 200px;
         }
-        .tg{
+
+        .tg {
             position: absolute;
             top: 2rem;
             left: 2rem;
             font-size: 30rem;
         }
-        .tg span{
+
+        .tg::before {
+            content: '';
+            display: block;
+            margin-top: -10rem;
+        }
+
+        .tg span {
             vertical-align: top;
         }
-ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+
+        .my {
+            font-size: 250px;
+            font-family: Verdana;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="wrap">
-        <div class="tg">
+        <span class="tg">
             ss
-        </div>
+        </span>
     </div>
-    
+    <div class="my">
+        ss
+    </div>
+
 </body>
+
 </html>
