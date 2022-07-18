@@ -87,6 +87,14 @@ body {
     padding: 3px;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
+
+    /* 처음에 안보임 */
+    display: none;
+
+}
+/* 상위메뉴 오버시 서브메뉴 보임 */
+.glist>li:hover .smenu{
+    display: block;
 }
 /* 가상요소로 서브메뉴 삼각형 만들기 */
 .smenu::before{
@@ -129,6 +137,11 @@ body {
 .glist>li:nth-child(1) .smenu li a:hover::after{
     content: '😍';
     float: right;
+}
+
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
 }
 
 
