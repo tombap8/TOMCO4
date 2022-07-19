@@ -134,6 +134,16 @@
         overflow: hidden;
     }
 
+    /* 14. 도깨비 문구 없앰 */
+    .dtxt{
+        display: none;
+    }
+
+    /* 15. 배경이미지 타이틀 없애기 */
+    body {
+        background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    }
+
 
 }
 /************* 870px 이하 끝 *************/

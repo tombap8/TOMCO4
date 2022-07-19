@@ -19,7 +19,28 @@ body {
    가로크기 10% 세로크기 auto(생략) */
 }
 
-/* 메인영역 */
+/* body의 가상요소로 인트로 애니동안 화면가리기 */
+body::after{
+   content: '';
+   display: block;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 99999999;
+   /* background-color: #f00; */
+   /* 애니메이션 */
+   animation: delCover .1s 6s forwards;
+}
+/* 가림막 사라지기 애니 키프레임 */
+@keyframes delCover {
+   to{
+      height: 0;
+   }
+} /* 키프레임 */
+
+/********************* 메인영역 *********************/
 .cont {
    padding-top: 500px;
    /* 상단패딩: 첫번째 요소 위치밀기의 기본!
@@ -52,6 +73,41 @@ body {
    display: block;
    clear: both;
 }
+
+/* 드라마 문구 이미지박스 */
+.dtxt{
+   position: absolute;
+   top: 20vh;
+   right: 0;
+   /* 부모는? 보이는화면*/
+   width: 400px;
+   height: 400px;
+   overflow: hidden;
+
+   /* outline: 2px dotted blue; */
+}
+/* 드라마 문구 이미지 */
+#dtxt{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   /* 부모는? .dtxt*/
+   width: 300px;
+
+   /* 투명도 */
+   opacity: 0;
+
+   /* 애니메이션 */
+   animation: dtxtAni 3s ease-in-out forwards;
+}
+/* 드라마 텍스트 키프레임 */
+@keyframes dtxtAni {
+   to{
+      top: 0;
+      left: 0;
+      opacity: 1;
+   }
+} /* 키프레임 */
 
 /* 캐릭터 개별박스 공통 */
 .cat {
