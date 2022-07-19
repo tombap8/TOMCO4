@@ -1,205 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS3-1. 제어문 - if문, switch case문, for문, while문</title>
     <script>
-      // 함수는 코드 저장소! - 호출시에 실행!
-      /********************************************* 
-            함수명: jumsu
-            기능: 점수에 따른 평가출력하기
-       *********************************************/
-      function jumsu() {
-        // 1. 함수호출확인!
-        console.log("점수요~!");
+        // 함수는 코드 저장소! - 호출시에 실행!
+        /********************************************* 
+              함수명: jumsu
+              기능: 점수에 따른 평가출력하기
+         *********************************************/
+        function jumsu() {
+            // 1. 함수호출확인!
+            console.log("점수요~!");
 
-        // 2. 대상선정
-        // 2-1. 점수입력요소 : input#jumsu
-        var jumsu = document.getElementById("jumsu");
+            // 2. 대상선정
+            // 2-1. 점수입력요소 : input#jumsu
+            var jumsu = document.getElementById("jumsu");
 
-        // 2-2. 출력요소 : #jexp
-        var jexp = document.querySelector("#jexp");
+            // 2-2. 출력요소 : #jexp
+            var jexp = document.querySelector("#jexp");
 
-        // 2-3. 칭찬스티커 : #jshow
-        var jshow = document.querySelector("#jshow");
+            // 2-3. 칭찬스티커 : #jshow
+            var jshow = document.querySelector("#jshow");
 
-        // 입력값 읽어오기
-        var score = jumsu.value;
-        // value - 입력된 값 속성
+            // 입력값 읽어오기
+            var score = jumsu.value;
+            // value - 입력된 값 속성
 
-        console.log("입력된값:", score);
+            console.log("입력된값:", score);
 
-        /*/////////////////////////////////////// 
-        ///// 2.5-1. 숫자여부 판별하기  //////////
-        ///////////////////////////////////////*/
+            //// 숫자여부 판별 및 숫자범위 판별 공통코드 함수 ///
+            // 변수에 이름없는 함수를 넣어서 코드를 저장할 수 있다!
+            // 이것도 함수다!!!
 
-        // 숫자여부 판별 JS내장함수 : isNaN(값)
-        // is Not a Number? 숫자가 아니니?
-        // 만약 숫자가 아니면 true
-        // 결과를 true / false 로 리턴해준다!
+            /*//////////////////////////////// 
+                함수명: cFn
+                기능: 각 요소값 초기화
+            */////////////////////////////////
+            var cFn = function () {
+                // 2. 글자색 초기화
+                jexp.style.color = "#000";
 
-        console.log("숫자가 아니니? ", isNaN(score));
+                // 3. 칭찬스티커 초기화
+                jshow.style.backgroundPosition = "322px 0";
 
-        if (isNaN(score)) {
-          // 1. 숫자가 아닐 경우 메시지 출력
-          jexp.innerText = "숫자를 입력하세요!";
+                // 4. 입력창에 내용지우기
+                jumsu.value = ""; // 빈문자값을 넣으면 지워짐!
 
-          // 2. 글자색 초기화
-          jexp.style.color = "#000";
+                // 5. 입력창에 포커스 주기(버튼클릭한 경우)
+                jumsu.focus();
+                // focus() JS내장함수는 입력창에 커서가 감!
+            }; /////////// cFn함수 ///////////////
 
-          // 3. 칭찬스티커 초기화
-          jshow.style.backgroundPosition = "322px 0";
+            /*/////////////////////////////////////// 
+            ///// 2.5-1. 숫자여부 판별하기  //////////
+            ///////////////////////////////////////*/
 
-          // 4. 입력창에 내용지우기
-          jumsu.value = ""; // 빈문자값을 넣으면 지워짐!
+            // 숫자여부 판별 JS내장함수 : isNaN(값)
+            // is Not a Number? 숫자가 아니니?
+            // 만약 숫자가 아니면 true
+            // 결과를 true / false 로 리턴해준다!
 
-          // 5. 입력창에 포커스 주기(버튼클릭한 경우)
-          jumsu.focus();
-          // focus() JS내장함수는 입력창에 커서가 감!
+            console.log("숫자가 아니니? ", isNaN(score));
 
-          // 만약 숫자가 아니면 더이상
-          // 아래쪽 코드가 실행되지 않도록
-          // 여기서 함수를 빠져나가게 함!!!
-          return;
-          // 리턴 키워드를 만나는 순간
-          // 함수를 빠져나간다!
-          // 참고) 리턴 뒤에 어떤값을 가지고 나갈 수 있음!
-        } ////////// if /////////
+            if (isNaN(score)) {
+                // 1. 숫자가 아닐 경우 메시지 출력
+                jexp.innerText = "숫자를 입력하세요!";
 
-        // 평가변수
-        var msg;
-        // 색상변수
-        var jc;
-        // 칭찬스티커 위치변수
-        var bgp;
+                // 2. 초기화함수 호출!
+                cFn();
 
-        // 3. 점수환산하기 /////////
-        if (score >= 90) {
-          msg = "매우잘함";
-          jc = "blue";
-          bgp = "0 0";
-        } else if (score >= 80) {
-          msg = "잘함";
-          jc = "green";
-          bgp = "-322px 0";
-        } else if (score >= 70) {
-          msg = "보통";
-          jc = "purple";
-          bgp = "-322px -322px";
-        } else if (score >= 60) {
-          msg = "노력요함";
-          jc = "orange";
-          bgp = "0 -644px";
-        } else {
-          msg = "재시험";
-          jc = "red";
-          bgp = "-644px -644px";
-        }
+                // 만약 숫자가 아니면 더이상
+                // 아래쪽 코드가 실행되지 않도록
+                // 여기서 함수를 빠져나가게 함!!!
+                return;
+                // 리턴 키워드를 만나는 순간
+                // 함수를 빠져나간다!
+                // 참고) 리턴 뒤에 어떤값을 가지고 나갈 수 있음!
+            } ////////// if /////////
 
-        // 할당된 변수값 확인!
-        console.log("msg:", msg, "\njc:", jc, "\nbgp:", bgp);
-        // 역슬래쉬n(\n) -> 줄바꿈
+            /*/////////////////////////////////////// 
+            ///// 2.5-2. 숫자범위 판별하기  //////////
+            ///////////////////////////////////////*/
 
-        // 4. 화면출력
-        jexp.innerText = "평가결과는 " + msg;
+            // 0~100 사이수가 아닌 경우 걸러냄!
+            // 조건: 0미만 이거나 100초과인 경우
+            else if (score < 0 || score > 100) {
+                // 1. 범위바깥일 경우 메시지 출력
+                jexp.innerText =
+                    "0이상 100이하의 숫자만 입력하세요!";
 
-        // 5. 글자색변경
-        jexp.style.color = jc;
+                 // 2. 초기화함수 호출!
+                 cFn();
 
-        // 6. 칭찬스티커 배경위치변경
-        jshow.style.backgroundPosition = bgp;
-      } //////////////// jumsu 함수 //////////////////
-      ////////////////////////////////////////////////
+                // 함수빠져나가기! 리턴!!!
+                return;
+            } ////////// else if ////////////////////
 
-      /********************************************** 
-        [ if문 ]
-        - 조건문을 검사하여 true이면
-        중괄호안의 코드가 실행되는 제어문
 
-        - 조건문이란 결과가 true / false 로 나오는 구문
-        - 보통 비교연산자나 논리연산자가 사용된다!
 
-        ((구문))
-        _______________________
+            // 평가변수
+            var msg;
+            // 색상변수
+            var jc;
+            // 칭찬스티커 위치변수
+            var bgp;
 
-        if(조건문){
-            실행코드
-        }
-        else if(조건문){
-            실행코드
-        }
-        ...
-        else{
-            실행코드
-        }
-        _________________________
+            // 3. 점수환산하기 /////////
+            if (score >= 90) {
+                msg = "매우잘함";
+                jc = "blue";
+                bgp = "0 0";
+            } else if (score >= 80) {
+                msg = "잘함";
+                jc = "green";
+                bgp = "-322px 0";
+            } else if (score >= 70) {
+                msg = "보통";
+                jc = "purple";
+                bgp = "-322px -322px";
+            } else if (score >= 60) {
+                msg = "노력요함";
+                jc = "orange";
+                bgp = "0 -644px";
+            } else {
+                msg = "재시험";
+                jc = "red";
+                bgp = "-644px -644px";
+            }
 
-        ((구문해석))
-        1. if문은 단독으로 따로 사용가능
-        2. else if문은 if문 뒤에 또는 else if문 뒤에
-            사용가능함!
-            if와 else if문으로 구성된 조건문은
-            하나의 조건에 들어가면 다른 조건은 통과한다!
-            (셋트로 코딩하는 if문은 구간설정시 많이사용됨!)
-        3. else문은 조건에 해당이 없을때 사용하며
-            필요한 경우 if문 맨끝에 코딩한다!
+            // 할당된 변수값 확인!
+            console.log("msg:", msg, "\njc:", jc, "\nbgp:", bgp);
+            // 역슬래쉬n(\n) -> 줄바꿈
 
-        ※ 주의사항 : else if나 else문은 단독으로 사용못함!
+            // 4. 화면출력
+            jexp.innerText = "평가결과는 " + msg;
 
-        ※ 참고 : 만약 if문의 실행문이 한줄일 경우 중괄호를
-        생략할 수 있다!
+            // 5. 글자색변경
+            jexp.style.color = jc;
 
-        예) 
-            if(aa>10){my="야야";}
-            아래처럼 중괄호 생략가능
-            if(aa>10) my="야야";
+            // 6. 칭찬스티커 배경위치변경
+            jshow.style.backgroundPosition = bgp;
+        } //////////////// jumsu 함수 //////////////////
+        ////////////////////////////////////////////////
 
-        ->> 일반적으로 JS에서 
-            중괄호{}는 코드를 묶는 역할을함
+        /********************************************** 
+          [ if문 ]
+          - 조건문을 검사하여 true이면
+          중괄호안의 코드가 실행되는 제어문
 
-      **********************************************/
+          - 조건문이란 결과가 true / false 로 나오는 구문
+          - 보통 비교연산자나 논리연산자가 사용된다!
+
+          ((구문))
+          _______________________
+
+          if(조건문){
+              실행코드
+          }
+          else if(조건문){
+              실행코드
+          }
+          ...
+          else{
+              실행코드
+          }
+          _________________________
+
+          ((구문해석))
+          1. if문은 단독으로 따로 사용가능
+          2. else if문은 if문 뒤에 또는 else if문 뒤에
+              사용가능함!
+              if와 else if문으로 구성된 조건문은
+              하나의 조건에 들어가면 다른 조건은 통과한다!
+              (셋트로 코딩하는 if문은 구간설정시 많이사용됨!)
+          3. else문은 조건에 해당이 없을때 사용하며
+              필요한 경우 if문 맨끝에 코딩한다!
+
+          ※ 주의사항 : else if나 else문은 단독으로 사용못함!
+
+          ※ 참고 : 만약 if문의 실행문이 한줄일 경우 중괄호를
+          생략할 수 있다!
+
+          예) 
+              if(aa>10){my="야야";}
+              아래처럼 중괄호 생략가능
+              if(aa>10) my="야야";
+
+          ->> 일반적으로 JS에서 
+              중괄호{}는 코드를 묶는 역할을함
+
+        **********************************************/
     </script>
     <style>
-      /* 칭찬스티커 */
-      #jshow {
-        position: absolute;
-        top: -19px;
-        left: 133px;
-        width: 322px;
-        height: 322px;
-        background: url(./images/ifshow.jpg) no-repeat;
-        /* 배경포지션으로 처음에 안보이게함! */
-        background-position: 322px 0;
-        /* 크기줄이기 - 30%크기 */
-        transform: scale(0.3);
-        /* 트랜지션: 속시이지 */
-        transition: all 0.4s ease-out;
-      }
+        /* 칭찬스티커 */
+        #jshow {
+            position: absolute;
+            top: -19px;
+            left: 133px;
+            width: 322px;
+            height: 322px;
+            background: url(./images/ifshow.jpg) no-repeat;
+            /* 배경포지션으로 처음에 안보이게함! */
+            background-position: 322px 0;
+            /* 크기줄이기 - 30%크기 */
+            transform: scale(0.3);
+            /* 트랜지션: 속시이지 */
+            transition: all 0.4s ease-out;
+        }
 
-      /* IR(배경이미지 설명 숨기기) */
-      .ir {
-        display: block;
-        width: 0;
-        height: 0;
-        overflow: hidden;
-      }
+        /* IR(배경이미지 설명 숨기기) */
+        .ir {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>JS 제어문</h1>
     <hr />
     <!-- if문 연습 -->
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
-    <input
-      type="text"
-      id="jumsu"
-      placeholder="점수를 입력하세요!"
-      maxlength="3"
-      onkeypress="if(event.keyCode===13)jumsu()"
-    />
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode===13)jumsu()" />
+    <button class="sbtn" onclick="jumsu()">평가하기</button>
     <!-- 
         onkeypress 이벤트 속성 
         -> 키보드를 치면 발생하는 이벤트연결 속성
@@ -213,11 +243,10 @@
         https://www.w3schools.com/charsets/ref_html_ascii.asp
 
      -->
-    <button class="sbtn" onclick="jumsu()">평가하기</button>
 
     <!-- 칭찬스티커 -->
     <div id="jshow">
-      <span class="ir">칭찬스티커</span>
+        <span class="ir">칭찬스티커</span>
     </div>
 
     <!-- 
@@ -231,5 +260,15 @@
         - maxlength -> 최대입력 글자수 지정
 
      -->
-  </body>
+
+     <br><br>
+     <hr />
+    <!-- switch case문 연습 -->
+    <h2>switch case문 연습</h2>
+    <h3 id="info">국번안내</h3>
+    <label for="local">지역명 입력:</label>
+    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10" onkeypress="if(event.keyCode===13)local()" />
+    <button class="sbtn" onclick="local()">국번문의</button>
+</body>
+
 </html>
