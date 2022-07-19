@@ -119,9 +119,21 @@
         display: block;
     }
     /* 11. GNB메뉴 보이기 */
-    .top.on .gnb{
+    body.on .top .gnb{
         display: block;
     }
+
+    /* 12. 캐릭터박스 GNB메뉴 보일때 아래로 내리기
+    - 트랜스폼 애니메이션으로 위치 위로 올라옴! */
+    body.on .cat{   
+        z-index: -1;
+    }
+
+    /* 13. GNB메뉴 보일때 스크롤 없앰! */
+    body.on{
+        overflow: hidden;
+    }
+
 
 }
 /************* 870px 이하 끝 *************/

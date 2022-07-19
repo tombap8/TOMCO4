@@ -27,13 +27,13 @@
   border-bottom: 1px solid #ccc;
   /* 배경흰색 */
   background-color: #fff;
-  
+
   /* 처음에 위로 올라가서 안보임 
   - 자신의 높이값 만큼 위쪽방향으로 이동! */
   transform: translateY(-100%);
 
-  /* 애니메이션 : 이시이지반방마 */
-  animation: topAni 1s ease-out 1s forwards;
+  /* 애니메이션 : 이시이지반방마 - 캐릭터 애니후 작동 */
+  animation: topAni 1s ease-out 4.5s forwards;
 }
 /* 상단영역 키프레임 */
 @keyframes topAni {
@@ -248,13 +248,13 @@
   content: '≡';
 }
 /* GNB메뉴 보이는 상태일때 햄버거버튼 */
-.top.on .ham{
+body.on .top .ham{
   transform: 
   translateY(-50%) scale(1.2);
   color: #fff;
   z-index: 9999;
 }
-.top.on .ham::before{
+body.on .top .ham::before{
   content: '×';
 }
 

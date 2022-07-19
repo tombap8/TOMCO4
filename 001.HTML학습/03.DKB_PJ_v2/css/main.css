@@ -77,7 +77,7 @@ body {
 
    /* 처음에 위로 올라가서 안보임
    - 보이는 화면 높이만큼 위쪽으로 이동 */
-   transform: translateY(-120vh);
+   transform: translateY(-600%);
 
    /* 애니메이션: 이시이지반방마 */
    animation: catAni 2s ease-out 1s forwards;
