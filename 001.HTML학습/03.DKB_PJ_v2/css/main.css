@@ -75,7 +75,29 @@ body {
    불일치 부분을 값으로 보정함) */
    padding-bottom: 10px;
 
+   /* 처음에 위로 올라가서 안보임
+   - 보이는 화면 높이만큼 위쪽으로 이동 */
+   transform: translateY(-120vh);
+
+   /* 애니메이션: 이시이지반방마 */
+   animation: catAni 2s ease-out 1s forwards;
 }
+/* 캐릭터 박스별 애니메이션 지연시간 차이주기 */
+.cat:nth-child(2){
+   animation-delay: 1.5s;
+}
+.cat:nth-child(3){
+   animation-delay: 2s;
+}
+.cat:nth-child(4){
+   animation-delay: 2.5s;
+}
+/* 캐릭터박스 키프레임 */
+@keyframes catAni {
+   to{
+      transform: translateY(0);
+   }
+} /* 키프레임 */
 
 /* 캐릭터 이미지박스 */
 .ci{
