@@ -340,7 +340,17 @@
 
             // 1. 함수호출확인!
             console.log("구구단을 외자!",optval);
-            
+
+            // 2. 대상선정 :  출력대상 - .g1
+            var g1 = document.querySelector(".g1");
+
+            // 3. 구구단 만들기 : code변수에 모두 넣기
+            var code = `<h2>${optval}단</h2>`;
+
+            // 4. 화면출력 : html 코드를 innerHTML로 출력!
+            // 주의: innerText로 출력하면 태그가 그냥보임!
+            g1.innerHTML = code;
+
        } /////////////////// gugu 함수 /////////////////////
        /////////////////////////////////////////////////////
     </script>
