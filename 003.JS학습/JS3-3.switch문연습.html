@@ -51,8 +51,113 @@
             3. 변경 대상: 메인 이미지요소
             4. 변경 내용: 이미지 src속성 변경
         ***********************************************/
+        /************************************** 
+                    함수명: chgImg
+                    기능: 이미지 src변경하기
+                **************************************/
+        const chgImg = function () {
 
-        
+            // 1. 함수호출확인
+            console.log("포스터변경!");
+
+            // 2. 대상선정
+
+            // 2-1. 변경할 이미지 : #scene
+            let scene = document.querySelector("#scene");
+            console.log("변경이미지:", scene);
+
+            // 2-2. 이벤트적용할 버튼들 : .btns
+            let btns = document.querySelectorAll(".btns");
+            console.log("버튼들:", btns);
+
+            // 3. 이벤트 설정하기
+            // 이벤트 종류: click
+            // 버튼개수만큼 for문 셋팅
+            // for(시;한;증){코드}
+            for (let i = 0; i < btns.length; i++) {
+
+                btns[i].onclick = function () {
+
+                    // 1. 버튼 데이터(텍스트) 가져오기
+                    // this 키워드는 이벤트걸린 요소자신!
+                    let btxt = this.innerText;
+                    console.log(btxt);
+
+                    // 이미지경로
+                    let isrc;
+
+                    // 2. 버튼별 이미지 분기
+                    // switch case문으로!!
+                    switch (btxt) {
+                        case "포스터":
+                            isrc = "./images/ala1.jpg";
+                            break;
+                        case "장면1":
+                            isrc = "./images/ala3.jpg";
+                            break;
+                        case "장면2":
+                            isrc = "./images/ala4.jpg";
+                            break;
+                        case "장면3":
+                            isrc = "./images/ala2.jpg";
+                            break;
+                    } ///// switch case /////////
+
+
+                    console.log("경로:", isrc);
+
+                    // 3. 이미지 변경하기
+                    // 대상: #scene -> scene변수
+                    scene.setAttribute("src", isrc);
+                    // setAttribute(속성명, 속성값)
+                    // -> 속성을 변경하는 JS내장함수
+                    // 참고) 속성값을 가져오는 것은 
+                    //      getAttribute(속성명)
+
+                    // 속성명으로 직접 변경하는 방법
+                    // scene.src = isrc;
+
+
+                }; /////////// click /////////////
+
+            } ////////////// for ///////////////////
+
+
+        }; ///////////// chgImg 함수 /////////////
+        //////////////////////////////////////////
+
+        // 함수호출
+        //    chgImg();
+
+        //// html이 모드 그려진 후 발생하는 이벤트는?
+        // 대상: window (최상위객체)
+        // 이벤트:
+        // 1. load - 모든 컨텐츠가 로딩된 후 발생
+        // 2. DOMContentLoaded - html태그만 그려지면 발생
+        // 2번이 1번보다 속도가 더 빠름!(적절히 판단해서 씀!)
+
+        // 이벤트 등록 JS내장함수(메서드)
+        // addEventListener(이벤트명,함수)
+        // - 이벤트명 : 사용할 이벤트명을 등록함
+        // - 함수 : 익명함수, 선언적함수, 할당된 함수
+        // 참고) 전달값이 없는 경우 소괄호 없이 함수명만 써도됨!
+        // 소괄호를 쓰거나 전달값이 있는 경우 익명함수로 싸서
+        // 코딩한다!
+        // 예) window.addEventListener("load",
+        //                           function(){chgImg()});
+
+        //    window.addEventListener("load",chgImg);
+
+        // window.addEventListener("DOMContentLoaded",
+        //    function(){
+        //     chgImg();
+        // }); ////////////// 로드구역 ////////////////
+
+        //    window.addEventListener("click",
+        //    function(){alert("나야나");})
+
+        /// html이 모두 그려진 후 함수 chgImg를 호출함!!!
+        window.addEventListener("DOMContentLoaded", chgImg);
     </script>
 </head>
 
