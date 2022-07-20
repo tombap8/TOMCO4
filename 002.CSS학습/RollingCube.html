@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roling Cube 3D Animation</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        /* 전체배경 */
+        body{
+            background-image: linear-gradient(to bottom, #777 30%, #ccc 70%);
+        }
+        /* 큐브 */
+        .cube{
+            position: absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px);
+            width: 300px;
+            height: 300px;
+
+            /* 
+                [ 입체로 설정하기 ]
+                - 입체로 설정할 요소의 부모박스에 아래와 같이
+                설정한다!
+
+                transform-style: preserve-3d;
+                - 기본값 flat, 즉 2D
+                - preserve-3d 는 3D 전환설정!
+            */
+            transform-style: preserve-3d;
+
+            /* 입체를 잘보이게 x,y축으로 약각 회전하기 */
+            transform: rotateX(10deg) rotateY(30deg);
+        }
+        /* 큐브각면 공통 */
+        .cube span{
+            position: absolute;
+            /* 앱솔루트는 span도 자동block! */
+            width: 100%;
+            height: 100%;
+            /* 부모는? .cube */
+            opacity: 0.8;
+            outline: 2px solid #000;
+        }
+
+        /*  1. 앞면 */
+        .cube span:nth-child(1){
+            background: url(images/newyorkCity.jpg) no-repeat right/auto 105%;
+            /* 화면방향(Z축) */
+            transform: translateZ(150px);
+        }
+        /*  2. 오른쪽면 */
+        .cube span:nth-child(2){
+            background: url(images/seoulCity.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        /*  3. 뒷면 */
+        .cube span:nth-child(3){
+            background: url(images/parisCity.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        /*  4. 왼쪽면 */
+        .cube span:nth-child(4){
+            background: url(images/cityMain.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        /*  5. 윗면 */
+        .cube span:nth-child(5){
+            background: url(images/citys.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        /*  6. 아랫면 */
+        .cube span:nth-child(6){
+            background: url(images/img2.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        /* 애니메이션 클래스 */
+        .cube-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: cubeAni 4s linear infinite;
+            /* 처음에 멈춰있기! */
+            animation-play-state: paused;
+        }
+        .cube-ani.on{
+            /* 돌아라! */
+            animation-play-state: running;
+        }
+
+        /* 회전키프레임 */
+        @keyframes cubeAni {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    x축 양의 방향으로 10도에서 출발
+                    양의 방향 360도+10도=370도
+                    음의 방향 -360도+10도=-350도
+
+                    y축 양의 방향으로 30도에서 출발
+                    양의 방향 360도+30도=390도
+                    음의 방향 -360도+30도=-330도
+
+                    -> rotateZ() - z축회전도 가능함!
+                */
+            }
+        } /* 키프레임 */
+
+        /* 버튼박스 */
+        .btns{
+            text-align: center;
+            padding: 50px;
+        }
+        .btns button{
+            font-size: 40px;
+            border-radius: 10px;
+        }
+    
+    </style>
+    <script>
+        /************************************** 
+            함수명: goR
+            기능: 큐브 돌기/멈추기
+        **************************************/
+       function goR(){
+            // 1. 호출확인
+            console.log("나야나!");
+            // 2. 대상선정: 
+            // 큐브 - .cube / 버튼 - .btns button 
+            var cube = document.querySelector(".cube");
+            var btns = document.querySelector(".btns button");
+
+            // 3. 클래스 넣기/빼기
+            // 클래스 제어 내장객체
+            // classList
+            // 이 객체가 메서드를 가짐
+            // (1)add(클래스명) 
+            // (2)remove(클래스명)
+            // (3)toggle(클래스명) -> 유무에 따라
+            cube.classList.toggle("on");
+
+
+       } ////////// goR 함수 ///////////////////
+       /////////////////////////////////////////
+    </script>
+</head>
+<body>
+
+    <!-- 버튼박스 -->
+    <div class="btns">
+        <button onclick="goR()">돌아!</button>
+    </div>
+
+    <!-- 큐브 -->
+    <div class="cube cube-ani">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    
+</body>
+</html>
