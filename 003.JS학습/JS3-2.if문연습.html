@@ -61,8 +61,42 @@
             // 1. 함수호출확인
             console.log("포스터변경!");
 
+            // 2. 대상선정
+
+            // 2-1. 변경할 이미지 : #scene
             let scene = document.querySelector("#scene");
             console.log("변경이미지:", scene);
+
+            // 2-2. 이벤트적용할 버튼들 : .btns
+            let btns = document.querySelectorAll(".btns");
+            console.log("버튼들:", btns);
+
+            // 3. 이벤트 설정하기
+            // 이벤트 종류: click
+            // 버튼개수만큼 for문 셋팅
+            // for(시;한;증){코드}
+            for (let i = 0; i < btns.length; i++) {
+
+                btns[i].onclick = function () {
+                    // 버튼 데이터(텍스트) 가져오기
+                    // this 키워드는 이벤트걸린 요소자신!
+                    let btxt = this.innerText;
+                    console.log(btxt);
+
+                    // 이미지경로
+                    let isrc;
+
+                    if(btxt==="포스터") isrc="";
+                    else if(btxt==="버튼1") isrc="";
+                    else if(btxt==="버튼2") isrc="";
+                    else if(btxt==="버튼3") isrc="";
+
+
+
+                }; /////////// click /////////////
+
+            } ////////////// for ///////////////////
+
 
         }; ///////////// chgImg 함수 /////////////
         //////////////////////////////////////////
