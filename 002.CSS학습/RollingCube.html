@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roling Cube 3D Animation</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
         }
+
         /* 전체배경 */
-        body{
+        body {
             background-image: linear-gradient(to bottom, #777 30%, #ccc 70%);
         }
+
         /* 큐브 */
-        .cube{
+        .cube {
             position: absolute;
             top: calc(50% - 150px);
             left: calc(50% - 150px);
@@ -36,8 +40,9 @@
             /* 입체를 잘보이게 x,y축으로 약각 회전하기 */
             transform: rotateX(10deg) rotateY(30deg);
         }
+
         /* 큐브각면 공통 */
-        .cube span{
+        .cube span {
             position: absolute;
             /* 앱솔루트는 span도 자동block! */
             width: 100%;
@@ -48,57 +53,63 @@
         }
 
         /*  1. 앞면 */
-        .cube span:nth-child(1){
+        .cube span:nth-child(1) {
             background: url(images/newyorkCity.jpg) no-repeat right/auto 105%;
             /* 화면방향(Z축) */
             transform: translateZ(150px);
         }
+
         /*  2. 오른쪽면 */
-        .cube span:nth-child(2){
+        .cube span:nth-child(2) {
             background: url(images/seoulCity.jpg) no-repeat center/cover;
             /* 화면방향(Z축) */
             transform: rotateY(90deg) translateZ(150px);
         }
+
         /*  3. 뒷면 */
-        .cube span:nth-child(3){
+        .cube span:nth-child(3) {
             background: url(images/parisCity.jpg) no-repeat center/cover;
             /* 화면방향(Z축) */
             transform: rotateY(180deg) translateZ(150px);
         }
+
         /*  4. 왼쪽면 */
-        .cube span:nth-child(4){
+        .cube span:nth-child(4) {
             background: url(images/cityMain.jpg) no-repeat center/cover;
             /* 화면방향(Z축) */
             transform: rotateY(-90deg) translateZ(150px);
         }
+
         /*  5. 윗면 */
-        .cube span:nth-child(5){
+        .cube span:nth-child(5) {
             background: url(images/citys.jpg) no-repeat center/cover;
             /* 화면방향(Z축) */
             transform: rotateX(90deg) translateZ(150px);
         }
+
         /*  6. 아랫면 */
-        .cube span:nth-child(6){
+        .cube span:nth-child(6) {
             background: url(images/img2.jpg) no-repeat center/cover;
             /* 화면방향(Z축) */
             transform: rotateX(-90deg) translateZ(150px);
         }
 
         /* 애니메이션 클래스 */
-        .cube-ani{
+        .cube-ani {
             /* 애니메이션: 이시이지반방마 */
             animation: cubeAni 4s linear infinite;
             /* 처음에 멈춰있기! */
             animation-play-state: paused;
         }
-        .cube-ani.on{
+
+        .cube-ani.on {
             /* 돌아라! */
             animation-play-state: running;
         }
 
         /* 회전키프레임 */
         @keyframes cubeAni {
-            to{
+            to {
                 transform: rotateX(370deg) rotateY(-330deg);
                 /* 
                     x축 양의 방향으로 10도에서 출발
@@ -112,25 +123,27 @@
                     -> rotateZ() - z축회전도 가능함!
                 */
             }
-        } /* 키프레임 */
+        }
+
+        /* 키프레임 */
 
         /* 버튼박스 */
-        .btns{
+        .btns {
             text-align: center;
             padding: 50px;
         }
-        .btns button{
+
+        .btns button {
             font-size: 40px;
             border-radius: 10px;
         }
-    
     </style>
     <script>
         /************************************** 
             함수명: goR
             기능: 큐브 돌기/멈추기
         **************************************/
-       function goR(){
+        function goR() {
             // 1. 호출확인
             console.log("나야나!");
             // 2. 대상선정: 
@@ -142,16 +155,28 @@
             // 클래스 제어 내장객체
             // classList
             // 이 객체가 메서드를 가짐
-            // (1)add(클래스명) 
-            // (2)remove(클래스명)
-            // (3)toggle(클래스명) -> 유무에 따라
+            // (1) add(클래스명) 
+            // (2) remove(클래스명)
+            // (3) toggle(클래스명) -> 유무에 따라
+            // (4) contains(클래스명) -> 있으면 true
             cube.classList.toggle("on");
 
+            var sts = cube.classList.contains("on");
 
-       } ////////// goR 함수 ///////////////////
-       /////////////////////////////////////////
+            console.log("on있니? ", sts);
+
+            // 버튼 글자 바꾸기!
+            btns.innerText = sts ? "멈춰!" : "돌아!";
+            // 조건연산자(비?집:놀이동산)
+            // 이퀄 오른쪽의 조건연산자가 값을 결정하여
+            // 왼쪽으로 할당되게 한다!
+
+
+        } ////////// goR 함수 ///////////////////
+        /////////////////////////////////////////
     </script>
 </head>
+
 <body>
 
     <!-- 버튼박스 -->
@@ -163,6 +188,7 @@
     <div class="cube cube-ani">
         <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
-    
+
 </body>
+
 </html>
