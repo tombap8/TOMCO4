@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* 도깨비 PJ 시청자게시판 - board.css */
+
+/* 컨텐츠 영역 속박스 */
+.cont{
+    min-height: 600px;
+    padding: 15px;
+}
+
+/* 1. 타이틀 */
+.stit{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    padding: 40px 0 20px;
+    font-weight: normal;
+}
+/* 2. 컨텐츠박스 */
+.scont{
+    max-width: 700px;
+    min-height: 275px;
+    margin: 0 auto;
+    border: 2px solid #737373;
+    border-radius: 10px;
+    /* 크기유지 */
+    box-sizing: border-box;
+    padding: 60px 15px;
+    background-color: #fff;
+}

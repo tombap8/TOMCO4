@@ -1,3 +1,17 @@
 @charset "utf-8";
 /* 도깨비 PJ 서브공통 - sub.css */
 
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/* 상단메뉴 고정하기 */
+#top{
+    transform: translateY(0);
+    animation: none;
+}
+/* 메인영역 배경색 */
+#cont{
+    background-color: #ddd;
+}
