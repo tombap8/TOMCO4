@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolling Phone</title>
     <style>
+        /* 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        /* font-family: 'Anton', sans-serif; */
+
         html,body{
             margin: 0;
             padding: 0;
@@ -110,12 +115,136 @@
 
         /* 키프레임 */
 
+        /* 흘러가는 글자박스 */
+        .fbx{
+            position: absolute;
+            width: 100vw;
+        }
+
+        /* 텍스트박스(움직일 박스) */
+        .tbx{
+            position: relative;
+            left: 0;/* 초기값 */
+            width: 200vw;
+            display: flex;
+        }
+        /* 텍스트박스 하위ul */
+        .tbx ul{
+            display: flex;
+            /* 직계 li 옆으로 흐름! */
+            flex: 1;
+
+            /* 기본없앰 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* 하위li */
+        .tbx li{
+            /* 등분할 설정 */
+            flex: 1;
+            text-align: center;
+            font-family: 'Anton', sans-serif;
+            font-size: 4vw;
+            color: #d3d3d3;
+        }
+
+        /* 첫번째 박스 위치 */
+        .f1{
+            bottom: 5vh;
+        }
+
+        /* 애니메이션 호출1 */
+        .f1 .tbx{
+            /* 애니메이션: 이시이지반방마 */
+            animation: txtFlow1 10s linear infinite;
+        }
+
+        /* 글자 흐르기 키프레임1 */
+        @keyframes txtFlow1 {
+            to{
+                left: -100%;
+            }
+        } /* 키프레임 */
+
+
+        /* 두번째 박스 위치 */
+        .f2{
+            top: 5vh;
+        }
+        /* 흐르는 박스 최초위치 */
+        .f2 .tbx{
+            left: -100%;
+            /* 왼쪽에 나가있음! */
+        }
+
+        /* 애니메이션 호출2 */
+        .f2 .tbx{
+            /* 애니메이션: 이시이지반방마 */
+            animation: txtFlow2 10s linear infinite;
+        }
+
+        /* 글자 흐르기 키프레임2 */
+        @keyframes txtFlow2 {
+            to{
+                left: 0;
+            }
+        } /* 키프레임 */
+
     </style>
+    <script>
+        /* 
+            [ 일정시간간격으로 아이폰 돌리기 클래스 넣기! ]
+            JS내장함수 : 인터발함수 -> setInterval(함수,시간)
+            -> 설정된 시간 간격으로 반복해서 함수를 실행함!
+            -> 시간은 1/1000초로 단위없이 씀(예:1000은 1초)
+
+            JS내장함수 : 타임아웃함수 -> setTimeout(함수,시간)
+            -> 설정된 시간 후 한번만 함수를 실행함!
+            -> 시간은 1/1000초로 단위없이 씀(예:1000은 1초)
+        */
+       setInterval(()=>{
+
+            // 1. 호출확인
+            console.log("나야나");
+
+            // 2. 대상선정
+            let tg = document.querySelector(".phone");
+
+            // 3. 클래스 지우기
+            tg.classList.remove("rAni");
+
+            // 4. 클래스 다시넣기(약간의 시간차이 필요!)
+            setTimeout(() => {
+                tg.classList.add("rAni");                
+            }, 10); /////// 타임아웃함수 //////
+
+
+
+       },10000); ///////// 인터발함수 ///////
+    </script>
 </head>
 <body>
 
     <!-- 흘러가는 글자박스1 -->
     <div class="fbx f1">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 흘러가는 글자박스2 -->
+    <div class="fbx f2">
         <div class="tbx">
             <ul>
                 <li>iPhone 2022</li>
