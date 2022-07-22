@@ -4,8 +4,41 @@
 <head>
   <meta charset="utf-8">
   <title> 태그 선택자 </title>
-
+  <!-- 제이쿼리 라이브러리를 불러온다! -->
+  <script src="jquery-3.6.0.min.js"></script>
+  <!-- 아래에서 제이쿼리 코딩함! - 순서중요! -->
   <script>
+    // 제이쿼리 로드구역 만들기
+    // 오리지널 코드
+    // jQuery(document).ready(function(){코드})
+    // 축약코드
+    // $(function(){코드})
+    // 완전축약
+    // $(()=>{코드})
+
+    $(()=>{ /////////// jQB /////////////////////
+
+      $('#container')
+      .click(()=>{
+
+        $('h2').css({
+          fontSize:"50px",
+          transition:"2s",
+          color:"red",
+          transform:"rotateY(720deg)"
+        });
+
+
+
+      }); /////////// click //////////
+
+
+
+
+
+    }); /////////////// jQB ////////////////////
+
+
     
   </script>
 
@@ -19,6 +52,10 @@
   <h1>나의 첫번째 제이쿼리!!!</h1>
   <div id="container">
     <header>
+      <h2> 여기를 클릭!!! </h2>
+      <h2> 여기를 클릭!!! </h2>
+      <h2> 여기를 클릭!!! </h2>
+      <h2> 여기를 클릭!!! </h2>
       <h2> 여기를 클릭!!! </h2>
     </header>
 
