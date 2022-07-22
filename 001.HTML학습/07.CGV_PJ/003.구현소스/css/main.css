@@ -383,6 +383,12 @@ body {
     width: 144px;
     height: 80px;
     /* outline: 1px dashed yellow; */
+
+    /* 손가락모양 */
+    cursor: pointer;
+
+    /* 원근설정 */
+    perspective: 480px;
 }
 /* 글자커버 */
 .cover{
@@ -399,7 +405,76 @@ body {
     font-size: 20px;
     line-height: 80px;
     text-align: center;
+    white-space: nowrap;
 
+    /* 애니메이션 변경 속성 - 들여쓰기 */
+    text-indent: -200%;
+    overflow: hidden;
+
+    /* 애니메이션 */
+    animation: txtAni 3s cubic-bezier(0.63, -0.86, 0.5, 1.65) infinite;
+
+    /* 트랜스폼 축변경 */
+    transform-origin: top;
+
+    /* 트랜지션 */
+    transition: transform .6s ease-in-out .2s;
+
+    box-sizing: border-box;
+}
+/* 오버시 x축회전하기 */
+.goMV:hover .cover{
+    transform: rotateX(90deg);
+    border: 1px solid aquamarine;
+}
+/* 텍스트 애니 키프레임 */
+@keyframes txtAni {
+    0%{
+        text-indent: -200%;
+    }
+    20%{
+        text-indent: 0;
+    }
+    80%{
+        text-indent: 0;
+    }
+    100%{
+        text-indent: 200%;
+    }
+} /* 키프레임 */
+
+/* 애니박스 */
+.anibx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 부모는? .goMV */
+
+    /* 배경 */
+    background-image: url(../images/street.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+
+    /* 애니메이션 */
+    animation: stAni 4s linear infinite;
+}
+/* 스크린 배경이동 키프레임 */
+@keyframes stAni {
+    to{
+        background-position-x: -136px;
+    }
+} /* 키프레임 */
+
+/* 걷는소년박스 */
+.ani{
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(../images/spAni03.png);
+    background-size: auto 100%;
+    outline: 2px dotted red;
 }
 
 
