@@ -28,37 +28,16 @@
     $(() => { //////////// jQB ///////////////////
 
       // 미션: #container를 클릭하면
-      $('#container').click(() => {
-      // $('#container').click(function(){
-
-        console.log("this의미:", this);
-        // this가 화살표함수 안에서는 window
-        // this가 익명함수 안에서는 이벤트요소
-        // 그.래.서...
-        // 화살표 함수일때는 
-        // event.currentTarget 을 사용해야함
-
+     
+        
 
         // 직계자식인 p태그를 찾아서 배경색을 노란색으로 바꾸고
-        // $(this)
-        $(event.currentTarget)
-        .children('p').css({
-          backgroundColor: "yellow"
-        }); /////// css ////////////
-
-        // $(this) 
-        // -> 나자신 (클릭이벤트 설정요소)
+      
 
 
         // 동시에 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
-        $(event.currentTarget)
-        .children('div').css({
-          backgroundColor: "red"
-        }); ////////// css //////////
+        
 
-
-
-      }); ////////// click /////////////
 
 
     }); //////////////// jQB ///////////////////
