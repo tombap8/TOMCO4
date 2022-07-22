@@ -534,17 +534,26 @@ body {
     background-size: 240px;
     /* 배경이미지 크기를 6장면이니까 한개당 40px로 계산 */
 
+    /* 장면넘기기 애니메이션 호출! */
+    animation: 
+    monAniX 1s steps(6) infinite,
+    monAniY 3s steps(3) infinite;
+    /* x축 steps(장면수),  y축 steps(줄수) */
+    
+
     outline: 2px dotted blue;
 }
 /* 몬스터애니 키프레임 : x,y축 따로 키프레임 작성! */
 @keyframes monAniX {
     to{
         background-position-x: -240px;
+        /* 비례식으로 계산된 가로크기에 마이너스! */
     }
 }
 @keyframes monAniY {
     to{
         background-position-y: -120px;
+        /* 비례식으로 계산된 세로크기에 마이너스! */
     }
 }
 
