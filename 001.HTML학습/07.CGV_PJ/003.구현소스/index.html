@@ -6,40 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CGV에 오신것을 환영합니다!</title>
     <link rel="stylesheet" href="css/main.css" />
-    <!-- JS코딩구역 -->
-    <script>
-        /******************************************* 
-            함수명: 멍멍
-            기능: 포스터메뉴 클릭시 유튜브 iframe
-                src속성값 변경하여 영화바꾸기! 
-        *******************************************/
-        function 멍멍(먹이) {
-            // 먹이 - 전달값을 담는 변수
-            // -> 먹이 변수에 영화 고유코드를 담는다!
-
-            // 1. 호출 및 전달값확인!
-            console.log("먹이줘!", 먹이);
-
-            // 2. 변경대상 : 아이프레임 -> #screen iframe
-            var 아이 = document.querySelector('#screen iframe');
-
-            // 3. 변경내용 : 아이프레임의 src속성값 변경하기!
-            아이.src =
-                "https://www.youtube.com/embed/" + 먹이 +
-                "?autoplay=1";
-
-            // 이퀄(=)을 만나는 순간
-            // 이퀄 오른쪽의 값을 만든후
-            // 왼쪽의 변수나 속성에 값을 넣는다!
-
-            // 전달변수 먹이 에 담긴 값을 다른 문자값과
-            // 합쳐서 하나의 문자로 만들어 준다!
-            // +는 문자를 합치는 연산자!
-
-
-        } /////////////// 멍멍 함수 //////////////////
-        /////////////////////////////////////////////
-    </script>
+    <!-- JS외부파일 호출 -->
+    <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -129,7 +97,7 @@
                 </aside>
             </nav>
             <!-- 극장가는길 애니박스 -->
-            <div class="goMV">
+            <div class="goMV" title="구글지도보기 클릭!">
                 <!-- 커버 -->
                 <div class="cover">극장가는 길</div>
                 <!-- 애니박스 -->

@@ -423,8 +423,9 @@ body {
 
     box-sizing: border-box;
 }
-/* 오버시 x축회전하기 */
-.goMV:hover .cover{
+/* 오버시 + 클래스 on 일때 x축회전하기 */
+.goMV:hover .cover,
+.goMV.on .cover{
     transform: rotateX(90deg);
     border: 1px solid aquamarine;
 }
@@ -560,7 +561,7 @@ body {
 /* 구글맵박스 */
 .gmap{
     position: fixed;
-    top: 50%;
+    top: -50%;/* 처음에 위에 있음(숨김) */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
@@ -568,7 +569,15 @@ body {
     border: 20px solid rgb(255, 69, 221);
     border-radius: 10px;
     z-index: 99999;
+
+    /* 트랜지션 */
+    transition: top .8s cubic-bezier(0, 0, 0.36, 1.5);
 }
+/* 클래스 on 위치이동설정 */
+.gmap.on{
+    top: 50%;
+}
+
 /* 닫기버튼 */
 .cbtn{
     position: absolute;
