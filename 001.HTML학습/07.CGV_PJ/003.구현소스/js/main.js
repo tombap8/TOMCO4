@@ -7,6 +7,64 @@ window.addEventListener("DOMContentLoaded",()=>{
     // 호출확인
     console.log("로딩완료!");
 
+
+    //////////////////////////////////////////////////
+    // 포스터 메뉴 클릭시 예고편 변경 및 클래스on주기 //
+    /////////////////////////////////////////////////
+
+    // 영화정보 셋팅하기
+    const minfo = [
+        // 닥터스트레인지2
+        "mI9oyFMUlfg",
+        // 쥬라기월드:도미니언
+        "aOu1ubTZdH8",
+        // 브로커
+        "DpVAb7Bi5UQ",
+        // 범죄도시2
+        "aw9j_23nORs",
+        // 몬스터싱어
+        "OTiqmI6Ooqs",
+        // 스파이더맨:노웨이홈
+        "yFZh-Wqi7RI"
+    ]; ///// minfo 배열 ////
+
+
+
+
+    // 대상선정(포스터메뉴 a링크): .mlist a
+    const mlist = document.querySelectorAll(".mlist a");
+    // console.log(mlist);
+
+    // 대상선정(포스터메뉴 최상위 li만):
+    const mli = document.querySelectorAll(".mlist>ul>li") 
+
+    // 대상 컬렉션의 개수만큼 돌면서 
+    // 예고편변경함수(멍멍함수)호출
+    mlist.forEach((ele,idx)=>{ // ele-요소,idx-순번
+        // console.log(minfo[idx]);
+
+        // 각 요소에 click이벤트 설정!
+        ele.onclick = ()=>{
+            // console.log(minfo[idx]);
+
+            // 1.멍멍함수 호출! -> 예고편 변경
+            멍멍(minfo[idx]);
+
+            // 2.모든 li요소의 클래스 지우기(일괄제거)
+            mli.forEach((eli)=>eli.classList.remove("on"));
+            // eli는 각 최상위 li임!
+
+            // 3.클릭된 요소의 부모(li)에 클래스 on넣기
+            ele.parentElement.classList.add("on");
+            // ele.parentElement -> a자신의 부모요소로 이동!
+            // console.log(ele.parentElement);
+
+        }; //////// click /////////
+
+    }); ////// forEach ///////////////////
+
+
+
     ////////////////////////////////////
     // 극장가는길 클릭시 구글맵 보이기 ///
     ////////////////////////////////////
