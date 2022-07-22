@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CGV PJ 미디어 쿼리 */
+
+/********** 미디어쿼리 1310px 이하 시작 **********/
+@media screen and (max-width:1310px) {
+
+    /* GNB메뉴 */
+    .gnb {
+        right: 70px;
+    }
+}
+
+/********** 미디어쿼리 1310px 이하 끝 **********/
+
+
+/********** 미디어쿼리 1050px 이하 시작 **********/
+@media screen and (max-width:1050px) {
+
+    /* GNB 메뉴리스트 */
+    .glist {
+        position: absolute;
+        top: 10px;
+        right: -62px;
+        flex-direction: column;
+        white-space: nowrap;
+        text-align: right;
+        /* 처음에 숨기기 */
+        display: none;
+    }
+
+    /* GNB박스에 오버시 메뉴 리스트 보이기 */
+    .gnb:hover .glist {
+        display: block;
+    }
+
+    /* 상위메뉴 마우스 오버시 서브메뉴 숨기기 */
+    .glist>li:hover .smenu {
+        display: none;
+    }
+}
+
+/********** 미디어쿼리 1050px 이하 끝 **********/
+
+/********** 미디어쿼리 780px 이하 시작 **********/
+@media screen and (max-width:780px) {
+
+    /* 하단영역 */
+    .info {
+        height: auto;
+    }
+
+    /* 주소박스 */
+    .info address {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* 하단로고 이미지 */
+    .info img {
+        float: none;
+        margin: 0;
+    }
+
+    /* 주소박스 */
+    .info span {
+        display: block;
+    }
+
+    /* sns */
+    .sns {
+        position: static;
+        justify-content: center;
+    }
+
+}
+
+/********** 미디어쿼리 780px 이하 끝 **********/
+
+
+/********** 미디어쿼리 1111px 이하 시작 **********/
+@media screen and (max-width:1111px) {}
+
+/********** 미디어쿼리 1111px 이하 끝 **********/
