@@ -311,8 +311,10 @@ body {
 }
 
 
-/* 오버시 아웃라인 보이기 */
-.mlist>ul>li:hover{
+/* 오버시 + 클래스 on일때 
+아웃라인 보이기 / 일어나기 */
+.mlist>ul>li:hover,
+.mlist>ul>li.on{
     outline: 1px solid aqua;
     /* x축회전: 일어나! */
     transform: rotateX(0deg);
