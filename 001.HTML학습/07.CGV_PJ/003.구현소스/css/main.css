@@ -473,6 +473,12 @@ body {
     height: 100%;
     margin: 0 auto;
     background-image: url(../images/spAni03.png);
+    /* 
+        축소된 배경이미지 크기 계산:
+        1472 : 325 = x : 80
+        x = 362
+        -> 가로크기 362px -> 배경포지션 이동값에 활용!
+    */
     background-size: auto 100%;
 
     /* 
@@ -480,10 +486,10 @@ body {
 
         1. 키프레임 셋팅법:
 
-        1) x축 배경이동 셋팅
+        1) x축 배경이동 셋팅(값이 마이너스임)
         background-position-x: -가로전체크기px;
 
-        2) y축 배경이동 셋팅
+        2) y축 배경이동 셋팅(값이 마이너스임)
         background-position-y: -세로전체크기px;
 
         (유의사항: 이미지 크기가 변경되었다면
@@ -504,14 +510,41 @@ body {
         여기서는 이징이 필요없음!
     */
 
-
+    /* 장면넘기기 애니메이션 호출! */
+    animation: wAni 1s steps(8) infinite;
 
     outline: 2px dotted red;
 }
 /* 걷는소년 키프레임 */
 @keyframes wAni {
     to{
-        background-position-x: ;
+        background-position-x: -362px;
+    }
+}
+
+/* 몬스터박스 */
+.ani2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background-image: url(../images/spAni02.png);
+    background-size: 240px;
+    /* 배경이미지 크기를 6장면이니까 한개당 40px로 계산 */
+
+    outline: 2px dotted blue;
+}
+/* 몬스터애니 키프레임 : x,y축 따로 키프레임 작성! */
+@keyframes monAniX {
+    to{
+        background-position-x: -240px;
+    }
+}
+@keyframes monAniY {
+    to{
+        background-position-y: -120px;
     }
 }
 
