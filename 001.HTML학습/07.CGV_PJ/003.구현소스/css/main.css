@@ -474,7 +474,45 @@ body {
     margin: 0 auto;
     background-image: url(../images/spAni03.png);
     background-size: auto 100%;
+
+    /* 
+        [ 장면 넘기기 애니메이션 ]
+
+        1. 키프레임 셋팅법:
+
+        1) x축 배경이동 셋팅
+        background-position-x: -가로전체크기px;
+
+        2) y축 배경이동 셋팅
+        background-position-y: -세로전체크기px;
+
+        (유의사항: 이미지 크기가 변경되었다면
+        비례식으로 정확한 크기를 계산하여 쓸것!)
+
+        2. 애니메이션 호출법:
+
+        1) x축 애니
+        animation: 키프레임명 시간 steps(장면수) infinite;
+
+        2) x,y축 애니
+        animation: 
+        x축키프레임명 시간 steps(장면수) infinite,
+        y축키프레임명 시간 steps(장면수) infinite;
+
+        -> steps(장면수) 는 전체길이의 장면을 설정하여
+        한장면씩 화면에 찍어서 셀애니메이션이 되게 해줌!
+        여기서는 이징이 필요없음!
+    */
+
+
+
     outline: 2px dotted red;
+}
+/* 걷는소년 키프레임 */
+@keyframes wAni {
+    to{
+        background-position-x: ;
+    }
 }
 
 
