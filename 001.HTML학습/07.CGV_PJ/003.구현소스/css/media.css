@@ -74,6 +74,17 @@
         justify-content: center;
     }
 
+    /* 영화정보박스 */
+    .movtxt {
+        font-size: 4.5vw;
+        line-height: 1.5;
+    }
+
+    /* 첫번째 li 영화제목 */
+    .movtxt li:first-child {
+        font-size: 5vw;
+    }
+
 }
 
 /********** 미디어쿼리 780px 이하 끝 **********/
