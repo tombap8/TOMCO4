@@ -5,14 +5,15 @@
 @import url(reset.css);
 @import url(core.css);
 
-html,body{
+html,
+body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
 
 /* 비디오요소 */
-#myvid{
+#myvid {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -42,7 +43,7 @@ html,body{
 }
 
 /* 들어가기 버튼 박스 */
-#enter{
+#enter {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,4 +51,30 @@ html,body{
     /* 트랜스폼 정중앙이동 */
 
     outline: 4px dotted lime;
+}
+
+/* Click Here! 글자박스 */
+#enter span {
+    display: block;
+    text-align: center;
+
+    /* 글자설정 한번에! */
+    font: bold min(4vw,34px)/1.3 'Audiowide', cursive;
+    /* font: 스두크/줄체; */
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out .2s;
+}
+/* 오버시 글자박스 */
+#enter:hover span{
+    transform: scale(2);
+    color: chartreuse;
+}
+/* 엔터박스 로고 이미지 */
+#enter img{
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out;
+}
+/* 오버시 로고 이미지 */
+#enter:hover img{
+    transform: rotate(-15deg) scale(1.5);
 }
