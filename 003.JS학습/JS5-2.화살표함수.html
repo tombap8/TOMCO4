@@ -62,53 +62,81 @@
         ****************************************************/
 
         // 일반적인 할당형 함수 /////
-        
+        let x = function (a, b) {
+            return a * b;
+        }; //////////// x 함수 /////////////
 
         // 함수호출하기
-       
+        console.log("x(100,20)함수호출:", x(100, 20));
 
         // 축약형
-        
+        let y = (a, b) => {
+            return a * b;
+        }; //////////// y 함수 /////////////        
 
         // 함수호출하기
-        
+        console.log("y(300,20)함수호출:", y(300, 20));
+
 
         // 좀더 축약!
-        
-        /////// z 함수 //////////
+        let z = (a, b) => a * b;
 
         // 함수호출하기
-        
+        console.log("z(400,20)함수호출:", z(400, 20));
 
 
         // 일반적인 함수할당
-        
+        let my = function (x) {
+            console.log(`나는 ${x}다!`);
+        } //////// my함수 ///////////
 
         // 함수호출하기
-        
+        my('프론트엔드 개발자');
 
 
         // 축약형 
         // - 전달변수가 하나일때 소괄호() 생략가능!
         // - 실행문이 하나일때도 중괄호{} 생략가능!
-       
+        let we = x => console.log(`우리는 ${x}다!`);
+
         ////////// we 함수 ///////////
 
         // 함수호출하기
-        
+        we('웹 개발자들이');
 
 
         /// 로딩구역 ////////////////////////
         window.addEventListener("load", () => {
 
+            // 버튼요소
+            let btn = document.querySelectorAll(".btn");
+
             // 버튼요소 클릭시 글자 바꾸기 //////
 
             // 기존방식 /////
-            
+            btn[0].onclick = function(){
+                // 클릭된 요소 자신은 this키워드다!
+                console.log(this);
+                // 버튼글자 변경
+                this.innerText = "올드익명함수다!";
+            }; /////////// click //////////////
 
 
             // 새로운 방식 ////
-            
+            btn[1].onclick = ()=>{
+                // 클릭된 요소 자신은 this키워드다?
+                // 그.러.나... 화살표함수는 this의 의미가
+                // 다르다!!! this는 상위객체를 가리킴
+                // 여기서는 window가 상위객체임!
+                // this대신 event.currentTarget
+                console.log(this);
+                console.log(event.currentTarget);
+
+                // 버튼글자 변경
+                event.currentTarget.innerText = 
+                "화살표함수다!";
+            }; /////////// click //////////////
+
 
 
             /************************************ 
@@ -136,10 +164,10 @@
 
 <body>
 
-    <button id="btn1" style="font-size:40px">
+    <button class="btn btn1" style="font-size:40px">
         너는 누구니? 클릭해봐!</button>
     <br><br>
-    <button id="btn2" style="font-size:40px">
+    <button class="btn btn2" style="font-size:40px">
         너는 누구니? 클릭해봐!</button>
 
 </body>
