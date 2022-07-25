@@ -17,6 +17,7 @@ body {
       url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
    /* 로고이미지 가로위치 10%, 세로위치 30%, 
    가로크기 10% 세로크기 auto(생략) */
+
 }
 
 /* body의 가상요소로 인트로 애니동안 화면가리기 */
