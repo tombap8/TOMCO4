@@ -50,7 +50,7 @@ body {
     transform: translate(-50%, -50%);
     /* 트랜스폼 정중앙이동 */
 
-    outline: 4px dotted lime;
+    /* outline: 4px dotted lime; */
 }
 
 /* Click Here! 글자박스 */
@@ -78,3 +78,13 @@ body {
 #enter:hover img{
     transform: rotate(-15deg) scale(1.5);
 }
+
+/* 미디어쿼리 600px 이하 시작*/
+@media screen and (max-width:600px) {
+    /* click here 글자박스 */
+    #enter span{
+        font-size: 7vw;
+        white-space: nowrap;
+    }
+}
+/* 미디어쿼리 600px 이하 끝 */
