@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CGV PJ 인트로 페이지 CSS - intro.css */
+
+/* 외부CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 비디오요소 */
+#myvid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 
+        [ object-fit 속성 ]
+        -> img, video 요소에 사용하는 맞춤속성
+
+        - 부모요소 크기에 채우는 방식을 결정함
+        - contain 기본값
+        - 특히 이미지일 경우 배경이미지로 넣어야
+        빈공간이 없이 비율을 유지하면서 채울 수 있다고
+        생각하는데 이 속성을 사용하면 마치 배경이미지처럼
+        이미지를 채울 수 있다! (동영상도 동일함!)
+
+        1. cover : 이미지나 동영상 비율을 유지하며
+                    부모박스를 빈공간없이 채운다!
+                    (잘리는 부분이 있을 수 있음)
+        2. fill : 이미지나 동영상 비율을 깨고 모두 보이게
+                    부모박스를 빈공간없이 채운다!
+                    (잘리는 부분이 없음)
+        3. contain : 이미지나 동영상이 모두 보이며 비율유지함
+                    (잘리는 부분이 없으나 빈 공간이 생길 수 있음)
+    */
+
+    /* 필터 명도를 조절하여 어두워보이게 함 */
+    filter: brightness(50%);
+}
+
+/* 들어가기 버튼 박스 */
+#enter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 트랜스폼 정중앙이동 */
+
+    outline: 4px dotted lime;
+}
