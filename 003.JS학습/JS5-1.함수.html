@@ -317,7 +317,7 @@
         setInterval(()=>{
 
             // 순번찍기
-            console.log("이번순번은? ",seq);
+            // console.log("이번순번은? ",seq);
 
             // body에 배경이미지 변경하기
             document.body.style.backgroundImage = 
@@ -329,6 +329,32 @@
             if(seq===3) seq=0; //처음으로!
 
         },3000); // 인터발함수 /////////////////
+
+
+
+
+        // 파라미터 변수 없는 함수가 전달값을 받을 수 있나?
+        // 기본 전달값 배열변수가 있다! ->>> arguments
+        // 주의: 화살표함수는 이것을 못씀!
+        // 글자찍기 함수 //////
+        function Fn(){
+            // 호출시 전달되는 arguments 찍어보기!
+            console.log("전달값arguments:",arguments);
+
+            // 배열 자동 돌리기 for문은?
+            // for of
+            for(let x of arguments){
+                document.body.innerHTML += 
+                `<h2>${x}</h2>`;
+            } ///////// for of ////////////////
+
+        } /////////// Fn함수 /////////////////////
+
+        // 일정시간후 한번 함수호출하기!
+        // setTimeout(함수,시간)
+        setTimeout(() => {
+            Fn("동해물과","백두산이","마르고 닳도록","하느님이","보우하사","우리나라 만세!!!");
+        }, 2000);
 
        
 
