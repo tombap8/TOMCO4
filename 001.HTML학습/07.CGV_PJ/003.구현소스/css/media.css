@@ -81,14 +81,17 @@
 
 /********** 미디어쿼리 600px 이하 시작 **********/
 @media screen and (max-width:600px) {
+
     /* 메인영역 비율변경 */
     .cont::before {
         padding-top: 150%;
     }
+
     /* 메인 배경이미지 크기 조정 */
     .cont {
         background-size: 130%;
     }
+
     /* 스크린 위치,크기조정 */
     #screen {
         top: 9.8%;
@@ -96,9 +99,26 @@
         width: 76.1%;
         height: 28.8%;
     }
+
     /* 극장가는길 없앰 */
-    .goMV{
+    .goMV {
         display: none;
+    }
+
+    /* 2-2. 예고편 선택메뉴 */
+    .mlist {
+        width: 90%;
+        bottom: 4%;
+    }
+
+    /* 예고편 ul */
+    .mlist ul {
+        flex-wrap: wrap;
+    }
+
+    /* 예고편 li */
+    .mlist>ul>li {
+        flex-basis: 29.73%;
     }
 
 }
