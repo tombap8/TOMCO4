@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <title> ID 선택자  </title>
-<!-- jQuery library -->
+<!-- 제이쿼리 라이브러리 -->
 <script src="jquery-3.6.0.min.js"></script>
-<script>
+<!-- 제이쿼리 UI - 추가기능 플러그인
+색상애니메이션, 이징(가속도), 드래그 기능 등 -->
+<script src="jquery-ui-1.8.23.custom.min.js"></script>
 
-      
+      <script>
       $(()=>{ /////////////// jQB ///////////////////////////
             // 글자넣기
             // $(선택자).text(넣을글자).css()
@@ -15,22 +17,56 @@
             // 이것을 메서드 체인이라고함!
             // 주어가 하나임! 나는 밥을 먹고 공부를 했다!
             
+            // 애니메이션 전용 메서드 ->>>> animate()
+            // animate({CSS설정},시간,이징,함수)
+            // CSS설정 - CSS요소변경
+            // 시간 - 1/1000초(단위안씀) : 기본값 400(안쓰면적용)
+            // 이징 - 제이쿼리전용 이징(https://easings.net/ko)
+            //      -> 이징은 반드시 제이쿼리UI가 필요함!
+            // 함수 - 콜백함수(애니메이션 끝난후 실행함수)
+            
             // 미션: h2태그를 클릭하면
+            $("h2").click(()=>{
+              // 아이디가 #sub 는 글자를 "이승기"로 바꾸고
+              // 배경노란색, 글자색파랑,보더1px solid green,
+              // 글자크기 42px, 트랜지션 0.8초
+              $("#sub").text("이승기")
+              .animate({ // animate에서는 트랜지션 안줌!!!
+                backgroundColor:"yellow",
+                color: "blue",
+                fontSize:"42px"
+              },800);
+
+              // 아이디가 #main 는 글자를 "공유"로 바꾸고
+              // 배경파랑, 글자색흰색,보더3px solid yellow,
+              // 글자크기 52px, 트랜지션 0.8초 -> 1초후
+              $("#main").text("공유")
+              .delay(1000) // 애니메이션 앞 지연시간
+              .animate({
+                backgroundColor:"blue",
+                color:"white",
+                fontSize:"52px"
+              },800);
+            
+              // 아이디가 #total 는 글자를 "싸랑해요~!"로 바꾸고
+              // 배경검정, 글자색빨강,보더2px solid purple,
+              // 글자크기 152px, 트랜지션 0.8초 -> 2초후
+              $("#total").text("싸랑해요~!")
+              .delay(2000)
+              .animate({
+                backgroundColor:"black",
+                color:"red",
+                fontSize:"152px"
+              },800);
+
+              
+
+            }); ///////////// click ////////////
            
                   
-            // 아이디가 #sub 는 글자를 "이승기"로 바꾸고
-            // 배경노란색, 글자색파랑,보더1px solid green,
-            // 글자크기 42px, 트랜지션 0.8초
             
             
-            // 아이디가 #main 는 글자를 "공유"로 바꾸고
-            // 배경파랑, 글자색흰색,보더3px solid yellow,
-            // 글자크기 52px, 트랜지션 0.8초 -> 1초후
-          
 
-            // 아이디가 #total 는 글자를 "싸랑해요~!"로 바꾸고
-            // 배경검정, 글자색빨강,보더2px solid purple,
-            // 글자크기 152px, 트랜지션 0.8초 -> 2초후
             
 
 
