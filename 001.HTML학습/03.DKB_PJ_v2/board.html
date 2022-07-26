@@ -73,7 +73,7 @@
 
             </aside>
             <!-- 1-3. GNB메뉴 -->
-            <nav class="gnb">                
+            <nav class="gnb">
                 <!-- 플렉스박스+가로중앙 -->
                 <ul class="fbx jcc">
                     <li class="sm">
@@ -150,7 +150,132 @@
             <h2 class="stit">Board</h2>
             <!-- 2-2.컨텐츠박스 -->
             <section class="scont">
-                
+                <!-- 한국 최신 드라마 리스트 -->
+                <table class="tbl" id="drama">
+                    <!-- 테이블 기본 사이간극은  
+                border="1"속성을 넣고 확인해 본다! 
+                없애려면 css에서 
+                border-collapse:collapse설정함! -->
+                    <!-- 1. 테이블제목 -->
+                    <caption>시청자 게시판</caption>
+                    <!-- 2. 테이블 머릿부분 -->
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>아이디</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <!-- 3. 테이블 메인부분 -->
+                    <tbody>
+                        <tr>
+                            <td>3086</td>
+                            <td>도깨비 넘 재밌습니다</td>
+                            <td>지나</td>
+                            <td>2022.06.12</td>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>3085</td>
+                            <td>지문 읽어주는 목소리 말인데요</td>
+                            <td>신델라</td>
+                            <td>2021.12.30</td>
+                            <td>156</td>
+                        </tr>
+                        <tr>
+                            <td>3084</td>
+                            <td>도깨비 제작진들께 다시한번 감사드립니다.</td>
+                            <td>김두선</td>
+                            <td>2021.11.07</td>
+                            <td>228</td>
+                        </tr>
+                        <tr>
+                            <td>3083</td>
+                            <td>감독판 블루레이 재발매는 안되는건가요???</td>
+                            <td>오나영</td>
+                            <td>2021.08.29</td>
+                            <td>213</td>
+                        </tr>
+                        <tr>
+                            <td>3082</td>
+                            <td>김은숙 작품이 맞는지 의심스러웠던 (1)</td>
+                            <td>오원동</td>
+                            <td>2021.06.26</td>
+                            <td>563</td>
+                        </tr>
+                        <tr>
+                            <td>3081</td>
+                            <td>도깨비는 감동입니다</td>
+                            <td>탁규민</td>
+                            <td>2021.01.29</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>3080</td>
+                            <td>ost엘피로 만들어 주세요</td>
+                            <td>박혜영</td>
+                            <td>2021.01.06</td>
+                            <td>258</td>
+                        </tr>
+                        <tr>
+                            <td>3079</td>
+                            <td>수정 부탁드려요</td>
+                            <td>피치</td>
+                            <td>2020.09.25</td>
+                            <td>442</td>
+                        </tr>
+                        <tr>
+                            <td>3078</td>
+                            <td>2화 엔딩</td>
+                            <td>온혜인</td>
+                            <td>2020.08.18</td>
+                            <td>335</td>
+                        </tr>
+                        <tr>
+                            <td>3077</td>
+                            <td>제발 이 브금 좀 알려주세요ㅜㅜ (1)</td>
+                            <td>김민정</td>
+                            <td>2020.03.02</td>
+                            <td>824</td>
+                        </tr>
+                    </tbody>
+                    <!-- 4. 테이블 하단부분 -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                ◀ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ▶
+                            </td>
+                            <!-- 
+                                colspan 속성은 기본적으로 td를 합칠때 사용함
+                                상단의 td(th)가 5개 이고 이것을 합치려면
+                                7개를 하나로 통합하는 값을 설정해 준다!
+                                여기서 col은 column 컬럼(기둥)의 뜻
+                                span은 "범위"라는 의미임
+
+                                위아래 행을 합치는 속성은 rowspan임!
+                            -->
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- 
+                    [ 가장 복잡한 그룹요소인 테이블!!! ]
+                    32. table : 테이블 전체 부모요소
+                    33. tr : 테이블 레코드행 (table row)
+                    34. td : 테이블 데이터요소 (table data)
+                    35. th : 테이블 머릿부분에 사용될 경우 
+                    td대신 th를 사용할 수 있다.
+                    (기본디자인-중앙정렬+두꺼운글자)
+                    ________________________________  
+                    (테이블 구조를 위한 추가요소들)
+                    36. caption : 테이블 제목
+                    37. thead : 테이블 머릿부분
+                    38. tbody : 테이블 중앙 내용부분
+                    39. tfoot : 테이블 하단부분
+                    ※tbody는 일반적으로 table tr td 로 구성하는
+                    테이블일 경우 자동으로 생성되어 표시된다!
+                -->
             </section>
         </main>
     </div>
@@ -158,7 +283,7 @@
     <div id="info">
         <footer class="ibx info">
             <!-- 3-1. 하단링크 -->
-            <div class="blink">                
+            <div class="blink">
                 <!-- 플렉스박스+가로중앙 -->
                 <ul class="fbx jcc">
                     <li>
