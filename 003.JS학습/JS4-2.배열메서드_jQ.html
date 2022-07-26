@@ -128,6 +128,29 @@
 
                 // 2. 버튼별 기능구현 분기하기
                 if(btxt==="과일주세요~!"){
+                    // 배열만큼 ul>li를 만들어서
+                    // html로 .cont에 출력하기!
+
+                    // 임시변수
+                    let temp = "<ul>";
+                    
+                    // 배열만큼 li만들기
+                    // 배열변수는 fruit
+                    // forEach((값,순번,객체)=>{})
+                    fruit.forEach(val=>{
+                        // 배열값 확인
+                        console.log("배열값:",val);
+                        // temp변수에 li셋팅
+                        temp += `
+                            <li style="background:url(addimg/${frObj[val]}.png) no-repeat center/cover">${val}</li>
+                        `;
+                    }); //// forEach ////////
+
+                    // temp변수 마무리
+                    temp += "</ul>";
+
+                    // 화면출력
+                    cont.html(temp); 
 
                 } ///////////// if /////////////
                 else if(btxt==="뒷배열추가요~!"){
