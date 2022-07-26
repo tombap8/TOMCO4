@@ -26,6 +26,9 @@ $(() => {
             case "인물관계도":
                 url = "cat";
                 break;
+            case "프로그램 소개":
+                url = "cat";
+                break;
             case "시청자 게시판":
                 url = "board";
                 break;

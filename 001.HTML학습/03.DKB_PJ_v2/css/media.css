@@ -72,8 +72,8 @@
         min-height: auto;
     }
 
-    /* 7. 사라질요소들 : .tmenu, .blink */
-    .tmenu, .blink{
+    /* 7. 사라질요소들 : .blink */
+    .blink{
         display: none;
     }
     /* 8. 하단영역 */
@@ -144,6 +144,26 @@
         background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
     }
 
+    /* 16. 탑메뉴 처음에 숨기기 + body.on일때 보이기 */
+    .tmenu{
+        display: none;
+    }
+    body.on .tmenu{
+        display: block;
+    }
+    /* 17. 탑메뉴 전체메뉴에 보이게하기 */
+    .tmenu>ul {
+        position: fixed;
+        z-index: 9999;
+        top: 87vh;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .tmenu>ul>li>a {
+        font-size: 4vw;
+        color: #fff;
+        white-space: nowrap;
+    }
 
 }
 /************* 870px 이하 끝 *************/

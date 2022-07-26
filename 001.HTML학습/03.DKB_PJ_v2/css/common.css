@@ -22,6 +22,8 @@
 #top{
   position: relative;
   /* 부모자격 */
+  z-index: 9999;
+  /* 하단박스 보다위(모바일 GNB메뉴때문) */
 
   /* 하단 구분선 */
   border-bottom: 1px solid #ccc;
