@@ -44,7 +44,7 @@
     font-size: 24px;
     margin: 0 auto;
     /* 마영오! 블록요소(테이블) 가로중앙 */
-    width: 1000px;
+    width: 90%;
     /* 테이블 width지정이 없으면 내용만큼 늘어남!
     좁으면 아래로 내용이 줄바꿈됨 */
 }
@@ -96,3 +96,46 @@
     /* 텍스트 중앙정렬 */
     padding: 45px 0;
 }
+
+
+/* 미디어쿼리 1050이하 시작*/
+@media screen and (max-width:1050px) {
+    /* 두번째 이후 항목 지우기 */
+    #drama thead th:nth-child(4)~th,
+    #drama tbody td:nth-child(4)~td{
+        display: none;
+    }
+}
+/* 미디어쿼리 1050이하 끝 */
+
+/* 미디어쿼리 950이하 시작*/
+@media screen and (max-width:950px) {
+    /* 두번째 이후 항목 지우기 */
+    #drama thead th:nth-child(3)~th,
+    #drama tbody td:nth-child(3)~td{
+        display: none;
+    }
+}
+/* 미디어쿼리 950이하 끝 */
+
+/* 미디어쿼리 780이하 시작*/
+@media screen and (max-width:780px) {
+    /* 두번째 이후 항목 지우기 */
+    #drama thead th:nth-child(2)~th,
+    #drama tbody td:nth-child(2)~td{
+        display: none;
+    }
+}
+/* 미디어쿼리 780이하 끝 */
+
+/* 미디어쿼리 600이하 시작*/
+@media screen and (max-width:600px) {
+    /* 두번째 이후 항목 지우기 */
+    #drama thead th:first-child,
+    #drama tbody td:first-child,
+    #drama thead th:nth-child(2)~th,
+    #drama tbody td:nth-child(2)~td{
+        display: none;
+    }
+}
+/* 미디어쿼리 600이하 끝 */
