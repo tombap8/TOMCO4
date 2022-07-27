@@ -148,7 +148,7 @@ body * {
 
 /* .cbx에 마우스 오버시 보더애니 */
 .cbx:hover::after{
-  border: 20px solid red;
+  border: min(1.6vw,20px) solid red;
 }
 
 /* 컨텐츠 타이틀박스 */
@@ -160,12 +160,12 @@ body * {
 
   /* 글자설정 */
   font-family: pist,nbg;
-  font-size: 33px;
+  font-size: min(3vw,33px);
   font-weight: normal;
   text-align: center;
   color: #fff;
 
-  padding: 50px;
+  padding: min(50px,3.4vw);
   /* 박스크기유지 - 패딩,보더포함 */
   box-sizing: border-box;
 }
