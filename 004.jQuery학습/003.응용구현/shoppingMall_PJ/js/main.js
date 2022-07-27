@@ -35,7 +35,29 @@ $(()=>{
         // 변경에 사용할 제이쿼리 메서드: 
         // animate({CSS속성},시간,이징,함수)
 
+        // 변경대상: 블릿 - .indic li
+        let indic = $(".indic li");
+
+        // 광클 금지상태변수
+        let prot = 0; // 1-불허용, 0-허용
+
+        // 애니메이션 시간 변수
+        const aniT = 600;
+
+        // 애니메이션 이징 변수
+        const aniE = "easeInOutQuint";
+
         $(".abtn").click(function(){
+
+            // console.log("진입:",prot);
+
+            /// 광클금지 ////////
+            if(prot) return;
+            prot = 1;//잠금!
+            setTimeout(()=>prot=0,aniT);
+            // 0.6초후 prot=0 잠금해제!
+            
+            // console.log("통과:",prot);
 
             // 1. 오른쪽여부
             // is(클래스/아이디명) -> 선택요소해당여부 리턴
@@ -47,7 +69,10 @@ $(()=>{
             // 2. 버튼별 분기하여 기능구현
             if(isR){ // 오른쪽버튼
 
-                slide.animate({left:"-100%"},600,
+                slide.animate(
+                {left:"-100%"}, // CSS설정
+                aniT, // 시간
+                aniE, // 이징
                 function(){ // 이동후 실행함수
                     // append(요소) 
                     // -> 자식요소로 맨뒤추가(이동)
@@ -73,11 +98,49 @@ $(()=>{
                 // 동시에 left값 -100%
                 .css({left:"-100%"})
                 // 그후 left값 0으로 애니메이션
-                .animate({left:"0"},600)
+                .animate(
+                    {left:"0"},
+                    aniT,//시간
+                    aniE // 이징
+                ); ////// animate //////
 
             } /////////// else ///////////
 
+            // 블릿순번 표시변경하기
+
+
         }); /////////// click /////////////
+
+
+        // 블릿순번을 결정하기 위한 슬라이드 고유번호
+        // 새로운 속성 만들기!!!
+        // 새로운 속성은 'data-' 라는 이름으로 시작하면
+        // 만들 수 있다!(w3c공식문법)
+        // 우리는 각 슬라이드에 'data-seq'라는 이름의
+        // 순번 저장용 속성을 만들고자 한다!
+        // 이때 사용할 제이쿼리 메서드는 바로~~~~~~~
+        // each() 메서드 - for문 안써도됨!
+        // each((ele,idx)=>{})
+        // ele -> 첫번째 전달변수 : 요소자신
+        // idx -> 두번째 전달변수 : 순번
+
+        // 속성넣기 제이쿼리 메서드는? attr(속성명,값)
+        // 비교) JS의 속성셋팅은 setAttribute(속성명,값)
+        // 비교) JS의 속성읽기는 getAttribute(속성명)
+        // 제이쿼리는 하나로 다 됨~!!!!
+        // attr(속성명) -> 속성값 읽기
+        // attr(속성명, 값) -> 속성값 셋팅
+
+
+        // 대상: 슬라이드의 li
+        slide.find("li").each(function(idx,ele){
+
+            // 'data-seq' 라는 
+            // 새로운 속성에 순번을 넣음!
+            $(ele).attr("data-seq",idx);
+            // console.log(ele,idx);
+
+        }); ///////// each ////////////////
 
 
 
