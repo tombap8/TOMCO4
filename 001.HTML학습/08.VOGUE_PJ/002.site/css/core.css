@@ -128,6 +128,10 @@ body * {
 
 
 /* 배경이미지 공통 class */
+.bgi{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 /* IR(Image Replacement) 또는 일반숨김용 클래스 */
