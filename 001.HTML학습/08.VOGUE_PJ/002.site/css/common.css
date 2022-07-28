@@ -9,8 +9,18 @@
 
 /************ 1-1.상단메뉴 ************/
 .tmenu{
+    /* 플렉스박스 */
+    display: flex;
+    max-width: 970px;
     min-height: 44px;
+    margin: 0 auto;
 }
+/* 플렉스 박스 직계 div */
+.tmenu>div{
+    flex: 1;
+    /* 등분할 자동높이 채움! */
+}
+
 /************ 1-2.로고박스 ************/
 .logo{
     text-align: center;
