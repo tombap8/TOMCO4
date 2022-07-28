@@ -5,6 +5,10 @@
     <title>03. 페이드효과 배너 슬라이드</title>
     <link rel="stylesheet" href="css/main.css">
     <!-- 외부JS삽입 -->
+    
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/main3.js"></script>
     <style>
         /* 슬라이드 변경 */
@@ -17,16 +21,17 @@
             height: 100%;
             /* 모든 슬라이드 겹치기 */
 
+            /* 제이쿼리에서 처리함->투명도,트랜지션 불필요! */
             /* 모두 투명하게함! */
-            opacity: 0;
+            /* opacity: 0; */
             /* 트랜지션: 속시이지 */
-            transition: opacity .6s ease-in-out;
+            /* transition: opacity .6s ease-in-out; */
         }
         /* 슬라이드 li에 클래스 on을 줄경우 보임! */
-        #slide li.on{
+        /* #slide li.on{
             opacity: 1;
             z-index: 1;
-        }
+        } */
 
         /* 양쪽이동버튼+블릿박스 z-index위로! */
         .abtn,.indic {
