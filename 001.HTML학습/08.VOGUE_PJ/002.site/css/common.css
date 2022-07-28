@@ -20,6 +20,103 @@
     flex: 1;
     /* 등분할 자동높이 채움! */
 }
+/* 1-1-1.sns박스 */
+.sns a{
+    width: 16px;
+    height: 16px;
+    /* .fi에 이미 inline-block되어있음 */
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 16px;
+    /* 손가락모양 */
+    cursor: pointer;
+
+    /* 
+        [커서 이미지 표시하기]
+        cursor: url(이미지경로),대체커서;
+        -> 이미지가 표시안될 경우 콤마뒤의 대체커서가 표시됨
+        -> 이미지는 대체로 jpg, png등 사용하는데 적합치 않은
+        경우 안나올 수 있다
+        예시)
+        cursor: url(../../../03.DKB_PJ_v2/images/blogo.png2),move;
+    */
+
+    /* 위치조정 */
+    margin-top: 14px;
+    margin-right: 17px;
+
+    /* 트랜지션: 속시이지 */
+    transition: opacity 0.2s;
+}
+
+/* a요소 오버시 */
+.sns a:hover{
+    opacity: 0.8;
+}
+
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter{
+    font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play{
+    font-size: 11px;
+}
+/* 유튜브 가상요소 세부조정 */
+.sns a.fi-youtube-play:before {
+    transform: scaleY(1.2);
+    display: inline-block;
+    /* inline은 트랜스폼 적용안됨! */
+}
+
+/* 카카오 스토리 배경이미지 넣기 */
+.sns a:last-child{
+    background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
+}
+
+/* 1-1-2.사이드메뉴 */
+.smbx{
+    /* 플렉스박스 */
+    display: flex;
+    /* 수평방향 끝정렬 */
+    justify-content: flex-end;
+
+    /* 글자체: Roboto, 나눔바른고딕 */
+    font-family: 'Roboto',nbg;
+    font-size: 12px;
+}
+/* 사이드 메뉴 상위 a요소 */
+.smbx>li>a{
+    display: block;
+    padding: 0 13px;
+    line-height: 44px;
+    color: #747474;
+}
+
+
+/* 사이트 메뉴 서브박스 */
+.smsub{
+    position: absolute;
+
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+/* 서브메뉴 a요소 */
+.smsub a{
+    display: block;
+    padding: 7px 10px;
+    color: #747474;
+
+    /* 트랜지션: 속시이지 */
+    transition: 0.2s ease-in-out;
+}
+/* 서브메뉴 마우스 오버시 */
+.smsub a:hover{
+    background-color: #fafafa;
+    color: #333;
+}
 
 /************ 1-2.로고박스 ************/
 .logo{
