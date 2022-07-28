@@ -8,6 +8,7 @@ $(() => {
     // 호출확인
     console.log("로딩완료!");
 
+
     /************************************ 
         [ 페이드 배너 요구사항 ]
 
@@ -28,9 +29,9 @@ $(() => {
     // 이벤트 대상: .abtn
     // 이벤트 : click() 메서드 사용
     // 양쪽버튼 구분 : .ab1(왼쪽버튼) / .ab2(오른쪽버튼)
-    // 변경대상: #slide
+    // 변경대상: #slide li
     // 변경내용: 슬라이드의 left값을 이동하여 애니메이션함!
-    let slide = $("#slide");
+    let slide = $("#slide li"); // li까지 선택함!
 
     // 변경에 사용할 제이쿼리 메서드: 
     // animate({CSS속성},시간,이징,함수)
@@ -47,6 +48,18 @@ $(() => {
     // 애니메이션 이징 변수
     const aniE = "easeInOutQuint";
 
+
+    // 페이드 기능을 위한 초기화 설정
+    // 슬라이드 li가 하나만 빼고 모두 불필요!
+    // display:none처리함! -> hide() 메서드
+    slide.hide().first().show();
+    // 슬라이드li.다숨겨().첫번째().보여()
+
+    // 현재 슬라이드 순번 변수
+    let sno = 0;
+    
+
+    //// 버튼 클릭 설정 ////////////
     $(".abtn").click(function () {
 
         // console.log("진입:",prot);
@@ -72,14 +85,43 @@ $(() => {
         // 2. 버튼별 분기하여 기능구현
         if (isR) { // 오른쪽버튼
 
+            // fadeIn으로 다음 순번 보이기
+            // eq(순번) -> 해당순번 선택
+
+            // 현재슬라이드 숨기기
+            slide.eq(sno).fadeOut(aniT);
+            // 슬라이드 순번 1증가
+            sno++; 
+            // 슬라이드 한계값체크 처음으로변경!
+            if(sno===slide.length) sno=0;
+            // slide.length는 li개수
+            console.log("현재슬번:",sno);
+            // 다음순번 슬라이드 보이기
+            slide.eq(sno).fadeIn(aniT);
 
         } /////////// if ///////////
         else { // 왼쪽버튼
+
+            // fadeIn으로 이전 순번 보이기
+            // eq(순번) -> 해당순번 선택
+
+            // 현재슬라이드 숨기기
+            slide.eq(sno).fadeOut(aniT);
+            // 슬라이드 순번 1감소
+            sno--; 
+            // 슬라이드 한계값체크 마지막으로변경!
+            if(sno===-1) sno=slide.length-1;
+            // slide.length는 li개수
+            console.log("현재슬번:",sno);
+            // 다음순번 슬라이드 보이기
+            slide.eq(sno).fadeIn(aniT);
 
             
         } /////////// else ///////////
 
         // 3. 등장슬라이드와 같은 순번의 블릿변경하기
+        indic.eq(sno).addClass("on")
+        .siblings().removeClass("on");
         
 
     }); /////////// click /////////////
