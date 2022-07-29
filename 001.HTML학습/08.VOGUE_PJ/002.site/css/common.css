@@ -195,4 +195,43 @@
 /*************** 2. 하단영역 ***************/
 .info{
     min-height: 286px;
+    background-color: #000;
+    padding: 70px;
+    /* 크기유지박스 */
+    box-sizing: border-box;
+    font-family: "Roboto", nbg;
+}
+/************ 3-1.하단로고 ************/
+.blogo{
+    text-align: center;
+}
+
+/************ 3-2.회사주소 ************/
+.addr{
+    color: #747474;
+    text-align: center;
+    font-size: 11px;
+    /* address 기본이택릭 해제 */
+    font-style: normal;
+    margin: 20px 0 10px;
+}
+
+/************ 3-3.하단링크 ************/
+.blink{
+    /* 플렉스박스 */
+    display: flex;
+    /* 수평방향 중앙정렬 */
+    justify-content: center;
+    /* 랩핑박스 */
+    flex-wrap: wrap;
+
+}
+.blink a{
+    color: #747474;
+    font-size: 13px;
+    margin: 0 6px;
+}
+/* 링크 마지막 글자 두껍게 */
+.blink li:last-child a{
+    font-weight: bold;
 }
