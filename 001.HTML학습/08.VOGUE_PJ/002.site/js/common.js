@@ -164,6 +164,11 @@ $(() => {
             pos = 0; // 숫자값으로 넣음!
 
     }); ///// click ///////////////
-
+$("body").prepend('<iframe width="1182" height="665" src="https://www.youtube.com/embed/pfk20N9JlBQ" title="Hansan: The Emergence of Dragons (2022) 한산: 용의 출현 Movie Trailer | EONTALK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 
 }); /////////////// jQB ///////////////////////
+
+
+$(window).on("load",function(){
+     $(".LDbx").hide()
+})
