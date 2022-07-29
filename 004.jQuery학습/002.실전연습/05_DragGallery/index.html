@@ -26,7 +26,7 @@
         }
 
         /* 드래그 선택 안되게 하는 CSS */
-        .dselect{
+        .dselect {
             user-select: none;
             /* 선택안되게함 */
             -webkit-user-drag: none;
@@ -82,7 +82,18 @@
         미리보기:
         https://tombap8.github.io/FED211/004.jQuery학습/jQuery-02.실전연습/04.jQuery_utility/05_DragGallery/ready.html
      -->
-     <script></script>
+    <script>
+        /// jQB //////////////////////////
+        $(() => {
+
+            // 아이스크림 박스 드래그설정
+            $("#move").draggable({
+                axis: "x" // x축고정
+                // 축고정 ("y"는 y축고정)
+            });
+
+        }); //////// jQB /////////////////////
+    </script>
 </head>
 
 <body>
