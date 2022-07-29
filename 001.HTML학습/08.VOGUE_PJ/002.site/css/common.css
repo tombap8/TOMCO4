@@ -289,3 +289,35 @@
 .blink li:last-child a{
     font-weight: bold;
 }
+
+/* 위로가기버튼 */
+.tbtn {
+    position: fixed;
+    bottom: -35px;
+    right: 75px;
+    width: 48px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    z-index: 9999;
+    font-size: 12px;
+    opacity: 0;
+    transition: 
+    background-color .3s, 
+    opacity .3s;
+}
+/* 위로가기 버튼 보이기상태 */
+.tbtn.on {
+    opacity: 1;
+    bottom: 0;
+}
+/* 위로가기 버튼 오버시 */
+.tbtn:hover{
+    background-color: #f00;
+}
+
+
+

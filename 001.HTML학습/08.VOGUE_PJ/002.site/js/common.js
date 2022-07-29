@@ -15,6 +15,8 @@ $(() => {
     let scTop; // 스크롤위치변수
     // 변경대상: 상단영역(#top)
     let topA = $("#top");
+    // 변경대상: 위로가기버튼(.tbtn)
+    let tbtn = $(".tbtn");
 
     // 각 등장액션 위치 배열변수
     const scpos = [];
@@ -72,14 +74,8 @@ $(() => {
     $(window).resize(() => {
 
         // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
-        scAct.each((idx, ele) => { // idx-순번, ele-요소
-            // console.log(idx,ele);
-
-            // 위치값 변수에 넣기!
-            scpos[idx] = $(ele).offset().top;
-            // offset().top -> 맨위에서부터 top 위치값 
-
-        }); /////// each //////////////
+        scAct.each((idx, ele) => 
+            scpos[idx] = $(ele).offset().top); 
 
         // 위치배열값 확인!
         console.log(scpos);
@@ -134,6 +130,14 @@ $(() => {
         // 사용하므로 전달변수를 2개 모두 써야함!
 
 
+        // 3. 위로가기 버튼 보이기/숨기기
+        if(scTop >= 300){ // 300이상일때
+            // 변경대상: .tbtn -> tbtn변수
+            tbtn.addClass("on");
+        } ////////// if /////////
+        else { // 300미만일때
+            tbtn.removeClass("on");
+        } ////////// else ////////
 
 
 
