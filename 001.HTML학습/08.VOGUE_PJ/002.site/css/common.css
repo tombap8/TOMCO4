@@ -3,6 +3,10 @@
 /* 상단,하단영역 반복 레이아웃 */
 
 /*************** 1. 상단영역 ***************/
+#top{
+    /* 박스 하단 경계선 그림자 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
 .top{
     min-height: 206px;
 }
@@ -191,6 +195,38 @@
 .gnb a:hover{
     color: red;
 }
+
+/************ 슬림 상단 디자인 변경 ************/
+/* #top 최상위 박스에 클래스 "on"을 줘서 적용! */
+
+/* 1. 상단영역 최상위 고정 */
+#top.on {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #fff;
+}
+/* 2. 상단영역 속박스(.top) 최소높이 해제 */
+#top.on .top{
+    min-height: auto;
+}
+/* 3. 탑메뉴 없애기 */
+#top.on .tmenu{
+    display: none;
+}
+/* 4. 메인로고 이미지 크기변경 */
+#top.on .logo img{
+    width: 100px;
+}
+/* 5. 메인로고 박스 포지션 변경 */
+#top.on .logo{
+    position: absolute;
+    padding: 10px;
+}
+
+
 
 /*************** 2. 하단영역 ***************/
 .info{

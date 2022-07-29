@@ -191,6 +191,8 @@ font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* 공통 적용 배경색 클래스 */
-
+.bgc{
+  background-color: #f9f9f9;
+}
 
 /* 등장액션 클래스 */
