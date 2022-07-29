@@ -9,7 +9,15 @@
 	<script src="jquery-ui.min.js"></script>
 	<script src="jquery-touch-punch.min.js"></script>
 	<!-- 터치펀치는 모바일이벤트 변환용 -->
-	<script></script>
+	<script>
+		$(()=>{
+			$("#viewer").draggable({
+				axis: 'x'
+			});
+
+
+		})
+	</script>
 
 	<style>
 		html,
