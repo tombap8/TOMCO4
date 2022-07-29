@@ -223,6 +223,7 @@
 /* 5. 메인로고 박스 포지션 변경 */
 #top.on .logo{
     position: absolute;
+    top: 0;
     left: 0;
     /*  부모는? #top */
     padding: 10px;
@@ -230,6 +231,8 @@
 /* 6. GNB 변경 */
 #top.on .gnb{
     font-size: 14px;
+    padding: 5px 120px 0;
+    /* 양쪽패딩 120px 밀어줌! - 로고때문! */
 }
 /* 글자색은 a요소에서 변경! */
 #top.on .gnb a{
