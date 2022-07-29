@@ -16,6 +16,21 @@ $(()=>{
    // 변경대상: 상단영역(#top)
    let topA = $("#top");
 
+   // 각 등장액션 위치 배열변수
+   const scpos = [];
+   // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
+   $(".scAct").each((idx,ele)=>{ // idx-순번, ele-요소
+        // console.log(idx,ele);
+
+        // 위치값 변수에 넣기!
+        scpos[idx] = $(ele).offset().top;
+        // offset().top -> 맨위에서부터 top 위치값 
+
+   }); /////// each //////////////
+
+   // 위치배열값 확인!
+   scpos.forEach((val)=>console.log(val));
+
    // 윈도우에 스크롤 이벤트 설정하기 ///
    $(window).scroll(function(){
 
@@ -39,7 +54,7 @@ $(()=>{
 
             // 상단영역에 클래스 on삭제
             topA.removeClass("on");
-            
+
         } //////// else ///////////
 
 
