@@ -18,6 +18,7 @@ $(()=>{
 
    // 각 등장액션 위치 배열변수
    const scpos = [];
+   
    // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
    $(".scAct").each((idx,ele)=>{ // idx-순번, ele-요소
         // console.log(idx,ele);
