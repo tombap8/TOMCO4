@@ -6,6 +6,10 @@ $(() => {
     // 호출확인
     console.log("로딩완료!");
 
+    /// 부드러운 스크롤 호출!(제이쿼리 아님!)
+    startSS();
+
+
     /******************************** 
         페이지 스크롤시 변경 구현하기
         - 이벤트: scroll
@@ -74,14 +78,21 @@ $(() => {
     $(window).resize(() => {
 
         // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
-        scAct.each((idx, ele) => 
-            scpos[idx] = $(ele).offset().top); 
+        scAct.each((idx, ele) =>
+            scpos[idx] = $(ele).offset().top);
 
         // 위치배열값 확인!
         console.log(scpos);
 
     }); /////////// resize함수 ///////////////////
 
+
+    $(window).on("mousewheel wheel",()=>{
+        console.log("ㅎㅎㅎ");
+        // 부드러운 스크롤 위치변수pos 업데이트
+        // pos = scTop;
+
+    })
 
 
     ////////////////////////////////////
@@ -94,7 +105,8 @@ $(() => {
         // 참고) 가로스크롤바 위치값은 scrollLeft()
 
         // 스크롤확인+위치값
-        console.log(scTop);
+        // console.log(scTop);
+        
 
         // 1. 상단영역 슬림변경 클래스 on주기!
         // 스크롤위치 기준은 100px이상일때
@@ -131,7 +143,7 @@ $(() => {
 
 
         // 3. 위로가기 버튼 보이기/숨기기
-        if(scTop >= 300){ // 300이상일때
+        if (scTop >= 300) { // 300이상일때
             // 변경대상: .tbtn -> tbtn변수
             tbtn.addClass("on");
         } ////////// if /////////
@@ -146,15 +158,19 @@ $(() => {
     // 위로가기버튼 클릭시 
     // 맨위로 스크롤 애니메이션하기!
     // 대상: .tbtn -> tbtn변수
-    tbtn.click(()=>{
+    tbtn.click(() => {
         // 변경대상: html,body
         // -> 전체 스크롤 위치이동대상
         // 사용메서드: animate()
         // 스크롤위치이동 속성은 scrollTop
         $("html,body")
-        .animate({
-            scrollTop:"0"
-        },800,"easeOutQuart"); 
+            .animate({
+                scrollTop: "0"
+            }, 800, "easeOutQuart");
+
+            // 부드러운 스크롤 위치변수에
+            // 변경된 위치값 업데이트 필수!
+            pos = 0; // 숫자값으로 넣음!
 
     }); ///// click ///////////////
 
