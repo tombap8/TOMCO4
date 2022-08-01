@@ -21,13 +21,13 @@ $(() => {
         // text() 텍스트 넣기
         $(ele).text(idx);
         // 9번방에 좀비넣기
-        if(idx===9) 
+        if (idx === 9)
             $(ele).append('<img src="images/mz1.png" alt="좀비1" class="mz">');
-        else if(idx===7) 
+        else if (idx === 7)
             $(ele).append('<img src="images/mz2.png" alt="좀비2" class="mz">');
-        else if(idx===1) 
+        else if (idx === 1)
             $(ele).append('<img src="images/zom.png" alt="좀비들" class="mz">');
-        else if(idx===2) 
+        else if (idx === 2)
             $(ele).append('<img src="images/inj.png" alt="주사기" class="inj">');
     }); ///////// each ///////////////
 
@@ -40,43 +40,61 @@ $(() => {
     // 버튼.숨겨().첫번째().보여()
     btns.hide().first().show();
 
-    // 3. "들어가기"버튼 클릭시
-    btns.first().click(function () {
+    // 3. 공통 구현 함수 만들기
+    // 각 스텝에서 미니언즈가 할 공통 기능 함수구현!
+    const actMini = (ele, seq, fn) => {
+        // ele - 버튼자신
+        // seq - 이동할 li 순번
+        // fn - 이동후 실행함수
 
         // 0. 버튼자신 없애기!
         // 없애기 방법: hide(),slideUp(),fadeOut()
-        $(this).slideUp(300);
+        $(ele).slideUp(300);
         // + 메시지 없애기
         msg.hide();
 
         // 1. 위치값 알아오기(대상:빌딩li)
         // 8번째 li
         // eq(순번) -> 순번요소 선택 메서드!
-        let tval = bd.eq(8).offset().top;
-        let lval = bd.eq(8).offset().left;
+        let tval = bd.eq(seq).offset().top;
+        let lval = bd.eq(seq).offset().left;
         // offset() 메서드 - 요소셋팅값(위치,크기)
         // top,left,width,height 속성값 사용!
 
 
         // 2. 위치이동(이동대상:미니언즈)
         mi.animate({
-            top: tval+"px",
-            left: lval+"px"
-        }, 1000, "easeInOutElastic",
-        function(){ // 이동애니후
+            top: tval + "px",
+            left: lval + "px"
+        }, 1000, "easeInOutElastic", fn);
+        /////////// animate /////////////
+
+    }; ////////// actMini 함수 ///////////////////
+    //////////////////////////////////////////////
+
+
+    // 4. "들어가기"버튼 클릭시
+    btns.first().click(function () {
+
+        // 이동후 함수
+        let fn = () => {
 
             // 메시지 변경하기+보이기
             msg
-            .text('와~! 아늑하다! 옆방으로 가보자!')
-            .show();
+                .text('와~! 아늑하다! 옆방으로 가보자!')
+                .show();
 
             // 다음버튼 보이기
             btns.eq(1).fadeIn(300);
 
-        }); /////// animate ///////
+        }; ///////// fn //////////
+
+        // 공통 기능구현 함수 호출!
+        actMini(this, 8, fn);
 
     }); ///////// click ///////////
 
+   
 
 
 }); ////////////// jQB /////////////////////////
