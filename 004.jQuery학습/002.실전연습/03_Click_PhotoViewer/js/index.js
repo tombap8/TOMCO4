@@ -214,7 +214,7 @@ $(() => {
 
             // 블릿변경하기
             let sseq =
-            slide.find("li").eq(1).attr("data-seq");
+                slide.find("li").eq(1).attr("data-seq");
 
             indic.eq(sseq).addClass("on")
                 .siblings().removeClass("on");
@@ -226,14 +226,14 @@ $(() => {
 
 
     //// 인터발 지우기 함수 ///////
-    function clearAuto(){
+    function clearAuto() {
         // 인터발지우기
         clearInterval(autoI);
         // 타임아웃지우기(실행쓰나미방지!)
         clearTimeout(autoT);
 
         // 일정시간후 다시 인터발호출!
-        autoT = setTimeout(autoSlide,4000);
+        autoT = setTimeout(autoSlide, 4000);
 
     } ///////// clearAuto함수 ///////////
 
@@ -249,36 +249,90 @@ $(() => {
 
 
 
-   /**************************************** 
-        블릿 클릭시 이동기능 구현하기
-        - 대상: #indic li -> indic변수
-        - 이벤트: click -> click() 메서드
-   ****************************************/
-  indic.click(function(){
+    /**************************************** 
+         블릿 클릭시 이동기능 구현하기
+         - 대상: #indic li -> indic변수
+         - 이벤트: click -> click() 메서드
+    ****************************************/
+    indic.click(function () {
 
-    // 1. 클릭된 블릿 li 순번
-    let idx = $(this).index();
-    console.log("블번:",idx)
+        // 1. 클릭된 블릿 li 순번
+        let idx = $(this).index();
+        console.log("블번:", idx)
 
-    // 2. 현재 슬라이드 순번(첫번째 슬라이드 'data-seq'값)
-    let sidx = slide.find("li")
-    .first().attr("data-seq");
-    console.log("슬번:",sidx)
+        // 2. 현재 슬라이드 순번(첫번째 슬라이드 'data-seq'값)
+        let sidx = slide.find("li")
+            .first().attr("data-seq");
+        console.log("슬번:", sidx)
 
-    // 3. 블릿순번 - 슬라이드순번 : 두 순번의 차이값
-    let diff = idx - sidx;
-    console.log("차이:",diff)
-    // 해석: 양수면 오른쪽에서 들어옴, 음수면 왼쪽에서 들어옴
+        // 3. 블릿순번 - 슬라이드순번 : 두 순번의 차이값
+        let diff = idx - sidx;
+        console.log("차이:", diff)
+        // 해석: 양수면 오른쪽에서 들어옴, 음수면 왼쪽에서 들어옴
 
-    // 4. 이동분기하기
-    if(diff > 0){ // 양수는 오른쪽에서 들어옴
+        // 차이수의 절대값
+        let absd = Math.abs(diff);
+        // Math.abs(숫자) -> 양수로 결과변환!
+        console.log("차이절대값:", absd);
 
-    } /////////// if ///////////////
-    else if(diff < 0) { // 음수는 왼쪽에서 들어옴
+        // 4. 이동분기하기
+        if (diff > 0) { // 양수는 오른쪽에서 들어옴
 
-    } ////////// else if ////////////
+            // 기본이동이 오른쪽버튼과 동일함!
+            slide.animate({
+                    left: (-100 * absd) + "%"
+                    // 절대차이값 만큼 left이동!
+                }, // CSS설정
+                aniT, // 시간
+                aniE, // 이징
+                function () { // 이동후 실행함수
 
-  }); ////////// click ////////////////////
+                    // 절대차이수만큼 반복한다!
+                    // 임시변수(감소하는 left값)
+                    let temp = absd;
+                    for (let i = 0; i < absd; i++) {
+                        temp--; // 1씩감소
+                        $(this) // slide
+                            .append($("li", this).first())
+                            .css({
+                                left: (-100 * temp) + "%"
+                            });
+
+                    } ///////// for ////////////
+                }); ///////// animate ///////
+
+        } /////////// if ///////////////
+        else if (diff < 0) { // 음수는 왼쪽에서 들어옴
+            // 왼쪽버튼 클릭시와 기본기능 동일함!
+            let temp = 0; // left에 적용할 증가값
+            for(let i=0;i<absd;i++){
+                temp++; // 1씩증가
+
+                slide
+                .prepend(slide.find("li").last())
+                .css({
+                    left: (-100*temp)+"%"
+                })
+
+            } ///////// for //////////////
+            // 맨뒤요소를 맨앞에 이동
+                // 그후 left값 0으로 애니메이션
+            slide.animate({
+                    left: "0"
+                },
+                aniT, //시간
+                aniE // 이징
+            ); ////// animate //////
+
+        } ////////// else if ////////////
+
+        // 공통 블릿변경하기!
+        // $(this) 클릭된 블릿li
+        $(this).addClass("on")
+            .siblings().removeClass("on");
+        // siblings() -> 다른 블릿li형제들
+
+    }); ////////// click ////////////////////
 
 
 
