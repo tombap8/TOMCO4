@@ -56,10 +56,16 @@ $(() => {
         // 1. 위치값 알아오기(대상:빌딩li)
         // 8번째 li
         // eq(순번) -> 순번요소 선택 메서드!
-        let tval = bd.eq(seq).offset().top;
-        let lval = bd.eq(seq).offset().left;
+        let tg = bd.eq(seq); // 타겟li
+        let tval = tg.offset().top;
+        let lval = 
+        tg.offset().left + tg.width()/2 - mi.width()/2;
+        // left위치 보정으로 미니언즈 li의 중앙위치
+        // 계산: left위치 + li가로절반 - 미니언즈가로절반
+
         // offset() 메서드 - 요소셋팅값(위치,크기)
         // top,left,width,height 속성값 사용!
+        // width(),height() 메서드로 바로 가로,세로크기 구함!
 
 
         // 2. 위치이동(이동대상:미니언즈)
@@ -170,6 +176,96 @@ $(() => {
             actMini(this, 6, fn);
 
         }) ///////// "다시옆방으로!" click /////////
+
+        // 7. "무서우니 윗층으로!"버튼 클릭시 ////////
+        .next().click(function () {
+
+            // 이동후 함수
+            let fn = () => {
+
+                 // 다음버튼 보이기
+                 $(this).next().fadeIn(300);
+
+               
+
+            }; ///////// fn //////////
+
+            // 공통 기능구현 함수 호출!
+            actMini(this, 4, fn);
+
+        }) ///////// "무서우니 윗층으로!" click /////////
+
+        // 8. "치료주사방으로!"버튼 클릭시 ////////
+        .next().click(function () {
+
+            // 이동후 함수
+            let fn = () => {
+
+                 // 다음버튼 보이기
+                 $(this).next().fadeIn(300);
+
+               
+
+            }; ///////// fn //////////
+
+            // 공통 기능구현 함수 호출!
+            actMini(this, 2, fn);
+
+        }) ///////// "치료주사방으로!" click /////////
+
+        // 9. "3번방으로!"버튼 클릭시 ////////
+        .next().click(function () {
+
+            // 이동후 함수
+            let fn = () => {
+
+                 // 다음버튼 보이기
+                 $(this).next().fadeIn(300);
+
+               
+
+            }; ///////// fn //////////
+
+            // 공통 기능구현 함수 호출!
+            actMini(this, 3, fn);
+
+        }) ///////// "3번방으로!" click /////////
+
+        // 10. "1번방으로!"버튼 클릭시 ////////
+        .next().click(function () {
+
+            // 이동후 함수
+            let fn = () => {
+
+                 // 다음버튼 보이기
+                 $(this).next().fadeIn(300);
+
+               
+
+            }; ///////// fn //////////
+
+            // 공통 기능구현 함수 호출!
+            actMini(this, 1, fn);
+
+        }) ///////// "1번방으로!" click /////////
+
+        // 11. "헬기를 호출!"버튼 클릭시 ////////
+        .next().click(function () {
+
+            // 이동후 함수
+            let fn = () => {
+
+                 // 다음버튼 보이기
+                 $(this).next().fadeIn(300);
+
+               
+
+            }; ///////// fn //////////
+
+            // 공통 기능구현 함수 호출!
+            actMini(this, 0, fn);
+
+        }) ///////// "헬기를 호출!" click /////////
 
 
 
