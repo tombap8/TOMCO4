@@ -28,7 +28,7 @@ $(() => {
     // 양쪽버튼 구분 : .lb(왼쪽버튼) / .rb(오른쪽버튼)
     // 변경대상: .viewer ul
     // 변경내용: 슬라이드의 left값을 이동하여 애니메이션함!
-    let slide = $(".viewer ul");
+    // let slide = $(".viewer ul");
 
     // 변경에 사용할 제이쿼리 메서드: 
     // animate({CSS속성},시간,이징,함수)
@@ -443,7 +443,7 @@ $(() => {
 
     // 0. 대상선정:
     // 슬라이드 부모박스
-    let sbx = $(".viewer");
+    // let sbx = $(".viewer");
 
     // 1. 슬라이드 드래그 이동 설정(일괄설정!)
     $(".viewer>ul").draggable({
@@ -457,7 +457,7 @@ $(() => {
         -> 이벤트: dragstop 
     *******************************************/
     // 광드래그 막기요소
-    let cover = $(".cover");
+    // let cover = $(".cover");
 
     // 모두 드래그 일괄셋팅!
     $(".viewer>ul").on("dragstop", function () {
