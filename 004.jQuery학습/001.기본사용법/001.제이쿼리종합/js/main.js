@@ -381,15 +381,15 @@ $(() => {
                 .delay(500) // 0.5초 쉬었다가
                 .animate({ // 다시 오른쪽 끝으로 이동
                     left:"70%"
-                },4000,"easeOutCirc",
+                },4000,"easeInOutCirc",
                 function(){ // 끝쪽에서 조정사 좀비로!
                     $(this)
                     .attr("src","images/heli3.png");
                 })
                 .delay(300)
-                .animate({
+                .animate({ // 아주 천천히 나감!
                     left: "100%"
-                },5000,"easeOutSine")
+                },10000,"linear")
 
 
 
