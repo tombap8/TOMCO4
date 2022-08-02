@@ -52,6 +52,9 @@
 			/* 가로중앙 마영오! */
 			background-color: #fff;
 			border: 2px solid #fdf6dd;
+
+			/* 숨기기부모박스 */
+			overflow: hidden;
 		}
 
 		/* 가상요소로 비율밀기! */
@@ -65,10 +68,12 @@
 		.viewer {
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: -100%;
+			/* 왼쪽에 나가있음!
+			-> 처음에 마지막 슬라이드가 첫번째에 있어야함 */
 			width: 100%;
 			height: 100%;
-			overflow: hidden;
+			/* overflow: hidden; - 숨기면 안됨! */
 		}
 
 		/* 슬라이드 이동박스 */
@@ -207,6 +212,9 @@
 			<!-- 슬라이드 이동박스 -->
 			<ul>
 				<li>
+					<img src="image/slide4.jpg" alt="슬라이드" />
+				</li>
+				<li>
 					<img src="image/slide1.jpg" alt="슬라이드" />
 				</li>
 				<li>
@@ -214,9 +222,6 @@
 				</li>
 				<li>
 					<img src="image/slide3.jpg" alt="슬라이드" />
-				</li>
-				<li>
-					<img src="image/slide4.jpg" alt="슬라이드" />
 				</li>
 			</ul>
 		</div>
@@ -256,6 +261,9 @@
 			<!-- 슬라이드 이동박스 -->
 			<ul>
 				<li>
+					<img src="image/m7.jpg" alt="슬라이드" />
+				</li>
+				<li>
 					<img src="image/m1.jpg" alt="슬라이드" />
 				</li>
 				<li>
@@ -272,9 +280,6 @@
 				</li>
 				<li>
 					<img src="image/m6.jpg" alt="슬라이드" />
-				</li>
-				<li>
-					<img src="image/m7.jpg" alt="슬라이드" />
 				</li>
 			</ul>
 		</div>
@@ -323,6 +328,9 @@
 			<!-- 슬라이드 이동박스 -->
 			<ul>
 				<li>
+					<img src="image/country45.jpg" alt="슬라이드" />
+				</li>
+				<li>
 					<img src="image/country1.jpg" alt="슬라이드" />
 				</li>
 				<li>
@@ -336,9 +344,6 @@
 				</li>
 				<li>
 					<img src="image/country21.jpg" alt="슬라이드" />
-				</li>
-				<li>
-					<img src="image/country45.jpg" alt="슬라이드" />
 				</li>
 			</ul>
 		</div>
