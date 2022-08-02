@@ -443,8 +443,8 @@ $(() => {
     // 슬라이드 부모박스
     let sbx = $(".viewer");
 
-    // 1. 슬라이드 드래그 이동 설정
-    $(this).parent().find(".viewer>ul").draggable({
+    // 1. 슬라이드 드래그 이동 설정(일괄설정!)
+    $(".viewer>ul").draggable({
         axis: 'x'
     }); ////// 드래그설정 ////////
 
@@ -457,13 +457,16 @@ $(() => {
     // 광드래그 막기요소
     let cover = $(".cover");
 
-    $(this).parent().find(".viewer>ul").on("dragstop", function () {
+    // 모두 드래그 일괄셋팅!
+    $(".viewer>ul").on("dragstop", function () {
 
         // 광드래그막기 작동!
-        cover.show();
+        $(this).parent().find(".cover").show();
+
+        // console.log("난누규?",this);
 
         // 1. left위치값 읽어오기
-        let spos = $(this).parent().find(".viewer>ul").position().left;
+        let spos = $(this).position().left;
         // offset().left 는 보이는 화면 왼쪽선 기준함
         // position().left는 싸고잇는 포지션있는 부모박스 기준함
 
@@ -473,25 +476,28 @@ $(() => {
         if (spos > 50) {
             // 드래그한 만큼 위치값 보정하기(tval에 보정!)
             tval = -spos;
-            $(".lb").trigger("click");
+            $(this).parent().find(".lb").trigger("click");
             setTimeout(() => {
-                cover.hide(); // 커버해제
+                $(this).parent().find(".cover")
+                .hide(); // 커버해제
             }, aniT);
         }
         // 2-2. -50px보다 작을때 오른쪽에서 들어옴!
         else if (spos < -50) {
-            $(".rb").trigger("click");
+            $(this).parent().find(".rb").trigger("click");
 
             setTimeout(() => {
-                cover.hide(); // 커버해제
+                $(this).parent().find(".cover")
+                .hide(); // 커버해제
             }, aniT);
         }
         // 2-3. 기준값 사이일때는 제자리!
         else
-            $(this).parent().find(".viewer>ul").animate({
+            $(this).animate({
                     left: 0
                 }, 300, "easeOutQuint",
-                () => cover.hide());
+                () => 
+                $(this).parent().find(".cover").hide());
 
 
 
