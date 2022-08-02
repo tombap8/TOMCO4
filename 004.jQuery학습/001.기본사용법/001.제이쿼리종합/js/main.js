@@ -432,7 +432,7 @@ $(() => {
             function(){ // over
                 $(this).css({
                     backgroundColor:"blue",
-                    color:"pink"
+                    color:"cyan"
                 });
             },
             function(){ // out

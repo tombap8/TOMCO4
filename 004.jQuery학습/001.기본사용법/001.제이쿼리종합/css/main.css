@@ -34,7 +34,12 @@ body {
 
     z-index: 999999;
 
-    transition: 3s ease-in;
+    /* 트랜지션: 속시이지 
+    -> 트랜스폼,top,left만 적용! */
+    transition: 
+    top 3s ease-in,
+    left 3s ease-in,
+    transform 3s ease-in;
 }
 /* .tit에 .on을 주면 값 변경하기 */
 .tit.on{
