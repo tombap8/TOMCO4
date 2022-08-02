@@ -45,7 +45,7 @@ $(() => {
     }); /////// each //////////////
 
     // 위치배열값 확인!
-    console.log(scpos);
+    // console.log(scpos);
     //    scpos.forEach((val)=>console.log(val));
 
     /************************************* 
@@ -85,7 +85,7 @@ $(() => {
             scpos[idx] = $(ele).offset().top);
 
         // 위치배열값 확인!
-        console.log(scpos);
+        // console.log(scpos);
 
     }); /////////// resize함수 ///////////////////
 
@@ -100,7 +100,7 @@ $(() => {
         // 참고) 가로스크롤바 위치값은 scrollLeft()
 
         // 스크롤확인+위치값
-        console.log(scTop);
+        // console.log(scTop);
 
         // 1. 상단영역 슬림변경 클래스 on주기!
         // 스크롤위치 기준은 100px이상일때
@@ -144,7 +144,6 @@ $(() => {
         else { // 300미만일때
             tbtn.removeClass("on");
         } ////////// else ////////
-
 
     }); ////////// scroll /////////////////
     ///////////////////////////////////////
@@ -212,7 +211,68 @@ $(window).scStop(function(){
     // 마지막 스크롤 위치값 
     let scTop = $(this).scrollTop();
     // 콘솔에 확인!
-    console.log("스크롤멈춤!",scTop);
+    // console.log("스크롤멈춤!",scTop);
     // 부드러운 스크롤 위치값에 업데이트!
     pos = scTop;
 }); ///////// window /////////////////
+
+
+
+$(()=>{
+
+    // 제이쿼리 data(키,값) 연습
+    let mykey = $("#top");
+    mykey.data('헐','고양이');
+    mykey.data('힘','강아지');
+
+    // console.log(
+    //     'data()키값:',
+    //     mykey.data('헐'),'/',
+    //     mykey.data('힘'));
+
+    // data() 삭제는 removeData(키)
+    mykey.removeData('헐');
+
+    
+    // console.log(
+    //     'data()키값:',
+    //     mykey.data('헐'),'/',
+    //     mykey.data('힘'));
+
+
+}); ///////// jQB ///////////////
+
+
+///////////////// 비교 JS Map() 메서드 /////////////
+// -> 키,값으로 저장하는 메모리공간 생성 메서드 //////
+// 1. 메모리 공간 생성: Map() -> new 키워드로!
+// Map() 객체 아래 메서드: set(), get(), has(), delete()
+const keyval = new Map();
+
+// 2. 값셋팅: set(키,값)
+keyval.set('한국배우','조승우');
+keyval.set('미국배우','탐크루즈');
+keyval.set('중국배우','성룡');
+
+// 3. 값호출 : get(키)
+// console.log('Map()값:',
+// keyval.get('한국배우'),'/',
+// keyval.get('미국배우'),'/',
+// keyval.get('중국배우')
+// );
+
+// 4. 키존재여부: has(키)
+// console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+
+// 5. 값삭제 : delete(키)
+keyval.delete('중국배우');
+
+// console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+
+
+// console.log('Map()값:',
+// keyval.get('한국배우'),'/',
+// keyval.get('미국배우'),'/',
+// keyval.get('중국배우')
+// );
+
