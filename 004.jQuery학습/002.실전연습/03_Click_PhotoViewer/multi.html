@@ -54,7 +54,9 @@
 			border: 2px solid #fdf6dd;
 
 			/* 숨기기부모박스 */
-			/* overflow: hidden; */
+			/* overflow: hidden; 
+			-> 여기서주면 나가있는 버튼이 안보임
+			-> 내부박스인 .vbx에서 줘야함! */
 		}
 
 		/* 가상요소로 비율밀기! */
@@ -64,6 +66,7 @@
 			margin-top: 60%;
 		}
 
+		/* 숨김용 기준박스 */
 		.vbx {
 			position: absolute;
 			top: 0;
