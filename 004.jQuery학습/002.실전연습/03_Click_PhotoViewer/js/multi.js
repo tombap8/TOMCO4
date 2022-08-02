@@ -152,7 +152,8 @@ $(() => {
         // 변경대상: .indic li -> indic 변수
 
         // 해당순번(sseq)의 블릿li에 클래스"on" 넣기 
-        indic.eq(sseq).addClass("on")
+        $(this).parent().find(".indic>li")
+        .eq(sseq).addClass("on")
             // 다른형제요소들 -> siblings() 은 클래스지워!
             .siblings().removeClass("on");
 
@@ -271,7 +272,10 @@ $(() => {
          - 대상: .indic li -> indic변수
          - 이벤트: click -> click() 메서드
     ****************************************/
-    indic.click(function () {
+    indic.click(function (e) {
+
+        // a기본이동막기
+        e.preventDefault();
 
         /// 광클금지 ////////
         if (prot) return;
@@ -282,9 +286,10 @@ $(() => {
         // 1. 클릭된 블릿 li 순번
         let idx = $(this).index();
         console.log("블번:", idx)
+        // console.log("난누규?", this)
 
         // 2. 현재 슬라이드 순번(첫번째 슬라이드 'data-seq'값)
-        let sidx = $(this).parent().find(".viewer>ul").find("li")
+        let sidx = $(this).parents(".slider").find(".viewer>ul").find("li")
             .first().attr("data-seq");
         console.log("슬번:", sidx)
 
@@ -314,9 +319,9 @@ $(() => {
                 absd = absd - 1;
 
                 // 맨뒤로 첫번째 슬라이드 미리이동
-                $(this).parent().find(".viewer>ul")
+                $(this).parents(".slider").find(".viewer>ul")
                 .append(
-                    $(this).parent().find(".viewer>ul")
+                    $(this).parents(".slider").find(".viewer>ul")
                     .find("li").first())
                     .css({
                         left: "100%"
@@ -326,7 +331,7 @@ $(() => {
 
 
             // 기본이동이 오른쪽버튼과 동일함!
-            $(this).parent().find(".viewer>ul").animate({
+            $(this).parents(".slider").find(".viewer>ul").animate({
                     left: (-100 * absd) + "%"
                     // 절대차이값 만큼 left이동!
                 }, // CSS설정
@@ -339,8 +344,9 @@ $(() => {
                     let temp = absd;
                     for (let i = 0; i < absd; i++) {
                         temp--; // 1씩감소
-                        $(this) // slide
-                            .append($("li", this).first())
+                        $(this).parents(".slider").find(".viewer>ul") // slide
+                            .append(
+                                $(this).parents(".slider").find(".viewer>ul>li").first())
                             .css({
                                 left: (-100 * temp) + "%"
                             });
@@ -368,8 +374,9 @@ $(() => {
                 for (let i = 0; i < absd; i++) {
                     temp++; // 1씩증가
 
-                    slide
-                        .prepend($(this).parent().find(".viewer>ul").find("li").last())
+                    $(this).parents(".slider").find(".viewer>ul")
+                        .prepend(
+                            $(this).parents(".slider").find(".viewer>ul").find("li").last())
                         .css({
                             left: (-100 * temp) + "%"
                         })
@@ -377,7 +384,7 @@ $(() => {
                 } ///////// for //////////////
                 // 맨뒤요소를 맨앞에 이동
                 // 그후 left값 0으로 애니메이션
-                $(this).parent().find(".viewer>ul").animate({
+                $(this).parents(".slider").find(".viewer>ul").animate({
                         left: "100%"
                         // 맨앞슬라이드까지 이동함
                         // 첫번째가 비어있음!
@@ -385,7 +392,8 @@ $(() => {
                     aniT, //시간
                     aniE, // 이징
                     ()=>{ // 이동후 맨뒤요소 맨앞이동 left:0
-                        $(this).parent().find(".viewer>ul").prepend($(this).parent().find(".viewer>ul").find("li").last())
+                        $(this).parents(".slider").find(".viewer>ul").prepend(
+                            $(this).parents(".slider").find(".viewer>ul").find("li").last())
                         .css({left:"0"});
                     } //// 콜백함수 ///
                 ); ////// animate //////
@@ -399,8 +407,8 @@ $(() => {
                 for (let i = 0; i < absd; i++) {
                     temp++; // 1씩증가
 
-                    slide
-                        .prepend($(this).parent().find(".viewer>ul").find("li").last())
+                    $(this).parents(".slider").find(".viewer>ul")
+                        .prepend($(this).parents(".slider").find(".viewer>ul").find("li").last())
                         .css({
                             left: (-100 * temp) + "%"
                         })
@@ -408,7 +416,7 @@ $(() => {
                 } ///////// for //////////////
                 // 맨뒤요소를 맨앞에 이동
                 // 그후 left값 0으로 애니메이션
-                $(this).parent().find(".viewer>ul").animate({
+                $(this).parents(".slider").find(".viewer>ul").animate({
                         left: "0"
                     },
                     aniT, //시간
