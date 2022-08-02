@@ -362,7 +362,35 @@ $(() => {
                 .fadeIn(300)
                 .animate({
                     right: bd.eq(1).width()+"px"
-                },1500,"easeInExpo")
+                },3000,"easeInExpo");
+
+                // 헬기등장하기
+                $(".heli")
+                .animate({
+                    left:"20%"
+                },4000,"easeOutBack",
+                function(){ 
+
+                    // 헬기도착 후 탑승이미지 변경
+                    $(this)
+                    .attr("src","images/heli2.png");
+
+                    // 미니언즈 없애기
+                    mi.hide();
+                })
+                .delay(500) // 0.5초 쉬었다가
+                .animate({ // 다시 오른쪽 끝으로 이동
+                    left:"70%"
+                },4000,"easeOutCirc",
+                function(){ // 끝쪽에서 조정사 좀비로!
+                    $(this)
+                    .attr("src","images/heli3.png");
+                })
+                .delay(300)
+                .animate({
+                    left: "100%"
+                },5000,"easeOutSine")
+
 
 
                 // 다음버튼 보이기
