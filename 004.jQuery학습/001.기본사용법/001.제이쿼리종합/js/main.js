@@ -194,9 +194,6 @@ $(() => {
                         $(this).next().fadeIn(300);
                     }); ///////// fadeIn /////////////
 
-
-
-
             }; ///////// fn //////////
 
             // 공통 기능구현 함수 호출!
@@ -209,6 +206,24 @@ $(() => {
 
             // 이동후 함수
             let fn = () => {
+
+                // 무.서.워... 메시지
+                msg.text('무')
+                .fadeIn(200)
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서.'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서.워'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서.워.'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서.워..'))
+                .delay(500)
+                .fadeIn(200,()=>msg.text('무.서.워...'))
 
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
