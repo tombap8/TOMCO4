@@ -463,7 +463,7 @@ $(() => {
     $(".viewer>ul").on("dragstop", function () {
 
         // 광드래그막기 작동!
-        $(this).parent().find(".cover").show();
+        $(this).parents(".slider").find(".cover").show();
 
         // console.log("난누규?",this);
 
