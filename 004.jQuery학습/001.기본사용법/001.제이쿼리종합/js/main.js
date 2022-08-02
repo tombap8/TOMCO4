@@ -235,13 +235,17 @@ $(() => {
                         },300,"easeOutElastic")
                         .delay(500)
                         .animate({ // 달겨들기!
-                            right:bd.eq(7).width()+"px"
-                        },1000,"easeInExpo")
+                            right:(bd.eq(7).width()*1.2)+"px"
+                        },1000,"easeInExpo",
+                        ()=>{ // 물린후 대사
+                            msg.html('아~악! 물렸다!<br>어서 치료주사방으로!')
 
-                    })
+                            // 다음버튼 보이기
+                            $(this).next().fadeIn(300);
+                        });//////// animate ////////////////
 
-                // 다음버튼 보이기
-                $(this).next().fadeIn(300);
+                    }); ///////////// fadeIn //////////////
+
 
 
 
