@@ -38,7 +38,8 @@ $(() => {
     // 2. 버튼 셋팅하기
     // 모든 버튼은 숨기고 첫번째 버튼만 보여
     // 버튼.숨겨().첫번째().보여()
-    btns.hide().first().show();
+    // btns.hide().first().show();
+    btns.hide().eq(4).show();
 
     // 3. 공통 구현 함수 만들기
     // 각 스텝에서 미니언즈가 할 공통 기능 함수구현!
@@ -238,7 +239,15 @@ $(() => {
                             right:(bd.eq(7).width()*1.2)+"px"
                         },1000,"easeInExpo",
                         ()=>{ // 물린후 대사
-                            msg.html('아~악! 물렸다!<br>어서 치료주사방으로!')
+                            msg
+                            .css({left:"-110%"})
+                            .html('아~악! 물렸다!<br>어서 치료주사방으로!')
+
+                            // 미니언즈 좀비이미지 변경(1초후)
+                            setTimeout(() => {
+                                mi.find("img")
+                                .attr("src","images/mz1.png");                                
+                            }, 1000);
 
                             // 다음버튼 보이기
                             $(this).next().fadeIn(300);
@@ -262,6 +271,23 @@ $(() => {
             // 이동후 함수
             let fn = () => {
 
+                // 주사기 돌기
+                $('.inj').css({
+                    transform:"rotate(-150deg)",
+                    transition:".5s .5s",
+                    zIndex: 9999
+                }); //// css ///////
+
+                // 미니언즈로 다시태어나다!(1초후)
+                setTimeout(() => {
+                    // 이미지변경
+                    mi.find("img").attr("src","images/m2.png");
+                    // 대사
+                    msg.html("이제 조금만 더 <br>가면 탈출이닷!")
+                    .css({left:"-150%"})
+                    .fadeIn(200)
+                }, 1000);
+
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
 
@@ -279,6 +305,10 @@ $(() => {
 
             // 이동후 함수
             let fn = () => {
+
+                // 메시지 보이기
+                msg.html("어서윗층으로 가자!")
+                .fadeIn(200);
 
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
@@ -298,6 +328,12 @@ $(() => {
             // 이동후 함수
             let fn = () => {
 
+                
+                // 메시지 보이기
+                msg.html("이제 곧 탈출이닷!")
+                .fadeIn(200);
+
+
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
 
@@ -315,6 +351,19 @@ $(() => {
 
             // 이동후 함수
             let fn = () => {
+
+                
+                // 메시지 보이기
+                msg.html("도와줘요!")
+                .fadeIn(200);
+
+                // 1번 좀비들이 나타나서 달겨듬!
+                bd.eq(1).find(".mz")
+                .fadeIn(300)
+                .animate({
+                    right: bd.eq(1).width()+"px"
+                },1500,"easeInExpo")
+
 
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
