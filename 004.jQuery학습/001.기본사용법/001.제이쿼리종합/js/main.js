@@ -224,6 +224,21 @@ $(() => {
                 .fadeIn(200,()=>msg.text('무.서.워..'))
                 .delay(500)
                 .fadeIn(200,()=>msg.text('무.서.워...'))
+                .delay(500)
+                .fadeIn(200,
+                    ()=>{
+                        // 7번방 좀비가 올라와서
+                        // 달겨든다!
+                        bd.eq(7).find(".mz")
+                        .animate({ // 윗층으로 올라옴
+                            bottom:bd.eq(7).height()+"px"
+                        },300,"easeOutElastic")
+                        .delay(500)
+                        .animate({ // 달겨들기!
+                            right:bd.eq(7).width()+"px"
+                        },1000,"easeInExpo")
+
+                    })
 
                 // 다음버튼 보이기
                 $(this).next().fadeIn(300);
