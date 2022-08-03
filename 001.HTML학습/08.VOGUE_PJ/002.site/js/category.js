@@ -21,22 +21,36 @@
 // 제이슨 데이터 할당변수
 let sinfo;
 // 제이슨 데이터 연결하여 할당하기!
-$.getJSON('js/cat.json', 
-jdata =>{ 
-    // 제이슨 파일에서 가져온 데이터를 변수에 할당!
-    sinfo = jdata;
-    // 데이터확인
-   console.log(sinfo);
-});
+$.getJSON('js/cat.json',
+    jdata => {
+        // 제이슨 파일에서 가져온 데이터를 변수에 할당!
+        sinfo = jdata;
+        // 데이터확인
+        //    console.log(sinfo);
+    });
 // jdata는 함수전달변수임(이름 맘대로!)
 
 
 // URL로 넘어온 파라미터 전달값 받기 //////
+let pm = location.href;
+// console.log('파라미터:',pm);
+
+// 현재 파라미터값만 필요하므로
+// 물음표(?)로 잘라서 뒤엣것 -> [1]
+// 이퀄(=)로 잘라서 뒤엣것 -> [1]
+pm = pm.split('?')[1].split('=')[1];
+// 특수문자복원하기
+pm = decodeURIComponent(pm);
+
+console.log('파라미터:', pm);
 
 
 ////// 제이쿼리 코드블럭 ///////////////////////
-$(()=>{
+$(() => {
 
+    // 1. 해당 카테고리의 데이터 셋업
+    const data = sinfo[pm];
+    console.log('선택데이터:',data);
 
 
 }); ////////////// jQB ////////////////////////
