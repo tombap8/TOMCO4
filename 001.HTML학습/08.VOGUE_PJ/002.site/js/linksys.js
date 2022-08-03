@@ -7,7 +7,7 @@ $(()=>{ ////////// jQB ///////////////////////
 
     // GNB 링크 셋팅 /////////////////////
     // 대상: .gnb a
-    $('.gnb a').click(function(e){
+    $('.gnb a,.mognb a').click(function(e){
 
         // a기본이동 막기
         e.preventDefault();
