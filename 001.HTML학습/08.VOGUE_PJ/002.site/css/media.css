@@ -16,7 +16,23 @@
         width: 132px;
     }
     /* 3. 상단영역 */
+    #top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999;
+        background-color: #fff;
+    }
+    /* 상단영역이 fixed되면서 body 패딩탑필요 */
+    body{
+        padding-top: 54px;
+        /* 상단메뉴만큼 밀어서 첫번째 컨텐츠
+        잘림방지 */
+    }
     .top{
+        position: relative;
+        /* 모바일버튼의 부모자격! */
         min-height: auto;
         padding: 10px;
     }
@@ -41,6 +57,30 @@
     .rbx.pt2::before {
         padding-top: 75%;
     }
+
+
+    /* 7. 모바일 버튼 보이기 */
+    .mobtn{
+        display: block;
+    }
+
+    /* 8. 등장액션 클래스 보이게 처리 */
+    .scAct{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* 9. 컨텐츠박스 타이틀 */
+    .cbx h2{
+        font-size: 5vw;
+    }
+
+    /* 10. 오버시(포커스갈때) 테두리 */
+    .cbx:hover::after {
+        border: 2.5vw solid red;
+    }
+
+
 }
 
 /******* 500px 이하 미디어쿼리 끝 *******/
