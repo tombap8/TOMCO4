@@ -101,6 +101,22 @@
   .blogo img {
     width: 200px;
   }
+
+  /* 13. 카테고리 페이지 서브 타이틀 */
+  .stit{
+    font-size: 30px;
+    padding: 25px 0 5px;
+  }
+
+  /* 14. 카테고리 페이지 lnb 메뉴 */
+  .lnb{
+    padding: 0 0 30px;
+  }
+  .lnb a{
+    font-size: 14px;
+  }
+
+
 }
 
 /******* 500px 이하 미디어쿼리 끝 *******/
