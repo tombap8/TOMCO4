@@ -357,6 +357,11 @@
     padding-bottom: 30px;
     background-color: #fff;
     display: none;/* 처음에 안보임 */
+
+    /* 넘치는 컨텐츠 스크롤설정, 높이값설정 */
+    overflow-y: auto;
+    height: calc(100vh - 54px);
+    /* 상단메뉴바 높이를 뺀 화면 전체높이크기 */
 }
 /* 1.5-1.모바일 GNb */
 .mognb{
