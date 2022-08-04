@@ -9,7 +9,7 @@ $(() => { ////////// jQB ///////////////////////
     // 변경: 대상요소 앞에 a요소 코드를 삽입한다!
     // 메서드: before(요소) -> 선택요소 앞에 형제요소 삽입
     // -> 참고) after(요소) -> 선택요소 뒤에 형제요소 삽입
-    $(".sns a").last()
+    $(".sns a,.mosns a").last()
         .before(`
         <a class="fi fi-laptop">
             <span class="ir">
@@ -45,7 +45,7 @@ $(() => { ////////// jQB ///////////////////////
         SNS 메뉴 파트 링크 셋팅하기
     ************************************/
     // 대상: .sns a
-    $('.sns a').click(function (e) {
+    $('.sns a, .mosns a').click(function (e) {
 
         // a요소 기본이동막기
         e.preventDefault();

@@ -1,5 +1,14 @@
 // 보그 PJ 공통 기능 JS - common.js
 
+// 현재 페이지명을 알아내어 제어에 활용한다!
+// 페이지명 변수
+let pname = location.pathname;
+// location.pathname 페이지명이 포함된 전체경로
+// split(자를문자열) -> 배열에 담는다!
+pname = pname.split('/');
+pname = pname[pname.length - 1]; //마지막배열
+pname = pname.split('.')[0]; //첫배열
+console.log('페이지이름:', pname);
 
 ///////////// 제이쿼리 블록 ///////////////////
 $(() => {
@@ -151,6 +160,11 @@ $(() => {
     // 윈도우에 스크롤 이벤트 설정하기 ///
     ////////////////////////////////////
     $(window).scroll(function (e) {
+
+        // 로그인, 회원가입, 갤러리 페이지는 안함!
+        if (pname === "login" ||
+            pname === "member" ||
+            pname === "gallery") return;
 
         scTop = $(this).scrollTop();
         // scrollTop() -> 세로스크롤바 위치값
