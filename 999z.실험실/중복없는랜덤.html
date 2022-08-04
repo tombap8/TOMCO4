@@ -18,7 +18,6 @@
             const myFn = () => {
                 let rdn = Math.ceil(Math.random() * 10);
                 console.log("처음랜덤:", rdn);
-                console.log("갔다옴:", chkFn(rdn));
                 while (chkFn(rdn)) {
                     rdn = Math.ceil(Math.random() * 10);
                     console.log("다시랜덤:", rdn);
@@ -43,7 +42,7 @@
                 return sts;
             }; ///// chkFn //////////////
 
-            
+
 
             setTimeout(() => myFn(), 2000);
         }); /////////////// jQB /////////////
