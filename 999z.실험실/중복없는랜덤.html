@@ -14,6 +14,7 @@
     <script>
         $(() => {
             const chk = [];
+            let autoT;
 
             const myFn = () => {
                 let rdn = Math.ceil(Math.random() * 10);
@@ -28,7 +29,10 @@
                 document.write(chk);
                 document.write(`<h2>${rdn}</h2>`);
 
-                if (chk.length < 11) setTimeout(() => myFn(), 1000);
+                clearTimeout(autoT);
+
+                if (chk.length < 11) autoT = setTimeout(() => myFn(), 1000);
+
             }; ///////// 인터발 //////////
 
             const chkFn = (rdn) => {
@@ -36,7 +40,7 @@
                 chk.forEach((val) => {
                     // console.log('체크rdn:', rdn);
                     // console.log('체크val:', val);
-                    if (val === rdn) sts = 1;
+                    if (val === rdn){ sts = 1;}
                 });
 
                 return sts;
