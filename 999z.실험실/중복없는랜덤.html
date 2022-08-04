@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>중복없는 랜덤</title>
+    <!-- 제이쿼리 라이브러리 CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 제이쿼리 UI CDN -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <script>
+        $(() => {
+            const chk = [];
+
+            const myFn = () => {
+                let rdn = Math.ceil(Math.random() * 10);
+                console.log("처음랜덤:", rdn);
+                console.log("갔다옴:", chkFn(rdn));
+                while (chkFn(rdn)) {
+                    rdn = Math.ceil(Math.random() * 10);
+                    console.log("다시랜덤:", rdn);
+                } ///////// while /////////////
+
+                chk.push(rdn);
+
+                document.write(chk);
+                document.write(`<h2>${rdn}</h2>`);
+
+                if (chk.length < 11) setTimeout(() => myFn(), 1000);
+            }; ///////// 인터발 //////////
+
+            const chkFn = (rdn) => {
+                let sts = 0;
+                chk.forEach((val) => {
+                    // console.log('체크rdn:', rdn);
+                    // console.log('체크val:', val);
+                    if (val === rdn) sts = 1;
+                });
+
+                return sts;
+            }; ///// chkFn //////////////
+
+            
+
+            setTimeout(() => myFn(), 2000);
+        }); /////////////// jQB /////////////
+    </script>
+</head>
+
+<body></body>
+
+</html>
