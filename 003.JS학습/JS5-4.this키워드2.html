@@ -25,6 +25,9 @@
                 setTimeout(function () {
                     console.log(this.name + "님, 오늘은 " + this.codeLine + "줄 코딩하셨네요!");
                 }.bind(this), 500);
+                // bind(this)는 타이밍함수의 시차로 인해
+                // this의 의미가 달라시는 것을 방지해줌!
+                // 즉, 원래함수의 this를 묶어줌!
             }
         }
 
@@ -37,6 +40,10 @@
                 setTimeout(() => {
                     console.log(this.name + "님, 오늘은 " + this.codeLine + "줄 코딩하셨네요!");
                 }, 500);
+                // 화살표함수를 타이밍함수안에 사용하면
+                // bind(this)를 사용하지 않아도
+                // 기존 싸고있는 this키워드의미로
+                // 사용가능함!
             }
         }
 
