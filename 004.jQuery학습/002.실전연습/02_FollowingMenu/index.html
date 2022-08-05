@@ -170,13 +170,13 @@
 
 			/// 메뉴 li에 마우스 오버시
 			menu.find('li').hover(
-				function() { // over
+				function () { // over
 					// 1. li자신의 opacity 1
-					$(this).stop().fadeTo(200,1);
+					$(this).stop().fadeTo(200, 1);
 					// fadeTo(시간,오파)
 
 					// 2. 아래 span요소 보이기
-					$('span',this).stop().fadeIn(200);
+					$('span', this).stop().fadeIn(200);
 					// 자손선택 위와동일
 					// $(this).find('span')
 
@@ -185,14 +185,39 @@
 					// $(this).children('span')
 
 				},
-				function(){ // out
+				function () { // out
 					// 1. li자신의 opacity 0.7
-					$(this).stop().fadeTo(200,0.7);
-					
+					$(this).stop().fadeTo(200, 0.7);
+
 					// 2. 아래 span요소 숨기기
-					$('span',this).stop().fadeOut(200);
+					$('span', this).stop().fadeOut(200);
 
 				}); /////////// hover //////////
+
+			// 메뉴 li클릭시 사이트 새창이동하기
+			menu.find('li').click(
+				function () {
+					let txt = $('span', this).text();
+
+					let url;
+					switch (txt) {
+						case 'Google':
+							url = 'https://www.google.co.kr/';
+							break;
+						case 'Naver':
+							url = 'https://www.naver.com/';
+							break;
+						case 'Daum':
+							url = 'https://www.daum.net/';
+							break;
+
+					}; ///////// switch case /////////
+
+					// 새창열기
+					window.open().location.href = url;
+
+				}); /////////// click /////////////////
+
 
 
 
