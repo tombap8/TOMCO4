@@ -128,6 +128,10 @@
                 drag = 1;
                 // x축 처음위치값 담기
                 point = e.pageX;
+                // 커서 주먹
+                cbx.css({
+                    cursor:"grabbing"
+                }); ////// css //////
             }); ////////// mousedown /////////////
 
 
@@ -137,6 +141,10 @@
             cbx.on('mouseup mouseout',e=>{
                 // 드래그 상태변경
                 drag = 0;
+                // 커서 손바닥
+                cbx.css({
+                    cursor:"grab"
+                }); ////// css //////
 
             }); //////////// mouseup ////////////
 
