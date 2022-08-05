@@ -196,7 +196,17 @@
 
 			// 메뉴 li클릭시 사이트 새창이동하기
 			menu.find('li').click(
-				function () {
+				function (e) {
+
+					// 이벤트 버블링 차단하기
+					e.stopPropagation();
+					// 자식요소의 클릭이 부모요소의 
+					// 클릭으로 전달되는
+					// 것을 막아준다!!!
+					// JS에서는 이벤트버블링 차단을
+					// 최하단 return false 를 사용함!
+					// 제이쿼리에서도 사용가능!
+
 					let txt = $('span', this).text();
 
 					let url;
