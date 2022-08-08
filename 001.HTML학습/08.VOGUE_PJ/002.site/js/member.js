@@ -210,8 +210,11 @@ $(()=>{
         .text('이메일 옵션 선택필수!')
         .removeClass('on');
 
+        // 2. 직접입력창 숨기기
+        eml2.fadeOut(300);
+
     } /////// if : 선택해주세요 /////////
-    else if(cv === 'free'){
+    else if(cv === 'free'){ // "직접입력"
         // 1. 직접입력창 보이기
         eml2.fadeIn(300).val("").focus();
         // val(값) ->  입력창에 값넣기(빈값은 비우기)
