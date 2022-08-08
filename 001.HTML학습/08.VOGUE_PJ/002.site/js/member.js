@@ -31,6 +31,7 @@ $(()=>{
 
         /// 모든공백 처리함수 /////
         const groSpace = cv => cv.replace(/\s/g, '');
+        // groSpace는 get rid of Space 즉, 공백제거라는 말
         // cv => {return cv.replace(/\s/g, '');}
         // 정규식: 슬래쉬(/) 사이에 표현함, \s 스페이스문자
         // g는 모두 찾으라는 global(전역) 플래그문자임 
@@ -39,9 +40,16 @@ $(()=>{
 
         // 1. 방금 블러가 발생한 요소의 id는?
         let cid = $(this).attr('id');
+        // cid는 current id 즉, 현재아이디라는 뜻
 
         // 2. 블러가 발생한 요소의 입력값은?
         let cv = $(this).val().trim();
+        // cv는 current value 즉, 현재값이라는 뜻
+
+        // "이름"일 경우 앞뒤공백만 제거함 : trim()
+        if(cid==='mnm') cv = cv.trim();
+        // 기타인 경우 모든 공백제거처리! : groSpace()
+        else cv = groSpace(cv);
 
         console.log('블러발생!',cid,'/',cv);
 
