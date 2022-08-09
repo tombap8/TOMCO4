@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script>
         ///////// 로딩구역 /////////////////////
-        window.addEventListener("load",()=>{
+        window.addEventListener("load", () => {
 
             console.log("로딩완료!");
 
             // 1. 텍스트 바인딩 ////////////////
-           new Vue({
-            el:'#app1',
-            // el - 요소를 선택하는 속성(element)
-            data:{
-                iam:"나는 프론트엔드 개발자다!",
-                yo:"요"
-            }
-            // data - 선택요소 내부에 사용할 데이터 셋팅 속성
-           }); //////////// Vue ///////////////
+            new Vue({
+                el: '#app1',
+                // el - 요소를 선택하는 속성(element)
+                data: {
+                    iam: "나는 프론트엔드 개발자다!",
+                    yo: "요"
+                }
+                // data - 선택요소 내부에 사용할 데이터 셋팅 속성
+            }); //////////// Vue ///////////////
 
             // 2. 반복 렌더링 /////////////////////
             new Vue({
-                el:'#app2',
+                el: '#app2',
                 data: {
-                    menList:["김수현","공유","송강","서강준"]
+                    menList: ["김수현", "공유", "송강", "서강준"]
                 }
             }); /////////////// Vue //////////////
 
@@ -35,7 +36,7 @@
             new Vue({
                 el: '#app3',
                 methods: {
-                    myClick: function(e){
+                    myClick: function (e) {
                         console.log('마이클릭!');
                         // 함수 전달변수 e
                         // 함수 호출시 아무것도 안보내고
@@ -46,13 +47,13 @@
                         e.target.style.transition = '2s';
 
                         // 4초후에 새로운 요소 추가
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             // 본박스안에 새요소넣기
                             // this는 뷰객체
                             // $el 선택된요소
                             this.$el.innerHTML +=
-                            '<div id="my">하하하</div>'
-                        },4000);
+                                '<div id="my">하하하</div>'
+                        }, 4000);
 
                         /* 
                             Vue의 methods 속성 내부의 함수에서 this는?
@@ -68,43 +69,52 @@
                         */
 
                     }, /////// myClick 함수 //////
-                    myOver:function(){
+                    myOver: function () {
                         // 함수 전달변수 e를 쓰지않고
                         // event라는 키워드를 사용하면
                         // 이벤트 전달값을 읽어온다!
                         // event.target로 쓰면 이벤트가
                         // 발생한 요소자신임!
-                        event.target.innerText = 
-                        '오버하지마!';
+                        event.target.innerText =
+                            '오버하지마!';
                         // '나를 불러줘' div#call에
                         // 글자바꾸기
                         this.$el.querySelector('#call')
-                        .innerText = '지금 너를 불렀어!!!';
+                            .innerText = '지금 너를 불렀어!!!';
                     }, ///////// myOver 함수 ///////
-                    myClick2: function(txt){
+                    myClick2: function (txt) {
                         // txt는 함수호출시 전달값 변수
                         event.target.innerText =
-                        `내가 ${txt}야!`;
+                            `내가 ${txt}야!`;
                     }
                 }
                 // methods 속성은 함수기능을 구현하여 할당함!
             }); //////////// Vue ////////////
-            
+
 
             // 4. 입력 양식과 동기화하기 /////////
-           
+            new Vue({
+                el: "#app4",
+                data: {
+                    msg: "여기에 입력해봐~!"
+                }
+            }); /////////// Vue /////////////
 
             // 5. 조건분기 ///////////////
-           
-           
-            
+            new Vue({
+                el: "#app5",
+                data:{
+                    show: true
+                }
+            }); //////// Vue //////////
+
+
 
         }); ///////////// 로딩구역 ///////////////////
         //////////////////////////////////////////////
-        
-
     </script>
 </head>
+
 <body>
     <h1>Vue JS 기초연습</h1>
 
@@ -124,9 +134,9 @@
 
     <h2>2. 반복 렌더링</h2>
     <div id="app2">
-       <ol>
-        <li v-for="man in menList">{{man}}</li>
-        <!-- 
+        <ol>
+            <li v-for="man in menList">{{man}}</li>
+            <!-- 
             v-for는 뷰JS에서 사용하는 반복구분 속성
             반복할 요소에 직접 사용함
             ________________________________
@@ -141,17 +151,17 @@
             (directive 는 지시,명령의 단어임)
 
          -->
-       </ol>
+        </ol>
     </div>
 
     <hr>
 
     <h2>3. 이벤트 사용하기</h2>
     <div id="app3">
-       <!-- <button v-on:click="myClick">클릭해봐!</button> -->
-       <button @click="myClick">클릭해봐!</button>
-       <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐!</button>
-       <div id="call">나를 불러줘!</div>
+        <!-- <button v-on:click="myClick">클릭해봐!</button> -->
+        <button @click="myClick">클릭해봐!</button>
+        <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐!</button>
+        <div id="call">나를 불러줘!</div>
     </div>
     <!-- 
         v-on:이벤트명 (v-on:을 줄여서 @)
@@ -163,17 +173,36 @@
 
     <h2>4. 입력 양식과 동기화하기</h2>
     <div id="app4">
-      
+        <input v-model="msg">
+        <p>{{msg}}</p>
+        <!-- 
+            v-model 속성은 요소 자신의 값이 타겟값으로
+            반영되게 함
+            변경데이터와 뷰JS의 동기화 기능!
+         -->
     </div>
 
     <hr>
 
     <h2>5. 조건분기</h2>
     <div id="app5">
-       
+        <button v-on:click="show=!show">변경하기</button>
+        <!-- 
+            v-on:click="show=!show"
+            show가 true이면 false, false이면 true로
+            ! 연산자로 반대로 변경해줌!
+         -->
+         <p v-if="show">나는 프론트엔드 개발자다!</p>
+         <p v-if="!show">나는 백엔드 개발자다!</p>
+         <!-- 
+            v-if 속성은 값이 true 일경우에만 display를
+            보여준다! false는 태그 자체를 출력하지 않는다!
+
+          -->
     </div>
 
 
-    
+
 </body>
+
 </html>
