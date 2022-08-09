@@ -71,12 +71,14 @@
                         <li>
                             <span class="itit">성별</span>
                             <label for="gen1">남성</label>
-                            <input type="radio" name="gen" id="gen1">
+                            <input type="radio" name="gen" id="gen1" value="m">
                             <label for="gen2">여성</label>
-                            <input type="radio" name="gen" id="gen2" checked>
+                            <input type="radio" name="gen" id="gen2" checked value="w">
                             <!-- 라디오버튼의 name 속성을
                             같은 이름으로 쓰면 그룹핑되어
                             하나만 선택된다! 
+                            - DB입력시 각 선택항목에 value를 써서 선택값을
+                            읽을 수 있게 한다!
 
                             checked 속성 - 기본체크설정 -->
                         </li>
