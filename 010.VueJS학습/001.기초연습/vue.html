@@ -44,6 +44,47 @@
                         e.target.innerText = '놀랐지?';
                         e.target.style.fontSize = '60px';
                         e.target.style.transition = '2s';
+
+                        // 4초후에 새로운 요소 추가
+                        setTimeout(()=>{
+                            // 본박스안에 새요소넣기
+                            // this는 뷰객체
+                            // $el 선택된요소
+                            this.$el.innerHTML +=
+                            '<div id="my">하하하</div>'
+                        },4000);
+
+                        /* 
+                            Vue의 methods 속성 내부의 함수에서 this는?
+                            this는 Vue로 생성된 인스턴스 자신을 말한다!
+                            (인스턴스: instance란? new 키워드로 생성된 메모리상의 객체를 말한다!)
+                            하위 속성 선택요소인 element를 선택하려면 $el이라고 표현한다!
+                            -> 여기서 선택된 부모요소인 "#app3"를 말함
+                            _________________________
+
+                            [ 인스턴스 속성 : Instance Properties ]
+                            - $el : Vue인스턴스가 관리하는 컴포넌트 인스턴스인 루트 DOM요소
+                            - $data : 컨포넌트 인스턴스의 데이터 객체
+                        */
+
+                    }, /////// myClick 함수 //////
+                    myOver:function(){
+                        // 함수 전달변수 e를 쓰지않고
+                        // event라는 키워드를 사용하면
+                        // 이벤트 전달값을 읽어온다!
+                        // event.target로 쓰면 이벤트가
+                        // 발생한 요소자신임!
+                        event.target.innerText = 
+                        '오버하지마!';
+                        // '나를 불러줘' div#call에
+                        // 글자바꾸기
+                        this.$el.querySelector('#call')
+                        .innerText = '지금 너를 불렀어!!!';
+                    }, ///////// myOver 함수 ///////
+                    myClick2: function(txt){
+                        // txt는 함수호출시 전달값 변수
+                        event.target.innerText =
+                        `내가 ${txt}야!`;
                     }
                 }
                 // methods 속성은 함수기능을 구현하여 할당함!
@@ -109,6 +150,8 @@
     <div id="app3">
        <!-- <button v-on:click="myClick">클릭해봐!</button> -->
        <button @click="myClick">클릭해봐!</button>
+       <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐!</button>
+       <div id="call">나를 불러줘!</div>
     </div>
     <!-- 
         v-on:이벤트명 (v-on:을 줄여서 @)
