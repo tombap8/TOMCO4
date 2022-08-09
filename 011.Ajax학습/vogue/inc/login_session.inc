@@ -34,6 +34,8 @@ session_start();
           // 3. 로그아웃 클릭시 로그아웃하기
           .click(function(){
 
+            
+
               // 비동기통신으로 로그아웃 처리 페이지호출!
               // Ajax - $.post() 로 처리!
               // $.post(호출페이지, 전달변수셋팅, 콜백함수)
@@ -61,6 +63,8 @@ session_start();
 
                           // 첫페이지로 리로드
                           location.replace("index.php");
+                          
+
 
                       } ////// if ////////////////
                       else{
@@ -74,7 +78,6 @@ session_start();
                   } /// 콜백함수 ///////
 
               );///////// Ajax - post /////////
-
 
 
           }) ///// click /////////////////////
@@ -120,7 +123,7 @@ session_start();
       $("#loginMsg").css({
           position: "absolute",
           width: "400px",
-          top: "5%",
+          top: "1%",
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "14px",
