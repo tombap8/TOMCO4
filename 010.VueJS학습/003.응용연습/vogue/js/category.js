@@ -31,16 +31,94 @@ $(() => {
         data: {
             vals: {},
             // json 데이터가 객체임!
-            catName: pm.replace(' & ','-'),
+            catName: pm.replace(' & ', '-'),
             // 파라미터로 넘어온 값을 Vue 데이터변수에 담기!
             catName2: pm //조건을 위한변수
         }, ////////// data //////////
         mounted: function () {
             axios.get('js/cat.json')
                 .then(x => this.vals = x);
-        } ///////// mounted //////////
+        }, ///////// mounted //////////
+        methods: {
+            // 탭 타이틀 변경 메서드
+            chgTit: function (tit) { // tit는 제목전달
+                $('title').prepend(tit);
+            }, ///////// chgTit 메서드 /////
+
+            // 한글자씩 등장애니 메서드 //////
+            callAni: function () {
+                $(()=>{ // jQB -> html그린후 실행!
+                 
+                // 대상: .stit
+                // 방법: 서브타이틀을 가져와서 각각 span태그로 싸준다!
+                const stit = $('.stit');
+
+                // 1. 서브타이틀 글자읽어오기
+                let stxt = stit.text();
+
+                // 2. span태그 한글자씩 싸기
+                let newtxt = "";
+                // for of로 한글자씩 돌아줌!
+                for (let x of stxt) {
+                    newtxt += `<span>${x}</span>`;
+                } ///// for of ////////////
+
+                console.log('이거야!', stit);
+
+                // 3. 원래 박스에 다시넣기
+                stit.html(newtxt);
+
+                // 4. span태그 css설정하기
+                stit.find('span').css({
+                    position: "relative",
+                    top: "-40px",
+                    opacity: 0
+                }); /////// css ////////
+
+
+                // 5. 순차적으로 하나씩 글자 등장하기 애니!
+                stit.find('span').
+                each((idx, ele) => {
+                    $(ele).delay(50 * idx)
+                        .animate({
+                            top: "0",
+                            opacity: 1
+                        }, 200, "easeInOutQuart");
+                }); //////// each ////////
+
+                // 6. LNB메뉴가 있으면 조금있다가 나와라!
+                $(".lnb").fadeTo(1, 0).delay(1000).fadeTo(500, 1);
+                // fadeTo(시간,오파,이징,함수)
+                // -> fadeIn/fadeOut과 달리 display를 none하지 않음!
+   
+            });
+
+            } ////////// callAni 메서드 //////
+
+        } ////////// methods //////////
 
     }); ////////// Vue /////////////////
+
+    ////////// 뷰JS 체험존 GNB 메뉴 클릭시 셋팅! ////
+    $(".VueGnb a").click(function(e) {
+
+        // 기본기능막기
+        e.preventDefault();
+
+        // 1. 클릭시 a요소 텍스트 읽어오기
+        let txt = $(this).text().toLowerCase();
+        // toLowerCase()는 소문자변환
+        console.log(txt);
+
+        
+
+    }); //////////// click /////////////////
+
+
+
+
+
+
 
 
 }); ///////////// jQB ////////////////////

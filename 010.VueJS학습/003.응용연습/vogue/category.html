@@ -244,6 +244,9 @@
                 -> 클래스명은 pm 값과 동일 -> catName
              -->
 
+             <!-- 탭메뉴 타이틀 변경 메서드 호출! -->
+             {{chgTit(v.제목)}}
+             <!-- 콧수염 표시자안에서 메서드를 호출! -->
 
             <!-- 2-1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
@@ -298,6 +301,8 @@
                     </div>
                 </div>
             </section>
+            <!-- 한글자씩 등장 애니 메서드 호출 -->
+            {{callAni()}}
         </main>
     </div>
     <!-- 3. 하단영역 -->
@@ -339,6 +344,38 @@
     <div class="LDbx">
         <img src="images/Loading_icon.gif" alt="loading">
     </div>
+
+    
+    <!-- 뷰JS전용 GNB -->
+    <nav class="VueGnb">
+        <!-- 타이틀 -->
+        <h2>SPA 체험존!!!</h2>
+        <!-- 메뉴 -->
+        <ul>
+            <li>
+                <a href="#">FASHION</a>
+            </li>
+            <li>
+                <a href="#">BEAUTY</a>
+            </li>
+            <li>
+                <a href="#">LIVING</a>
+            </li>
+            <li>
+                <a href="#">PEOPLE</a>
+            </li>
+            <li>
+                <a href="#">VIDEO</a>
+            </li>
+            <li>
+                <a href="#">RUNWAY</a>
+            </li>
+            <li>
+                <a href="#">SHOPPING</a>
+            </li>
+        </ul>
+    </nav>
+
 
 
 </body>

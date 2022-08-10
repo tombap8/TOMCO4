@@ -6,14 +6,18 @@
 @import url(core.css);
 @import url(common.css);
 
+#cont{
+    min-height: 50vh;
+}
+
 /* 등장액션 해제 */
-.scAct{
+.scAct {
     transform: translateY(0);
     opacity: 1;
 }
 
 /* 2-1-1. 서브타이틀 */
-.stit{
+.stit {
     font-family: pist;
     font-weight: normal;
     font-size: 50px;
@@ -21,227 +25,271 @@
     padding: 40px 0 20px;
 }
 
+/* 타이틀 잘라넣을 span */
+.stit span {
+    /* 처음부터 안보임! */
+    opacity: 0;
+}
+
 /* 2-1-2. 서브메뉴(LNB) */
-.lnb{
+.lnb {
     padding: 5px 0 50px;
 }
-.lnb ul{
+
+.lnb ul {
     /* 플렉스박스 */
     display: flex;
     justify-content: center;
 }
-.lnb li{
+
+.lnb li {
     margin: 0 10px;
 }
-.lnb a{
+
+.lnb a {
     font-family: nbg;
     font-size: 18px;
     color: #333;
     /* 트랜지션: 속시이지 */
-    transition: color .5s;
+    transition: color 0.5s;
 }
+
 /* 첫번째 메뉴 + 오버시 빨간색 */
 .lnb li:first-child a,
-.lnb a:hover{
+.lnb a:hover {
     color: red;
 }
 
+/* 뷰JS용 GNB */
+.VueGnb{
+    position: fixed;
+    top: 20vh;
+    right: 0;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.725);
+    z-index: 9999;
+    width: 15vw;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.VueGnb h2{
+    font-family: nbg;
+    text-align: center;
+    font-size: 2vw;
+    padding: 1vw 0;
+}
+.VueGnb ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.VueGnb a{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1vw;
+    display: block;
+    padding: 2vw;
+    color: #222;
+}
+
+
 /************************ fashion ************************/
-.fashion .bg1-1{
+.fashion .bg1-1 {
     background-image: url(../images/fashion/cont1-1a.jpg);
 }
 
-.fashion .bg1-2{
+.fashion .bg1-2 {
     background-image: url(../images/fashion/cont1-2a.jpg);
 }
 
-.fashion .bg1-3{
+.fashion .bg1-3 {
     background-image: url(../images/fashion/cont1-3a.jpg);
 }
 
-.fashion .bg2-1{
+.fashion .bg2-1 {
     background-image: url(../images/fashion/cont2-1a.jpg);
 }
 
-.fashion .bg2-2{
+.fashion .bg2-2 {
     background-image: url(../images/fashion/cont2-2a.jpg);
 }
 
-.fashion .bg2-3{
+.fashion .bg2-3 {
     background-image: url(../images/fashion/cont2-3a.jpg);
 }
 
 /************************ beauty ************************/
-.beauty .bg1-1{
+.beauty .bg1-1 {
     background-image: url(../images/beauty/cont1-1a.jpg);
 }
 
-.beauty .bg1-2{
+.beauty .bg1-2 {
     background-image: url(../images/beauty/cont1-2a.jpg);
 }
 
-.beauty .bg1-3{
+.beauty .bg1-3 {
     background-image: url(../images/beauty/cont1-3a.jpg);
 }
 
-.beauty .bg2-1{
+.beauty .bg2-1 {
     background-image: url(../images/beauty/cont2-1a.jpg);
 }
 
-.beauty .bg2-2{
+.beauty .bg2-2 {
     background-image: url(../images/beauty/cont2-2a.jpg);
 }
 
-.beauty .bg2-3{
+.beauty .bg2-3 {
     background-image: url(../images/beauty/cont2-3a.jpg);
 }
 
 /************************ living ************************/
-.living .bg1-1{
+.living .bg1-1 {
     background-image: url(../images/living/cont1-1a.jpg);
 }
 
-.living .bg1-2{
+.living .bg1-2 {
     background-image: url(../images/living/cont1-2a.jpg);
 }
 
-.living .bg1-3{
+.living .bg1-3 {
     background-image: url(../images/living/cont1-3a.jpg);
 }
 
-.living .bg2-1{
+.living .bg2-1 {
     background-image: url(../images/living/cont2-1a.jpg);
 }
 
-.living .bg2-2{
+.living .bg2-2 {
     background-image: url(../images/living/cont2-2a.jpg);
 }
 
-.living .bg2-3{
+.living .bg2-3 {
     background-image: url(../images/living/cont2-3a.jpg);
 }
 
 /************************ people ************************/
-.people .bg1-1{
+.people .bg1-1 {
     background-image: url(../images/people/cont1-1a.jpg);
 }
 
-.people .bg1-2{
+.people .bg1-2 {
     background-image: url(../images/people/cont1-2a.jpg);
 }
 
-.people .bg1-3{
+.people .bg1-3 {
     background-image: url(../images/people/cont1-3a.jpg);
 }
 
-.people .bg2-1{
+.people .bg2-1 {
     background-image: url(../images/people/cont2-1a.jpg);
 }
 
-.people .bg2-2{
+.people .bg2-2 {
     background-image: url(../images/people/cont2-2a.jpg);
 }
 
-.people .bg2-3{
+.people .bg2-3 {
     background-image: url(../images/people/cont2-3a.jpg);
 }
 
 /************************ video ************************/
-.video .bg1-1{
+.video .bg1-1 {
     background-image: url(../images/video/cont1-1a.jpg);
 }
 
-.video .bg1-2{
+.video .bg1-2 {
     background-image: url(../images/video/cont1-2a.jpg);
 }
 
-.video .bg1-3{
+.video .bg1-3 {
     background-image: url(../images/video/cont1-3a.jpg);
 }
 
-.video .bg2-1{
+.video .bg2-1 {
     background-image: url(../images/video/cont2-1a.jpg);
 }
 
-.video .bg2-2{
+.video .bg2-2 {
     background-image: url(../images/video/cont2-2a.jpg);
 }
 
-.video .bg2-3{
+.video .bg2-3 {
     background-image: url(../images/video/cont2-3a.jpg);
 }
 
 /************************ runway ************************/
-.runway .bg1-1{
+.runway .bg1-1 {
     background-image: url(../images/runway/cont1-1a.jpg);
 }
 
-.runway .bg1-2{
+.runway .bg1-2 {
     background-image: url(../images/runway/cont1-2a.jpg);
 }
 
-.runway .bg1-3{
+.runway .bg1-3 {
     background-image: url(../images/runway/cont1-3a.jpg);
 }
 
-.runway .bg2-1{
+.runway .bg2-1 {
     background-image: url(../images/runway/cont2-1a.jpg);
 }
 
-.runway .bg2-2{
+.runway .bg2-2 {
     background-image: url(../images/runway/cont2-2a.jpg);
 }
 
-.runway .bg2-3{
+.runway .bg2-3 {
     background-image: url(../images/runway/cont2-3a.jpg);
 }
 
 /************************ shopping ************************/
-.shopping .bg1-1{
+.shopping .bg1-1 {
     background-image: url(../images/shopping/cont1-1a.jpg);
 }
 
-.shopping .bg1-2{
+.shopping .bg1-2 {
     background-image: url(../images/shopping/cont1-2a.jpg);
 }
 
-.shopping .bg1-3{
+.shopping .bg1-3 {
     background-image: url(../images/shopping/cont1-3a.jpg);
 }
 
-.shopping .bg2-1{
+.shopping .bg2-1 {
     background-image: url(../images/shopping/cont2-1a.jpg);
 }
 
-.shopping .bg2-2{
+.shopping .bg2-2 {
     background-image: url(../images/shopping/cont2-2a.jpg);
 }
 
-.shopping .bg2-3{
+.shopping .bg2-3 {
     background-image: url(../images/shopping/cont2-3a.jpg);
 }
 
 /************************ time & gem ************************/
-.time-gem .bg1-1{
+.time-gem .bg1-1 {
     background-image: url(../images/time-gem/cont1-1a.jpg);
 }
 
-.time-gem .bg1-2{
+.time-gem .bg1-2 {
     background-image: url(../images/time-gem/cont1-2a.jpg);
 }
 
-.time-gem .bg1-3{
+.time-gem .bg1-3 {
     background-image: url(../images/time-gem/cont1-3a.jpg);
 }
 
-.time-gem .bg2-1{
+.time-gem .bg2-1 {
     background-image: url(../images/time-gem/cont2-1a.jpg);
 }
 
-.time-gem .bg2-2{
+.time-gem .bg2-2 {
     background-image: url(../images/time-gem/cont2-2a.jpg);
 }
 
-.time-gem .bg2-3{
+.time-gem .bg2-3 {
     background-image: url(../images/time-gem/cont2-3a.jpg);
 }
