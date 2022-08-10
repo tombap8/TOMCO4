@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* 메인영역 모두포함 */
+
+
+
+
+.mid h2{
+  font-size: 20px;
+  padding: 10px;
+}
+.mid h2 a{
+  color:black
+}
+
+.lbox2 ul li a{
+  color: black;
+  font-weight: bolder;
+}
+/* 테스트중 */
+.lbox2:hover ul li a{
+  color: rgb(214, 214, 214);
+  font-weight: bolder;
+}
+
+.fbox .sbox:hover a{
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.fbox{
+  /* 라인별공통flex박스
+  한공간 가로로 박스 2개 */
+  display: flex;
+}
+.sbox{
+  /* 목록별 박스 3개씩 가로로
+  세로정령은 중앙맞춤*/
+  display: flex;
+  min-width: 500px;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1; /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 움직이는거수정해야함 */
+  /* flex-shrink: 0;
+  flex-basis: 500px;
+  margin: 0 50px; */
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.lbox1{
+  /* 순번 */
+  flex-basis: 50px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.lbox2{
+  /* 이름 */
+  flex-basis: 350px;
+  flex-shrink: 0;
+}
+/* @@@@이미지에 비율정보에대한 중요라인 */
+.lbox3{
+  /* 이미지 */
+  flex-basis: 76px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  
+}
+
+.lbox3_1{
+  /* 이미지크기조절을위한 포지션및
+  패딩탑 ,오버플로우히든 */
+  /* 이미지조절을 위한 부모자격 */
+  position: relative;
+  /* 1:1사이즈 */
+  padding-top: 100%;
+  overflow: hidden;
+  /* 자식요소의 수직적인 패당값은 부모
+  요소의 너비에 영향을 받는다
+  부모는 ? .lbox3 50px에 대한 100%
+  자식은 ? img 자식을 위한 포지션은 가짐 */
+  
+}
+
+.lbox3 img{
+  /* 부모는? .lbox3 */
+  position: absolute;
+  /* 사방면 0의 값을 주면 부모 크기에
+  꽉채운다 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 이미지 크기는  부모크기의 100%!
+  max를 붙여서 부모를 넘치지않도록! */
+  max-width: 100%;
+   
+}
+
+.cbox{
+  /* 이미지박스 가로베치 줄바꿈 */
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  
+}
+
+
+#card{
+  background-color: #fafafa;
+}
+
+.card{
+  flex-basis: 200px;
+  flex-shrink: 0;
+  /* .card 부모자격 */
+  position: relative;
+  /* 부모비율에대한 패딩탑 */
+  padding-top: 161px;
+  /* 자식요소간 공간 */
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 6%);
+  text-align: center;
+  
+  
+}
+
+.card img{
+  /* 비율유지를 위한 포지션 */
+  position: absolute;
+  /* 4방면으로 부모크기에맞추기 */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* 부모사이즈넘치지않게 */
+  max-width: 70%;
+  margin: 10px auto;
+}
+
+.card a{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: black;
+  
+}
+
+.card:hover a{
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* 하단영역 모두포함 */
+
+
+.mi{
+    display: flex;
+    text-align: center;
+}
+.mi li{
+    flex: 1;
+}

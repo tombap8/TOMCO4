@@ -1,0 +1,465 @@
+#top{
+    background-color: #f5f3a0;
+}
+
+
+.top1{
+    /* 제목,모드 가로정렬 */
+    display: flex;
+    justify-content: space-between;
+    /*제목,모드 세로정렬 */
+    align-items: center;
+    /* 모드 부모자격 */
+    position: relative;
+    
+}
+
+
+
+.title{
+    /* 제목 상단꽉채움 */
+    flex: 1;
+    /* 제목 텍스트 중앙 */
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Gugi', cursive;
+    /* 타이틀설명 공통으로? */
+}
+
+
+.t_mode{
+    /* 제목중앙정렬을 위한 모드위치이동 */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.t_mode ul{
+    /* 모드 아이콘 가로정렬 */
+    display: flex;
+}
+
+.t_mode ul li{
+    /* 모드아이콘 간격 정렬 */
+    margin: 0 5px;
+
+}
+
+.t_mode ul li span{
+    /* 디스플레이 전환으로 부모li채우기 */
+    display: block;
+}
+.t_mode ul li:hover span{
+    /* 아이콘 오버시 */
+     font-weight: bold;
+     background-color: rgba(255, 255, 255, 0.219);
+     border-radius: 50%;
+     /* outline: 1px solid black; */
+     cursor:pointer;
+    
+}
+
+.gnb{
+    /* 가상요소 부모자격 */
+    position: relative;
+    font-family: 'Single Day', cursive;
+    
+    
+    
+}
+
+.gnb::after{
+    /* 전체드롭 자식가상요소 */
+    content: "";
+    display: block;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    height: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s ease-out;
+    z-index: 1;
+}
+
+.gnb:hover::after{
+    /* gnb  메뉴오버시 전체드롭 */
+    width:  100%;
+    height: 121px;
+}
+
+
+.gnb:hover .s_menu{
+    /* gnb메뉴오버시에 전체메뉴보임 */
+    height: 80px;
+    /* 돌아올때 맞지않아 원본에주지않음 */
+    transition: 0.1s ease-in .2s;
+}
+
+
+.gnb ul {
+    /* 메인메뉴 가로정렬 */
+    display: flex;
+    /* width: 800px; */
+    /* margin: 0 auto; */
+    text-align: center;
+    position: relative;
+    justify-content: center;
+}
+
+.menu{
+    /* 부모 ul크기에 맞게 채움 */
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* .menu 가상요소부모 */
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+.menu a{
+    /* a태그 가상요소 밑줄의 위치때문에 인라인블럭으로 */
+    display: inline-block;
+    height: 100%;
+    /* 인라인블럭을주고
+    퍼센트를 100프로주면 부모요사만큼커지기때문에
+    블럭요소나 다름없는공간임 */
+    /* width: 100%; */
+    line-height: 4rem;
+    color: black;
+    /* 가상요소 부모자격 */
+    position: relative;
+    font-size: 20px;
+
+}
+
+
+.menu > a::after{
+    /* a에 가상요소로 밑줄 */
+    content: '';
+    display: block;
+    /* 포지션을 잡은후에 
+    트랜스폼 0으로대기 */
+    transform: scalex(0);
+    position: absolute;
+    /* width 와 height를 줘도
+    트랜스폼 스케일이 0이면 모습이보이지않음
+    그런후 오버할시 스케일을 늘려주면 중앙에서 양쪽
+    x축으로 나가서 중간에서 퍼지는효과를볼수있음 */
+    height: 2px;
+    width: 100%;
+    bottom: 2px;
+    transition: .5s;
+}
+
+.menu:hover a::after{
+    /* 트랜스폼으로 중간에서 펼치기 */
+    transform: scalex(1);
+    background-color: rgb(42, 113, 175);
+    
+}
+
+
+.s_menu ol li a:hover{
+    /* 서브메뉴 a에 오버시
+    li할경우 보더레디우스 줄경우 어울리지않음 */
+    background-color: rgba(255, 228, 196, 0.507);
+    border-radius: 50%;
+    
+}
+
+
+.s_menu{
+    /* 서브메뉴 앱솔루트로 자리유지 */
+    position: absolute;
+    /* width: 200px; */
+    overflow: hidden;
+    height: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+/* -----------------------햄버거메뉴 목록--------------------- */
+
+article{
+     /* 태그로 속성 */
+    /*브라우저화면기준으로 포지션 */
+    position: fixed;
+    top: 0;
+    /* 브라우저밖으로 나가있기 */
+    left: -312px;
+    z-index: 3;
+    /* 햄버거메뉴 양방향 트랜지션 */
+    transition: 1s;
+    /* overflow: hidden; */
+    
+}
+
+
+
+article a{
+    color: rgb(111, 0, 255);
+}
+
+.inart{
+    /* 햄버거 목록 가로,세로 크기 */
+    width: 312px;
+    height: 1000px;
+    background-color: rgb(215, 216, 215);
+    margin-top: 0;
+}
+
+.art{
+    /* 목록공통크기
+    부모사이즈 90프로에 마영오로 박스중앙정렬 */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ham{
+    /* 햄버거안 span태그 세로정렬 */
+    display: flex;
+    flex-direction: column;
+    /* 제목 중앙정렬을 위한 햄버거 위치이동 */
+    position: absolute;
+    top: 50%;
+    right: -33px;
+    cursor: pointer;
+
+    /* @@@@@@@@@@@@@ 메인 완성시 클릭 이벤트발생시켜야함
+    즉 자리이동필요 */
+}
+
+.ham:hover{
+    /* 햄버거메뉴 오버시 */
+    background-color: rgba(255, 255, 255, 0.219);
+    border-radius: 1px;
+    /* outline: 1px solid black; */
+    
+}
+
+.ham span{
+    /* 햄버거 메뉴 크기 및 사이간격 */
+    width: 30px;
+    height: 4px;
+    background: black;
+    margin: 2px 0;
+    border-radius: 3rem;
+        
+}
+
+.al{
+    /* 목록 넣다빼기위한 클래스 */
+    left: 0px;
+}
+
+
+
+.fart1{
+    /* 가로flex 사람로고,로그인, */
+    display: flex;
+    /* 자식 .hm1 세로정렬 */
+    align-items: center;
+    /* 자식 .hm1 가로 왼쪽시작 */
+    justify-content: start;
+    /* 상단하단여유주기위해 패딩 */
+    padding-top: 15px;
+    
+}
+
+.fart1 a{
+    /* a요소 span감싸도로록 블럭처리 */
+    display: block;
+    /* 로그인글씨 크기 */
+    font-size: 13px;
+    /* 로그인글씨 두껍게 */
+    font-weight: bold;
+    
+}
+
+.fart1 li:last-child a:hover{
+    /* 햄버거목록안 로그인 글씨 오버시 */
+    color:white;
+    font-weight: bolder;
+    text-shadow: 1px 1px 5px black;
+}
+
+.fart1 li:last-child{
+    /* 사람로고와 로그인글씨 간격 마진으로 */
+    margin-left: 5px;
+
+}
+
+.fart1 li:first-child a span{
+    /* 기본설정되어있는 사람로고 라인하이트 0으로 재설정 */
+    line-height: normal;
+    /* 사이즈재조정 */
+    font-size: 35px;
+    /* 사람로고 아이콘두껍게 */
+    font-weight: bold;
+
+}
+.fart1 li:first-child a span:hover{
+    /* 햄버거목록에 사람로고 오버시에 배경변경 */
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 30px;
+}
+
+.fart2{
+    /* 가로flex 구매내역, 선물함, 쿠폰함 ,장바구니 */
+    display: flex;
+    /* 가로공간에 맞게 정렬 */
+    justify-content: space-around;
+    /* 아이콘중앙정렬 */
+    text-align: center;
+}
+
+.fart2 >li{ 
+    /* 자식요소 부모요소에 꽉차게 */
+    flex: 1;
+}
+
+.fart2 img{
+    /* 두번째파트 아이콘이미지 맞춤 */
+    width: 35px;
+}
+
+
+.hm2:hover{
+    background-color: rgba(255, 255, 255, 0.212);
+    border-radius: 50%;
+}
+
+
+
+.hm2 li a{
+    /* 햄버거목록 a태그 글씨체 */
+    font-size: 12px;
+    font-family: 'Do Hyeon', sans-serif;
+    /* 블럭으로 하단간극없애기 */
+    display: block;
+}
+
+
+.fart3{
+    /* 세로flex */
+    display: flex;
+    flex-direction: column;
+    /* 가로방향 중앙정렬 */
+    align-items: center;
+}
+
+.fart3 li{
+    /* 부모 .fart3 크기에맞추기 */
+    width: 100%;
+    height: 50px;
+}
+
+
+.fart3>li>a{
+    /* li크기에 맞추기 */
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    height: 100%;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.fart3>li>a:hover{
+    /* 홈/신규/인기/콘텐츠 마우스오버시에 색변경 */
+    background-color: rgba(128, 128, 128, 0.205);
+    text-shadow: 1px 1px 2px white;
+}
+
+
+.fart4 li{
+    /* 부모 .fart3 크기에맞추기 */
+    width: 100%;
+    height: 50px;
+}
+
+
+.fart4>li>a{
+    /* li크기에 맞추기 */
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    line-height: 50px;
+}
+
+.fart4>li>a:hover{
+       /* 새소식/자주묻는질문/회원가입*/
+       background-color: rgba(128, 128, 128, 0.205);
+       text-shadow: 1px 1px 2px white;
+}
+
+.fart5{
+    /* 햄버메뉴목록 최하단 */
+    margin-top: 300px;
+    border-top: 2px solid rgba(0, 0, 0, 0.103);
+    color: gray;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.fart5 p{
+    /* 상위공간확보 */
+    padding-top: 10px;
+}
+
+/*******************************************이미지라인************************************** */
+
+section {
+    /* 슬라이드 부모(태그) */
+    width: 800px;
+    height: 447px;
+    margin: 0 auto;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.pi {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    
+}
+
+.pi > li{
+    flex-basis: 100%;
+    flex-shrink: 0;
+    /* background-color: rgba(250, 235, 215, 0.205); */
+}
+
+.pi > li > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn1{
+    right: 0px;
+}
+
+.btn2{
+    left: 0px;
+}

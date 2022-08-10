@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* 메인영역 모두포함 */
+
+
+
+
+.mid h2{
+  font-size: 20px;
+  padding: 10px;
+}
+.mid h2 a{
+  color:black
+}
+.mid a:hover{
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.lbox2 ul li a{
+  color: black;
+  font-weight: bolder;
+
+}
+.lbox2:hover ul li a{
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  
+}
+
+
+.fbox .sbox:hover a{
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.fbox{
+  display: flex;
+}
+.sbox{
+  display: flex;
+  min-width: 500px;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1; 
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.lbox1{
+  flex-basis: 50px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.lbox2{
+  flex-basis: 350px;
+  flex-shrink: 0;
+}
+
+.lbox3{
+  flex-basis: 76px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  
+}
+
+.lbox3_1{
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  
+}
+
+.lbox3 img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+   
+}
+
+.cbox{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  
+}
+
+
+#card{
+  background-color: #fafafa;
+}
+
+.card{
+  flex-basis: 200px;
+  flex-shrink: 0;
+  position: relative;
+  padding-top: 161px;
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 6%);
+  text-align: center;
+  
+  
+}
+
+.card img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-width: 70%;
+  margin: 10px auto;
+}
+
+.card a{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: black;
+  
+}
+
+.card:hover a{
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+
+
+
+

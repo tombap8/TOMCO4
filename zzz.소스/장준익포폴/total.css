@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* 종합 CSS */
+/* html link 파일 */
+
+@import url(./top.css);
+/* 상단에 대한 레이아웃 포함모든것 */
+@import url(./main.css);
+/* 메인에 대한 레이아웃 포함모든것 */
+@import url(./footer.css);
+/* 하단에 대한 레이아웃 포함모든것 */
+@import url(./reset.css);
+/* 상단제목 , 상단 메뉴 폰트  -> font-family: 'Gugi', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+/* 상단메뉴 폰트  -> font-family: 'Single Day', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Single+Day&display=swap');
+/* 햄버거목록 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+
+/* ____________________공통_____________________ */
+
+.inbox{
+    max-width: 1200px;
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+html{
+    /* 1rem을 10px로 맞추는작업 */
+    font-size: 62.50%;
+}
+
+
+/* _________________임시 영역표시________________ */
+
+.top{
+    height: 581px;
+    /* background-color: rgba(132, 151, 212, 0.281); */
+}
+
+.mid{
+    /* background-color: #fafafa; */
+}
+
+.info{
+    height: 10vh;
+    /* background-color: rgba(224, 255, 255, 0.507) */
+}
+
+body{
+    background-color: rgba(156, 126, 126, 0.055);
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* 하단영역 모두포함 */
+
+
+.mi{
+    display: flex;
+    text-align: center;
+}
+.mi li{
+    flex: 1;
+}
+
+.inbox a{
+    padding-top: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.inbox p{
+    padding-top: 10px;
+    font-size: 12px;
+}

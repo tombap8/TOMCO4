@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="total.css">
+    <!-- 검색아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- 언어아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- 모드아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <title>이모티콘페이지</title>
+    <!-- 외부 script 파일 -->
+    <script src="main.js"></script>
+</head>
+
+
+<body>
+    <!-- 마우스클릭시 이벤트발생 -->
+    <!-- <div class="ci ck"></div> -->
+    <div id="top">
+        <!-- 상단메뉴 드롭다운으로 header 속박스적용안함 -->
+        <header class="top">
+            <div class="top1 inbox">
+                <!-- 상단 제목 -->
+                <div class="title">
+                    <h1>kakaoemoticon shop</h1>
+                </div>
+                <!-- 상단 모드 -->
+                <div class="t_mode">
+                    <ul>
+                        <li>
+                            <span class="material-symbols-outlined" title="검색">search</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" title="언어변경">language</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" title="다크모드">dark_mode</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 햄버거메뉴 목록 -->
+            <article>
+                <!-- 상단 햄버거메뉴 -->
+                <div class="ham" title="목록열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="inart">
+                    <!-- 햄버거 메뉴 이미지,로그인 -->
+                     <div class="art">
+                        <ul class="fart1">
+                            <li>
+                                <a href="#">
+                                    <span class="material-symbols-outlined">account_circle</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span>로그인&#62;</span></a>
+                            </li>
+                        </ul>
+                     </div>
+                     <!-- 햄버거 메뉴아이콘 -->
+                     <hr>
+                     <div class="art">
+                        <ul class="fart2">
+                            <li>
+                                <ol class="hm2">
+                                    <li>
+                                        <img src="./프로젝트이미지/구매.png" alt="구매내역">
+                                    </li>
+                                    <li>
+                                        <a href="#">구매내역</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="hm2">
+                                    <li>
+                                        <img src="./프로젝트이미지/선물함.png" alt="선물함">
+                                    </li>
+                                    <li>
+                                        <a href="#">선물함</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="hm2">
+                                    <li>
+                                        <img src="./프로젝트이미지/쿠폰함.png" alt="쿠폰함">
+                                    </li>
+                                    <li>
+                                        <a href="#">쿠폰함</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="hm2">
+                                    <li>
+                                        <img src="./프로젝트이미지/장바구니.png" alt="장바구니">
+                                    </li>
+                                    <li>
+                                        <a href="#">장바구니</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ul>
+                     </div>
+                     <hr>
+                     <!-- 햄버거메뉴 서브목록 -->
+                     <div class="art">
+                        <ul class="fart3">
+                            <li>
+                                <a href="#">홈</a>
+                            </li>
+                            <li>
+                                <a href="#">신규</a>
+                            </li>
+                            <li>
+                                <a href="#">인기</a>
+                            </li>
+                            <li>
+                                <a href="#">콘텐츠</a>
+                            </li>
+                        </ul>
+                     </div>
+                     <hr>
+                     <!-- 햄버거메뉴 기타정보 -->
+                     <div class="art">
+                        <ul class="fart4">
+                            <li>
+                                <a href="#">새소식</a>
+                            </li>
+                            <li>
+                                <a href="#">자주묻는질문</a>
+                            </li>
+                            <li>
+                                <a href="#">회원가입</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="fart5">
+                       <p>@이모티콘페이지</p>
+                   </div>
+                </div>
+            </article>
+            <!-- 상단 전체 메뉴 -->
+            <nav class="gnb">
+                <ul>
+                    <li class="menu">
+                        <a href="#">홈</a>
+                    </li>
+                    
+                    <li class="menu">
+                        <a href="#">신규</a>
+                        <!-- 서브메뉴 -->
+                        <div class="s_menu">
+                            <ol>
+                                <li>
+                                    <a href="">오늘의신규이모티콘</a>
+                                </li>
+                                <li>
+                                    <a href="">이모티콘등록하기</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="menu">
+                        <a href="#">인기</a>
+                        <!-- 서브메뉴 -->
+                        <div class="s_menu">
+                            <ol>
+                                <li>
+                                    <a href="">오늘의인기이모티콘</a>
+                                </li>
+                                <li>
+                                    <a href="">이모티콘순위</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="menu">
+                        <a href="#">스타일</a>
+                        <!-- 서브메뉴 -->
+                        <div class="s_menu">
+                            <ol>
+                                <li>
+                                    <a href="">오늘의콘텐츠</a>
+                                </li>
+                                <li>
+                                    <a href="">콘텐츠등록하기</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 상단 이미지슬라이드 -->
+            <section>
+                <ul class="pi">
+                    <li><img src="./프로젝트이미지/슬라이드1.gif" alt="1"></li>
+                    <li><img src="./프로젝트이미지/슬라이드2.gif" alt="2"></li>
+                    <li><img src="./프로젝트이미지/슬라이드3.gif" alt="3"></li>
+                    <li><img src="./프로젝트이미지/슬라이드4.gif" alt="4"></li>
+                    <li><img src="./프로젝트이미지/슬라이드5.gif" alt="5"></li>
+                </ul>
+                <a href="#" class="btn btn1"><img src="./프로젝트이미지/오른쪽.png" alt=""></a>
+                <a href="#" class="btn btn2"><img src="./프로젝트이미지/왼쪽.png" alt=""></a>
+
+            </section>
+        </header>
+    </div>
+    <div id="mid">
+        <!-- 메인메뉴 -->
+        <main class="mid inbox">
+            <!-- 인기이모티콘 순위목록형 -->
+            <div>
+                <div>
+                    <h2>
+                        <a href="">인기이모티콘 &#62;</a>
+                    </h2>
+                </div>
+                <!-- 1,6 순위 -->
+                <div class="fbox">
+                    <!-- 1순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>1</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">오늘의 짤 #짤판났네</a></li>
+                                <li>MOH Inc.</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기1.png" alt="1">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>6</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">잔망 루피 4</a></li>
+                                <li>뽀로로</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기6.png" alt="6">
+                            </div>
+                        </div>
+                    </div>
+                </div>             
+                <hr>
+                <!-- 2,7 순위 -->
+                <div class="fbox">
+                    <!-- 2순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>2</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">꼬물꼬물 따랑해 곰식이</a></li>
+                                <li>쩡고</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기2.png" alt="2">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>7</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">감정충만 먼지씨</a></li>
+                                <li>문랩</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기7.png" alt="7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 3,8 순위 -->
+                <div class="fbox">
+                    <!-- 3순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>3</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">금쪽같은 쥐방울</a></li>
+                                <li>ⓒhansigan</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기3.png" alt="3">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 8순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>8</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">앗냥.사랑스러운 팍스</a></li>
+                                <li>마성</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기8.png" alt="8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 4,9 순위 -->
+                <div class="fbox">
+                    <!-- 4순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>4</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">꼬물꼬물 따랑해 토식이</a></li>
+                                <li>쩡고</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기4.png" alt="4">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 9순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>9</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">늬에시의 여름일상</a></li>
+                                <li>철새</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기9.png" alt="9">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- 5,10 순위 -->
+                <div class="fbox">
+                    <!-- 5순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>5</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">심쿵저격 깜찍한 하양토끼 하루</a></li>
+                                <li>툰스</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기5.png" alt="5">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 10순위 -->
+                    <div class="sbox">
+                        <div class="lbox1">
+                            <h3>10</h3>
+                        </div>
+                        <div class="lbox2">
+                            <ul>
+                                <li><a href="">망그러진 작은 햄터</a></li>
+                                <li>유랑</li>
+                            </ul>
+                        </div>
+                        <div class="lbox3">
+                            <div class="lbox3_1">
+                                <img src="./프로젝트이미지/인기10.png" alt="10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 신규이모티콘 카드형 -->
+            <div id="card">
+                <h2>
+                    <a href="">신규이모티콘 &#62;</a>
+                </h2>
+                <figure>
+                    <div class="cbox">
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규1.png" alt="1">
+                            <a href="#">내 마음을 받아조라</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규2.png" alt="2">
+                            <a href="">대충살자 김오리처럼</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규3.png" alt="3">
+                            <a href="">다정한 안부톡톡</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규4.png" alt="4">
+                            <a href="">~라고 말했습니다</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규5.png" alt="5">
+                            <a href="">신입 햇병아리는 햇리</a>
+                        </div>
+                    </div>
+                    <div class="cbox">
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규6.png" alt="6">
+                            <a href="">단톡방에 예의바른 공손</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규7.png" alt="7">
+                            <a href="">할미가 사랑혀</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규8.png" alt="8">
+                            <a href="">올 여름도 자기와 함께!</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규9.png" alt="9">
+                           <a href="">치킨러버 바둑이</a>
+                        </div>
+                        <div class="card">
+                            <img src="./프로젝트이미지/신규10.png" alt="10">
+                            <a href="">아기눈덕이는 참지</a>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </main>
+    </div>
+    <div id="info">
+        <!-- 하단메뉴바 -->
+        <footer class="info inbox">
+            <!-- 하단메뉴 -->
+            <div>
+                <ul class="mi">
+                    <li>
+                        <a href="">이용약관</a>
+                    </li>
+                    <li>
+                        <a href="">유료이용안내</a>
+                    </li>
+                    <li>
+                        <a href="">개인정보처리방침</a>
+                    </li>
+                    <li>
+                        <a href="">기업고객</a>
+                    </li>
+                    <li>
+                        <a href="">문의하기</a>
+                    </li>
+                    <li>
+                        <a href="">공정위사업자정보</a>
+                    </li>
+                    <li>
+                        <a href="">(주) 이모티콘</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 법적고지 -->
+            <div>
+                <p>카카오 이모티콘샵에서 판매되는 콘텐츠의 저작권은 콘텐츠 제공자에게 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 처벌될 수 있습니다.</p>
+            </div>
+            <!-- 주소및 대표 -->
+            <div>
+            <p>대표남궁훈사업자등록번호120-81-47521통신판매업신고번호제2015-제주아라-0032호
+                주소제주특별자치도 제주시 첨단로 242(영평동)호스팅사업자(주)카카오고객센터1577-3754메일help.notice@kakaocorp.com</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
