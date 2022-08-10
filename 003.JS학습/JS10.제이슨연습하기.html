@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS10.제이슨 사용하기</title>
+    <!-- 1. 먼저 제이슨 파이을 불러온다! 
+    단, 제이슨파일안에 전체객체를 변수에 담는다! -->
+    <script src="real.json"></script>
+    <script>
+        // 2. 변수에 제이슨을 파싱하여 할당한다!
+        let myjson = JSON.parse(JSON.stringify(jsdata));
+
+        // JSON.parse() - 제이슨 데이터 파싱메서드
+        // 파싱이란? 문자열 데이터를 분석하고 분해하여
+        // 목적한 패턴에 맞게 문자열구조를 결정하는것!
+
+        // JSON.stringify() - 제이슨 형식 데이터를 문자열로 변환하는 메서드
+        // 여기서 변수  jsdata는 제이슨 파일안에 전체를
+        // 담은 변수명이다!
+        // 제이슨 파일자체에서 에러라고 빨간색표시가 나오지만
+        // 에러가 아님!
+
+        // 3. 원하는 대로 객체호출 형식으로 사용한다!
+        console.log(myjson);
+        // "shopping"의 "메뉴"
+        console.log(myjson["shopping"]["메뉴"]);
+        console.log(myjson["fashion"]["제목"]);
+        let mydata = myjson["living"];
+        for(let x in mydata){
+            console.log(x,":",mydata[x]);
+        } /////// for in ///////////
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
