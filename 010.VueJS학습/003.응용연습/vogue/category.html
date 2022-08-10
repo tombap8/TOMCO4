@@ -16,6 +16,12 @@
     <!-- 외부JS삽입 -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+
+    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    
     
     <!-- 링크시스템 JS -->
     <script src="js/linksys.js"></script>
@@ -222,27 +228,56 @@
 
     </div>
     <!-- 2. 메인영역 -->
-    <div class="bgc">
-        <main class="ibx cont">
+    <!-- 메인영역 최상위 부모요소인 #cont가 Vue JS의 대상! -->
+    <div id="cont" class="bgc">
+        <main class="ibx cont" v-for="(v,n) in vals.data" v-if="n===catName2" v-bind:class="catName">
+            <!-- 
+                v-if="n===catName"
+                조건이 속성명과 파라미터값이 같은 경우에 셋팅함!
+
+                [ 클래스 추가 디렉티브 ]
+                v-bind:class="클래스명"
+                -> 데이터 바인딩 할때 클래스명을 추가함!
+                -> 클래스명은 pm 값과 동일 -> catName
+             -->
+
+
             <!-- 2-1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 2-1-1. 서브타이틀 -->
-                <h2 class="stit"></h2>
+                <h2 class="stit">{{v.제목}}</h2>
                 <!-- 2-1-2. 서브메뉴(LNB-Local Navigation Bar) -->
-                <nav class="lnb"></nav>
+                <nav class="lnb" v-if="v.메뉴!=='없음'">
+                    <ul>
+                        <li v-for="(m,i) in v.메뉴">
+                            <a href="#">{{m}}</a>
+                        </li>
+                        <!--  메뉴는 배열이므로 
+                            (배열값,순번) -->
+                    </ul>
+                </nav>
             </header>
             <!-- 2-2. 카테고리 컨텐츠박스 -->
             <!-- 유형2 컨텐츠박스1 -->
             <section class="pt2 rbx scAct">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg1-1">
-                        <h2></h2>
+                        <!-- <h2>{{v.타이틀[0]}}</h2> -->
+                        <h2 v-html="v.타이틀[0]"></h2>
+                        <!-- 
+                            [html태그 출력 디렉티브]
+                            v-html="태크코드"
+                            콧수염 표시자로 넣으면
+                            html 특수문자, 태그 처리안됨!
+                            따라서 html태그는 v-html
+                            디렉티브를 사용해야함!
+                         -->
                     </div>
                     <div class="cbx bgi bg1-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[1]"></h2>
                     </div>
                     <div class="cbx bgi bg1-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[2]"></h2>
                     </div>
                 </div>
             </section>
@@ -250,13 +285,13 @@
             <section class="pt2 rbx scAct">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg2-1">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[3]"></h2>
                     </div>
                     <div class="cbx bgi bg2-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[4]"></h2>
                     </div>
                     <div class="cbx bgi bg2-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[5]"></h2>
                     </div>
                 </div>
             </section>
