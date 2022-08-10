@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Dongle&family=Jua&family=Nanum+Gothic&display=swap');
+
+/* 
+font-family: 'Asap Condensed', sans-serif;
+font-family: 'Dongle', sans-serif;
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol,li {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration: none;
+	color:#000;
+}
+
+
+/* header */
+header {
+	position:relative;
+	top: 0;
+	right: 0%;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	width: 100%;
+	height: 80px;
+}
+header .inner {
+	display: flex;
+	width: 1300px;
+	margin: 0px auto;
+	position: relative; /*자식 absolute 요소의 기준점 설정*/
+}
+header .inner h1 {
+	position: absolute;
+	left: 25px;
+	top:25px;
+}
+header .inner img{
+	width:100%;
+}
+header .inner .util {
+	display: flex;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+header .inner .util li a {
+	display: block;
+	font: 12px/1 "arial";
+
+	padding: 0px 10px;
+}
+header .inner #gnb {
+	position: absolute;
+	bottom: 0px;
+	left:30%;
+	margin: 0 auto;
+	margin-right:10px;
+	display: flex;
+	white-space: nowrap;
+}
+header .inner #gnb li a {
+	display: block; /*인라인 요소는 block설정하여 크기를 조절가능*/
+	font: bold 15px/1 "arial";
+	padding: 20px 40px;
+	transition: all 0.5s;
+}
+header:hover{
+	background-color: #fff;
+}
+header:hover .util li a{
+	color: #000;
+}
+header:hover #gnb li a{
+	color: #000;
+}
+
+.ir {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+  }
+
+/* 1-1-1.sns박스 */
+.sns{
+	position: absolute;
+	right: 0;
+}
+.sns a {
+    width: 16px;
+    height: 16px;
+    /* .fi에 이미 inline-block되어있음 */
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 16px;
+    /* 손가락모양 */
+    cursor: pointer;
+
+    /* 
+        [커서 이미지 표시하기]
+        cursor: url(이미지경로),대체커서;
+        -> 이미지가 표시안될 경우 콤마뒤의 대체커서가 표시됨
+        -> 이미지는 대체로 jpg, png등 사용하는데 적합치 않은
+        경우 안나올 수 있다
+        예시)
+        cursor: url(../../../03.DKB_PJ_v2/images/blogo.png2),move;
+    */
+
+    /* 위치조정 */
+    margin-top: 14px;
+    margin-right: 17px;
+}
+
+/* a요소 오버시 */
+.sns a:hover {
+    opacity: 0.8;
+}
+
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter {
+    font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play {
+    font-size: 11px;
+}
+
+/* 유튜브 가상요소 세부조정 */
+.sns a.fi-youtube-play:before {
+    transform: scaleY(1.2);
+    display: inline-block;
+    /* inline은 트랜스폼 적용안됨! */
+}
+
+
+#subCont1{
+    position: relative;
+    margin: 0 auto;
+    width:1300px;
+    max-width: 100vw;
+    height: calc(100vh + 120px);
+}
+#subCont1 p{
+    position: absolute;
+    display: block;
+    left:50%;
+    transform: translateX(-50%);
+    top:15%;
+    font-size:max(16vw,160px);
+    letter-spacing: 5px;
+    font-family: 'Dongle', sans-serif;
+    color:#fff;
+    text-shadow: 0 0 4px #000;
+}
+#subCont1 .amtBx{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 40%;
+}
+#subCont1 .amtBx .amt{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80%;
+    height: 60%;
+    align-items: center;
+    justify-content: space-around;
+}
+#subCont1 .amtBx .amt .air{
+    flex: 1px;
+    width: 12vw;
+    min-width: 160px;
+    height: 12vw;
+    min-height: 160px;
+    border-radius: 50%;
+    background-color: #97c2ec;
+    text-align: center;
+    padding: 20px;
+}
+#subCont1 .amtBx .amt .month{
+    flex: 1px;
+    width: 12vw;
+    min-width: 160px;
+    height: 12vw;
+    min-height: 160px;
+    border-radius: 50%;
+    background-color: #b7aae0;
+    text-align: center;
+    padding: 20px;
+}
+#subCont1 .amtBx .amt .time{
+    flex: 1px;
+    width: 12vw;
+    min-width: 160px;
+    height: 12vw;
+    min-height: 160px;
+    border-radius: 50%;
+    background-color: #d0ae81;
+    text-align: center;
+    padding: 20px;
+}
+#subCont1 .amtBx .amt i{
+    display: block;
+    font-size: max(2vw,25px);
+    margin-bottom: 20px;
+}
+#subCont1 .amtBx .amt strong{
+    display: block;
+    font-size: max(1.5vw,19px);
+    margin-bottom: 20px;
+    font-family: 'Nanum Gothic', monospace;
+}
+#subCont1 .amtBx .amt span{
+    display: block;
+    font-size: max(1.3vw,16px);
+    font-family: 'Nanum Gothic', monospace;
+}
+
+#subCont2{
+    position: relative;
+    margin: 0 auto;
+    width:1300px;
+    height: 500px;
+    max-width: 100vw;
+
+}
+#subCont2 .subIbx{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+
+}
+#subCont2 .subIbx .txtBx{
+    position: absolute;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    padding-top: 30px;
+}
+#subCont2 .subIbx .txtBx .tit{
+    color: #fff;
+    margin-bottom: 20px;
+}
+#subCont2 .subIbx .txtBx .tit strong{
+    margin-right: 1.5vw;
+    font-size: max(4vw,42px);
+    font-family: 'Jua', sans-serif;
+    line-height: 1.3;
+    border-bottom: 1px solid #fff;
+}
+#subCont2 .subIbx .txtBx .tit span{
+    line-height: 2;
+    font-size: max(2.7vw,30px);
+    font-family: 'Asap Condensed', sans-serif;
+}
+#subCont2 .subIbx .txtBx .txt{
+    font-size: max(1.3vw,18px);
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', monospace;
+}
+#subCont2 .subIbx .svgBx{
+    position: relative;
+    margin: 0 100%;
+    transform:translateX(-100%);
+    right: 0;
+    width: 60%;
+    height: 100%;
+}
+#subCont2 .subIbx svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+
+#subCont3{
+    position: relative;
+    margin: 0 auto;
+    width:1300px;
+    height: 1550px;
+    max-width: 100vw;
+    padding: 20px;
+    background-color: rgba(17, 117, 17, 0.76);
+}
+#subCont3 .areaBx{
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    
+}
+#subCont3 .areaBx span{
+    font-family: 'Jua', sans-serif;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    font-size: max(2.5vw,30px);
+    color:#fff;
+}
+#subCont3 .areaBx .areaIbx{
+    position: relative;
+    margin: 30px auto;
+    width: 70%;
+    height: 250px;
+    /* background-color: orange; */
+}
+#subCont3 .areaBx .areaIbx:nth-child(even) .img{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+}
+#subCont3 .areaBx .areaIbx:nth-child(odd) .img{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+}
+#subCont3 .areaBx img{
+    width: 100%;
+    height: 100%;
+}
+#subCont3 .areaBx .areaIbx:nth-child(even) .txtBx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    height: 90%;
+    left: 0;
+    padding:20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#subCont3 .areaBx .areaIbx:nth-child(odd) .txtBx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    height: 90%;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#subCont3 .areaBx .areaIbx .txtBx .tit{
+    display: block;
+    font-weight: bold;
+    font-family: 'Nanum Gothic', monospace;
+    margin-bottom: 15px;
+    font-size: max(1vw,15px);
+}
+#subCont3 .areaBx .areaIbx .txtBx .txt{
+    line-height: 1.2;
+    font-family: 'Nanum Gothic', monospace;
+    font-size: max(0.8vw,11px);
+}
+
+div.tooltip{
+    position:absolute;
+    line-height:20px;
+    color:white;
+    width:170px;
+    background:#FF9900;
+    border:2px solid white;
+    border-radius: 10px;
+    padding:10px;
+    font-size:12px;
+    text-align: center;
+    font-family: 'Nanum Gothic', monospace;
+  }
+  .mognb{
+    display: none;
+  }
+
+  .btnTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    /* 보이는 화면에 고정! */
+    width: 100px;
+    height: 100px;
+	background-color:transparent;
+	border: none;
+    /* button 요소는 기본 중앙정렬에 세로중앙도 적용되어 있음! */
+    /* 오버 시 MDN으로 보더 옵션 참조! */
+    /* 
+        w3c 참조:
+        https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_border-style&preval=none;
+    */
+    /* 투명도 -> 애니대상! */
+}
+.btnTop i{
+	color:rgba(7, 207, 218, 0.8);
+	cursor: pointer;
+	font-size: 5vw;
+}

@@ -1,0 +1,856 @@
+@charset "utf-8";
+/* 보그 PJ 공통 CSS - common.css */
+/* 상단,하단 공통 모듈 */
+@import url(reset.css);
+@import url(core.css);
+/* 부드러운 스크롤이동 -> JS 부드러운스크롤시 주석! */
+/* html{    
+    scroll-behavior: smooth;
+} */
+
+/***************** 1. 상단영역 *****************/
+#top {
+  position: relative;
+  z-index: 999;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.216);
+}
+.top {
+  min-height: 206px;
+}
+/* 1-1. 상단메뉴 */
+.tmenu {
+  /* 플렉스박스 */
+  display: flex;
+  max-width: 970px;
+  height: 44px;
+  margin: 0 auto;
+}
+/* 플렉스 박스 직계자식 div */
+.tmenu > div {
+  /* 등분할박스 + 높이값 자동채움 */
+  flex: 1;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* 1-1-1. sns박스 */
+.sns a {
+  width: 16px;
+  height: 16px;
+  /* .fi 설정에 inline-block되어 있음
+    (크기적용됨!) */
+  font-size: 16px;
+  text-align: center;
+  line-height: 16px;
+  vertical-align: top;
+
+  /* 위치조정 */
+  margin-top: 14px;
+  margin-right: 17px;
+
+  /* 트랜지션: 속시이지 */
+  transition: opacity 0.2s;
+}
+/* a요소 오버시 */
+.sns a:hover {
+  opacity: 0.8;
+}
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter {
+  font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play {
+  font-size: 11px;
+}
+
+/* 유튜브 가상요소 크기조정(Y축만) */
+.sns a.fi-youtube-play::before {
+  transform: scaleY(1.2);
+  display: inline-block;
+  /* inline은 트랜스폼이 적용안됨! */
+}
+
+/* sns 마지막 a요소에 카스이미지 배경이미지로 넣기 */
+.sns a:last-child {
+  background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* 1-1-2. 사이드메뉴 */
+.smbx {
+  /* 플렉스박스 */
+  display: flex;
+  /* 플렉스박스 수평방향 오른쪽 끝 정렬 */
+  justify-content: flex-end;
+
+  font-family: 'Roboto', nbg, sans-serif;
+  font-size: 12px;
+}
+
+.smbx > li{
+  outline: 1px solid rgb(32, 32, 167);
+  margin: 3px 3px;
+}
+/* 사이트 메뉴 상위 a요소 */
+.smbx > li > a {
+  display: block;
+  padding: 0 13px;
+  line-height: 44px;
+  color: #747474;
+}
+/* 메뉴 사이 구분선 넣기 */
+.smbx > li:first-child {
+  border-right: 1px solid #e5e5e5;
+}
+/* 첫번째 사이드 메뉴 마우스 오버시 커서모양 */
+.smbx > li:first-child > a {
+  cursor: auto;
+  /* 자동은 글자는 I모양,일반은 화살표로 나옴! */
+  /* 
+    참고) CSS커서모양종류:
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+}
+
+/* 사이드 메뉴 서브박스 */
+.smsub {
+  position: absolute;
+  /* 젠틀앱솔루트! */
+
+  border: 1px solid #e5e5e5;
+
+  /* 숨기기 */
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보이기 */
+.smbx > li:hover .smsub {
+  opacity: 1;
+  /* 원래 자기 크기의 높이값 복원! */
+  height: auto;
+  /* 트랜지션 */
+  transition: opacity 0.4s ease-in-out;
+}
+/* 서브메뉴 a요소 */
+.smsub a {
+  display: block;
+  padding: 7px 10px;
+  padding-right: 20px;
+  color: #747474;
+
+  /* 트랜지션 */
+  transition: 0.2s ease-in-out;
+}
+
+/* 서브메뉴 a요소에 마우스 오버시 */
+.smsub a:hover {
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.gnb{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* GNB 상위li */
+.gnb>ul>li{
+  padding: 0 15px;
+}
+
+/* GNB 상위 a */
+.gnb>ul>li>a{
+  display: block;
+  /* 글자크기 (17px) */
+  font-size: 1.3rem;
+  /* 줄간격 (44px) */
+  line-height: 4.4rem;
+
+  /* 보더 때문에 크기가 변하지 않게
+  원본에 만들고 투명하게 색처리함! */
+  border-bottom: 4px solid transparent;
+}
+/* 상위메뉴 마우스 오버시 상위a에 하단보더 */
+.gnb>ul>li:hover>a{
+  /* 오버시엔 보더 색만 변경함! */
+  border-bottom-color: rgb(38, 13, 177);
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* 서브메뉴 */
+.smenu{
+  position: absolute;
+  z-index: 1;
+  /* li가상요소 after보다 위! */
+  /* background-color: #fff; */
+
+  /* 서브메뉴 숨기기 */
+  height: 0;
+  overflow: hidden;
+
+  /* 트랜지션: 속시이지 */
+  transition: height .2s ease-in-out;
+}
+/* 상위메뉴 li마우스 오버시 서브메뉴 보이기
++ 서브메뉴 가상요소 배경 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu,
+.gnb>ul>li:nth-child(1):hover::after{
+  height: 300px;
+  width: 200px;
+}
+.gnb>ul>li:nth-child(2):hover .smenu,
+.gnb>ul>li:nth-child(2):hover::after{
+  height: 300px;
+  width: 230px;
+
+}
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after{
+  height: 300px;
+  width: 300px;
+
+}
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after{
+  height: 90px;
+  width: 230px;
+
+}
+.gnb>ul>li:nth-child(5):hover .smenu,
+.gnb>ul>li:nth-child(5):hover::after{
+  height: 300px;
+  width: 280px;
+
+}
+/* 서브메뉴 a */
+.smenu a{
+  background-color: rgba(0, 0, 255, 0.767);
+  color: #fff;
+  display: block;
+  font-size: 1.4rem;
+  padding: 10px 10px;
+  white-space: wrap;
+}
+
+/* 서브메뉴 끝까지 차는 배경박스 
+가상요소로 만들기! -> .sm인li만 생성됨! */
+.gnb>ul>li.sm::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* 가로크기를 %로 주면 
+  부모자격에 기준을 둔다!
+  -> 화면을 채워야 하므로 싸고있는
+  요소중에는 부모가 없어야한다!
+  그래야 화면이 부모가 된다! 
+  left를 줬으므로 보이는 화면기준!
+  top은 안줘서 젠틀함! a요소 아래위치!*/
+  height: 0;/* 200px-> 오버시 각 수치로! */
+  background-color: #fff;
+
+  /* #top박스 하단보더 보이게 하기위해
+  마진탑으로 1px이동(top을 쓰면 복잡해짐) */
+  margin-top: 1px;
+  
+  /* 트랜지션: 속시이지 */
+  transition: height .2s ease-out;
+}
+
+/* 상위li에 오버시 가상요소 하단 보더 공통생성 */
+.gnb>ul>li:hover::after{
+  border-bottom: 2px solid red;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* 1-2. 로고박스 */
+.logo {
+  text-align: center;
+  margin-bottom: 11px;
+}
+/* 1-3. GNB박스 */
+.gnb {
+  /* 글자설정 */
+  
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 30px;
+}
+.gnb > ul {
+  /* 플렉스박스 */
+  
+  display: flex;
+  /* 랩핑설정 */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* 리스트 요소 */
+.gnb li {
+  
+  padding-right: 45px;
+}
+/* 마지막 li는 패딩없음 */
+/* .gnb li:last-child {
+  padding-right: 0;
+} */
+/* 마지막 li의 a 돋보기 */
+.gnb li:last-child a {
+  padding-top: 12px;
+}
+
+/* GNB a링크 트랜지션 */
+.gnb a {
+  transition: color 0.2s linear;
+}
+/* 오버시 a요소 */
+.gnb a:hover {
+  color: rgb(38, 29, 160);
+}
+
+/* 슬림 상단 디자인 변경 */
+/* #top 최상위 박스에 class="on"을 줘서 적용 */
+
+#top.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* 속박스 */
+#top.on .top {
+  /* .ibx의 최대가로값 1300px을 해제함!
+    - 기본적으로 block 박스는 끝까지 차지함! */
+  max-width: none;
+  min-height: 50px;
+}
+/* 상단메뉴 숨기기 */
+#top.on .tmenu {
+  display: none;
+}
+/* 로고박스 */
+#top.on .logo {
+  width: 100px;
+  float: left;
+  padding: 10px;
+  margin-bottom: 0;
+}
+/* 로고이미지 */
+#top.on .logo img {
+  width: 100px;
+}
+/* GNB메뉴 */
+#top.on .gnb {
+  font-size: 14px;
+  padding: 5px 0 3px;
+}
+/* GNB 플렉스ul - 왼쪽여백조정 */
+#top.on .gnb > ul {
+  padding-left: 6px;
+}
+/* GNB 리스트 */
+#top.on .gnb li {
+  padding-right: 35px;
+}
+/* GNB a링크 */
+#top.on .gnb a {
+  color: #333;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* 모바일 전용버튼 */
+.mobtn {
+  /* 공통 */
+  position: absolute;
+  /* 부모는? #top(모바일에서 fixed) */
+  width: 21px;
+  height: 21px;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 세로중앙이동 */
+  display: none; /* 처음에 안보임 */
+}
+/* 모바일용 햄버거 버튼 */
+.hbtn {
+  left: 10px;
+  font-size: 15px;
+}
+/* 모바일용 검색버튼 */
+.sbtn {
+  right: 10px;
+  font-size: 21px;
+  font-weight: bold;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 1.4. 모바일 검색박스 */
+.mos {
+  padding: 15px 30px;
+  background-color: #fff;
+  display: none; /* 처음에 숨기기 */
+}
+/* 검색속박스 */
+.mwrap {
+  position: relative;
+  /* 부모자격 */
+  width: 100%;
+  height: 35px;
+  background-color: #000;
+}
+/* 검색입력창 - 부모박스의 크기에 따라 유동적인 박스 */
+#search {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 50px;
+  bottom: 9px;
+}
+/* 입력양식 */
+#search input {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+}
+/* input박스는 일반 div박스와 다르기때문에 겉박스를 만들고
+채우기 형식으로 디자인함! */
+
+/* 검색버튼 */
+.scbtn {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 1.5. 모바일 전체메뉴박스 (#top의 하위자식으로 편성) */
+#mobx {
+  padding-left: 15px;
+  padding-top: 6px;
+  padding-bottom: 30px;
+  background-color: #fff;
+
+  /* 스크롤 생기게 셋팅함! */
+  height: calc(100vh - 54px);
+  overflow: auto;
+
+  display: none; /* 처음에 안보임 */
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 1.5-1.모바일 GNb */
+.mognb {
+  padding-left: 15px;
+}
+.mognb a {
+  font-family: 'Roboto';
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 2;
+  color: #333;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 1.5-2. 모바일 SNS */
+.mosns {
+  margin-top: 24px;
+  margin-left: 13px;
+}
+/* sns박스 a */
+.mosns a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  margin: 0 2px 10px;
+  font-size: 20px;
+  text-align: center;
+  /* 박스내의 인라인요소 가로중앙정렬 */
+  vertical-align: top;
+  /* 인라인 요소간 세로정렬(top-윗줄맞춤) */
+  line-height: 40px;
+  /* 보더가 2px내부에 포함되어서 2px뺀 높이와 같음! */
+  /* 글자가 박스 세로 중앙에 오도록 설정 */
+
+  /* 원형디자인 */
+  border: 1px solid #d2d2d2;
+  border-radius: 50%;
+  box-sizing: border-box; /* 보더포함 */
+}
+/* 트위터 아이콘 박스 */
+.mosns a.fi-twitter {
+  font-size: 16px;
+  /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+/* 유튜브 아이콘 박스 */
+.mosns a.fi-youtube-play {
+  font-size: 15px;
+  /* 가로크기가 16px에 맞게 글자크기조정 */
+}
+/* mosns 마지막 a요소에 카스아이콘 넣기 */
+.mosns a:last-child {
+  background: url(../images/sns_kakao.png) no-repeat center/auto 50%;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 1.5-3.매거진박스 */
+.magbox {
+  margin: 0;
+  padding: 10px 30px 0 15px;
+  font-family: 'NanumBarunGothic', sans-serif;
+}
+/* 잡지커버이미지 */
+.mcover img {
+  width: 100%;
+}
+/* 잡지설명 */
+.magbox figcaption {
+  font-size: 13px;
+  line-height: 2;
+  color: #222;
+}
+/* 정기구독버튼 */
+.magbtn {
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  padding: 5px 0;
+}
+/* 모바일 하단링크 */
+.moblink {
+  display: flex;
+  margin-left: 15px;
+  line-height: 3.5;
+  font-size: 15px;
+  letter-spacing: -1px;
+}
+.moblink li + li {
+  /* 2번째 li부터 */
+  padding-left: 7px;
+}
+.moblink a {
+  color: #222;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/***************** 2. 하단영역 *****************/
+.info {
+  min-height: 285px;
+  background-color: #000;
+  padding: 70px;
+  /* 크기유지 - 패딩포함 */
+  box-sizing: border-box;
+  font-family: 'Roboto', nbg;
+}
+/* 3-1.하단로고 */
+.blogo {
+  text-align: center;
+}
+/* 3-2.회사주소 */
+.addr {
+  color: #747474;
+  text-align: center;
+  font-size: 11px;
+  /* address 기본이탤릭 해제 */
+  font-style: normal;
+  margin: 20px 0 10px;
+}
+/* 3-3.하단링크 */
+.blink {
+  /* 플렉스박스 */
+  display: flex;
+  /* 수평방향 중앙정렬 */
+  justify-content: center;
+  /* 자동줄바꿈 */
+  flex-wrap: wrap;
+}
+.blink a {
+  color: #747474;
+  font-size: 13px;
+  margin: 0 6px;
+}
+
+/* 링크 마지막 li만 글자 두껍게 */
+.blink li:last-child a {
+  font-weight: bold;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 위로가기버튼 */
+.tbtn {
+  position: fixed;
+  bottom: -35px;
+  /* 아래쪽에 나가있음 */
+  right: 75px;
+  width: 48px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  background-color: #333;
+  border-radius: 4px 4px 0 0;
+  color: #fff;
+  z-index: 9999;
+  font-size: 12px;
+  opacity: 0;
+  /* 투명 */
+
+  /* 트랜지션: 속시이지 */
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* 탑메뉴 클래스on상태 */
+.tbtn.on {
+  opacity: 1;
+  /* 나타나기 */
+  bottom: 0;
+  /* 올라옴! */
+}
+
+/* 탑메뉴 마우스 오버시 */
+.tbtn:hover {
+  background-color: #f00;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+    /************** 1-3. 네이버예약버튼 **************/
+    .btnTop {
+      background: url(../img/naverRsvn.png) no-repeat center/cover;
+      position: fixed;
+      z-index: 1;
+      bottom: 150px;
+      right: 50px;
+      /* 보이는 화면에 고정! */
+      width: 100px;
+      height: 100px;
+      /* button 요소는 기본 중앙정렬에 세로중앙도
+  적용되어 있음! */
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      border: none;
+      /* border: 5px outset #fff; */
+      /* 오버시 MDN으로 보더 옵션 참조! 
+      w3c 참조:
+      https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_border-style&preval=none
+  */
+    }
+
+    /* 위로가기 버튼 오버시 */
+    .btnTop:hover {
+      background-color: rgb(90, 225, 130);
+      /* border-style: inset; */
+    }
+
+    .btnTop:hover a {
+      color: red;
+    }
+
+    .btnTop a {
+      display: block;
+      /* 크기 디자인 적용위해 block! */
+      width: 100%;
+      height: 100%;
+      font: 30px/90px 'Black Ops One';
+      /* line-height가 90px인 이유:
+  버튼요소는 box-sizing:border-box 이므로
+  내부에 패딩과 보더크기를 포함함
+  따라서 보더크기인 5+5=10px을 빼야
+  컨텐츠 영역의 순수 높이가 된다! */
+      text-decoration: none;
+    }
+  
+
+    /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+    /* 북킹 폼 */
+    @import url("https://fonts.googleapis.com/css2?family=Spectral&display=swap");
+
+
+
+.right {
+  color: #2c2fca;
+
+  flex-direction: column;
+
+  padding: 50px;
+
+  position: relative;
+
+  width: 400px;
+
+  background-color: #fff;
+
+  max-height: 500px;
+
+  border-radius: 25px;
+
+  opacity: 0.9;
+
+  left: 50%;
+  
+  top: 20px;
+}
+
+.right h3 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2c2fca;
+}
+
+.right h4 {
+  border-bottom: 1px solid #333;
+}
+
+.right p {
+  color: #192d3c;
+
+  font-weight: 500;
+
+  font-size: 1.2rem;
+
+  margin: 13px 0;
+  /* margin-top: -20px; */
+}
+
+.right button {
+  background-color: #2c2fca;
+
+  border: 1px solid #8e44ad;
+
+  color: #ffffff;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+  padding: 15px 30px;
+
+  margin-top: auto;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* 2-2. 핵심기술 메뉴 */
+.mlist {
+  /* display: flex; */
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  /* 비율유지박스 자식으로 %설정! */
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 가로정중앙이동 */
+}
+
+/* 예고편 ul */
+.mlist ul {
+  display: flex;
+  /* 원근설정 */
+  perspective: 600px;
+}
+
+/* 예고편 li */
+.mlist > ul > li {
+  color: #000;
+  /* 부모자격! */
+  overflow: hidden;
+  /* 부모자격이 있는 요소에서 숨기기가 적용됨
+    중간에 자격이 없으면 숨기기줘도 소용없음! */
+
+  /* 플렉스 자식요소 flex속성으로 등분할 설정! */
+  flex: 1;
+  /* width: 99px;
+    height: 140px; */
+
+  /* x축회전 */
+  transform: rotateX(15deg);
+  /* 회전축변경 */
+  transform-origin: bottom;
+  /* 트랜지션: 속시이지 */
+  transition: transform 0.4s ease-out;
+}
+
+/* 오버시 + 클래스 on일 때 아웃라인 보이기/ 일어나기 */
+.mlist > ul > li:hover,
+.mlist > ul > li.on {
+  outline: 5px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  /* x축회전: 일어나! */
+  transform: rotateX(0deg);
+  z-index: 1;
+}
+
+/* 두번째 li부터 끝까지만 왼쪽마진! */
+.mlist > ul > li + li {
+  margin-left: 10px;
+}
+
+/* 포스터 이미지 */
+.mlist img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 이미지를 비율유지하여 박스에 채움 */
+}
+
+/* 영화정보박스 */
+.movtxt {
+  /* 수직방향 플렉스박스로 중앙정렬! */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+  top: 100%;
+  /* 높이값만큼 내려가 있음! */
+  width: 100%;
+  height: 100%;
+  /* 부모는? 싸고있는 li */
+
+  /* 반투명배경색 */
+  background-color: rgba(163, 168, 89, 0.514);
+
+  /* 글자셋팅 */
+  color: #fff;
+  font-family: 'Roboto', cursive;
+  font-size: min(1.3vw, 14px);
+  /* 글자최대크기 14px, 보이는 가로크기의 1.3% */
+  line-height: 2;
+  text-align: center;
+  /* 줄바꿈방지 */
+  white-space: nowrap;
+
+  /* 트랜지션: 속시이지 */
+  transition: top 0.3s ease-out;
+}
+
+/* 오버시 영화정보 보이기 */
+.mlist ul > li:hover .movtxt {
+  top: 0;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child {
+  color: rgb(0, 0, 0);
+  font-size: min(1.5vw, 20px);
+  /* 최대 17px, 화면가로의 1.5% */
+  letter-spacing: -1px;
+}
+ */

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+
+header {
+	position:relative;
+	top: 0;
+	right: 0%;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	width: 100%;
+	height: 80px;
+}
+#subCont1{
+    background: url(/images/스위스1.jpg) no-repeat top/cover;
+}
+#subCont1 .amtBx{
+    background: linear-gradient(0deg, rgb(118, 183, 106) 0%, rgba(118, 183, 106,0.9) 60%, rgba(112, 163, 49, 0) 100%);
+}
+#subCont2{
+    background-color: rgba(0, 176, 15, 0.6);
+}
+#subCont3{
+    background-color: rgb(118, 183, 106);
+}
+
+/* 취리히, 융프라우, 제네바, 몽트뢰, 체르마트 */
+#CH-ZH, #CH-BE, #CH-GE, #CH-VD, #CH-VS
+{
+    fill: rgb(84, 163, 0);
+}
+#CH-ZH:hover, #CH-BE:hover, #CH-GE:hover, #CH-VD:hover, #CH-VS:hover
+{
+    fill: rgb(41, 106, 0);
+}
+.mobtn{
+	display: none;
+}

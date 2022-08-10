@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* Q&A 게시판 - qa.css */
+
+/* 컨텐츠 영역 속박스 */
+.cont{
+    min-height: 600px;
+    padding: 15px;
+    padding-bottom: 100px;
+}
+
+/* 1. 타이틀 */
+.stit{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    padding: 40px 0 20px;
+    font-weight: normal;
+}
+
+/* 2. 컨텐츠박스 */
+.scont{
+    max-width: 1100px;
+    min-height: 275px;
+    margin: 0 auto;
+    border: 2px solid #737373;
+    border-radius: 10px;
+    /* 크기유지 */
+    box-sizing: border-box;
+    padding: 60px 15px;
+    background-color: #fff;
+}
+
+
+/* 테이블공통 */
+.tbl{
+    font-family: 'Nanum Gothic', serif;
+    /* 글씨체 - 순서대로 있는 글씨체 적용 */
+    color: #222;
+    /* 글자색 */
+    border-collapse: collapse;
+    /* 테이블 사이간극 없앰! */
+}
+/* Q&A 리스트 테이블 */
+#drama{
+    font-size: 24px;
+    margin: 0 auto;
+    /* 마영오! 블록요소(테이블) 가로중앙 */
+    width: 90%;
+    /* 테이블 width지정이 없으면 내용만큼 늘어남!
+    좁으면 아래로 내용이 줄바꿈됨 */
+}
+/* 테이블 제목 */
+#drama caption{
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    /* 자간 */
+    word-spacing: 5px;
+    /* 단어사이 */
+    /* padding-top: 50px;
+    padding-bottom: 20px; */
+    padding: 50px 0 20px;
+    /* padding 3개(위 양쪽 아래) */
+
+}
+
+/* td와 th 패딩 */
+#drama td,
+#drama th{
+    padding: 8px 10px;
+    /* 패딩: 위아래 양쪽 */
+}
+/* td에 밑줄넣기 - 테이블 본문에만 적용 */
+#drama tbody td {
+    border-bottom: 1px solid #ccc;
+}
+/* th에 윗줄, 아랫줄 두꺼운 보더넣기 */
+#drama th {
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+}
+/* 본문(tbody) 마지막 tr의 td 
+아래쪽 보더 넣기 */
+#drama tbody tr:last-child td{
+    border-bottom: 2px solid #555;    
+}
+/* 본문(tbody)의 짝수번째 tr의 td
+배경색 넣기 */
+/* nth-child(순번) -> odd(홀수), even(짝수) */
+#drama tbody tr:nth-child(even) td{
+    background-color: #f3f3f3;
+}
+
+/* 하단부분(tfoot) */
+#drama tfoot td{
+    text-align: center;
+    /* 텍스트 중앙정렬 */
+    padding: 45px 0;
+}
+
+
+
+/* 미디어쿼리 1050이하 시작 */
+@media screen and (max-width:1050px) {
+    /* 두번째 이후 항목 지우기 */    
+    #drama thead th:nth-child(4)~th,
+    #drama tbody td:nth-child(4)~td{
+        display: none;
+    }
+}
+/* 미디어 쿼리 1050이하 끝 */
+
+/* 미디어쿼리 950 시작 */
+@media screen and (max-width:950px) {
+    /* 두번째 이후 항목 지우기 */    
+    #drama thead th:nth-child(3)~th,
+    #drama tbody td:nth-child(3)~td{
+        display: none;
+    }
+}
+/* 미디어 쿼리 950 끝 */
+
+/* 미디어쿼리 780 시작 */
+@media screen and (max-width:780px) {
+    /* 두번째 이후 항목 지우기 */    
+    #drama thead th:nth-child(2)~th,
+    #drama tbody td:nth-child(2)~td{
+        display: none;
+    }
+}
+/* 미디어 쿼리 780 끝 */
+
+/* 미디어쿼리 600 시작 */
+@media screen and (max-width:600px) {
+    /* 두번째 이후 항목 지우기 */    
+    #drama thead th:first-child,
+    #drama tbody td:first-child,
+    #drama thead th:nth-child(2)~th,
+    #drama tbody td:nth-child(2)~td{
+        display: none;
+    }
+}
+/* 미디어 쿼리 600 끝 */

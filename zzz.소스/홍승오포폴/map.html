@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="../img/capsule.png" />
+
+    <title>오시는 길</title>
+    <link rel="stylesheet" href="css/map.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/media2.css" />
+
+    <!-- JS 외부파일 호출 (사이에 뭐 쓰지말것!)-->
+    <script src="js/map.js"></script>
+  </head>
+
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top">
+      <header class="top ibx">
+        <!-- 1-1.로고 -->
+        <h1 class="tit">오시는 길</h1>
+        <!-- 1-2.GNB메뉴 -->
+        <nav class="gnb">
+          <ul class="glist"></ul>
+          <!-- 캡슐 박스 -->
+          <aside id="cam">
+            <img src="../img/capsule.png" alt="캡슐" />
+            <div class="beam"></div>
+          </aside>
+        </nav>
+        <!-- 병원가는 길 애니박스 -->
+        <div class="goMV" title="구글지도보기 클릭!">
+          <!-- 커버 -->
+          <div class="cover">병원으로 오시는 길</div>
+          <!-- 애니박스 -->
+          <div class="anibx">
+            <!-- 걷는 애니박스 -->
+            <div class="ani">
+              <span class="ir">걷는소년</span>
+            </div>
+            <!-- 몬스터 애니박스 -->
+            <div class="ani2">
+              <span class="ir">쿠기몬스터</span>
+            </div>
+          </div>
+        </div>
+        <!-- 구글맵박스 -->
+        <div class="gmap">
+          <!-- 구글맵 아이프레임 -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.3658937468767!2d126.86334985469671!3d37.52287129019044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9decbe4b9ae9%3A0xbaf3c05e63f8364f!2zMjTsi5wg7Jqw66as65Ok64-Z66y866mU65SU7Lus7IS87YSw!5e0!3m2!1sko!2skr!4v1658697223360!5m2!1sko!2skr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <!-- 닫기버튼 -->
+          <a href="#" class="cbtn">×</a>
+        </div>
+      </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div id="cont">
+      <div class="cont ibx">
+        <!-- 2-1. 스크린박스 -->
+        <div id="screen">
+          <!-- 유튜브 아이프레임 -->
+          <iframe
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/QTy7zIDBsKU"
+            title="강아지, 고양이 MRI 영상센터 OPEN! 우리들동물영상센터"
+            frameborder="0"
+            allow="accelerometer; autoplay; mute; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- 2-2. 수술정보 선택메뉴 -->
+        <nav class="mlist">
+          <ul>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner1.jpg"
+                  alt="복합 골절 치료 (3D 프린터)"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>심장센터</li>
+                  <li>전문적인 선천성 후천성</li>
+                  <li>심장질환의 진단과 치료 관리</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner2.jpg"
+                  alt="경추수술(AAI)"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>간담도계센터</li>
+                  <li>반려견 노령견 간 담도계</li>
+                  <li>간종양의 진단과 외과적 치료</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner3jpg.jpg"
+                  alt="뇌신경수술(VP-shunt)"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>복강경,내시경센터</li>
+                  <li>작은 절개 수술로 빠른 회복</li>
+                  <li>복강경·내시경 진료</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner4.jpg"
+                  alt="디스크수술(IVDD)"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>혈액투석센터</li>
+                  <li>급성,만성신부전환자의 빠른 회복과</li>
+                  <li>생존율을 높이는 투석치료</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner5.jpg"
+                  alt="뇌신경수술(FMD)"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>물리치료재활</li>
+                  <li>정형외과 수술 후 통증경감과</li>
+                  <li>빠른 조직재생 회복</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../img/우리들동물메디컬센터/middle2_banner6.jpg"
+                  alt="재활치료"
+                />
+                <!-- 수술정보 -->
+                <ol class="movtxt">
+                  <li>재활치료</li>
+                  <li>노령견 관절염 디스크</li>
+                  <li>혈자리 자극 염증완화 통증 완화</li>
+                </ol>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div id="info">
+      <footer class="info ibx">
+        <!-- 3-1.회사정보 -->
+        <address>
+          <img src="../img/우리들동물메디컬센터/logo.jpg" alt="하단로고" />
+          <span>
+            우리들동물메디컬센터 | 서울특별시 양천구 신정동 목동로 161 <br />
+            사업자 번호 117-10-77903 | 대표자명 이규석 | truthy2000@naver.com<br />
+            tel.02-2642-7588 | fax. 02-6342-7589
+          </span>
+        </address>
+        <!-- 3-2.sns박스 -->
+        <ol class="sns fbx">
+          <li>
+            <a href="#" title="페이스북 바로가기">
+              <span class="ir"> 페이스북 바로가기 </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="트위터 바로가기">
+              <span class="ir"> 트위터 바로가기 </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="인스타그램 바로가기">
+              <span class="ir"> 인스타그램 바로가기 </span>
+            </a>
+          </li>
+        </ol>
+      </footer>
+    </div>
+  </body>
+</html>

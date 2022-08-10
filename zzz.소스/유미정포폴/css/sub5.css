@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+
+header {
+	position:relative;
+	top: 0;
+	right: 0%;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	width: 100%;
+	height: 80px;
+}
+#subCont1{
+    background: url(/images/독일2.jpg) no-repeat top/cover;
+}
+#subCont1 .amtBx{
+    background: linear-gradient(0deg, rgb(238, 134, 60) 0%, rgba(238, 134, 60,0.9) 60%, rgba(255,255,255,0) 100%);
+}
+#subCont2{
+    background-color: rgba(238, 134, 60, 0.6);
+}
+#subCont3{
+    background-color: rgb(238, 134, 60);
+}
+
+/* 뮌헨, 베를린, 쾰른, 함부르크, 슈투트가르트  */
+#DE-BY, #DE-BE, #DE-NW, #DE-HH, #DE-BW
+{
+    fill: rgb(255, 140, 0);
+}
+#DE-BY:hover, #DE-BE:hover, #DE-NW:hover, #DE-HH:hover, #DE-BW:hover
+{
+    fill: rgb(197, 108, 0);
+}
+.mobtn{
+	display: none;
+}

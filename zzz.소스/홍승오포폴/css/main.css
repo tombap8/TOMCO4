@@ -1,0 +1,563 @@
+@charset "utf-8";
+/*브라우저 다운로드 사이트 메인 CSS - main.css*/
+@import url(reset.css);
+@import url(core.css);
+/*공통 CSS*/
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    overflow: hidden;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+/*IR*/
+.bld{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/*상단영역*/
+.top{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+/*큰 타이틀*/
+.top h1{
+    font-size: 15px;
+    padding-top: 15px;
+}
+/*작은 타이틀*/
+.top h2{
+    font-size: 12px;
+}
+/*처음에 작은타이틀 모바일용 숨기기*/
+.mb{
+    display: none;
+}
+
+/*햄버거버튼*/
+#ham{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    font: 42px/70px Verdana;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* @@@@@@@@@@ reservation 폼 @@@@@@@@@@@@@@@@@ */
+
+/*GNB메뉴*/
+.gnb{
+    position: fixed;
+    top: 0;
+    left: -1000px;
+    /*왼쪽에 나가있음!*/
+    width: 1000px;
+    height: 100vh;
+    z-index: 99999;/*가장위!*/
+    /* outline: 3px dashed red; */
+    
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+}
+
+.section .section-center {
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+#booking {
+    font-family: 'Raleway', sans-serif
+}
+
+.booking-form {
+    position: relative;
+    max-width: 642px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    /* padding: 40px; */
+    overflow: hidden;
+    background-image: url('https://i.imgur.com/8z1tx3u.jpg');
+    background-size: cover;
+    /* border-radius: 5px; */
+    z-index: 20
+}
+
+.booking-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(197, 59, 59, 0.986);
+    z-index: -1;
+    border-radius: 30px;
+    
+}
+
+.booking-form .form-header {
+    text-align: center;
+    position: relative;
+    /* margin-bottom: 30px */
+}
+
+.booking-form .form-header h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 42px;
+    margin: 0px;
+    color: #fff
+}
+
+.booking-form .form-group {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px
+}
+
+.booking-form .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    height: 65px;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 0px 2px transparent;
+    box-shadow: 0px 0px 0px 2px transparent;
+    -webkit-transition: 0.2s;
+    transition: 0.2s
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.booking-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.booking-form .form-control:focus {
+    -webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+    box-shadow: 0px 0px 0px 2px #ff8846
+}
+
+.booking-form input[type="date"].form-control {
+    padding-top: 16px
+}
+
+.booking-form input[type="date"].form-control:invalid {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.booking-form input[type="date"].form-control+.form-label {
+    opacity: 1;
+    top: 10px
+}
+
+.booking-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.booking-form select.form-control:invalid {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+
+.booking-form select.form-control+.select-arrow:after {
+    content: '\279C';
+    display: block;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.booking-form select.form-control option {
+    color: #000
+}
+
+.booking-form .form-label {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    opacity: 0;
+    color: #ff8846;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    height: 15px;
+    line-height: 15px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all
+}
+
+.booking-form .form-group.input-not-empty .form-control {
+    padding-top: 16px
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+    opacity: 1;
+    top: 10px
+}
+
+.booking-form .submit-btn {
+    color: #fff;
+    background-color: #e35e0a;
+    font-weight: 700;
+    height: 60px;
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 40px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+    opacity: 0.9
+}
+
+/* @@@@@@@ GNB2 @@@@@@@@@@ */
+.gnb2{
+    position: fixed;
+    top: 0;
+    left: -300px;
+    /*왼쪽에 나가있음!*/
+    width: 300px;
+    height: 100vh;
+    z-index: 99999;/*가장위!*/
+    /* outline: 3px dashed red; */
+}
+
+.wrap{
+    display: flex;
+}
+
+.gnb2 .wrap ul{
+    position: relative;
+    flex-direction: column;
+}
+
+/*GNB List*/
+.gnb2 .wrap li{
+    /* position: relative; */
+    /* left: -100%; */
+    /*ul자식요소 왼쪽에 나가있음*/
+    width: 100%;
+    height: 15%;
+    /*
+        대부분(5개) 높이비율
+        15% * 5 = 75%
+    */
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    /*outline: 3px dotted lime;*/
+}
+
+/*메뉴 글자 a요소*/
+.gnb2 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    line-height: 13px;
+}
+/*메뉴 세로 중앙이동*/
+.gnb2 span{
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    transform: translateY(-50%);
+    /*트랜스폼은 최소한 inline-block이어야함!
+    inline요소는 안먹힌다!*/
+} */
+
+/*GNB메뉴 배경색*/
+.gnb2 li:nth-child(1) a{
+    background-color: #2c2c2c;
+}
+.gnb2 li:nth-child(2) a{
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+    /*"HOME PAGE"메뉴는 손가락표시 없앰!*/
+}
+.gnb2 li:nth-child(3) a{
+    background-color: #656565;
+}
+.gnb2 li:nth-child(4) a{
+    background-color: #545454;
+}
+.gnb2 li:nth-child(5) a{
+    background-color: #494949;
+}
+.gnb2 li:nth-child(6) a{
+    background-color: #3c3c3c;
+}
+.gnb2 li:nth-child(7) a{
+    background-color: #2c2c2c;
+}
+.gnb2 li:nth-child(8) a{
+    background-color: #333333;
+}
+
+/* @@@@@@@@@@ reservation 폼 End @@@@@@@@@@@@@@@@@ */
+
+/* @@@@@@@ GNB2 @@@@@@@@@@ */
+
+
+
+
+
+/******** 개별디자인 **********/
+/*컨텐츠 전체박스*/
+.wrap{
+    position: relative;
+    left: 0;/*메뉴때문에 이동할 기준값!*/
+    width: 100%;
+    height: 100%;
+}
+.wrap>ul{
+    /*플렉스 박스!*/
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+/*파티션 박스*/
+.wrap>ul>li{
+    flex: 1;/*등분할!*/
+    overflow: hidden;
+    transition: all .3s ease-out;
+}
+
+/*인트로셋팅! class="on"을 .wrap에 추가하면 된다!*/
+.wrap.on>ul>li{
+    flex: 0;/*모두0*/
+    transition: none;
+}
+.wrap.on>ul>li:nth-child(1){
+    flex: 1;/*첫번째만 처음에 전체로 보임*/
+}
+
+
+/*1.병원소개*/
+section.wrap>ul>li:nth-child(1){
+    background-color: #2f13aa;
+}
+/*2.특화진료*/
+section.wrap>ul>li:nth-child(2){
+    background-color: #55442f;
+}
+/*3.진료케이스*/
+section.wrap>ul>li:nth-child(3){
+    background-color: #00caff;
+}
+/*4.의료진소개*/
+section.wrap>ul>li:nth-child(4){
+    background-color: #d3aa2d;
+}
+/*5.찾아오시는 길*/
+section.wrap>ul>li:nth-child(5){
+    background-color: #f25648;
+}
+
+/*마우스 오버시 파티션 박스 확장하기~!*/
+section.wrap>ul>li:hover{
+    flex: 2;/*2배크게~!*/
+    /*그라데이션 배경색넣기(원형: 반투명흰색->투명흰색)*/
+    /*closest-side at 50% 50% 중심에서 바깥쪽 경계선 안쪽*/
+    background-image: radial-gradient(closest-side at 50% 50%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+
+section.wrap>ul>li:nth-child(1):hover{
+    background: url(../img/우리들동물메디컬센터/youtube_back1.jpg) no-repeat center/cover;
+}
+section.wrap>ul>li:nth-child(2):hover{
+    background: url(../img/온누리동물메디컬센터/main_subject_img-5.jpg) no-repeat center/cover;
+}
+section.wrap>ul>li:nth-child(3):hover{
+    background: url(../img/우리들동물메디컬센터/middle_roll2_img2.jpg) no-repeat center/cover;
+}
+section.wrap>ul>li:nth-child(4):hover{
+    background: url(../img/온누리동물메디컬센터/main_about_bg.jpg) no-repeat center/cover;
+}
+section.wrap>ul>li:nth-child(5):hover{
+    background: url(../img/우리들동물메디컬센터/middle_roll_img03.jpg) no-repeat 17% center/cover;
+}
+
+/******************* 컨텐츠 박스 *********************/
+.cbox{
+    position: relative;
+    top: 15%;
+    width: 270px;
+    height: 81%;
+    margin: 0 auto;
+    /*outline: 1px solid red;*/
+}
+
+/*공통 li*/
+.cbox > li{
+    text-align: center;
+    color: #fff;
+    /*트랜지션*/
+    transition: opacity .4s;
+}
+
+/*점유율, 버튼박스는 처음에 안보임*/
+.cbox >li:nth-child(1),
+.cbox >li:nth-child(3){
+    opacity: 0;
+}
+
+/*상위 파티션 li에 마우스 오버시 점유율, 버튼 박스 보이기*/
+.wrap>ul>li:hover .cbox > li:nth-child(1),
+.wrap>ul>li:hover .cbox > li:nth-child(3){
+    opacity: 1;
+}
+
+/*구성요소 디자인*/
+
+/*1. 메뉴 상단*/
+.cbox > li:nth-child(1) h2{
+    font-size: 40px;
+}
+/*2. 메뉴 영어*/
+.cbox > li:nth-child(1) h4{
+    font-size: 12px;
+}
+/*3. 로고박스*/
+.cbox > li:nth-child(2) {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+/*4. 로고*/
+.logo{
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: auto 200px;
+}
+
+/*5. 로고 타이틀*/
+.cbox > li:nth-child(2) > h4{
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/*6. 바로가기 버튼 박스*/
+.cbox > li:nth-child(3){
+    position: absolute;
+    top: 61%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+/*7. 바로가기 버튼*/
+.btndown{
+    height: 57px;
+    padding: 0 48px;
+    white-space: nowrap;/*줄바꿈방지*/
+    /*가로크기는 유동적임*/
+    border: 3px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    background-color: transparent;
+    font: bold 15px/15px Verdana;
+    cursor: pointer;/*손가락모양*/
+    margin-top: 60px;
+    
+}
+/*버튼에 마우스 오버시 배경색*/
+.btndown:hover{
+    background-color: #fff;
+}
+
+/*1번메뉴버튼 오버시 글자색*/
+.btnC:hover{
+    color: #f2b635;
+}
+
+/*2번메뉴버튼 오버시 글자색*/
+.btnF:hover{
+    color: #f19a2a;
+}
+
+/*3번메뉴버튼 오버시 글자색*/
+.btnI:hover{
+    color: #00caff;
+}
+
+/*4번메뉴버튼 오버시 글자색*/
+.btnS:hover{
+    color: #00a0e6;
+}
+
+/*5번메뉴버튼 오버시 글자색*/
+.btnO:hover{
+    color: #f25648;
+}
+
+/*8. 바로가기 글자박스*/
+.cbox > li:nth-child(3) > h5{
+    font-size: 10px;
+    line-height: 30px;
+}
+
+/*10. SNS*/
+.cbox > li:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+

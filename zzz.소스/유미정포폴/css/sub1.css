@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+
+header {
+	position:relative;
+	top: 0;
+	right: 0%;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	width: 100%;
+	height: 80px;
+}
+#subCont1{
+    background: url(/images/터키1.jpg) no-repeat top/cover;
+}
+#subCont1 p{
+	color:#fff;
+	text-shadow: 0 0 4px #000;
+}
+#subCont1 .amtBx{
+    background: linear-gradient(0deg, rgb(181, 116, 116) 0%, rgba(181, 116, 116,0.9) 60%, rgba(255,255,255,0) 100%);
+}
+#subCont2{
+    background-color: rgba(255, 0, 0, 0.6);
+}
+#subCont3{
+    background-color: rgb(181, 116, 116);
+}
+
+/* 이스탄불, 카파도키아, 안탈랴, 파묵칼레, 괴레메  */
+#TR-34, #TR-50, #TR-07, #TR-20, #TR-35
+{
+    fill: rgb(231, 0, 0);
+}
+#TR-34:hover, #TR-50:hover, #TR-07:hover, #TR-20:hover, #TR-35:hover
+{
+    fill: rgb(120, 0, 0);
+}
+.mobtn{
+	display: none;
+}

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+
+header {
+	position:relative;
+	top: 0;
+	right: 0%;
+	z-index: 1;
+	background-color: transparent;
+	display: flex;
+	width: 100%;
+	height: 80px;
+}
+#subCont1{
+    background: url(/images/이탈리아1.jpg) no-repeat top/cover;
+}
+#subCont1 .amtBx{
+    background: linear-gradient(0deg, rgb(38, 127, 126) 0%, rgba(38, 127, 126,0.9) 60%, rgba(255,255,255,0) 100%);
+}
+#subCont2{
+    background-color: rgba(38, 127, 126, 0.6);
+}
+#subCont3{
+    background-color: rgb(38, 127, 126);
+}
+
+/* 로마, 시칠리아, 밀라노, 베네치아, 피렌체 */
+#IT-62, #IT-82, #IT-25, #IT-34, #IT-52
+{
+    fill: rgb(0, 151, 156);
+}
+#IT-62:hover, #IT-82:hover, #IT-25:hover, #IT-34:hover, #IT-52:hover
+{
+    fill: rgb(0, 101, 117);
+}
+.mobtn{
+	display: none;
+}

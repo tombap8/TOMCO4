@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자주 하는 질문답변</title>
+   <!-- 탭메뉴 아이콘 -->
+  <link rel="shortcut icon" type="image/x-icon" href="../img/capsule.png" />
+    <!-- 폰티스토 아이콘 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css"
+    />
+    <link rel="stylesheet" href="css/category.css" />
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- 미디어쿼리는 본css보다 아래에 위치함! -->
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/media2.css" />
+
+    <link rel="stylesheet" href="css/qa.css">
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 제이쿼리 UI -->
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- 공통JS -->
+    <script src="js/linksys.js"></script>
+    <script src="js/common.js"></script>
+    <!-- 카테고리 페이지용 JS -->
+    <script src="js/category.js"></script>
+  </head>
+
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top">
+      <header class="ibx top">
+        <!-- 1-1.상단메뉴 -->
+        <div class="tmenu">
+          <!-- 1-1-1.sns박스 -->
+          <div class="sns">
+            <a href="#" class="fi fi-instagram">
+              <span class="ir"> 인스타그램 </span>
+            </a>
+            <a href="#" class="fi fi-facebook">
+              <span class="ir"> 페이스북 </span>
+            </a>
+            <a href="#" class="fi fi-twitter">
+              <span class="ir"> 트위터 </span>
+            </a>
+            <a href="#" class="fi fi-youtube-play">
+              <span class="ir"> 유튜브 </span>
+            </a>
+            <a href="#" class="fi">
+              <span class="ir"> 카카오스토리 </span>
+            </a>
+          </div>
+          <!-- 1-1-2.사이드메뉴 -->
+          <div class="sideMenu">
+            <ul class="smbx">
+              <li>
+                <a href="#">MENU</a>
+                <!-- 서브메뉴 -->
+                <ol class="smsub">
+                  <li>
+                    <a href="#">진료시간</a>
+                  </li>
+                  <li>
+                    <a href="#">오시는 길</a>
+                  </li>
+                  <li>
+                    <a href="#">의료진 소개</a>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a href="#">KOR</a>
+                <!-- 서브메뉴 -->
+                <ol class="smsub">
+                  <li>
+                    <a href="#">ENG</a>
+                  </li>
+                  <li>
+                    <a href="#">JPN</a>
+                  </li>
+                  <li>
+                    <a href="#">CHN</a>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 1-2.로고박스 -->
+        <h1 class="logo">
+          <a href="#">
+            <img src="../img/우리들동물메디컬센터/logo.jpg" alt="메인로고" />
+          </a>
+        </h1>
+        <!-- 1-3.GNB박스 -->
+        <nav class="gnb">
+          <ul>
+            <li>
+              <a href="#">병원소개</a>
+              <div class="smenu">
+                <ol>
+                  <li>
+                    <a href="#">인사말</a>
+                  </li>
+                  <li>
+                    <a href="#">의료진소개</a>
+                  </li>
+                  <li>
+                    <a href="#">의료장비소개</a>
+                  </li>
+                  <li>
+                    <a href="#">병원둘러보기</a>
+                  </li>
+                  <li>
+                    <a href="#">찾아오시는 길</a>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">특화진료</a>
+              <div class="smenu">
+                <ol>
+                  <li>
+                    <a href="#">영상센터</a>
+                  </li>
+                  <li>
+                    <a href="#">종양센터</a>
+                  </li>
+                  <li>
+                    <a href="#">심장센터</a>
+                  </li>
+                  <li>
+                    <a href="#">간담도계 센터</a>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">응급진료</a>
+              <div class="smenu">
+                <ol>
+                  <li>
+                    <a href="#">24시응급진료안내</a>
+                  </li>
+                  <li>
+                    <a href="#">우리들 의료시스템 특징</a>
+                  </li>
+                  <li>
+                    <a href="#">블로그치료케이스</a>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">블로그치료케이스</a>
+              <div class="smenu">
+                <ol>
+                  <li>
+                    <a href="#">치료케이스</a>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">커뮤니티</a>
+              <div class="smenu">
+                <ol>
+                  <li>
+                    <a href="#">공지사항</a>
+                  </li>
+                  <li>
+                    <a href="#">자주하는 질문답변</a>
+                  </li>
+                  <li>
+                    <a href="#">방송출연</a>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="fi fi-search">
+                <span class="ir">search</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- 2. 컨텐츠영역 -->
+    <div class="bgc">
+      <div id="cont">
+        <main class="cont ibx">
+          <!-- 2-1. 타이틀 -->
+          <h2 class="stit">자주 하는 질문답변</h2>
+          <!-- 2-2. 컨텐츠박스 -->
+          <section class="scont">
+            <!-- 한국 최신 드라마 리스트 -->
+            <table class="tbl" id="drama">
+              <!-- 테이블 기본 사이간극은  
+              border="1"속성을 넣고 확인해 본다! 
+              없애려면 css에서 
+              border-collapse:collapse설정함! -->
+              <!-- 1. 테이블제목 -->
+              <caption>
+                자주 하는 질문답변
+              </caption>
+              <!-- 2. 테이블 머릿부분 -->
+              <thead>
+                <tr>
+                  <th>번호</th>
+                  <th>제목</th>
+                  <th>상태</th>
+                  <th>작성자</th>
+                  <th>작성일</th>
+                </tr>
+              </thead>
+              <!-- 3. 테이블 메인부분 -->
+              <tbody>
+                <tr>
+                  <td>27</td>
+                  <td>당일 방문 검사 문의</td>
+                  <td>답변완료</td>
+                  <td>곽새봄</td>
+                  <td>2022.07.23</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>노견 수술문의</td>
+                  <td>답변완료</td>
+                  <td>심가린</td>
+                  <td>2022.07.22</td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td>주말 진료비 할증 문의</td>
+                  <td>답변완료</td>
+                  <td>지현</td>
+                  <td>2022.07.18</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>수술비 문의</td>
+                  <td>답변완료</td>
+                  <td>으엥</td>
+                  <td>2022.07.15</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>수중런닝머신</td>
+                  <td>답변완료</td>
+                  <td>Bori</td>
+                  <td>2022.07.10</td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>건강검진비용</td>
+                  <td>답변완료</td>
+                  <td>이정민</td>
+                  <td>2022.07.01</td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td>7월 스케줄표</td>
+                  <td>답변완료</td>
+                  <td>위지원</td>
+                  <td>2022.06.24</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>MRi 뇌신경 검사</td>
+                  <td>답변완료</td>
+                  <td>김하연</td>
+                  <td>2022.06.23</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>여아 중성화수술 문의</td>
+                  <td>답변완료</td>
+                  <td>김지현</td>
+                  <td>2022.06.06</td>
+                </tr>
+              </tbody>
+              <!-- 4. 테이블 하단부분 -->
+              <tfoot>
+                <tr>
+                  <td colspan="5">
+                    ◀ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ▶
+                  </td>
+                  <!-- 
+                              colspan 속성은 기본적으로 td를 합칠때 사용함
+                              상단의 td(th)가 7개 이고 이것을 합치려면
+                              7개를 하나로 통합하는 값을 설정해 준다!
+                              여기서 col은 column 컬럼(기둥)의 뜻
+                              span은 "범위"라는 의미임
+
+                              위아래 행을 합치는 속성은 rowspan임!
+                          -->
+                </tr>
+              </tfoot>
+            </table>
+            <!-- 
+          [ 가장 복잡한 그룹요소인 테이블!!! ]
+          32. table : 테이블 전체 부모요소
+          33. tr : 테이블 레코드행 (table row)
+          34. td : 테이블 데이터요소 (table data)
+          35. th : 테이블 머릿부분에 사용될 경우 
+          td대신 th를 사용할 수 있다.
+          (기본디자인-중앙정렬+두꺼운글자)
+          ________________________________  
+          (테이블 구조를 위한 추가요소들)
+          36. caption : 테이블 제목
+          37. thead : 테이블 머릿부분
+          38. tbody : 테이블 중앙 내용부분
+          39. tfoot : 테이블 하단부분
+
+          ※tbody는 일반적으로 table tr td 로 구성하는
+          테이블일 경우 자동으로 생성되어 표시된다!
+
+       -->
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div id="info" class="bgc">
+      <footer class="ibx info">
+        <!-- 3-1.하단로고 -->
+        <div class="blogo">
+          <img src="../img/우리들동물메디컬센터/all_menu_logo.jpg" alt="하단로고" />
+        </div>
+        <!-- 3-2.회사주소 -->
+        <address class="addr">
+          우리들동물메디컬센터 | 서울특별시 양천구 신정동 목동로 161 사업자 번호
+          117-10-77903 | 대표자명 이규석 |<br />
+          truthy2000@naver.com <br />tel.02-2642-7588 | fax. 02-6342-7589 <br />
+          COPYRIGHT(C)2022 BY 우리들동물메디컬센터. <br />ALL RIGHT RESERVED.
+          DIRECTED BY CUBE DESIGN
+        </address>
+        <!-- 3-3.하단링크 -->
+        <ul class="blink">
+          <li>
+            <a href="#">병원소개</a>
+          </li>
+          <li>
+            <a href="#">특화진료</a>
+          </li>
+          <li>
+            <a href="#">응급진료</a>
+          </li>
+          <li>
+            <a href="#">개인정보 처리방침</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  
+  </body>
+</html>
