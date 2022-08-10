@@ -232,8 +232,11 @@
     <div id="cont" class="bgc">
         <main class="ibx cont" v-for="(v,n) in vals.data" v-if="n===catName2" v-bind:class="catName">
             <!-- 
-                v-if="n===catName"
-                조건이 속성명과 파라미터값이 같은 경우에 셋팅함!
+                v-if="n===catName2"
+                조건이 속성명과 파라미터값이 같은 경우에 셋팅함!(특수문자가 들어간 time & gem 때문에
+                클래스명으로 사용될 이름은 'time-gem'로 변경
+                조건을 위한 변수는 pm값 그대로 사용하기 위해
+                catName2를 변수로 추가하였다!)
 
                 [ 클래스 추가 디렉티브 ]
                 v-bind:class="클래스명"
