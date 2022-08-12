@@ -14,7 +14,7 @@ header {
 	height: 80px;
 }
 #subCont1{
-    background: url(/images/터키1.jpg) no-repeat top/cover;
+    background: url(../images/터키1.jpg) no-repeat top/cover;
 }
 #subCont1 p{
 	color:#fff;

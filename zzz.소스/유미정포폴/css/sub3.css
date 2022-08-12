@@ -14,7 +14,7 @@ header {
 	height: 80px;
 }
 #subCont1{
-    background: url(/images/이탈리아1.jpg) no-repeat top/cover;
+    background: url(../images/이탈리아1.jpg) no-repeat top/cover;
 }
 #subCont1 .amtBx{
     background: linear-gradient(0deg, rgb(38, 127, 126) 0%, rgba(38, 127, 126,0.9) 60%, rgba(255,255,255,0) 100%);

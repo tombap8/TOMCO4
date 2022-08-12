@@ -14,7 +14,7 @@ header {
 	height: 80px;
 }
 #subCont1{
-    background: url(/images/스위스1.jpg) no-repeat top/cover;
+    background: url(../images/스위스1.jpg) no-repeat top/cover;
 }
 #subCont1 .amtBx{
     background: linear-gradient(0deg, rgb(118, 183, 106) 0%, rgba(118, 183, 106,0.9) 60%, rgba(112, 163, 49, 0) 100%);

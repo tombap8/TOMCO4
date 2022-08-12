@@ -14,7 +14,7 @@ header {
 	height: 80px;
 }
 #subCont1{
-    background: url(/images/베트남1.jpg) no-repeat top/cover;
+    background: url(../images/베트남1.jpg) no-repeat top/cover;
 }
 #subCont1 .amtBx{
     background: linear-gradient(0deg, rgb(14, 106, 2) 0%, rgba(14, 106, 2,0.9) 60%, rgba(255,255,255,0) 100%);

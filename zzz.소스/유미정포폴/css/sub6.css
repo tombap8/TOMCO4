@@ -14,7 +14,7 @@ header {
 	height: 80px;
 }
 #subCont1{
-    background: url(/images/브라질1.jpg) no-repeat top/cover;
+    background: url(../images/브라질1.jpg) no-repeat top/cover;
 }
 #subCont1 .amtBx{
     background: linear-gradient(0deg, rgb(75, 145, 28) 0%, rgba(75, 145, 28,0.9) 60%, rgba(255,255,255,0) 100%);
