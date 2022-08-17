@@ -95,7 +95,7 @@ $(() => { ////////// jQB ///////////////////////
             atxt === "회원가입" ||
             atxt === "갤러리")
             location.href = url;
-        else // 기타 sns는 새창열기(window.open())
+        else if(atxt !== '로그아웃') // 기타 sns는 새창열기(window.open())
             window.open().location.href = url;
 
     }); ///////// click //////////////////
