@@ -1,5 +1,5 @@
-import { name, age } from "/003.JS학습/module/person.js";
-import message from "/003.JS학습/module/message.js";
+import { name, age } from "./person.js";
+import message from "./message.js";
 
 
 document.getElementById("demo").innerHTML = message();
