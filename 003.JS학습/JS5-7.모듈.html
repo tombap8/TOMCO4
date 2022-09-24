@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS5-7.모듈</title>
+        <script src="./module/main.js" type="module"></script>
+        <!-- 
+            모든 스크립트 type="module"에는 defer속성 이 자동으로 부여됩니다 . 그러면 
+            페이지를로드 할 때 병렬로 (인라인이 아닌 경우) 다운로드 한 다음 파서가 완료된 후
+             순서대로 실행됩니다.
+         -->
+    </head>
+<body>
+<h1>JavaScript Modules</h1>
+
+<p id="demo"></p>
+
+<!-- <script type="module">
+import { name, age } from "./module/person.js";
+import message from "./module/message.js";
+
+document.getElementById("demo").innerHTML = message();
+
+</script> -->
+
+</body>
+</html>
