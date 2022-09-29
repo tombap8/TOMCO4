@@ -104,7 +104,19 @@ input:focus {
 
 /* 체크박스 라벨과 세로정렬 */
 .addbx input {
-    vertical-align: -2px;
+    display: none;
+}
+
+.addbx input+label{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 20px;
+    /* outline: 1px solid red; */
+}
+.addbx input:checked+label{
+    font-weight: 900;
 }
 
 /* 기타링크 */
