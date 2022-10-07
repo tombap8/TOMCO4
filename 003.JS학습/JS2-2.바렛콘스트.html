@@ -298,6 +298,29 @@
         // 의미 있지는 않지만 속성중 마지막에 추가된다!
         // 객체의 속성과 메서드는 별도로 관리된다!
 
+        /* 
+            [새로 추가한 객체의 속성을 delete로 삭제하려면?]
+            Object.defineProperty(myObj,"name",
+            {
+                value:"톰소여",  
+                enumerable: true,  
+                configurable: true,  
+                writable: true
+            });
+
+            - 경우에 따라 아래 3가지 속성 설정 필요!
+
+            1. configurable 
+                -> 값 수정 및 삭제여부
+                (true / false-기본값)
+            2. enumerable 
+                -> 객체에 노출여부
+                (true / false-기본값)
+            3. writable 
+                -> 할당 연산자로 속성의 값변경 여부 
+                (true / false-기본값)
+        */
+
         // 속성지우기 //////////
         // delete 객체명.속성명 -> 속성을 삭제함!
         // myObj.second 를 삭제하자!
