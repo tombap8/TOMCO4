@@ -236,6 +236,12 @@ ALTER TABLE `friends`
 MODIFY COLUMN `fname` varchar(100);
 
 
+
+[ 테이블 컬럼 순서바꾸기 ]
+ALTER TABLE 테이블명 MODIFY 바꿀컬럼명 바꿀컬럼형 AFTER 뒤에놓을컬럼
+ALTER TABLE `todolist` MODIFY `title` varchar(300) AFTER `cont`
+
+
 >>>>>> DML (INSERT INTO, UPDATE, DELETE, SELECT)<<<<
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
