@@ -16,6 +16,26 @@
             -> 부모 클래스를 참조
             -> 부모의 생성자 메서드를 호출
             -> 부모의 속성과 메서드에 접근가능
+
+            [ 겟터와 셋터 ]
+            1. 클래스의 특정 속성에 대하여 겟터와 셋터를 설정할 수 있다.
+            2. 겟터(Getter) : 값을 리턴함
+                get 겟터명(){
+                    return this.속성변수
+                }
+            3. 셋터(Setter) : 값을 셋팅함
+                set 셋터명(전달변수){
+                    this.속성변수=전달변수
+                } 
+            4. 값의 호출 : 겟터명을 변수호출함
+            5. 값의 셋팅 : 셋터변수에 할당함
+            (주의사항)
+            -> 겟터명과 셋터명은 동일함
+            -> 사용시 변수처럼 사용함
+            -> 호출시엔 본래 클래스 맴버 속성을 사용해도 됨
+            -> 값셋팅은 셋터로만 가능함
+            -> 사용목적은 값셋팅의 안전성을 위함
+                (직접 값을 넣지 않기때문에 유효성검사 가능!)
             
           ***************************************************************/
 
@@ -35,6 +55,7 @@
         } /////////// class //////////////////////
 
 
+        /// CGV 극장에서는 기본 정보를 모두 상속받고 CGV만의 기능과 항목을 새로 만든다!
         class CGV extends MovieInfo {
             constructor(tit, sum, dir, act, des, msg, num) {
                 super(tit, sum, dir, act, des);
@@ -57,14 +78,11 @@
             }
         }
 
-        // 클래스의 데이터형은 뭐지?
-        // typeof 변수 -> 변수(객체,클래스)의 데이터형을 리턴
-        console.log("클래스는 뭐지? ", typeof MovieInfo);
 
         document.write("<h1>JS5-6.2. JS 클래스 상속</h1>");
 
-        // 클래스로 객체만들기!
-        const mi1 = new CGV(
+        // 클래스로 객체만들기! ////////////
+        const cgv = new CGV(
             "조제",
             "멜로/로맨스, 드라마",
             "김종관",
@@ -75,25 +93,92 @@
         );
 
         // 클래스로 만든게 객체인지 확인
-        console.log("mi1이 객체인지 확인:", mi1);
+        console.log("cgv이 객체인지 확인:", cgv);
 
         // 만들어진 객체 화면출력 : 객체니까 for in 사용!
-        for (let x in mi1) {
-            document.write(`<h2>★${x} : ${mi1[x]}</h2>`);
+        for (let x in cgv) {
+            document.write(`<h2>★${x} : ${cgv[x]}</h2>`);
         } //// for in /////
 
         // 객체 메서드 호출!
-        document.write(`<h2> 메시지: ${mi1.함수("굉장허네!")}</h2>`);
+        document.write(`<h2> 메시지: ${cgv.함수("굉장허네!")}</h2>`);
 
         // 기본인원찍기
-        document.write(`<h2>CGV의 극장평균 수용인원은 ${mi1.인원}명입니다!(2021년기준)</h2>`);
+        document.write(`<h2>CGV의 극장평균 수용인원은 ${cgv.인원}명입니다!(2021년기준)</h2>`);
 
         // 기본인원 셋팅하기
-        mi1.people=450;
+        cgv.people = 450;
         // 변경된 기본인원 불러오기
-        document.write(`<h2>CGV의 극장평균 수용인원은 ${mi1.people}명입니다!(2022년기준)</h2>`);
+        document.write(`<h2>CGV의 극장평균 수용인원은 ${cgv.people}명입니다!(2022년기준)</h2>`);
         // 클래스 맴버 변수인 "인원"을 사용해도 동일한 값을 찍는다!(셋터가 변경하였음!)
-        // document.write(`<h2>CGV의 극장평균 수용인원은 ${mi1.인원}명입니다!(2022년기준)</h2>`);
+        // document.write(`<h2>CGV의 극장평균 수용인원은 ${cgv.인원}명입니다!(2022년기준)</h2>`);
+
+        // 구분선
+        document.write("<hr>");
+
+        ////////////////////////////////////////////////////
+
+
+        /// MegaBox 극장에서는 기본 정보를 모두 상속받고 MegaBox만의 기능과 항목을 새로 만든다!
+        class MegaBox extends MovieInfo {
+            constructor(tit, sum, dir, act, des, msg, num) {
+                super(tit, sum, dir, act, des);
+                this.팝콘소식 = msg;
+
+                // 상영관수 추가
+                this.상영관수 = num;
+            }
+            show() {
+                return this.함수() + ", 메가박스 팝콘 : " + this.팝콘소식;
+            }
+
+            // 상영관수 리턴
+            get hallNum() {
+                return this.상영관수;
+            }
+            // 상영관수 셋팅
+            set hallNum(n) {
+                if(isNaN(n)){
+                    console.log("숫자가 아닙니다! 다시 입력하세요!");
+                    return;
+                }
+                this.상영관수 = n;
+            }
+        }
+
+        // 클래스로 객체만들기! ////////////
+        const megabox = new MegaBox(
+            "스파이더맨: 노 웨이 홈",
+            "액션/어드벤처/SF",
+            "존 왓츠",
+            "톰 홀랜드, 젠데이아 콜먼",
+            "닥스도 나오는 스파이더맨이양~!!!",
+            "롤리팝과 먹는 새로운 롤리팝콘 출시!!!",
+            50
+        );
+
+        // 클래스로 만든게 객체인지 확인
+        console.log("megabox이 객체인지 확인:", megabox);
+
+        // 만들어진 객체 화면출력 : 객체니까 for in 사용!
+        for (let x in megabox) {
+            document.write(`<h2>★${x} : ${megabox[x]}</h2>`);
+        } //// for in /////
+
+        // 객체 메서드 호출!
+        document.write(`<h2> 메시지: ${megabox.함수("역시 스파이더맨이야!")}</h2>`);
+
+        // 기본인원찍기
+        document.write(`<h2>megabox의 총 상영관수는 ${megabox.상영관수}개입니다!(2021년기준)</h2>`);
+        // 겟터에서 "상영관수" 맴버 변수를 가져올 수 있음!!!
+        // document.write(`<h2>megabox의 총 상영관수는 ${megabox.hallNum}개입니다!(2021년기준)</h2>`);
+
+        // 기본인원 셋팅하기
+        megabox.hallNum = 70;
+        // 변경된 기본인원 불러오기
+        document.write(`<h2>megabox의 총 상영관수는 ${megabox.hallNum}개입니다!(2022년기준)</h2>`);
+        // 클래스 맴버 변수인 "상영관수"를 사용해도 동일한 값을 찍는다!(셋터가 변경하였음!)
+        // document.write(`<h2>megabox의 총 상영관수는 ${megabox.상영관수}개입니다!(2022년기준)</h2>`);
 
         // 구분선
         document.write("<hr>");
